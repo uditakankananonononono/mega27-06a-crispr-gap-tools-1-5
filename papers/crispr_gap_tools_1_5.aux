@@ -58,6 +58,7 @@
 \newlabel{fig:crossdata}{{1}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Gap 1 (cont.): pooling does not fix the boundary}{10}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Gap 2: GNN beats published scores; isotonic calibrates}{10}{}\protected@file@percent }
+\newlabel{sec:results-offtarget}{{10.3}{10}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Reliability curves on held-out crisprSQL pairs, before and after Platt calibration on the validation slice.}}{11}{}\protected@file@percent }
 \newlabel{fig:calibration}{{2}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.4}Gap 3: Cas9-to-pegRNA transfer}{11}{}\protected@file@percent }
@@ -75,19 +76,33 @@
 \newlabel{sec:discovery}{{11}{13}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Portability correction: rescuing cross-dataset transfer}{13}{}\protected@file@percent }
 \newlabel{sec:porta}{{11.1}{13}}
-\bibcite{doench2014}{1}
-\bibcite{doench2016}{2}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Pooling mitigation attempt (gap 1, 3 seeds).}}{14}{}\protected@file@percent }
 \newlabel{tab:pooled}{{3}{14}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Off-target classification on crisprSQL, guide-grouped held-out split.}}{14}{}\protected@file@percent }
 \newlabel{tab:offtarget}{{4}{14}}
 \@writefile{toc}{\contentsline {section}{\numberline {12}Limitations}{14}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {13}Tool documentation}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Reproducibility appendix}{14}{}\protected@file@percent }
+\newlabel{sec:repro}{{A}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Environment}{14}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}}{15}{}\protected@file@percent }
+\newlabel{tab:calib}{{5}{15}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Ablation: PAM and chromatin feature channels (gaps 4-5).}}{15}{}\protected@file@percent }
+\newlabel{tab:ablation}{{6}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Data provenance}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Entry points and tests}{15}{}\protected@file@percent }
+\bibcite{doench2014}{1}
+\bibcite{doench2016}{2}
 \bibcite{chari2015}{3}
 \bibcite{wang2019}{4}
 \bibcite{chuai2018}{5}
 \bibcite{kim2020}{6}
 \bibcite{hsu2013}{7}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces pegRNA efficiency (HEK), grouped held-out Spearman (gap 3).}}{16}{}\protected@file@percent }
+\newlabel{tab:pegrna}{{7}{16}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces pegRNA scarce-regime scaling (HEK, grouped held-out Spearman). Transfer never beats scratch.}}{16}{}\protected@file@percent }
+\newlabel{tab:scaling}{{8}{16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Negative results register}{16}{}\protected@file@percent }
 \bibcite{haeussler2016}{8}
 \bibcite{listgarten2018}{9}
 \bibcite{concordet2018}{10}
@@ -95,10 +110,6 @@
 \bibcite{walton2020}{12}
 \bibcite{anzalone2019}{13}
 \bibcite{kim2021}{14}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}}{15}{}\protected@file@percent }
-\newlabel{tab:calib}{{5}{15}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Ablation: PAM and chromatin feature channels (gaps 4-5).}}{15}{}\protected@file@percent }
-\newlabel{tab:ablation}{{6}{15}}
 \bibcite{mathis2023}{15}
 \bibcite{stortz2021}{16}
 \bibcite{platt1999}{17}
@@ -108,13 +119,9 @@
 \bibcite{bendavid2010}{21}
 \bibcite{pan2010}{22}
 \bibcite{spearman1904}{23}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Residual-corrected cross-dataset transfer. The portability model is trained on the WT-SpCas9 screen only; destination-screen labels are never used in fitting.}}{17}{}\protected@file@percent }
+\newlabel{tab:porta}{{9}{17}}
 \bibcite{barlow1972}{24}
 \bibcite{brier1950}{25}
 \bibcite{degroot1983}{26}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces pegRNA efficiency (HEK), grouped held-out Spearman (gap 3).}}{16}{}\protected@file@percent }
-\newlabel{tab:pegrna}{{7}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces pegRNA scarce-regime scaling (HEK, grouped held-out Spearman). Transfer never beats scratch.}}{16}{}\protected@file@percent }
-\newlabel{tab:scaling}{{8}{16}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Residual-corrected cross-dataset transfer. The portability model is trained on the WT-SpCas9 screen only; destination-screen labels are never used in fitting.}}{17}{}\protected@file@percent }
-\newlabel{tab:porta}{{9}{17}}
-\gdef \@abspage@last{17}
+\gdef \@abspage@last{18}

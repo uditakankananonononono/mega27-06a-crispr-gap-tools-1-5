@@ -201,6 +201,7 @@ $0.72$--$0.73$ pure, 3 seeds). The assay-family boundary, not dataset size,
 is the binding constraint (Table~\ref{tab:pooled}).
 
 \subsection{Gap 2: GNN beats published scores; isotonic calibrates}
+\label{sec:results-offtarget}
 \begin{figure}[h]\centering\includegraphics[width=0.5\textwidth]{fig_calibration.pdf}
 \caption{Reliability curves on held-out crisprSQL pairs, before and after
 Platt calibration on the validation slice.}
@@ -338,5 +339,7 @@ calibrated scorer with MIT/CFD baselines), \texttt{crisprgap.train\_pegrna}
 + \texttt{crisprgap.models.transfer\_cnn} (gap 3 predictor),
 \texttt{crisprgap.models.offtarget\_v2} (gaps 4--5 PAM/chromatin-aware
 scorer). All tools are covered by the hermetic pytest suite.
+\input{repro_appendix.tex}
+
 \input{references.tex}
 \end{document}
