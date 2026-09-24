@@ -488,7 +488,12 @@ untuned configuration we tested (HEK $0.7945$). Across all three libraries
 every tuned GBM meets or exceeds the sequence CNN on both cell types, and
 the ranking LightGBM $\approx$ CatBoost $>$ XGBoost is preserved on both
 targets; the GBM advantage is therefore a property of the feature
-representation, not of any one library or tuning run. We preserve all
+representation, not of any one library or tuning run. It is also robust to
+the \emph{search algorithm}: an independent 30-trial hyperopt TPE search
+over the same space on the same seed-0 train/val split converges to a
+different configuration (lr $0.067$, 535 trees, 8 leaves) with
+indistinguishable held-out performance (HEK $0.7979$ vs Optuna $0.7978$;
+K562 $0.6109$ vs $0.6161$; \texttt{results/pegrna\_hyperopt.json}). We preserve all
 negatives as the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 

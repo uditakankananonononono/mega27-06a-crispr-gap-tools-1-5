@@ -1,0 +1,38 @@
+{
+  "tool": "hyperopt 0.3.0 (TPE) + lightgbm 4.7.0",
+  "n_trials": 30,
+  "tuned_on": "seed-0 train/val only (HEK)",
+  "best_params": {
+    "learning_rate": 0.0666389770713881,
+    "min_child_samples": 49,
+    "n_estimators": 535,
+    "num_leaves": 8,
+    "subsample": 0.6675752491204014
+  },
+  "best_val_spearman": 0.7913520540959433,
+  "targets": {
+    "HEK": {
+      "by_split": [
+        0.8006613916075974,
+        0.8026402886584061,
+        0.790294167334416
+      ],
+      "mean": 0.7978652825334732
+    },
+    "K562": {
+      "by_split": [
+        0.6174361727137075,
+        0.6058806309259174,
+        0.6093584910717219
+      ],
+      "mean": 0.6108917649037823
+    }
+  },
+  "reference": {
+    "optuna_tuned_HEK": 0.7978,
+    "optuna_tuned_K562": 0.6161,
+    "cnn_HEK": 0.794,
+    "cnn_K562": 0.61,
+    "default_lgbm_HEK": 0.795
+  }
+}
