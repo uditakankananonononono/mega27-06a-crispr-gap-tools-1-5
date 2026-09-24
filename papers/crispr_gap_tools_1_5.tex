@@ -851,7 +851,19 @@ between DNase signal and cleavage frequency across the 1{,}236 positives
 CIRCLE-seq, again cell-free by assay design. Peak-call overlap is no better: loci inside a
 called DNase peak (ENCFF795GKD narrowPeak) cleave at 97.8\% vs 97.2\%
 outside (Fisher odds ratio $1.25$, $p=1.0$;
-\texttt{results/gap5\_k562\_peaks.json}). Effect sizes (pingouin, rank-biserial $r$ /
+\texttt{results/gap5\_k562\_peaks.json}). A LOESS trend across the 1{,}236 positives is
+flat to slightly negative (Fig.~\ref{fig:k562_loess}; endpoint slope
+$-0.27$ log-cleavage per signal unit;
+\texttt{results/gap5\_loess.json}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.55\textwidth]{fig_k562_loess.pdf}
+\caption{No dose-response between DNase accessibility and cleavage
+frequency among the 1{,}236 cleaved K562 loci: the LOESS trend
+(scikit-misc) is flat to slightly negative.}
+\label{fig:k562_loess}
+\end{figure} Effect sizes (pingouin, rank-biserial $r$ /
 Cohen's $d$) tell the same story: Koike-Yusa NAG-vs-NGG $r=0.15$
 ($p=0.071$; the action is in the tail, not the bulk), K562 DNase
 $r=-0.12$, HEK293T SITE-Seq DNase $r=0.014$
