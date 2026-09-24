@@ -1,0 +1,8 @@
+{
+ "n": 1630,
+ "exonic_frac_cleaved": 0.5347222222222222,
+ "nonexonic_frac_cleaved": 0.5491251682368775,
+ "fisher_or": 0.9436274509803921,
+ "fisher_p": 0.7926239339314378,
+ "cross_check": "intervaltree result: exonic 53.8% vs non-exonic 54.5%, OR 0.96"
+}

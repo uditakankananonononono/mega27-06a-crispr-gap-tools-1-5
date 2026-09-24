@@ -872,7 +872,10 @@ $-0.27$ log-cleavage per signal unit;
 \texttt{results/gap5\_loess.json}). Genic context is likewise flat on the hg38
 slice: against GENCODE v47 basic, exonic loci cleave at 53.8\% vs
 54.5\% for non-exonic (Fisher OR $0.96$, $p=0.86$;
-\texttt{results/gap5\_genic\_context.json}). Two further K562 tracks -- CTCF (ENCFF014YLT) and
+\texttt{results/gap5\_genic\_context.json}). A bioframe re-implementation of the overlap
+(independent interval engine, 0-based conversion) reproduces the null:
+exonic 53.5\% vs 54.9\%, OR $0.94$, $p=0.79$
+(\texttt{results/genic\_bioframe\_xcheck.json}). Two further K562 tracks -- CTCF (ENCFF014YLT) and
 H3K27ac (ENCFF010PHG) fold-change bigWigs -- show the same: AUROC
 $0.42$ / $0.49$ on the negatives ($p=0.11$ / $0.79$) and positive-side
 Spearman $0.084$ / $0.043$ (\texttt{results/gap5\_k562\_multitrack.json}).
