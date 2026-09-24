@@ -5,3 +5,4 @@ __pycache__/
 data/hg38.fa
 data/hg38.fa.gz
 data/hg38.fa.fai
+data/gencode_v47_basic.gtf.gz

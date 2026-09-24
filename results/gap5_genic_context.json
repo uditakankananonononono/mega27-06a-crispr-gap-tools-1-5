@@ -1,0 +1,20 @@
+{
+  "annotation": "GENCODE v47 basic (GRCh38)",
+  "n": 1630,
+  "contexts": {
+    "exonic": {
+      "n": 145,
+      "frac_cleaved": 0.5379310344827586
+    },
+    "intronic_or_other_genic": {
+      "n": 1069,
+      "frac_cleaved": 0.5369504209541628
+    },
+    "intergenic": {
+      "n": 416,
+      "frac_cleaved": 0.5793269230769231
+    }
+  },
+  "exonic_vs_rest_or": 0.9570552147239264,
+  "fisher_p": 0.8612897112544251
+}
