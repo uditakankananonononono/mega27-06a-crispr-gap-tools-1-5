@@ -1,0 +1,40 @@
+{
+ "n_site_positions": 26,
+ "per_editor": {
+  "zTadCBE": {
+   "mean_ctot": 0.2175974358974359,
+   "median_ctot": 0.20779999999999998
+  },
+  "TCBE1.1": {
+   "mean_ctot": 0.2422307692307692,
+   "median_ctot": 0.19403333333333336
+  },
+  "TCBE1.2": {
+   "mean_ctot": 0.40622307692307685,
+   "median_ctot": 0.38863333333333333
+  },
+  "TCBE1.3": {
+   "mean_ctot": 0.30878205128205133,
+   "median_ctot": 0.2801666666666667
+  },
+  "TCBE1.4": {
+   "mean_ctot": 0.2871435897435897,
+   "median_ctot": 0.21530000000000002
+  }
+ },
+ "cross_editor_site_rank_spearman": {
+  "zTadCBE_vs_TCBE1.1": 0.9065934065934066,
+  "zTadCBE_vs_TCBE1.2": 0.7472527472527473,
+  "zTadCBE_vs_TCBE1.3": 0.5769230769230769,
+  "zTadCBE_vs_TCBE1.4": 0.9175824175824175,
+  "TCBE1.1_vs_TCBE1.2": 0.5934065934065935,
+  "TCBE1.1_vs_TCBE1.3": 0.4615384615384615,
+  "TCBE1.1_vs_TCBE1.4": 0.9340659340659341,
+  "TCBE1.2_vs_TCBE1.3": 0.7527472527472528,
+  "TCBE1.2_vs_TCBE1.4": 0.5934065934065935,
+  "TCBE1.3_vs_TCBE1.4": 0.532967032967033
+ },
+ "min_cross_editor_rho": 0.4615384615384615,
+ "max_cross_editor_rho": 0.9340659340659341,
+ "best_editor_by_mean": "TCBE1.2"
+}

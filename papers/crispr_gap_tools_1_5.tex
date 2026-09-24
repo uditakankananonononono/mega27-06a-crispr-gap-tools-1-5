@@ -1429,6 +1429,15 @@ language models lead (ESM-2 0.48, SaProt 0.47) over random forest
 (0.41), MLP (0.33), linear regression (0.35) and CNN (0.28).
 Sequence--activity prediction is decisively data-limited below
 $10^{4}$ examples, a caution for every small-library CRISPR model.
+TadA-derived cytosine editors in zebrafish embryos (Nat Biomed Eng 2025,
+10.1038/s41551-025-01607-1, MOESM8; 26 site-positions x 5 editors x 3
+injection replicates) show editor choice and site identity interacting
+(\texttt{results/tadacbe\_zebrafish.json}): TCBE1.2 leads with 40.6\%
+mean C-to-T editing, 1.9$\times$ zTadCBE (21.8\%), yet cross-editor
+site rankings transfer only moderately (Spearman 0.46--0.93 across the
+10 editor pairs), so an editor that wins on average still needs
+site-level validation.
+
 
 
 
