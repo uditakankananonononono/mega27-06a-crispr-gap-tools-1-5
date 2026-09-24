@@ -75,6 +75,23 @@ $U$-statistic. Equivalence with the trapezoidal ROC area follows because
 the empirical ROC curve steps at distinct negative scores, and each step
 rectangle's area equals the corresponding pair count.
 \end{proof}
+\begin{corollary}[midrank computation, used in all experiment code]
+\label{cor:midrank}
+Let $r_i$ be the average (tie-broken) rank of score $s_i$ among all
+$n_1+n_0$ scores, with rank 1 smallest. Then
+$\mathrm{AUROC} = \big(\sum_{i:\,y_i=1} r_i - \tfrac12 n_1(n_1+1)\big)/(n_1 n_0)$.
+\end{corollary}
+\begin{proof}
+With ties averaged, $\sum_{i:\,y_i=1} r_i - \tfrac12 n_1(n_1+1)$ counts,
+for each positive $i$, the number of negatives ranked strictly below it
+plus half the number tied with it: $r_i - \tfrac12(n_1+1)$ subtracts the
+contribution of the $n_1$ positives (each positive outranks itself and on
+average half the tied positives), leaving exactly the per-positive term of
+\eqref{eq:mwu}. Summing over positives and dividing by $n_1 n_0$ recovers
+\eqref{eq:mwu}. This is the identity implemented in
+\texttt{experiments/gap5\_encode\_multitrack.py} and
+\texttt{experiments/gap5\_encode\_hek293t\_dnase.py}.
+\end{proof}
 Two consequences we rely on. First, AUROC is a pure ranking functional,
 so by Proposition~\ref{prop:mono} it is invariant to the monotone
 recalibrations of Section~\ref{sec:discovery}: PORTA corrections change
