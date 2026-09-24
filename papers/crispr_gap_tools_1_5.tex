@@ -522,7 +522,18 @@ averages $0.557$ across three seeds ($0.630/0.484/0.558$) -- between
 CFD ($0.552$) and the positional logistic model ($0.609$) on the same
 splits. Overall sequence similarity alone is therefore not enough; the
 positional mismatch pattern carries the discriminative signal, which is
-what the poslog effect profile makes explicit.
+what the poslog effect profile makes explicit. A published physics-based
+model, CRISPRoff (Alkan et al.\ 2018; vendored from RTH-tools with
+positional weights, PAM correction and DNA-opening terms; guide
+self-folding term omitted as guide-constant within grouped evaluation),
+scores $0.602$ mean AUROC on the same three slices
+($0.675/0.529/0.603$; \texttt{results/crisproff\_baseline.json}) --
+matching the positional logistic model ($0.609$) and beating MIT, CFD
+and the alignment score. 69 pairs (0.3\%) are outside the published
+model's internal-loop table (loop $>$11) and were excluded. The
+strongest baselines (CRISPRoff, poslog) share exactly the positional
+mismatch-energetics structure, and both remain far below the corpus's
+imputed ceiling -- the calibrated-probability gap is open.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
