@@ -34,13 +34,14 @@ no current tool reports. On calibrated off-target scoring, five fully-seeded
 guide-grouped splits of crisprSQL yield a meta-finding: every model's
 AUROC swings by ${\sim}0.2$ across splits and inits (GNN $0.45$--$0.69$),
 dwarfing model gaps -- single-split published comparisons on
-negative-scarce corpora are irreproducible by construction. Our GNN leads
-on mean ($0.609$ vs CFD $0.552$, MIT $0.516$) without separating
-significantly. A natural per-study routing hypothesis (GNN for
+negative-scarce corpora are irreproducible by construction. The strongest model is a
+position-specific logistic regression ($0.692 \pm 0.154$), beating the
+GNN ($0.609 \pm 0.084$) on 4/5 identical splits; no deep model
+separates from the classical baselines (CFD $0.552$, MIT $0.516$). A natural per-study routing hypothesis (GNN for
 low-prevalence GUIDE-seq-style studies, MIT otherwise) is \emph{falsified}
 under leave-one-out evaluation: the apparent per-study GNN wins rest on as
 few as two positives, and the robust policy on this corpus is the MIT
-baseline everywhere (Section~6). All artifacts -- code, 40-test offline suite, data pipelines,
+baseline everywhere (Section~6). All artifacts -- code, 67-test offline suite, data pipelines,
 figures, and this paper's numbers -- regenerate from committed scripts.
 \end{abstract}
 
@@ -290,6 +291,17 @@ irreproducible by construction.} Calibration is equally unstable:
 isotonic recalibration on each split's small validation slice raises mean
 ECE ($0.326 \to 0.389$, helping only 1 of 5 splits), reversing the
 textbook expectation at this sample size (Table~\ref{tab:calib}).
+\paragraph{A one-hot logistic beats the GNN.}
+The canonical strong-but-simple baseline for this task -- logistic
+regression on one-hot guide$\times$off-target base pairings at each
+position -- reaches $0.692 \pm 0.154$ on the identical five splits,
+beating the GNN on 4/5 (paired mean $+0.083$), CFD on 4/5 and MIT on
+4/5, with per-seed AUROC spanning $0.446$--$0.930$. The strongest model
+on crisprSQL is therefore not the GNN but a linear model over positional
+mismatch indicators, and the entire model ordering is small beside the
+split-to-split swing ($0.484$ within the logistic model alone). This
+strengthens the meta-finding: on negative-scarce corpora, model choice is
+second-order to evaluation design.
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
 init draws (data order fixed) gives AUROC $0.530$--$0.606$ (sd $0.032$)
