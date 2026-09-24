@@ -1,0 +1,150 @@
+{
+ "n_outcome_types": 10,
+ "n_conditions": 18,
+ "conditions": {
+  "Nbn": {
+   "l1_vs_control": 97.34,
+   "biggest_shift": {
+    "outcome": "I1-2_d",
+    "ctrl": 14.45,
+    "ko": 43.48
+   }
+  },
+  "Lig4": {
+   "l1_vs_control": 48.94,
+   "biggest_shift": {
+    "outcome": "I1-2_d",
+    "ctrl": 14.45,
+    "ko": 0.2
+   }
+  },
+  "Polq": {
+   "l1_vs_control": 44.41,
+   "biggest_shift": {
+    "outcome": "D3-9 MH",
+    "ctrl": 20.6,
+    "ko": 6.69
+   }
+  },
+  "Xrcc5": {
+   "l1_vs_control": 43.54,
+   "biggest_shift": {
+    "outcome": "D10+ MH",
+    "ctrl": 26.78,
+    "ko": 44.21
+   }
+  },
+  "Xlf": {
+   "l1_vs_control": 41.98,
+   "biggest_shift": {
+    "outcome": "I1-2_d",
+    "ctrl": 14.45,
+    "ko": 4.24
+   }
+  },
+  "Lig1": {
+   "l1_vs_control": 25.72,
+   "biggest_shift": {
+    "outcome": "other I",
+    "ctrl": 5.97,
+    "ko": 12.08
+   }
+  },
+  "Rad52": {
+   "l1_vs_control": 18.13,
+   "biggest_shift": {
+    "outcome": "other I",
+    "ctrl": 5.97,
+    "ko": 11.49
+   }
+  },
+  "Prkdc": {
+   "l1_vs_control": 17.29,
+   "biggest_shift": {
+    "outcome": "D10+ MH",
+    "ctrl": 26.78,
+    "ko": 33.17
+   }
+  },
+  "Poll": {
+   "l1_vs_control": 17.23,
+   "biggest_shift": {
+    "outcome": "I1-2_d",
+    "ctrl": 14.45,
+    "ko": 6.91
+   }
+  },
+  "Wrn": {
+   "l1_vs_control": 15.57,
+   "biggest_shift": {
+    "outcome": "other I",
+    "ctrl": 5.97,
+    "ko": 2.34
+   }
+  },
+  "Dclre1c": {
+   "l1_vs_control": 15.01,
+   "biggest_shift": {
+    "outcome": "other I",
+    "ctrl": 5.97,
+    "ko": 10.72
+   }
+  },
+  "Lig3": {
+   "l1_vs_control": 14.94,
+   "biggest_shift": {
+    "outcome": "other I",
+    "ctrl": 5.97,
+    "ko": 1.49
+   }
+  },
+  "Polm": {
+   "l1_vs_control": 13.5,
+   "biggest_shift": {
+    "outcome": "I1-2_d",
+    "ctrl": 14.45,
+    "ko": 11.01
+   }
+  },
+  "Parp1": {
+   "l1_vs_control": 12.83,
+   "biggest_shift": {
+    "outcome": "other I",
+    "ctrl": 5.97,
+    "ko": 8.78
+   }
+  },
+  "Trp53": {
+   "l1_vs_control": 12.69,
+   "biggest_shift": {
+    "outcome": "D2",
+    "ctrl": 6.47,
+    "ko": 9.19
+   }
+  },
+  "Ercc1": {
+   "l1_vs_control": 8.82,
+   "biggest_shift": {
+    "outcome": "other I",
+    "ctrl": 5.97,
+    "ko": 8.92
+   }
+  },
+  "Trp53bp1": {
+   "l1_vs_control": 7.65,
+   "biggest_shift": {
+    "outcome": "D10+",
+    "ctrl": 4.75,
+    "ko": 2.75
+   }
+  },
+  "Trex1": {
+   "l1_vs_control": 6.5,
+   "biggest_shift": {
+    "outcome": "other I",
+    "ctrl": 5.97,
+    "ko": 4.03
+   }
+  }
+ }
+}

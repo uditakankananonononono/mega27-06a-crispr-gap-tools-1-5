@@ -1168,6 +1168,15 @@ total off-target burden 2.7x (122$\to$46 summed fixed indel frequency;
 sites $>$5\%: 550$\to$192), but at BCL11A the same procedure keeps only
 34\% of on-target activity for a 1.45x burden reduction -- guide
 optimization is a locus-dependent trade, not a free lunch.
+The repair-context study (Nat Commun 2024, 10.1038/s41467-024-54566-7,
+MOESM4 Fig.\ 2b) shows the genetic background rewrites the outcome
+spectrum itself (\texttt{results/repair\_context.json}): across 18
+repair-gene knockouts, the Nbn knockout shifts the outcome distribution
+by L1=97 (1--2\,bp insertion-duplications jump 14$\to$43\%), Lig4 loss
+abolishes them (14.5$\to$0.2\%), Polq loss suppresses 3--9\,bp
+microhomology deletions (21$\to$7\%), and Xrcc5 loss shifts toward
+long MH deletions (27$\to$44\%) -- sequence-only outcome predictors
+face a moving target set by the cell's repair genotype.
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
 \texttt{results/gap4\_mismatch\_tolerance.json}) quantify
