@@ -1549,6 +1549,23 @@ same targets: eePASSIGE 41.9\% vs eePASTE 2.2\% (19.5-fold), and cV6
 vs evoCAST 7.2-fold averaged over four loci. The 5-pegRNA off-target
 indel panel stays below 0.5\% at every candidate site (on-target
 indel 0.41--0.54\%), an honest low-signal negative.
+ABE9-SpRY off-target panel (Sci Rep 2026, 10.1038/s41598-026-40642-z,
+MOESM2; 4 mouse loci, target + 5 ACEofBASE-nominated off-targets each,
+ABE8e-SpRY vs ABE9-SpRY, triplicate) quantifies what PAM flexibility
+costs and what the deaminase buys back
+(\texttt{results/abe9\_spry\_offtarget.json}). SpRY's NRN PAM search
+nominates 1{,}879--4{,}055 candidate off-targets per guide ($\leq$4
+mismatches) --- an order of magnitude more than NGG-constrained
+searches. ABE8e-SpRY confirms the risk: 2--5 of the 5 assayed
+off-targets per locus exceed 3x background (cumulative A-to-G; max
+102.7 at Trpm4-L903). ABE9-SpRY is clean at three loci (0 assayed
+off-targets above 3x background; max-OT reduction up to
+1{,}958-fold) --- but Tpc2-L249 is the honest exception: ABE9 still
+leaves 2 off-targets above background (max 16.1) and the deaminase
+swap buys only a 2.0-fold reduction there. On-target activity is
+equally locus-dependent: ABE9 ranges from near-dead (0.1 at
+Tpc2-K188) to strong (73.9 at Trpm4-L903), so the fidelity gain is
+real but its cost must be re-measured per locus.
 
 
 
