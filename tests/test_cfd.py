@@ -32,3 +32,13 @@ def test_two_mismatches_compound():
 def test_rejects_non_23mer():
     with pytest.raises(ValueError):
         cfd_score("ACGT", "ACGT")
+
+
+def test_cfd_applicable_rejects_indels_and_bad_alphabet():
+    from crisprgap.cfd import cfd_applicable
+    good_wt = "ACGT" * 5 + "AGG"   # 23-mer, NGG PAM
+    good_off = "ACGT" * 5 + "AGG"
+    assert cfd_applicable(good_wt, good_off)
+    assert not cfd_applicable(good_wt, "ACGT-ACGTACGTACGTACG" + "AGG"[:1] + "GG")
+    assert not cfd_applicable(good_wt, "N" * 23)
+    assert not cfd_applicable("ACGT", good_off)  # wrong length

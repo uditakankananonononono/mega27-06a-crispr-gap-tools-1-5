@@ -14,7 +14,7 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 from torch import nn
 
 from crisprgap.baselines import mit_score
-from crisprgap.cfd import cfd_score
+from crisprgap.cfd import cfd_score, cfd_applicable
 from crisprgap.calibration import (expected_calibration_error, fit_platt, apply_platt,
                                    fit_isotonic, brier_score)
 from crisprgap.data.datasets import load_crisprsql
@@ -79,7 +79,7 @@ def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int
     y_te, y_val = ds.labels[te], ds.labels[val]
     mit_te = np.array([mit_score(ds.guides[i], ds.offtargets[i]) for i in te])
     # CFD needs both 23-mers (guide+PAM, off-target+PAM); subset where both are reported
-    cfd_mask = np.array([bool(ds.pam[i]) and bool(ds.off_pam[i]) for i in te])
+    cfd_mask = np.array([bool(ds.pam[i]) and bool(ds.off_pam[i]) and cfd_applicable(ds.guides[i] + ds.pam[i], ds.offtargets[i] + ds.off_pam[i]) for i in te])
     cfd_idx = np.where(cfd_mask)[0]
     te_l = list(te)
     cfd_te = np.array([cfd_score(ds.guides[te_l[j]] + ds.pam[te_l[j]],

@@ -42,3 +42,13 @@ def cfd_score(wt_23mer: str, off_23mer: str) -> float:
         if wt_u[i] != sl:
             score *= mm_scores["r" + wt_u[i] + ":d" + revcom(sl) + "," + str(i + 1)]
     return score * pam_scores[pam]
+
+
+_ACGT = set("ACGT")
+
+
+def cfd_applicable(wt_23mer: str, off_23mer: str) -> bool:
+    """CFD is defined for substitution-only 23-mers over ACGT (guide+PAM)."""
+    w, o = wt_23mer.upper(), off_23mer.upper()
+    return (len(w) == 23 and len(o) == 23
+            and set(w) <= _ACGT and set(o) <= _ACGT)
