@@ -403,6 +403,35 @@ cross-scores by ${\le}0.01$ (3 seeds;
 features neither improve within-dataset fit nor rescue cross-community
 transfer.
 
+\paragraph{Families 13-14: CRISPRi/a activity screens.} The Horlbeck
+2016 training screens (eLife 19760; mhorlbeck/CRISPRiaDesign data
+tables) contribute guide-level empirical activity scores for CRISPRi
+(18{,}380 guides) and CRISPRa (2{,}792) in K562 -- repression and
+activation, not nuclease cutting. Both are learnable within (ridge
+$0.355$/$0.288$), transfer strongly to each other ($+0.27$/$+0.30$ --
+same lab, same cell line, different modality), transfer positively to
+sgDesigner ($+0.30$ out, $+0.12$--$+0.14$ in) and CRISPRscan
+($+0.21$), transfer \emph{negatively} to the DepMap consensus
+($-0.15$/$-0.19$), and barely into the Wang/Xu screens ($\le 0.12$).
+On the 14-dataset matrix, Louvain again returns exactly two communities
+(identical across 3 seeds, $Q=0.276$;
+\texttt{results/transfer\_communities\_14ds.json}): the HEK nuclease
+family stays pure, and everything else -- Wang/Xu, zebrafish, CRISPRi/a,
+DepMap -- forms the loose second group. The sharp boundary is the
+HEK293T nuclease assays, not nuclease-versus-screen per se.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.62\textwidth]{fig_transfer_heatmap.pdf}
+\caption{The full $14\times 14$ cross-dataset transfer matrix (ridge,
+mean of 3 seeds; diagonal = within-dataset). The HEK-nuclease block
+(bottom right) and the Wang/Xu block (upper middle) are visible as
+coherent red squares; the DeepCRISPR-HEK293T column is uniformly blue
+(the inversion anomaly); the Horlbeck CRISPRi/a pair transfers to each
+other and to sgDesigner/CRISPRscan but negatively to DepMap.}
+\label{fig:transfer_heatmap}
+\end{figure}
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.9\textwidth]{fig_transfer_dendrogram.pdf}
