@@ -1,0 +1,27 @@
+{
+ "HEK4": {
+  "Cas9_HEK4": 952,
+  "Cas9_HEK4_T-cells": 450,
+  "Cas9_HEK4_HSPCs": 453,
+  "Cas9_HEK4__vs__Cas9_HEK4_T-cells": {
+   "overlap": 303,
+   "jaccard": 0.276
+  },
+  "Cas9_HEK4__vs__Cas9_HEK4_HSPCs": {
+   "overlap": 304,
+   "jaccard": 0.276
+  },
+  "Cas9_HEK4_T-cells__vs__Cas9_HEK4_HSPCs": {
+   "overlap": 450,
+   "jaccard": 0.993
+  }
+ },
+ "VEGFA2": {
+  "Cas9_VEGFA2": 1310,
+  "Cas9_VEGFA2_T-cells": 1879,
+  "Cas9_VEGFA2__vs__Cas9_VEGFA2_T-cells": {
+   "overlap": 832,
+   "jaccard": 0.353
+  }
+ }
+}
