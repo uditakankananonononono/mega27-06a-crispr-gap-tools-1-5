@@ -87,6 +87,21 @@ def _esc(tex: str) -> str:
     return tex.replace("_", "\\_")
 
 
+def table_crossdata_cnn():
+    if not os.path.exists(f"{R}/crossdata_cnn_3ds.json"):
+        return ""
+    d = json.load(open(f"{R}/crossdata_cnn_3ds.json"))["summary"]["cnn"]
+    rows = []
+    for train, v in d.items():
+        cross = ", ".join(f"{o}: {s2:.3f}" for o, s2 in v["cross_mean"].items())
+        rows.append(f"{train} & {v['within_mean']:.3f} & {cross} & {v['generalization_gap']:.3f} " + chr(92)*2)
+    return ("\\begin{table}[h]\\centering\\caption{Cross-dataset generalization, CNN "
+            "(2 seeds, 6-epoch compute budget; within-dataset numbers are undertrained "
+            "relative to Table 1). Negative transfer to DeepHF appears.}\\label{tab:crosscnn}"
+            "\\begin{tabular}{lccc}\\hline Train & Within & Cross & Gap \\\\\hline\n"
+            + "\n".join(rows) + "\n\\hline\\end{tabular}\\end{table}\n")
+
+
 def table_scaling():
     if not os.path.exists(f"{R}/pegrna_transfer_scaling.json"):
         return ""
@@ -101,6 +116,6 @@ def table_scaling():
 if __name__ == "__main__":
     os.makedirs(P, exist_ok=True)
     with open(f"{P}/results_tables.tex", "w") as f:
-        f.write(_esc(table_crossdata() + table_offtarget() + table_ablation() + table_pegrna() + table_scaling()))
+        f.write(_esc(table_crossdata() + table_crossdata_cnn() + table_offtarget() + table_ablation() + table_pegrna() + table_scaling()))
     fig_crossdata()
     print("assets written")

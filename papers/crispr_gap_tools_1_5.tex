@@ -176,7 +176,13 @@ collapse is total: FC+RES$\to$DeepHF $\rho=0.026$ and V1$\to$DeepHF
 $0.032$, while DeepHF is highly learnable within itself ($0.728$). The
 bottleneck is therefore not model capacity or feature quality but assay
 distribution shift -- the quantified form of the gap (Figure~\ref{fig:crossdata},
-Table~\ref{tab:crossdata}).
+Table~\ref{tab:crossdata}). A CNN under a tight compute budget shows the
+same structure, and something stronger: transfer to DeepHF goes
+\emph{negative} ($\rho=-0.25$ from both Doench datasets,
+Table~\ref{tab:crosscnn}), i.e.\ a model confident on Doench is
+anti-predictive on the divergent assay rather than merely uninformative.
+Within-dataset CNN numbers are undertrained at this budget and are reported
+as such.
 \begin{figure}[h]\centering\includegraphics[width=0.7\textwidth]{fig_crossdata.pdf}
 \caption{Within-dataset vs cross-dataset Spearman (ridge, 3 seeds).}
 \label{fig:crossdata}\end{figure}
