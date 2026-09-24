@@ -25,11 +25,11 @@ Uncalibrated & 0.326 \\
 Platt & 0.367 \\
 Isotonic & 0.389 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Ablation: PAM and chromatin feature channels (gaps 4-5).}\label{tab:ablation}\begin{tabular}{lccc}\hline Features & AUROC & AUPRC & AUROC non-NGG \\\hline
-seq\_only & 0.506 & 0.897 & 0.530 \\
-pam & 0.540 & 0.919 & 0.607 \\
-epigen & 0.509 & 0.912 & 0.506 \\
-pam\_epigen & 0.577 & 0.921 & 0.599 \\
+\begin{table}[h]\centering\caption{Ablation: PAM and chromatin feature channels (gaps 4-5), five fully-seeded guide-grouped splits (mean $\pm$ sd AUROC). All conditions are within noise of seq-only; the winner varies by seed (pam\_epigen 3/5, epigen 2/5).}\label{tab:ablation}\begin{tabular}{lcc}\hline Features & AUROC (5 seeds) & AUROC non-NGG (5 seeds) \\\hline
+seq\_only & $0.590 \pm 0.094$ & $0.580 \pm 0.065$ \\
+pam & $0.528 \pm 0.119$ & $0.552 \pm 0.087$ \\
+epigen & $0.587 \pm 0.092$ & $0.556 \pm 0.054$ \\
+pam\_epigen & $0.605 \pm 0.086$ & $0.597 \pm 0.079$ \\
 \hline\end{tabular}\end{table}
 \begin{table}[h]\centering\caption{pegRNA efficiency (HEK), grouped held-out Spearman (gap 3).}\label{tab:pegrna}\begin{tabular}{lc}\hline Model & Spearman \\\hline
 Ridge (numeric only) & 0.741 \\
@@ -41,9 +41,9 @@ CNN, Cas9-pretrained trunk & 0.789 \\
 1000 & 0.762 & 0.758 \\
 4000 & 0.771 & 0.767 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Per-study held-out AUROC on the canonical split (studies with $\ge$30 test pairs and both classes; all other studies contribute too few pairs to score - itself the corpus's limitation).}\label{tab:perstudy}\begin{tabular}{lccc}\hline Study & $n$ test & GNN & MIT \\
+\begin{table}[h]\centering\caption{Per-study held-out AUROC on the canonical split, with class counts. The Anderson GNN ``win'' rests on \textbf{2 positives}; across five seeded splits only 13 (study, split) rows carry $\ge$5 positives and $\ge$5 negatives, and the GNN wins one of them -- per-study rankings on this corpus are not estimable (Section~6).}\label{tab:perstudy}\begin{tabular}{lcccc}\hline Study & $n$ test & pos / neg & GNN & MIT \\
 \hline
-Anderson & 72 & 0.764 & 0.550 \\
-Cameron & 301 & 0.525 & 0.541 \\
-Kim & 47 & 0.487 & 0.692 \\
+Anderson & 72 & 2 / 70 & 0.764 & 0.550 \\
+Cameron & 301 & 72 / 229 & 0.525 & 0.541 \\
+Kim & 47 & 18 / 29 & 0.487 & 0.692 \\
 \hline\end{tabular}\end{table}

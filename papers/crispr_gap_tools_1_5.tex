@@ -36,7 +36,11 @@ AUROC swings by ${\sim}0.2$ across splits and inits (GNN $0.45$--$0.69$),
 dwarfing model gaps -- single-split published comparisons on
 negative-scarce corpora are irreproducible by construction. Our GNN leads
 on mean ($0.609$ vs CFD $0.552$, MIT $0.516$) without separating
-significantly, and we show where it does win (per-study analysis). All artifacts -- code, 40-test offline suite, data pipelines,
+significantly. A natural per-study routing hypothesis (GNN for
+low-prevalence GUIDE-seq-style studies, MIT otherwise) is \emph{falsified}
+under leave-one-out evaluation: the apparent per-study GNN wins rest on as
+few as two positives, and the robust policy on this corpus is the MIT
+baseline everywhere (Section~6). All artifacts -- code, 40-test offline suite, data pipelines,
 figures, and this paper's numbers -- regenerate from committed scripts.
 \end{abstract}
 
@@ -65,12 +69,14 @@ group-aware held-out numbers, including where the gap resisted us.
 models, with the first cross-family transfer matrix on Doench/DeepHF
 (Section~5). (ii)~A calibrated multi-study off-target benchmark with full
 split/init determinism, establishing that negative-scarce corpora cannot
-adjudicate between scorers on single splits, with a per-study analysis of
-where models actually differ (Section~6). (iii)~A controlled study of
+adjudicate between scorers on single splits -- and that per-study
+apparent wins, including our own, are positive-count artifacts (a
+study-routing hypothesis is stated and falsified, Section~6). (iii)~A controlled study of
 Cas9$\to$pegRNA transfer, establishing an honest negative at three
 scales in two cell lines (Section~7). (iv)~PAM- and chromatin-aware
-off-target channels, with the PAM channel recovering most of the non-NGG
-deficit (Section~8). (v)~A named, quantified, falsifiable discovery --
+off-target channels; five-seed replication reverses our own single-split
+finding -- no channel's delta exceeds split noise, and PAM alone
+\emph{hurts} on average (Section~8). (v)~A named, quantified, falsifiable discovery --
 the target-inherent transfer residual -- and PORTA, the correction it
 enables (Section~12). (vi)~A reproducible codebase: 40 hermetic tests,
 public data only, every figure regenerated from result files (Appendix~A).
@@ -284,13 +290,23 @@ irreproducible by construction.} Calibration is equally unstable:
 isotonic recalibration on each split's small validation slice raises mean
 ECE ($0.326 \to 0.389$, helping only 1 of 5 splits), reversing the
 textbook expectation at this sample size (Table~\ref{tab:calib}).
-Per-study analysis (seed-0 split; Table~\ref{tab:perstudy}) shows where
-signal actually lives: the GNN is strong on Anderson-era GUIDE-seq data
-($0.764$ vs MIT $0.550$) and weak on Kim-style targeted libraries
-($0.487$ vs $0.692$) -- model rankings are study-conditional, and most
-studies contribute too few held-out pairs to score at all, which is
-itself the corpus's core limitation: crisprSQL holds only 1,494
-validated negatives across 17 studies.
+Per-study analysis on the seed-0 split (Table~\ref{tab:perstudy})
+initially suggested structure -- a GNN win on Anderson-era GUIDE-seq data
+($0.764$ vs MIT $0.550$) and a loss on Kim-style targeted libraries
+($0.487$ vs $0.692$). \textbf{This structure does not survive audit.}
+The Anderson row rests on \emph{two} held-out positives. Across the five
+seeded splits, only 13 (study, split) pairs carry at least 30 test pairs
+with $\ge$5 positives and $\ge$5 negatives; the GNN wins exactly one of
+them. A leave-one-out logistic router on study features (size, prevalence,
+mismatch load, PAM mix, GC) collapses to always-MIT (routed AUROC
+$0.6283$ $=$ always-MIT $0.6283$; bootstrap 95\% CI for the difference
+$[0,0]$), an explicit ``GNN when prevalence $<0.10$'' rule does
+\emph{worse} than always-MIT ($0.609$), and even an oracle router gains
+only $0.001$ -- there is no routing headroom on this corpus. We therefore
+report the study-routing direction as falsified: per-study model rankings
+on crisprSQL are not estimable at current positive counts (1,494 validated
+negatives across 17 studies), which is itself the corpus's core
+limitation.
 
 \subsection{Gap 3: Cas9-to-pegRNA transfer}
 \begin{figure}[h]\centering\includegraphics[width=0.55\textwidth]{fig_pegrna_scaling.pdf}
@@ -325,26 +341,32 @@ preserve both negatives as the gap-3 result.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{figs/fig_ablation_bars.png}
-\caption{Gaps 4--5 channel ablation. The PAM channel lifts overall AUROC
-($0.506 \to 0.540$) and non-NGG AUROC ($0.530 \to 0.607$); epigenetic
-tracks alone are null, and the best model combines both ($0.577$).}
+\caption{Gaps 4--5 channel ablation, five fully-seeded splits
+(mean $\pm$ sd). Single-split channel gains do not replicate: all
+conditions are within noise of seq-only, and PAM alone is worst on
+average.}
 \label{fig:ablation}
 \end{figure}
 \begin{figure}[h]\centering\includegraphics[width=0.55\textwidth]{fig_pam_distribution.pdf}
 \caption{47\% of measured crisprSQL off-targets carry non-NGG PAMs -- the
 blind spot of NGG-trained scoring tools (gap 4 motivation).}
 \label{fig:pam}\end{figure}
-Adding a PAM one-hot channel lifts held-out AUROC from $0.506$ to $0.540$,
-and on the 2,248 non-NGG held-out pairs from $0.530$ to $0.607$ -- the gain
-concentrates exactly in the PAM-variant regime that SpG/SpRY-class editors
-inhabit (Table~\ref{tab:ablation}). Chromatin tracks alone add nothing
-($0.509$) and degrade calibration (ECE $0.260$), an honest negative we
-attribute to study-confounded track provenance: each epigenetic track was
-measured in the cell type of its source study, so the channel can encode
-study identity rather than cleavage biology. Combined with PAM the epigen
-channel contributes to the best overall AUROC ($0.577$), suggesting the two
-channels decorrelate each other's confounds; we report the interaction
-without overclaiming it.
+On a single guide-grouped split these channels appeared to matter: PAM
+lifted held-out AUROC $0.506 \to 0.540$ ($0.530 \to 0.607$ on non-NGG
+pairs). \textbf{Five-seed replication reverses that finding}
+(Table~\ref{tab:ablation}): seq-only $0.590{\pm}0.094$, PAM
+$0.528{\pm}0.119$, epigen $0.587{\pm}0.092$, PAM+epigen
+$0.605{\pm}0.086$ (mean $\pm$ sd AUROC). No channel's delta exceeds
+split noise; PAM alone \emph{hurts} on average, and the best-condition
+title changes hands across seeds (PAM+epigen 3/5, epigen 2/5). On the
+non-NGG slice the ordering is equally flat ($0.580$ / $0.552$ / $0.556$ /
+$0.597$). The honest gap-4/5 verdict: on crisprSQL, PAM identity and
+chromatin context channels add no robust signal over sequence on top of a
+duplex GNN -- consistent with the gap-2 meta-finding that this corpus
+cannot resolve modest effect sizes. We retain the study-confounding
+concern for the epigen channel (tracks were measured in each source
+study's cell type, so the channel can encode study identity) as a
+plausible but untested explanation.
 \input{results_tables.tex}
 
 \section{Discovery: target-inherent transfer residual}
