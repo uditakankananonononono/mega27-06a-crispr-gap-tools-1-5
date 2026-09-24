@@ -1,0 +1,40 @@
+{
+ "n": 6481,
+ "variants": [
+  "WT",
+  "Sniper",
+  "eSpCas9",
+  "HF1",
+  "Hypa",
+  "evo"
+ ],
+ "within_cv": {
+  "WT": 0.513,
+  "Sniper": 0.491,
+  "eSpCas9": 0.489,
+  "HF1": 0.677,
+  "Hypa": 0.719,
+  "evo": 0.809
+ },
+ "wt_transfer": {
+  "WT_to_Sniper": 0.528,
+  "WT_to_eSpCas9": 0.481,
+  "WT_to_HF1": 0.386,
+  "WT_to_Hypa": 0.426,
+  "WT_to_evo": 0.334
+ },
+ "retention_vs_wt": {
+  "Sniper": 1.008,
+  "eSpCas9": 0.884,
+  "HF1": 0.744,
+  "Hypa": 0.641,
+  "evo": 0.325
+ },
+ "pairwise_wt_spearman": {
+  "WT_Sniper": 0.894,
+  "WT_eSpCas9": 0.806,
+  "WT_HF1": 0.606,
+  "WT_Hypa": 0.601,
+  "WT_evo": 0.425
+ }
+}

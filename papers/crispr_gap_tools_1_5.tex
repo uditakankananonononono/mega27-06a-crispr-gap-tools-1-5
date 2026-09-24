@@ -752,6 +752,17 @@ outright, and GUIDE-seq off-target counts drop from 10--85 (WT) to
 fidelity--activity tradeoff is continuous and variant-specific, which
 is why a single shared penalty table (gap 4) cannot describe variant
 off-target behavior.
+\paragraph{Variant ladder on on-target activity (Kim screen).} The Kim
+et al.\ high-fidelity variant screen (6,481 guides $\times$ WT, Sniper,
+eSpCas9(1.1), SpCas9-HF1, HypaCas9, evoCas9; reprocessed deposit in
+MOESM10 of 10.1038/s41467-023-41393-5) orders the variants by activity
+retention Sniper 1.01 $>$ eSpCas9 0.88 $>$ HF1 0.74 $>$ Hypa 0.64 $>$
+evoCas9 0.33 (\texttt{results/kim\_hf\_variant\_on.json}), and HF1's
+0.74 mean retention matches DeepHF's 0.70 median on an independent
+library -- variant behavior is replicable across datasets even when
+guide-level ranks are not. WT-trained ridge transfers to variants at
+$0.33$--$0.53$ against within-variant CV $0.49$--$0.81$, the same
+transfer gap measured twice more above.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
