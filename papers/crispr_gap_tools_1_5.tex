@@ -129,6 +129,33 @@ per-position terms, so neither can represent any interaction term.
 \end{proof}
 
 \section{Results}
-% tables filled from results/*.json
+\subsection{Gap 1: collapse across divergent assays, transfer within families}
+Ridge models trained on Doench FC+RES transfer to Doench V1 at
+$\rho=0.501$ (within: $0.455$) and V1$\to$FC+RES at $0.434$ (within:
+$0.458$): inside the Doench assay family the score laws are near
+affine-equivalent and Proposition 1 applies. Across assay families the
+collapse is total: FC+RES$\to$DeepHF $\rho=0.026$ and V1$\to$DeepHF
+$0.032$, while DeepHF is highly learnable within itself ($0.728$). The
+bottleneck is therefore not model capacity or feature quality but assay
+distribution shift -- the quantified form of the gap (Figure~\ref{fig:crossdata},
+Table~\ref{tab:crossdata}).
+\begin{figure}[h]\centering\includegraphics[width=0.7\textwidth]{fig_crossdata.pdf}
+\caption{Within-dataset vs cross-dataset Spearman (ridge, 3 seeds).}
+\label{fig:crossdata}\end{figure}
+
+\subsection{Gap 2: GNN beats published scores; isotonic calibrates}
+On a guide-grouped crisprSQL split (4,073 held-out pairs at natural 91\%
+prevalence) the duplex GNN reaches AUROC $0.572$ vs.\ MIT/Hsu-2013 $0.452$
+and CFD/Doench-2016 $0.431$ (Table~\ref{tab:offtarget}). Isotonic
+calibration on a validation slice cuts ECE from $0.148$ to $0.133$; Platt
+scaling underfits the small validation slice and slightly worsens ECE --
+we report both (Table~\ref{tab:calib}). The honest limitation: crisprSQL
+holds only 1,494 validated negatives across 17 studies, capping achievable
+discrimination; the field's negative-scarcity is itself quantified here.
+
+\subsection{Gap 3: Cas9-to-pegRNA transfer}
+% filled when pegrna_metrics_HEK.json lands
+\subsection{Gaps 4-5: PAM and chromatin ablation}
+% filled when offtarget_ablation.json lands
 \input{results_tables.tex}
 \end{document}
