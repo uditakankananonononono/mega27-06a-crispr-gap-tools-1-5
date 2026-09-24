@@ -13,15 +13,17 @@ Doench-pooled & 0.014 \\
 All-pooled (incl.\ 80\% DeepHF) & 0.688 \\
 DeepHF only (within) & 0.728 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Off-target classification on crisprSQL, guide-grouped held-out split.}\label{tab:offtarget}\begin{tabular}{lcc}\hline Model & AUROC & AUPRC \\\hline
-GNN (this work) & 0.572 & 0.923 \\
-MIT / Hsu 2013 & 0.452 & 0.913 \\
-CFD / Doench 2016 & 0.431 & 0.910 \\
+\begin{table}[h]\centering\caption{Off-target classification on crisprSQL, guide-grouped held-out AUROC across three splits (seeds 0/1/2). GNN AUPRC on seed 0: 0.923.}\label{tab:offtarget}\begin{tabular}{lcccc}\hline Model & seed 0 & seed 1 & seed 2 & mean $\pm$ sd \\
+\hline
+GNN (this work) & 0.572 & 0.578 & 0.542 & $0.564 \pm 0.016$ \\
+MIT / Hsu 2013 & 0.452 & 0.485 & 0.550 & $0.496 \pm 0.041$ \\
+CFD / Doench 2016 & 0.431 & 0.572 & 0.576 & $0.526 \pm 0.067$ \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}\label{tab:calib}\begin{tabular}{lcc}\hline & ECE & Brier \\\hline
-Uncalibrated & 0.148 & 0.119 \\
-Platt & 0.156 & 0.128 \\
-Isotonic & 0.133 & 0.116 \\
+\begin{table}[h]\centering\caption{Calibration on held-out crisprSQL pairs: seed-0 ECE/Brier and mean ECE over the three splits (recalibrators fit on each split's validation slice).}\label{tab:calib}\begin{tabular}{lccc}\hline & ECE (seed 0) & Brier (seed 0) & mean ECE (3 splits) \\
+\hline
+Uncalibrated & 0.148 & 0.119 & 0.263 \\
+Platt & 0.156 & 0.128 & 0.246 \\
+Isotonic & 0.133 & 0.116 & 0.243 \\
 \hline\end{tabular}\end{table}
 \begin{table}[h]\centering\caption{Ablation: PAM and chromatin feature channels (gaps 4-5).}\label{tab:ablation}\begin{tabular}{lccc}\hline Features & AUROC & AUPRC & AUROC non-NGG \\\hline
 seq\_only & 0.506 & 0.897 & 0.530 \\

@@ -96,15 +96,15 @@
 \@writefile{toc}{\contentsline {paragraph}{What the residual is.}{16}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Gaps 4--5 channel ablation. The PAM channel lifts overall AUROC ($0.506 \to 0.540$) and non-NGG AUROC ($0.530 \to 0.607$); epigenetic tracks alone are null, and the best model combines both ($0.577$).}}{17}{}\protected@file@percent }
 \newlabel{fig:ablation}{{6}{17}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Off-target classification on crisprSQL, guide-grouped held-out split.}}{17}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Off-target classification on crisprSQL, guide-grouped held-out AUROC across three splits (seeds 0/1/2). GNN AUPRC on seed 0: 0.923.}}{17}{}\protected@file@percent }
 \newlabel{tab:offtarget}{{4}{17}}
 \@writefile{toc}{\contentsline {paragraph}{What practitioners should do differently.}{17}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Why the pegRNA transfer negative matters.}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Relation to domain adaptation theory.}{17}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces 47\% of measured crisprSQL off-targets carry non-NGG PAMs -- the blind spot of NGG-trained scoring tools (gap 4 motivation).}}{18}{}\protected@file@percent }
 \newlabel{fig:pam}{{7}{18}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}}{18}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Calibration on held-out crisprSQL pairs: seed-0 ECE/Brier and mean ECE over the three splits (recalibrators fit on each split's validation slice).}}{18}{}\protected@file@percent }
 \newlabel{tab:calib}{{5}{18}}
+\@writefile{toc}{\contentsline {paragraph}{Relation to domain adaptation theory.}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Scope of claims.}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {14}Limitations}{18}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Ablation: PAM and chromatin feature channels (gaps 4-5).}}{19}{}\protected@file@percent }
@@ -116,13 +116,13 @@
 \newlabel{sec:repro}{{A}{19}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Environment}{19}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Data provenance}{19}{}\protected@file@percent }
-\bibcite{doench2014}{1}
 \@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces pegRNA scarce-regime scaling (HEK, grouped held-out Spearman). Transfer never beats scratch.}}{20}{}\protected@file@percent }
 \newlabel{tab:scaling}{{8}{20}}
 \@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Residual-corrected cross-dataset transfer. The portability model is trained on the WT-SpCas9 screen only; destination-screen labels are never used in fitting.}}{20}{}\protected@file@percent }
 \newlabel{tab:porta}{{9}{20}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Entry points and tests}{20}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Negative results register}{20}{}\protected@file@percent }
+\bibcite{doench2014}{1}
 \bibcite{doench2016}{2}
 \bibcite{chari2015}{3}
 \bibcite{wang2019}{4}
@@ -132,23 +132,23 @@
 \bibcite{haeussler2016}{8}
 \bibcite{listgarten2018}{9}
 \bibcite{concordet2018}{10}
-\bibcite{lin2020}{11}
-\bibcite{walton2020}{12}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Gap 2: guide-grouped AUROC, bootstrap 95\% intervals (400 reps). The GNN wins 400/400 paired resamples.}}{21}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Gap 2: guide-grouped AUROC, bootstrap 95\% intervals (400 reps, seed-0 split). The GNN wins 400/400 paired resamples within this split; Table\nobreakspace  {}4\hbox {} gives the three-split picture, where split choice dominates model choice.}}{21}{}\protected@file@percent }
 \newlabel{tab:boot-offtarget}{{10}{21}}
 \@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Gap 1: Doench FC+RES $\to $ DeepHF-WT transfer, bootstrap 95\% intervals (400 reps over destination guides).}}{21}{}\protected@file@percent }
 \newlabel{tab:boot-gap1}{{11}{21}}
+\bibcite{lin2020}{11}
+\bibcite{walton2020}{12}
 \bibcite{anzalone2019}{13}
 \bibcite{kim2021}{14}
 \bibcite{mathis2023}{15}
 \bibcite{stortz2021}{16}
 \bibcite{platt1999}{17}
-\bibcite{zadrozny2002}{18}
-\bibcite{niculescu2005}{19}
 \@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces PORTA on SpCas9-HF1: bootstrap 95\% intervals (400 reps over guides).}}{22}{}\protected@file@percent }
 \newlabel{tab:boot-porta}{{12}{22}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Transfer-residual concordance across nuclease screens (sequence-matched guides): the Doench transfer error on the same guide in WT-SpCas9 and SpCas9-HF1 screens agrees at $\rho =0.856$ ($n=54{,}279$), far above the cross-screen correlation of the measured activities ($\sim $$0.73$).}}{22}{}\protected@file@percent }
 \newlabel{fig:concordance}{{8}{22}}
+\bibcite{zadrozny2002}{18}
+\bibcite{niculescu2005}{19}
 \bibcite{guo2017}{20}
 \bibcite{bendavid2010}{21}
 \bibcite{pan2010}{22}
