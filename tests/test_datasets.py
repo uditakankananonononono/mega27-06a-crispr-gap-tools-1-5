@@ -75,3 +75,12 @@ def test_depmap_loads():
     assert len(ds.sequences) == 193475
     assert all(set(s) <= set("ACGT") and len(s) in (19, 20, 23) for s in ds.sequences[:5000])
     assert ds.scores.min() >= 0 and ds.scores.max() <= 1
+
+
+@pytest.mark.skipif(not _have("pridict/library1_v1.csv.gz"), reason="data not fetched")
+def test_pridict_v1_library():
+    import pandas as pd
+    df = pd.read_csv("data/pridict/library1_v1.csv.gz")
+    assert len(df) == 92423
+    assert df["averageedited"].between(0, 100).all()
+    assert {"PBSlength", "RTlength", "wide_initial_target"} <= set(df.columns)

@@ -622,8 +622,21 @@ Gaussian-process Bayesian search (scikit-optimize 0.10.2, same budget and
 split) converges to yet a third configuration (lr $0.053$, 530 trees, 8
 leaves) with the same held-out performance (HEK $0.7986$, K562 $0.6154$;
 \texttt{results/pegrna\_skopt.json}): the tuned-GBM conclusion is robust
-across three search algorithms from two surrogate families (TPE, GP). We
-preserve all negatives as the gap-3 result.
+across three search algorithms from two surrogate families (TPE, GP).
+
+\paragraph{Cross-library transfer works here.} The PRIDICT v1 training
+library (Mathis et al.\ 2023, Nat Biotechnol; Nature ESM
+\texttt{MOESM5}, Library\_1 sheet: 92{,}423 pegRNAs, HEK293T) gives a
+second, independently measured pegRNA corpus. On the minimal shared
+feature set (PBS/RT lengths, edit position, correction length,
+one-hot correction type), ridge transfers \emph{symmetrically} and
+near-losslessly: v1$\to$v2 $0.622$ vs v2-within $0.631$, and
+v2$\to$v1 $0.338$ vs v1-within $0.368$ (3 seeds;
+\texttt{results/pridict\_v1\_transfer.json}). Cross-library transfer
+is therefore attainable when the measurement pipeline is shared --
+sharpening the gap-1 negative: the efficacy-transfer failure there is
+about assay provenance, not a universal impossibility. We preserve all
+negatives as the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 
 \begin{figure}[h]
