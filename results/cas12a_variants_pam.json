@@ -1,0 +1,34 @@
+{
+ "n_pam_blocks": 11,
+ "n_variant_columns": 342,
+ "variants_parsed": 69,
+ "n_variants_with_tttv": 13,
+ "pam_mean_activity": {
+  "ATTV": 0.1898,
+  "CCCV": 0.1299,
+  "CTTV": 0.2875,
+  "GTTV": 0.1799,
+  "TACV": 0.0709,
+  "TCTV": 0.2288,
+  "TGCV": 0.0438,
+  "TGTV": 0.2151,
+  "TTAV": 0.0567,
+  "TTCV": 0.059,
+  "TTTV": 0.4603
+ },
+ "breadth_gt10pct": {
+  "lbrvrr": 9,
+  "enashf1": 9,
+  "lbrvr": 8,
+  "eneb": 8,
+  "eafn": 8,
+  "eb": 8,
+  "fnrvr": 8,
+  "lbrr": 7,
+  "asrr": 7,
+  "lb": 7,
+  "mut2cw": 6,
+  "mut2cwf": 6,
+  "lbcas12a": 1
+ }
+}

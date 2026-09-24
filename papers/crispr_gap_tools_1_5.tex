@@ -780,6 +780,17 @@ twenty-fold across a decade of assays. BreakTag also resolves scission
 geometry by variant: 51\% of SpCas9-WT cuts are blunt-dominant versus
 44\% for LZ3 and 47\% for xCas9 (n=1{,}606/347/427), a
 variant-dependent cleavage-mode axis that off-target scorers ignore.
+A 2025 highly parallel Cas12a variant screen (Nat Commun
+10.1038/s41467-025-57150-9, MOESM5; 4,800 targets x 11 PAM contexts x
+23 variants) quantifies PAM flexibility directly
+(\texttt{results/cas12a\_variants\_pam.json}): mean indel activity is
+0.46 at canonical TTTV, 0.29/0.23/0.22 at CTTV/TCTV/TGTV, and
+$<0.08$ at TGCV/TTAV/TTCV/TACV; 13 variants with a measurable TTTV
+reference retain $>$10\% relative activity at 6--9 alternative PAMs
+(engineered LbRVRR and enAsCas12a-HF1 the broadest). PAM-variant
+flexibility is a continuous, variant-specific spectrum rather than a
+binary PAM rule -- gap-4 models must score PAM context as a graded
+variable per variant.
 \paragraph{What fidelity engineering buys (gap 4).} A 2023 variant
 screen (Nat Commun 10.1038/s41467-023-41393-5, MOESM8/9) measures
 amplicon indels for WT and high-fidelity SpCas9 variants on the same
