@@ -1,0 +1,1 @@
+- ENCODE bigWigs are re-fetched per accession on demand (https://www.encodeproject.org/files/<ACC>/@@download/<ACC>.bigWig); not retained locally to keep the sandbox under disk quota. Scored results live in results/gap5_encode_sweep{,2,3}.json.

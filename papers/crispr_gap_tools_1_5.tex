@@ -899,9 +899,17 @@ nominal $p=0.009$--$0.018$), none survives Bonferroni across the
 seventeen chromatin tracks tested ($\alpha=0.0029$). The U2OS slice --
 the largest in crisprSQL at 5{,}920 hg19 loci -- has \emph{no} ENCODE
 chromatin track of any assay on any assembly, so the chromatin question
-is untestable there; we record this as a data-coverage gap. Across
-seventeen tracks and four cell lines, chromatin state at $\pm 500$\,bp
-adds no predictive signal for cell-free off-target cleavage.
+is untestable there; we record this as a data-coverage gap. A final batch widens the
+mark census: five further K562 marks (H3K4me2 ENCFF118MMT, H3K9ac
+ENCFF866KTJ, H3K79me2 ENCFF003CLZ, H4K20me1 ENCFF143CUR, H2AFZ
+ENCFF191EXE) and four further HeLa-S3 marks (H3K4me3 ENCFF699TXY,
+H3K9me3 ENCFF761QZP, H3K27me3 ENCFF484EAZ, H3K36me3 ENCFF559FSM)
+(\texttt{results/gap5\_encode\_sweep3.json}). All AUROCs sit between
+$0.42$ and $0.55$ and all positive-side $|\rho| < 0.1$. Across
+\emph{twenty-six} ENCODE tracks, four cell lines and every major
+histone-modification class, chromatin state at $\pm 500$\,bp adds no
+predictive signal for cell-free off-target cleavage. (Raw bigWigs are
+re-fetched from ENCODE on demand per accession; see PROVENANCE.)
 Chromosome-level context is also flat: on the hg38 slice (1{,}630
 sites; Fig.~\ref{fig:karyotype}), per-chromosome mean cleavage ranges
 $0.008\%$--$2.4\%$ with no significant chromosome effect (Kruskal--Wallis
