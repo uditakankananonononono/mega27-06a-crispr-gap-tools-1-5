@@ -423,8 +423,18 @@ against an untuned baseline. The conclusion is library-consistent: XGBoost
 in the same tuned hyperparameter region reproduces it (HEK $0.799$, K562
 $0.606$), while \emph{default} XGBoost collapses (HEK $0.742$, K562
 $0.476$) -- a 0.06--0.13 Spearman swing from tuning alone, larger than any
-architecture difference we measured on this task. We preserve all negatives as
-the gap-3 result.
+architecture difference we measured on this task. A third gradient-boosting
+library, CatBoost 1.2.10, completes the check on identical splits
+(\texttt{results/pegrna\_catboost.json}): tuned-region CatBoost is the
+strongest single method on HEK ($0.8014$, vs tuned LightGBM $0.7978$ and
+tuned XGBoost $0.7985$) and ties the CNN-level on K562 ($0.6121$ vs
+LightGBM $0.6161$), while CatBoost's \emph{defaults} are the strongest
+untuned configuration we tested (HEK $0.7945$). Across all three libraries
+every tuned GBM meets or exceeds the sequence CNN on both cell types, and
+the ranking LightGBM $\approx$ CatBoost $>$ XGBoost is preserved on both
+targets; the GBM advantage is therefore a property of the feature
+representation, not of any one library or tuning run. We preserve all
+negatives as the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 
 \begin{figure}[h]
