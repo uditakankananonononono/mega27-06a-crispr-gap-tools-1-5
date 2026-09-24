@@ -1,0 +1,91 @@
+"""Generate paper tables (LaTeX) and figures (PDF) from results/*.json."""
+import json
+import os
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+R, P = "results", "papers"
+
+
+def table_crossdata():
+    d = json.load(open(f"{R}/crossdata_ridge_3ds.json"))["summary"]["ridge"]
+    rows = []
+    for train, v in d.items():
+        cross = ", ".join(f"{o}: {s:.3f}" for o, s in v["cross_mean"].items())
+        rows.append(f"{train} & {v['within_mean']:.3f} & {cross} & {v['generalization_gap']:.3f} \\\\")
+    return ("\\begin{table}[h]\\centering\\caption{Cross-dataset generalization "
+            "(ridge, 3 seeds): held-out vs transfer Spearman.}\\label{tab:crossdata}"
+            "\\begin{tabular}{lccc}\\toprule Train & Within & Cross & Gap \\\\\\midrule\n"
+            + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\\end{table}\n")
+
+
+def fig_crossdata():
+    d = json.load(open(f"{R}/crossdata_ridge_3ds.json"))["summary"]["ridge"]
+    names = list(d.keys())
+    fig, ax = plt.subplots(figsize=(5.2, 3.4))
+    within = [d[n]["within_mean"] for n in names]
+    crosses = [sum(v for v in d[n]["cross_mean"].values()) / max(len(d[n]["cross_mean"]), 1) for n in names]
+    x = range(len(names))
+    ax.bar([i - 0.2 for i in x], within, width=0.4, label="within-dataset")
+    ax.bar([i + 0.2 for i in x], crosses, width=0.4, label="cross-dataset (mean)")
+    ax.set_xticks(list(x)); ax.set_xticklabels(names)
+    ax.set_ylabel("Spearman $\\rho$"); ax.legend(); fig.tight_layout()
+    fig.savefig(f"{P}/fig_crossdata.pdf"); plt.close(fig)
+
+
+def table_offtarget():
+    d = json.load(open(f"{R}/offtarget_metrics.json"))
+    rows = [
+        f"GNN (this work) & {d['gnn_test_auroc']:.3f} & {d['gnn_test_auprc']:.3f} \\\\",
+        f"MIT / Hsu 2013 & {d['mit_test_auroc']:.3f} & {d['mit_test_auprc']:.3f} \\\\",
+        f"CFD / Doench 2016 & {d['cfd_subset_auroc']:.3f} & {d['cfd_subset_auprc']:.3f} \\\\",
+    ]
+    cal = (f"\\begin{{table}}[h]\\centering\\caption{{Calibration on held-out crisprSQL pairs "
+           f"(isotonic/Platt fit on validation slice).}}\\label{{tab:calib}}"
+           "\\begin{tabular}{lcc}\\toprule & ECE & Brier \\\\\\midrule\n"
+           f"Uncalibrated & {d['ece_uncalibrated']:.3f} & {d['brier_uncalibrated']:.3f} \\\\\n"
+           f"Platt & {d['ece_platt_calibrated']:.3f} & {d['brier_platt_calibrated']:.3f} \\\\\n"
+           f"Isotonic & {d['ece_isotonic_calibrated']:.3f} & {d['brier_isotonic_calibrated']:.3f} \\\\\n"
+           "\\bottomrule\\end{tabular}\\end{table}\n")
+    return ("\\begin{table}[h]\\centering\\caption{Off-target classification on crisprSQL, "
+            "guide-grouped held-out split.}\\label{tab:offtarget}"
+            "\\begin{tabular}{lcc}\\toprule Model & AUROC & AUPRC \\\\\\midrule\n"
+            + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\\end{table}\n") + cal
+
+
+def table_ablation():
+    if not os.path.exists(f"{R}/offtarget_ablation.json"):
+        return ""
+    d = json.load(open(f"{R}/offtarget_ablation.json"))["conditions"]
+    rows = []
+    for name, v in d.items():
+        extra = f" & {v['auroc_non_ngg_pam']:.3f}" if "auroc_non_ngg_pam" in v else " & -"
+        rows.append(f"{name} & {v['auroc']:.3f} & {v['auprc']:.3f}{extra} \\\\")
+    return ("\\begin{table}[h]\\centering\\caption{Ablation: PAM and chromatin feature channels "
+            "(gaps 4-5).}\\label{tab:ablation}"
+            "\\begin{tabular}{lccc}\\toprule Features & AUROC & AUPRC & AUROC non-NGG \\\\\\midrule\n"
+            + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\\end{table}\n")
+
+
+def table_pegrna():
+    if not os.path.exists(f"{R}/pegrna_metrics_HEK.json"):
+        return ""
+    d = json.load(open(f"{R}/pegrna_metrics_HEK.json"))["means"]
+    rows = "\n".join([
+        f"Ridge (numeric only) & {d['ridge_numeric_spearman']:.3f} \\\\",
+        f"CNN from scratch & {d['scratch_spearman']:.3f} \\\\",
+        f"CNN, Cas9-pretrained trunk & {d['transfer_spearman']:.3f} \\\\",
+    ])
+    return ("\\begin{table}[h]\\centering\\caption{pegRNA efficiency (HEK), grouped held-out "
+            "Spearman (gap 3).}\\label{tab:pegrna}"
+            "\\begin{tabular}{lc}\\toprule Model & Spearman \\\\\\midrule\n"
+            + rows + "\n\\bottomrule\\end{tabular}\\end{table}\n")
+
+
+if __name__ == "__main__":
+    os.makedirs(P, exist_ok=True)
+    with open(f"{P}/results_tables.tex", "w") as f:
+        f.write(table_crossdata() + table_offtarget() + table_ablation() + table_pegrna())
+    fig_crossdata()
+    print("assets written")

@@ -30,7 +30,7 @@ def _split(ds, seed, val_frac=0.1, test_frac=0.2):
     n_va = int(len(grps) * val_frac)
     te_g, va_g = set(grps[:n_te]), set(grps[n_te:n_te + n_va])
     gid = np.array(ds.grp_ids)
-    return (~gid.isin(te_g | va_g)), gid.isin(va_g), gid.isin(te_g)
+    mask_te = np.isin(gid, list(te_g)); mask_va = np.isin(gid, list(va_g)); return (~(mask_te | mask_va)), mask_va, mask_te
 
 
 def _encode(seqs):

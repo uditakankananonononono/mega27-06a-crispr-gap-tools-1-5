@@ -120,8 +120,12 @@ PEGRNA_NUMERIC_COLS = (
     "Correction_Length", "Correction_Deletion", "Correction_Insertion", "Correction_Replacement",
     "RToverhangmatches", "RToverhanglength", "RTlength", "PBSlength",
     "RTmt", "RToverhangmt", "PBSmt", "protospacermt", "extensionmt",
-    "deepeditposition", "protospacerlocation_only_initial", "PBSlocation",
-    "RT_initial_location", "RT_mutated_location", "Editing_Position",
+    "deepeditposition", "Editing_Position",
+)
+
+PEGRNA_INTERVAL_COLS = (
+    "protospacerlocation_only_initial", "PBSlocation",
+    "RT_initial_location", "RT_mutated_location",
 )
 
 
@@ -145,8 +149,15 @@ def load_pridict() -> PegrnaDataset:
     df = pd.read_csv(os.path.join(DATA_DIR, "pridict", "data_23k_v1.csv"))
     ctype = pd.get_dummies(df["Correction_Type"]).astype(np.float32)
     num = df[list(PEGRNA_NUMERIC_COLS)].astype(np.float32)
-    numerics = np.concatenate([num.to_numpy(), ctype.to_numpy()], axis=1)
-    names = list(PEGRNA_NUMERIC_COLS) + [f"ctype_{c}" for c in ctype.columns]
+    import ast
+    interval_feats, interval_names = [], []
+    for c in PEGRNA_INTERVAL_COLS:
+        parsed = df[c].map(ast.literal_eval)
+        interval_feats.append(np.array([p[0] for p in parsed], dtype=np.float32))
+        interval_feats.append(np.array([p[1] for p in parsed], dtype=np.float32))
+        interval_names += [f"{c}_start", f"{c}_end"]
+    numerics = np.concatenate([num.to_numpy()] + [np.stack(interval_feats, 1).astype(np.float32)] + [ctype.to_numpy()], axis=1)
+    names = list(PEGRNA_NUMERIC_COLS) + interval_names + [f"ctype_{c}" for c in ctype.columns]
     assert not np.isnan(numerics).any(), "unexpected NaN in pegRNA numerics"
     return PegrnaDataset(
         sequences=df["wide_initial_target"].tolist(),

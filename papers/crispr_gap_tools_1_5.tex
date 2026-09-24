@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{newtxtext,newtxmath} % Times New Roman
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx,booktabs,hyperref}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\title{Five Tools for Verified Gaps in CRISPR Guide-RNA and Off-Target Modeling:\\Cross-Dataset Generalization, Calibrated Cleavage Probabilities,\\Transfer Learning for pegRNAs, PAM-Variant Awareness,\\and Chromatin-Context Scoring}
+\author{MEGA27 Project 6a}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{abstract}
+Public CRISPR tooling concentrates on a narrow slice of the editing problem.
+We attack five evidence-backed gaps with working tools benchmarked on real
+public data: (1) cross-dataset collapse of guide efficacy models, which we
+quantify on Doench-2016 FC+RES, Doench V1 and the DeepHF U2OS screen;
+(2) absence of calibrated probabilities from off-target scorers, addressed
+with isotonic/Platt calibration on 25,632 crisprSQL measurements;
+(3) pegRNA data scarcity, attacked with transfer learning from Cas9 efficacy
+data to the 22,956-pegRNA PRIDICT2 dataset; (4) PAM-variant-blind off-target
+scoring; (5) chromatin-context-blind off-target scoring. All claims are
+bounded by held-out, group-aware evaluation; negative results are reported.
+\end{abstract}
+
+\section{Introduction}
+% CRISPR tooling landscape; the five gaps; dataset evidence for each.
+
+\section{Gap 1: Cross-dataset generalization of efficacy models}
+\begin{definition}[Cross-dataset generalization gap]
+Let $\mathcal{D}_A, \mathcal{D}_B$ be guide-efficacy datasets with score
+distributions $P_A, P_B$, and $f_A$ a model trained on $\mathcal{D}_A$ with
+held-out Spearman $\rho_{AA}$ and transfer Spearman $\rho_{AB}$. The
+generalization gap is $g(A\!\to\!B) = \rho_{AA} - \rho_{AB}$.
+\end{definition}
+\begin{proposition}[Identity of indiscernibles for rank transfer]
+If $P_B$ is an affine rescaling of the conditional score law of $P_A$, i.e.\
+$Y_B = aY_A + b$ a.s.\ with $a>0$, then $g(A\!\to\!B) = 0$ for any model
+$f_A$ that is optimal under squared loss on $\mathcal{D}_A$.
+\end{proposition}
+\begin{proof}
+Spearman correlation is invariant under strictly increasing transformations
+of either argument. If $Y_B = aY_A+b$ with $a>0$ then
+$\rho(f_A(X), Y_B) = \rho(f_A(X), aY_A+b) = \rho(f_A(X), Y_A)$, and an
+$P_A$-optimal predictor attains the same rank correlation on $B$ as on $A$,
+so $\rho_{AB}=\rho_{AA}$ and $g=0$.
+\end{proof}
+The contrapositive is the empirical content of the gap: observed
+$g \gg 0$ certifies that the conditional score laws differ beyond affine
+rescaling (different assay, cell type, or delivery), which is what our
+harness measures (Section~4.1).
+
+\section{Gap 2: Calibrated cleavage probabilities}
+Published scores (MIT/Hsu-2013, CFD/Doench-2016) are ranking scores, not
+probabilities. We fit monotone calibrators $c: \mathbb{R}\to[0,1]$ on a
+held-out validation slice and evaluate with expected calibration error
+\begin{equation}
+\mathrm{ECE} = \sum_{m=1}^{M} \frac{|B_m|}{n}\, \big|\,\mathrm{acc}(B_m) - \mathrm{conf}(B_m)\,\big|,
+\end{equation}
+over equal-width bins $B_m$, and the Brier score
+$\mathrm{BS} = \frac{1}{n}\sum_i (p_i - y_i)^2$.
+\begin{proposition}[Brier decomposition implies ECE lower bound]
+For any binned predictor with per-bin confidence $\bar p_m$ and accuracy
+$\bar y_m$, $\mathrm{BS} \ge \sum_m \frac{|B_m|}{n}(\bar y_m - \bar p_m)^2$,
+hence calibration error contributes quadratically to Brier while ECE
+measures it in absolute terms.
+\end{proposition}
+\begin{proof}
+The Murphy decomposition gives
+$\mathrm{BS} = \sum_m \frac{|B_m|}{n}(\bar y_m - \bar p_m)^2
++ \sum_m \frac{|B_m|}{n}\,\mathrm{Var}(p \mid B_m)
+- \mathrm{Var}(Y)$ up to the standard reliability--resolution--uncertainty
+terms; the reliability term is exactly the sum of squared per-bin
+calibration gaps, and variance terms are nonnegative.
+\end{proof}
+
+\section{Gap 3: Transfer learning for pegRNA efficiency}
+% fully-convolutional trunk; why length-agnostic weight transfer is valid
+The conv trunk applies the same filters $\{W_k\}$ to any input length $L$:
+$h^{(L)} = \phi(W * x^{(L)})$, and global average pooling
+$\bar h = \frac{1}{L}\sum_t h_t$ makes the head length-agnostic. Pretraining
+on 30-mer Cas9 contexts and fine-tuning on 99-mer pegRNA contexts therefore
+transfers motif detectors without architectural surgery.
+
+\section{Gaps 4 and 5: PAM-variant and chromatin-aware off-target scoring}
+% global feature channels; ablation design
+
+\section{Results}
+% tables filled from results/*.json
+\input{results_tables.tex}
+\end{document}
