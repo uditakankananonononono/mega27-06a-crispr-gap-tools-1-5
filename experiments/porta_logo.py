@@ -29,8 +29,12 @@ base = Ridge(alpha=1.0).fit(Xf, fc.scores)
 
 with open("data/raw/public_data_crisprCas9/data/deepHF/wt_seq_data_array.pkl", "rb") as fh:
     seq_int, biofeat, indel = pickle.load(fh)
-_INT2BASE = {1: "A", 2: "C", 3: "G", 4: "T", 0: "N", 5: "N"}
-seqs = ["".join(_INT2BASE[b] for b in row) for row in seq_int]
+# DeepHF encoding (verified vs biofeature GC, |rho|=0.966): col 0 sentinel,
+# cols 1..21 = 21-mer with 2=C, 3=G, 4=T, 5=A. (Old mapping read 5 as N - bug.)
+_INT2BASE = {2: "C", 3: "G", 4: "T", 5: "A"}
+_arr = np.asarray(seq_int)
+assert (_arr[:, 0] == 1).all()
+seqs = ["".join(_INT2BASE[b] for b in row[1:]) for row in _arr]
 biofeat = np.asarray(biofeat, dtype=np.float32)
 measured = np.clip(np.asarray(indel, dtype=np.float32), 0, 1)
 
@@ -50,7 +54,7 @@ A, B = perm[:half], perm[half:]
 portA = fit_portability(FEAT[A], pred[A], measured[A])
 rhoB = spearmanr(portA.score(FEAT[B]), resid[B]).statistic
 
-valid = np.array([len(s) >= 20 and all(b in "ACGT" for b in s[:20]) for s in seqs])
+valid = np.array([len(s) >= 20 and all(b in "ACGT" for b in s[:20]) for s in seqs])  # all valid post-fix
 order_hi = np.argsort(-score)[valid[np.argsort(-score)]]
 order_lo = np.argsort(score)[valid[np.argsort(score)]]
 hi = order_hi[:500]

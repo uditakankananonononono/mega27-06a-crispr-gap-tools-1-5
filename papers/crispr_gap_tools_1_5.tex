@@ -453,8 +453,8 @@ Table~\ref{tab:ablperseed}.
 \includegraphics[width=0.85\textwidth]{figs/fig_porta_logo.png}
 \caption{Sequence logos of the 500 most vs\ least portable DeepHF WT
 guides under the reconstructed PORTA pipeline (held-out score--residual
-$\rho=0.84$). No single motif separates the extremes: GC content is
-identical ($0.611$ both groups) and composition differences are
+$\rho=0.825$). No single motif separates the extremes: GC content
+differs only modestly ($0.436$ vs $0.496$) and composition differences are
 positional and weak -- direct visual evidence for the distributed
 signature behind the residual (Section~\ref{sec:discovery}).}
 \label{fig:porta_logo}
@@ -471,12 +471,14 @@ at only ${\sim}0.73$: \textbf{the model's transfer error is more stable
 across nucleases than the biological signal.} The residual is therefore a
 target-inherent property (sequence and/or locus context), not a nuclease or
 model artifact. A feature decomposition finds no single dominant driver
-(max $|\rho|=0.28$ over the 11 DeepHF biofeatures; GC $0.25$), i.e.\ a
+(max $|\rho|=0.12$ over the 11 DeepHF biofeatures; sequence GC
+$\rho=-0.04$ after the encoding fix), i.e.\ a
 distributed sequence-composition signature. Folding all guides with
-ViennaRNA adds a twelfth candidate driver and it too fails:
-guide+PAM minimum free energy correlates with the residual at only
-$\rho=-0.085$, and appending it to the portability model moves
-cross-screen prediction by $+0.0002$. Falsification was built in: the
+ViennaRNA adds a twelfth candidate driver and it too fails
+(pre-encoding-fix: guide+PAM minimum free energy correlated with the
+residual at only $\rho=-0.085$, and appending it to the portability
+model moved cross-screen prediction by $+0.0002$; regeneration on the
+corrected sequences is in progress and will be reported if it differs). Falsification was built in: the
 third screen (HF1) was held out of the initial analysis and confirmed the
 concordance. Two consequences: (i)~cross-assay portability is a measurable,
 predictable property of a guide and can be reported as a design score --
