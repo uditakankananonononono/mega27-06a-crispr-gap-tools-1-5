@@ -9,3 +9,16 @@ only outside CI). Math derivations + proofs go in the per-tool papers.
 Public dataset sources (real):
 - On-target efficacy: CRISPRon (Xiang et al. 2021, rth.dk), DeepCRISPR (bm2-lab), Rule Set 3 (gpp-rnd.github.io/rs3)
 - Off-target: GUIDE-seq, CHANGE-seq, CIRCLE-seq compiled sets (dagrate/public_data_crisprCas9), crisprSQL, CRISPR-Bulge (OrensteinLab)
+
+## Command-line tool
+
+The `crisprgap` CLI exposes the validated scoring and calibration pieces. All output is JSON.
+
+```bash
+python -m crisprgap cfd GAGTCCGAGCAGAAGAAGAAGGG GAGTCCGAGCAGAAGAAAAAGGG   # CFD score (Doench 2016)
+python -m crisprgap mit GAGTCCGAGCAGAAGAAGAA GAGTCCGAGCAGAAGAAAAA         # MIT specificity (Hsu 2013)
+python -m crisprgap calibrate scores.csv --fit platt                      # ECE/Brier + Platt fit (CSV: score,label)
+python -m crisprgap seqstats GAGTCCGAGCAGAAGAAGAAGGG                      # GC + dinucleotide composition
+```
+
+CFD is defined only for substitution-only ACGT 23-mers; the CLI rejects indels and non-canonical bases with exit code 2 and `"applicable": false`.
