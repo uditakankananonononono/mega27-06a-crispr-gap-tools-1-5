@@ -1,0 +1,151 @@
+{
+ "gP_Pcsk9": {
+  "n_ot_sites": 104,
+  "organs": [
+   "Brain",
+   "Colon",
+   "Heart",
+   "Kidney",
+   "Liver",
+   "Lungs",
+   "Pancreas",
+   "Spleen"
+  ],
+  "on_target_editing": {
+   "Brain": 6.01,
+   "Colon": 49.8,
+   "Heart": 40.23,
+   "Kidney": 47.58,
+   "Liver": 46.01,
+   "Lungs": 36.55,
+   "Pancreas": 70.4,
+   "Spleen": 31.33
+  },
+  "detected_ge_0.5pct_breadth_hist": {
+   "0": 75,
+   "1": 7,
+   "2": 9,
+   "3": 2,
+   "4": 5,
+   "5": 1,
+   "6": 0,
+   "7": 1,
+   "8": 4
+  },
+  "detected_ge_1.0pct_breadth_hist": {
+   "0": 86,
+   "1": 7,
+   "2": 3,
+   "3": 2,
+   "4": 0,
+   "5": 1,
+   "6": 0,
+   "7": 3,
+   "8": 2
+  },
+  "organ_specific_sites_n": 2,
+  "organ_specific_examples": [
+   [
+    "OT036",
+    "Pancreas",
+    1.36,
+    0.24
+   ],
+   [
+    "OT112",
+    "Pancreas",
+    4.47,
+    0.99
+   ]
+  ],
+  "cross_organ_spearman_min": [
+   "Brain",
+   "Lungs",
+   0.177
+  ],
+  "cross_organ_spearman_max": [
+   "Colon",
+   "Pancreas",
+   0.756
+  ],
+  "cross_organ_spearman_median": 0.573,
+  "sites_ge1pct_per_organ": {
+   "Brain": 2,
+   "Colon": 10,
+   "Heart": 9,
+   "Kidney": 10,
+   "Liver": 5,
+   "Lungs": 5,
+   "Pancreas": 10,
+   "Spleen": 10
+  }
+ },
+ "gMH": {
+  "n_ot_sites": 75,
+  "organs": [
+   "Brain",
+   "Colon",
+   "Heart",
+   "Kidney",
+   "Liver",
+   "Lungs",
+   "Pancreas",
+   "Spleen"
+  ],
+  "on_target_editing": {
+   "Brain": 1.14,
+   "Colon": 45.75,
+   "Heart": 8.43,
+   "Kidney": 17.42,
+   "Liver": 18.57,
+   "Lungs": 7.4,
+   "Pancreas": 22.62,
+   "Spleen": 18.18
+  },
+  "detected_ge_0.5pct_breadth_hist": {
+   "0": 75,
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 0,
+   "6": 0,
+   "7": 0,
+   "8": 0
+  },
+  "detected_ge_1.0pct_breadth_hist": {
+   "0": 75,
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 0,
+   "6": 0,
+   "7": 0,
+   "8": 0
+  },
+  "organ_specific_sites_n": 0,
+  "organ_specific_examples": [],
+  "cross_organ_spearman_min": [
+   "Heart",
+   "Kidney",
+   -0.075
+  ],
+  "cross_organ_spearman_max": [
+   "Heart",
+   "Pancreas",
+   0.621
+  ],
+  "cross_organ_spearman_median": 0.307,
+  "sites_ge1pct_per_organ": {
+   "Brain": 0,
+   "Colon": 0,
+   "Heart": 0,
+   "Kidney": 0,
+   "Liver": 0,
+   "Lungs": 0,
+   "Pancreas": 0,
+   "Spleen": 0
+  }
+ }
+}

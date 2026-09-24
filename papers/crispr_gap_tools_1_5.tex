@@ -1192,6 +1192,23 @@ FANCF) turns nomination frequency into a calibration axis
 falls from 19\% in the top nomination-frequency bin to 9\%, 6\%, 9\%
 and 2\% across descending bins -- off-target nomination is a graded
 confidence signal that gap-2 calibration can exploit directly.
+Organ-specific in vivo editing (Nat Commun 2026,
+10.1038/s41467-026-77144-5, MOESM9) tracks the same guide's editing
+across eight organs in doxycycline-induced Cas9 mice (4 animals per
+organ, rhAmpSeq amplicons; \texttt{results/organ\_specific\_invivo.json}).
+On-target editing spans an order of magnitude across organs (gP/Pcsk9:
+6.0\% brain to 70.4\% pancreas; gMH: 1.1\% brain to 45.8\% colon),
+and off-target detection follows the organ: of 104 gP candidate sites,
+86 never reach 1\% editing in any organ, 7 reach it in exactly one,
+and per-organ detected-site counts range from 2 (brain) to 10 (colon,
+kidney, pancreas, spleen), with cross-organ Spearman correlations of
+site-level editing averaging 0.57 (minimum 0.18, brain--lungs). For
+gMH no candidate off-target reaches 0.5\% in any organ despite
+45.8\% on-target editing in colon -- a clean negative. The burden is
+genuinely organ-local: site OT112 edits at 4.5\% in pancreas but
+$\leq$1\% in every other organ. Off-target risk assessment from a
+single tissue is therefore not a safe proxy for the organism.
+
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
 \texttt{results/gap4\_mismatch\_tolerance.json}) quantify
