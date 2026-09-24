@@ -29,7 +29,7 @@ Isotonic & 0.360 & 0.349 \\
 \begin{table}[h]\centering\caption{Calibration on crisprSQL: mean ECE over the five fully-seeded splits (recalibrators fit on each split's validation slice). At this sample size, recalibration hurts on average.}\label{tab:calib}\begin{tabular}{lc}\hline & mean ECE (5 splits) \\\hline
 uncalibrated & 0.326 \\
 isotonic (val slice) & 0.389 \\
-Platt (val slice) & 0.367
+Platt (val slice) & 0.367 \\
 \hline\end{tabular}\end{table}
 \begin{table}[h]\centering\caption{Ablation: PAM and chromatin feature channels (gaps 4-5), five fully-seeded guide-grouped splits (mean $\pm$ sd AUROC). All conditions are within noise of seq-only; the winner varies by seed (pam\_epigen 3/5, epigen 2/5).}\label{tab:ablation}\begin{tabular}{lcc}\hline Features & AUROC (5 seeds) & AUROC non-NGG (5 seeds) \\\hline
 seq\_only & $0.590 \pm 0.094$ & $0.580 \pm 0.065$ \\

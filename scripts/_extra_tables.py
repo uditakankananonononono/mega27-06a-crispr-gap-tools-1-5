@@ -35,7 +35,7 @@ def table_calib():
             "five fully-seeded splits (recalibrators fit on each split's validation slice). "
             "At this sample size, recalibration hurts on average.}\\label{tab:calib}"
             "\\begin{tabular}{lc}\\hline & mean ECE (5 splits) \\\\\\hline\n"
-            + " \\\\\n".join(rows) + "\n\\hline\\end{tabular}\\end{table}\n")
+            + " \\\\\n".join(rows + [""]) + "\hline\\end{tabular}\\end{table}\n")
 
 
 def table_perstudy():

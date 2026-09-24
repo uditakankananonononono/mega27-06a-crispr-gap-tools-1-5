@@ -275,6 +275,16 @@ $0.27$ to DeepSpCas9; sgDesigner within $0.33$ but $0.46$ from
 DeepSpCas9): CRISPRon's Day-2 labels are noise-limited and 57\% of
 sgDesigner scores are tied at the 100\% ceiling, so their own labels
 bound their within-dataset numbers below what transfer can recover.
+\paragraph{A shared-library ceiling on residual methods.} The residual
+concordance that powers the discovery (Section~\ref{sec:discovery})
+requires the same guides assayed under two conditions. That structure is
+rare: across the three HEK293T-cluster datasets, guide-core overlap is
+zero (DeepSpCas9 $\cap$ sgDesigner: 0 of 12{,}825/1{,}309 cores;
+sgDesigner $\cap$ CRISPRon: 0; DeepSpCas9 $\cap$ CRISPRon: 54). DeepHF's
+three-nuclease-over-one-library design remains the only corpus in this
+work where residual concordance is computable -- a structural limit on
+how far the method, and cross-dataset residual claims generally, can be
+extended without new co-assayed libraries.
 
 \subsection{Data-integrity audit: the DeepHF encoding bug}
 \label{sec:encoding-audit}
@@ -364,6 +374,15 @@ Clustering matters: naive Wald intervals are 2--3$\times$ narrower, and
 three nominally significant positions (4, 17) lose significance under
 guide-cluster-robust errors -- a concrete instance of the corpus's
 guide-level dependence structure corrupting naive inference.
+
+\begin{figure}[h]\centering
+\includegraphics[width=0.75\textwidth]{fig_poslog_profile.pdf}
+\caption{Per-position mismatch log-odds on crisprSQL (GLM, guide-cluster-robust
+95\% CIs; red = $p<0.05$). The profile contradicts the textbook seed-region
+gradient: PAM-proximal positions are null, and the position-15 positive
+anomaly survives clustering.}
+\label{fig:poslog}
+\end{figure}
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
 init draws (data order fixed) gives AUROC $0.530$--$0.606$ (sd $0.032$)
