@@ -750,6 +750,17 @@ CBE--Cas9 overlap on a second platform. Same method, two cell lines
 0.603). RUNX1 profiled with a Cpf1 base editor yields 950 sites versus
 27 for BE4max -- enzyme scaffold changes the off-target burden by an
 order of magnitude (PAM-density caveat noted).
+EndoV-seq's in-vitro complement (Wienert 2019, Nat Commun
+10.1038/s41467-018-07988-z, MOESM4 Supp.\ Fig.\ 1; 102 mismatch
+substrates x 3 guides, chromatin-free) gives the biochemical floor
+(\texttt{results/endovseq\_tolerance.json}): ABE7.10 retains 66\% of
+on-target deamination at a single mismatch (Cas9 cleavage 78\% on the
+same substrates), falling to 18\% at two and 8\% at three mismatches;
+single mismatches in the PAM-distal region (positions 1--7) retain
+86\% of ABE activity versus 42\% in the seed (13--20). The high
+in-vitro tolerance against low cellular off-target counts (Detect-seq,
+Tracking-seq) localizes base-editor specificity gains to the cellular
+context, not the enzyme's intrinsic recognition.
 \paragraph{What fidelity engineering buys (gap 4).} A 2023 variant
 screen (Nat Commun 10.1038/s41467-023-41393-5, MOESM8/9) measures
 amplicon indels for WT and high-fidelity SpCas9 variants on the same

@@ -1,0 +1,31 @@
+{
+ "n_guides": 3,
+ "n_variants": 102,
+ "on_target_mean": {
+  "abe": 16.67,
+  "cas9": 3.42
+ },
+ "retention_by_mismatch_count": {
+  "1": {
+   "n": 57,
+   "abe_retention": 0.66,
+   "cas9_retention": 0.783
+  },
+  "2": {
+   "n": 27,
+   "abe_retention": 0.177,
+   "cas9_retention": 0.293
+  },
+  "3": {
+   "n": 18,
+   "abe_retention": 0.078,
+   "cas9_retention": 0.128
+  }
+ },
+ "single_mm_seed_vs_distal": {
+  "abe_seed": 7.06,
+  "abe_distal": 14.38,
+  "cas9_seed": 2.25,
+  "cas9_distal": 2.96
+ }
+}
