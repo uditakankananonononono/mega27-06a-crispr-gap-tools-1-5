@@ -809,6 +809,39 @@ under-resolves at $n=190$ with 15 positives: NAG odds ratio $0.34$
 (95\% CI $0.10$--$1.11$, $p=0.074$), per-mismatch OR $0.50$
 ($0.22$--$1.14$, $p=0.097$) (\texttt{results/koike\_yusa\_stats.json}).
 We report the direction and the interval, not a claim.
+\paragraph{PAM-variant activity atlas (Kim 2020).} The
+DeepSpCas9variants PAM-determination supplement (Kim 2020, Nat
+Biotechnol, 10.1038/s41587-020-0537-9 MOESM3) measures
+background-subtracted indel frequencies for 13 Cas9 variants across
+8{,}130 guide$\times$PAM library members (6-mer library PAMs, first base
+fixed to A; we classify on the dinucleotide at positions 2--3). Two
+findings matter for gap 4 (\texttt{results/gap4\_pam\_variants.json},
+Fig.~\ref{fig:pam_variant}). First, variant rankings do not transfer
+from WT: Spearman correlations of per-guide activity with wild-type
+SpCas9 drop from $0.83$ (Sniper-Cas9) and $0.66$--$0.74$ (high-fidelity
+variants eSpCas9(1.1), SpCas9-HF1, HypaCas9) to $0.29$--$0.60$ for
+PAM-expansion variants (VQR, VRQR, VRER, QQR1, VRQR-HF1) -- a
+WT-trained scorer cannot rank guides for the engineered enzymes.
+Second, the PAM-dinucleotide atlas (Fig.~\ref{fig:pam_variant})
+quantifies each variant's relaxed specificity: SpCas9-NG shows activity
+across all NG$x$ classes (mean $36.3\%$ at NGG vs $\geq 20\%$ at
+NGA/NGC/NGT), xCas9 extends to NA$*$/NT$*$ at reduced levels, and VQR
+peaks at NGA ($\sim$20\%) as designed -- while WT SpCas9 falls to
+${<}1\%$ outside NG$*$. Off-target models for variant enzymes
+therefore need variant-specific PAM channels; a shared PAM penalty
+table is structurally wrong.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{figs/fig_pam_variant_heatmap.png}
+\caption{PAM-variant activity atlas (Kim 2020 MOESM3, $n=8{,}130$):
+mean background-subtracted indel frequency (log$_{10}$ \%) for 13 Cas9
+variants across 16 PAM-dinucleotide classes (library PAMs are 6-mers
+with first base fixed to A; classes use the dinucleotide at positions
+2--3). NGG dominates WT; SpCas9-NG flattens across NG$*$; VQR shifts
+to NGA; high-fidelity variants narrow rather than shift.}
+\label{fig:pam_variant}
+\end{figure}
 \paragraph{Direct chromatin-track queries: a coverage gap and a power
 ceiling.} crisprSQL's bundled chromatin columns are themselves sparse:
 on the 1{,}271 K562 hg19 rows (CIRCLE-seq + Cho) the bundled H3K4me3
