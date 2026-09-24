@@ -50,6 +50,29 @@ taken from the CRISPOR source tree (Haeussler \& Konczak 2016) and
 vendored into \texttt{crisprgap/matrices/} so the scorer is reproducible
 offline.
 
+\subsection{Haeussler 2016 CRISPOR benchmark}
+Haeussler et al.\ 2016 (Genome Biol; via the microsoft/Elevation mirror)
+provides 26{,}052 guide--site pairs with read-fraction labels used as the
+gap-2 external validation corpus; 2{,}550 pairs overlap crisprSQL and are
+excluded, leaving 23{,}502 external pairs with only eight positives.
+
+\subsection{DeepCRISPR regression screens}
+The DeepCRISPR release (Chuai et al.\ 2018, Genome Biol; bm2-lab
+\texttt{paper\_data-regression}) contains guide-level efficacy screens for
+HCT116 (4{,}239), HEK293T (4{,}566), HeLa (8{,}101) and HL60 (2{,}076)
+as 23-mers with scores in $[0,1]$ -- the eighth through eleventh gap-1
+assay families (Wang-2014 and Xu-2015 derivatives plus a
+DeepCRISPR-compiled HEK293T set). The same release's off-target tables
+(\texttt{offtar/*.repiotrt}, 153k pairs) were examined and \emph{not}
+integrated: 25 of their 29 unique guides (86\%) are already in crisprSQL
+(Tsai-2015 GUIDE-seq and kin), so adding them would double-count.
+
+\subsection{DepMap 23Q4 guide efficacy}
+DepMap 23Q4 Public (figshare article 24667905), file
+\texttt{CRISPRInferredGuideEfficacy.csv}: Chronos-inferred per-guide
+efficacy for 193{,}475 guides pooled across $>$1{,}000 screened cell
+models; lengths 19/20/23, scores in $[0,1]$. The twelfth gap-1 family.
+
 \subsection{Usage matrix}
 \begin{table}[h]\centering\small
 \caption{Which dataset powers which analysis. Counts are rows actually
@@ -67,6 +90,13 @@ DeepHF SpCas9-HF1 & residual screen C; PORTA destination & 56{,}888 & all \\
 crisprSQL 100720 & gaps 2, 4, 5; routing audit & 25{,}632 pairs & all \\
 PRIDICT2 23k & gap 3 benchmark; thermo feature studies & 22{,}956 pegRNAs & all \\
 CFD matrices & gap-2 published baseline (vendored) & 23-mer table & all \\
+CRISPRscan & gap-1 seventh family & 492 guides & all \\
+Haeussler 2016 & gap-2 external validation & 23{,}502 pairs & overlap-excluded \\
+DeepCRISPR HCT116 & gap-1 eighth family & 4{,}239 guides & all \\
+DeepCRISPR HEK293T & gap-1 anomaly set & 4{,}566 guides & all \\
+DeepCRISPR HeLa & gap-1 ninth family & 8{,}101 guides & all \\
+DeepCRISPR HL60 & gap-1 tenth family & 2{,}076 guides & all \\
+DepMap 23Q4 efficacy & gap-1 twelfth family & 193{,}475 guides & all \\
 \hline
 \end{tabular}
 \end{table}

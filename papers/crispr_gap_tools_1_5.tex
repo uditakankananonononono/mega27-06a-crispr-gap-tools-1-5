@@ -483,6 +483,17 @@ retraining with balanced class weights or random undersampling
 0.385$ and $0.338$; \texttt{results/prevalence\_rebalance.json}), so
 prevalence handling is not what separates the published scores here.
 
+\paragraph{Alignment score as a classical comparator.} A
+Smith--Waterman local-alignment score between guide and off-target
+(parasail, \texttt{dnafull}, match $+2$, gap open/extend $2/1$;
+\texttt{results/parasail\_alignment.json}) reaches global AUROC
+$0.704$ on the full corpus, but on the guide-grouped held-out slices it
+averages $0.557$ across three seeds ($0.630/0.484/0.558$) -- between
+CFD ($0.552$) and the positional logistic model ($0.609$) on the same
+splits. Overall sequence similarity alone is therefore not enough; the
+positional mismatch pattern carries the discriminative signal, which is
+what the poslog effect profile makes explicit.
+
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
 init draws (data order fixed) gives AUROC $0.530$--$0.606$ (sd $0.032$)
