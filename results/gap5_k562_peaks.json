@@ -1,0 +1,16 @@
+{
+  "dataset": "ENCODE ENCSR000EKN / ENCFF795GKD (K562 DNase narrowPeak, hg19)",
+  "n": 1271,
+  "n_pos": 1236,
+  "n_neg": 35,
+  "table": {
+    "in_peak_cleaved": 87,
+    "in_peak_not": 2,
+    "out_peak_cleaved": 1149,
+    "out_peak_not": 33
+  },
+  "odds_ratio": 1.2493472584856398,
+  "fisher_p": 1.0,
+  "frac_cleaved_in_peak": 0.9775280898876404,
+  "frac_cleaved_out_peak": 0.9720812182741116
+}

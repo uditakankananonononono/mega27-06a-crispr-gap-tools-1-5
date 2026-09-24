@@ -830,7 +830,10 @@ crisprSQL K562 loci gives AUROC $0.44$ on the 35 negatives
 (Mann--Whitney $p=0.24$) and a Spearman of only $0.075$ ($p=0.008$)
 between DNase signal and cleavage frequency across the 1{,}236 positives
 (\texttt{results/gap5\_k562\_dnase.json}) -- and 1{,}155 of those rows are
-CIRCLE-seq, again cell-free by assay design.
+CIRCLE-seq, again cell-free by assay design. Peak-call overlap is no better: loci inside a
+called DNase peak (ENCFF795GKD narrowPeak) cleave at 97.8\% vs 97.2\%
+outside (Fisher odds ratio $1.25$, $p=1.0$;
+\texttt{results/gap5\_k562\_peaks.json}).
 \input{ablation_perseed_table.tex}
 \input{results_tables.tex}
 

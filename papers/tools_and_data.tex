@@ -39,6 +39,7 @@ umap-learn (0.5.12) & sequence-space embedding, covariate-shift check (Fig.~\ref
 biopython (1.88) & biophysical feature audit (GC, Tm, length), gap 1 \\
 seaborn (0.13.2) & transfer-matrix heatmap (Fig.~\ref{fig:transfer_heatmap}) \\
 logomaker (0.8.7) & sequence logos: extreme-portability guides (Fig.~8) and Chari high vs low (Fig.~\ref{fig:chari_logo}) \\
+intervaltree (3.2.1) & crisprSQL locus vs ENCODE peak overlap queries (gap 5) \\
 CRISPOR CFD matrices & published off-target baseline (vendored, offline scorer) \\
 CRISPRoff (Alkan 2018, vendored RTH-tools) & published energy-based gap-2 baseline \\
 MIT/Hsu-2013 score & published off-target baseline (reimplemented from source) \\
@@ -48,7 +49,7 @@ Google Drive API & artifact delivery (bundle + paper PDF) \\
 \end{tabular}
 \end{table}
 
-\subsection{Datasets and data sources (29 accession-level records + 13 sub-studies)}
+\subsection{Datasets and data sources (30 accession-level records + 13 sub-studies)}
 \begin{table}[h]\centering\small
 \caption{Datasets actually analyzed, with role.}
 \label{tab:datasets}
@@ -80,6 +81,7 @@ Horlbeck 2016 CRISPRa activity (eLife 19760, CRISPRiaDesign tables) & gap-1 four
 Koike-Yusa 2014 MiSeq off-targets (nbt.2800 ST1) & gap-4 PAM-variant validation (190 sites, 1 guide, mESC) \\
 Chari sgRNAScorer 2.0 high/low lists (rajchari2/sgrnascorer) & gap-1 external discrimination test (215+215 guides) \\
 ENCODE K562 DNase-seq (ENCSR000EKN / ENCFF526LYS, hg19) & gap-5 second-cell-line chromatin query (1,299 loci) \\
+ENCODE K562 DNase narrowPeak calls (ENCFF795GKD, hg19) & gap-5 peak-overlap test (519,541 peaks) \\
 CRISPRscan zebrafish in-vivo screen (Nat Methods 2015, PMC4589495, ESM MOESM633) & gap-1 seventh assay family (492 guides) \\
 DeepCRISPR HCT116 screen (Chuai 2018, Genome Biol; Wang 2014 derivative) & gap-1 eighth family (4,239 guides) \\
 DeepCRISPR HEK293T screen (Chuai 2018) & gap-1; anti-correlated anomaly set (4,566 guides) \\
