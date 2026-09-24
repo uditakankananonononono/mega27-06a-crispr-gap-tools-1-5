@@ -1489,6 +1489,26 @@ keeps 86\% matched cleavage with 2.4\% mismatch cleavage
 mismatch. Mismatch tolerance in WT is a time problem: cleavage of the
 mismatched substrate catches up by 15\,min, so specificity claims must
 state their timepoint.
+Engineered Sdd7 cytosine base editors (Nat Commun 2025,
+10.1038/s41467-025-60789-z, MOESM8; 30 sites x 4 editors, plus
+positional profiles at 16 sites) trade peak activity for bystander
+restraint in opposite directions across variants
+(\texttt{results/sdd7\_cbe\_window.json}). Mean primary editing is
+nearly flat across BE4max (56.7\%), Sdd7 (62.1\%), Sdd7e1 (59.7\%)
+and Sdd7e2 (60.5\%), but the secondary low-signal (bystander-class)
+block at the same 30 sites gives a specificity index
+(secondary/primary) of 0.017 for BE4max against 0.051 for Sdd7e2 ---
+a 3.1-fold bystander penalty for the most active variant.
+Site rankings still transfer imperfectly between editors (Spearman
+$\rho$ 0.54--0.87; weakest BE4max vs Sdd7e2 at 0.54), a direct gap-1
+measurement of cross-editor generalization failure. The editing window
+is variant-dependent: all four editors peak at C6, but the C4--C7 share
+of total activity runs 0.66 (BE4max), 0.58 (Sdd7), 0.69 (Sdd7e1),
+0.72 (Sdd7e2) --- the base Sdd7 deaminase broadens the window and the
+e1/e2 engineering re-narrows it. Caveat: the figure's second block is
+a low-signal secondary measurement at the same sites (bystander class
+by figure layout); we treat the ratio as a specificity index rather
+than an absolute bystander rate.
 
 
 

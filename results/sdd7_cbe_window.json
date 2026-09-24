@@ -1,0 +1,98 @@
+{
+ "n_sites": 30,
+ "secondary_mean_activity": {
+  "BE4max": 0.9390000000000001,
+  "Sdd7": 1.9333333333333336,
+  "Sdd7e1": 2.078,
+  "Sdd7e2": 3.0693333333333332
+ },
+ "specificity_index_secondary_over_primary": {
+  "BE4max": 0.016563865254690745,
+  "Sdd7": 0.031138431804150005,
+  "Sdd7e1": 0.0347796008770217,
+  "Sdd7e2": 0.05075235628065921
+ },
+ "note": "Fig 3b carries two stacked blocks over the same 30 sites: primary on-target editing and a secondary low-signal (bystander-class) measurement; ratio used as specificity index.",
+ "n_sites_activity": 30,
+ "editor_mean_activity": {
+  "BE4max": 56.68966666666666,
+  "Sdd7": 62.08833333333333,
+  "Sdd7e1": 59.74766666666666,
+  "Sdd7e2": 60.47666666666666
+ },
+ "cross_editor_site_spearman": {
+  "BE4max_vs_Sdd7": 0.7067853170189099,
+  "BE4max_vs_Sdd7e1": 0.6947719688542825,
+  "BE4max_vs_Sdd7e2": 0.5377085650723026,
+  "Sdd7_vs_Sdd7e1": 0.7490545050055617,
+  "Sdd7_vs_Sdd7e2": 0.575083426028921,
+  "Sdd7e1_vs_Sdd7e2": 0.8651835372636262
+ },
+ "min_cross_editor_rho": 0.5377085650723026,
+ "positional_profiles": {
+  "BE4max": {
+   "n_sites": 16,
+   "peak_position": 6,
+   "share_C4_to_C7": 0.6557110253639922,
+   "profile": [
+    0.17,
+    15.37,
+    38.48,
+    57.92,
+    62.64,
+    47.06,
+    41.74,
+    33.07,
+    17.86
+   ]
+  },
+  "Sdd7": {
+   "n_sites": 16,
+   "peak_position": 6,
+   "share_C4_to_C7": 0.5816405865865579,
+   "profile": [
+    28.75,
+    48.72,
+    60.31,
+    68.12,
+    69.29,
+    59.89,
+    48.21,
+    33.77,
+    25.84
+   ]
+  },
+  "Sdd7e1": {
+   "n_sites": 16,
+   "peak_position": 6,
+   "share_C4_to_C7": 0.6888172940658364,
+   "profile": [
+    12.75,
+    26.44,
+    40.29,
+    56.92,
+    61.12,
+    40.02,
+    24.65,
+    15.81,
+    9.95
+   ]
+  },
+  "Sdd7e2": {
+   "n_sites": 16,
+   "peak_position": 6,
+   "share_C4_to_C7": 0.7212271980312427,
+   "profile": [
+    6.4,
+    17.09,
+    30.59,
+    55.37,
+    62.85,
+    43.46,
+    23.92,
+    15.69,
+    11.21
+   ]
+  }
+ }
+}
