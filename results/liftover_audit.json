@@ -1,0 +1,10 @@
+{
+  "n_hg19_rows": 9346,
+  "lifted": 9332,
+  "unmapped": 14,
+  "lifted_seq_matches": 9066,
+  "lifted_seq_revcomp": 0,
+  "other_or_mismatch": 266,
+  "lift_rate": 0.998502032955275,
+  "seq_concordance_of_lifted": 0.9714959279897128
+}

@@ -864,6 +864,16 @@ $0.42$ / $0.49$ on the negatives ($p=0.11$ / $0.79$) and positive-side
 Spearman $0.084$ / $0.043$ (\texttt{results/gap5\_k562\_multitrack.json}).
 Three chromatin modalities, two cell lines, seven readouts: no signal.
 
+\paragraph{Assembly harmonization audit.} pyliftover (UCSC
+hg19$\to$hg38 chain) lifts 9{,}332 of 9{,}346 crisprSQL hg19 loci
+(99.85\%); with a strand-aware one-base window, 97.1\% of lifted loci
+reproduce the recorded target sequence exactly
+(\texttt{results/liftover\_audit.json}). Two data notes: crisprSQL's
+interval columns span 22 of the 23 recorded bases (the PAM-adjacent base
+sits outside the interval, on the side set by strand), and 266 rows
+(2.9\%) do not survive sequence-verified lifting -- we keep them on
+their native assembly rather than risk silent misplacement.
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.55\textwidth]{fig_k562_loess.pdf}
