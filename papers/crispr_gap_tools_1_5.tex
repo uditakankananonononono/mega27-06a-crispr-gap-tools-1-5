@@ -301,7 +301,13 @@ that Cas9-efficacy pretraining encodes. Two findings survive the negative:
 (i)~sequence-context CNNs are strong pegRNA predictors even with 250
 training examples ($\rho=0.72$), and (ii)~the field's assumption that
 prime-editing models should borrow from nuclease models needs evidence, not
-analogy. We preserve the failed transfer as the gap-3 result.
+analogy. The K562 track replicates the pattern (ridge $0.554$, scratch
+$0.610$, transfer $0.588$). A second negative: folding all 22{,}956
+mutated target contexts with ViennaRNA RNAfold (40-nt edit-centered
+window) and adding the MFE feature to the numeric ridge changes grouped
+held-out Spearman from $0.7329$ to $0.7331$ -- local target secondary
+structure, at least at this resolution, is not the missing signal. We
+preserve both negatives as the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 
 \begin{figure}[h]
@@ -341,7 +347,11 @@ across nucleases than the biological signal.} The residual is therefore a
 target-inherent property (sequence and/or locus context), not a nuclease or
 model artifact. A feature decomposition finds no single dominant driver
 (max $|\rho|=0.28$ over the 11 DeepHF biofeatures; GC $0.25$), i.e.\ a
-distributed sequence-composition signature. Falsification was built in: the
+distributed sequence-composition signature. Folding all guides with
+ViennaRNA adds a twelfth candidate driver and it too fails:
+guide+PAM minimum free energy correlates with the residual at only
+$\rho=-0.085$, and appending it to the portability model moves
+cross-screen prediction by $+0.0002$. Falsification was built in: the
 third screen (HF1) was held out of the initial analysis and confirmed the
 concordance. Two consequences: (i)~cross-assay portability is a measurable,
 predictable property of a guide and can be reported as a design score --
@@ -448,6 +458,32 @@ calibrated scorer with MIT/CFD baselines), \texttt{crisprgap.train\_pegrna}
 + \texttt{crisprgap.models.transfer\_cnn} (gap 3 predictor),
 \texttt{crisprgap.models.offtarget\_v2} (gaps 4--5 PAM/chromatin-aware
 scorer). All tools are covered by the hermetic pytest suite.
+
+\subsection{PORTA: portability scoring and corrected transfer}
+\label{sec:porta-tool}
+PORTA packages the discovery as a design tool. Inputs: a source-trained
+efficacy model $f$, one \emph{calibration screen} measuring a guide library
+(any public screen whose guides overlap the target library), and a set of
+query guides with sequences and optional biofeatures. Outputs per guide:
+(i)~the \emph{portability score} $\hat r(g) = m(\phi(g), b(g))$ -- the
+predicted normalized-rank residual of $f$ on the calibration screen --
+and (ii)~the corrected ranking $\tilde p(g) = \mathrm{nrank}(f(g)) -
+\hat r(g)$. Interpretation: guides in the top PORTA tail are ones the
+source model systematically over-ranks \emph{for assay reasons}, so their
+low transfer rank should not disqualify them; the bottom tail flags
+guides likely to disappoint on a new assay despite high source scores.
+Reference usage:
+\begin{verbatim}
+from crisprgap.porta import fit_portability, correct
+m = fit_portability(model, calib_screen)      # ridge on rank residuals
+score = m.score(seqs, biofeatures)            # per-guide portability
+ranking = correct(model, seqs, biofeatures)   # corrected ranks
+\end{verbatim}
+Validation for this exact configuration (Doench source, DeepHF WT
+calibration, HF1/eSpCas9 destination) is Table~9; the correction is
+exact when residual replication and portability prediction are perfect
+(Proposition~\ref{prop:porta}) and degrades gracefully with their
+product.
 \input{repro_appendix.tex}
 
 \input{references.tex}
