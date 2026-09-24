@@ -248,6 +248,30 @@ channels decorrelate each other's confounds; we report the interaction
 without overclaiming it.
 \input{results_tables.tex}
 
+\section{Discovery: target-inherent transfer residual}
+\label{sec:discovery}
+Training on Doench FC+RES and scoring the DeepHF guides yields a per-guide
+transfer residual (predicted rank minus measured rank). Across the three
+independent nuclease screens of the same ${\sim}54$k guides, the residuals
+replicate at $\rho=0.86$ (WT vs eSpCas9), $0.90$ (eSpCas9 vs SpCas9-HF1)
+and $0.86$ (WT vs HF1), while the measured efficacies themselves correlate
+at only ${\sim}0.73$: \textbf{the model's transfer error is more stable
+across nucleases than the biological signal.} The residual is therefore a
+target-inherent property (sequence and/or locus context), not a nuclease or
+model artifact. A feature decomposition finds no single dominant driver
+(max $|\rho|=0.28$ over the 11 DeepHF biofeatures; GC $0.25$), i.e.\ a
+distributed sequence-composition signature. Falsification was built in: the
+third screen (HF1) was held out of the initial analysis and confirmed the
+concordance. Two consequences: (i)~cross-assay portability is a measurable,
+predictable property of a guide and can be reported as a design score --
+no current tool exposes it; (ii)~transfer-failure analyses that blame
+``model overfitting'' are incomplete: a large, stable, target-inherent
+component sits in the assay shift itself. A companion attempt to turn
+crisprSQL's non-NGG pairs into an empirical PAM-activity atlas that beats
+CFD failed its out-of-sample test (mean guide-held-out $\rho$: atlas
+$0.464$ vs CFD $0.469$) and is preserved as a negative
+(\texttt{results/pam\_atlas\_falsification.json}).
+
 \section{Limitations}
 crisprSQL aggregates 17 studies with different assays and sensitivities;
 its 94\% positive prevalence and 1,494 validated negatives cap
