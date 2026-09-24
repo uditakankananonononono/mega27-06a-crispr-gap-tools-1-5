@@ -366,7 +366,20 @@ its weak positive edges. An independent Leiden partition (leidenalg
 0.12.0 / python-igraph 1.0.0, 3 seeds;
 \texttt{results/transfer\_communities\_leiden.json}) recovers the
 identical two-community assignment, so the structure is not an artifact
-of the Louvain heuristic. The consensus label does not bridge the
+of the Louvain heuristic.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{fig_umap_covariate.pdf}
+\caption{UMAP of one-hot guide sequence features, 600 guides per dataset
+(seed 0). The datasets' guides largely \emph{co-occupy} sequence space;
+only CRISPRscan separates visibly (zebrafish T7-promoter sequence
+constraints). The transfer failure is therefore not primarily a
+covariate-shift artifact -- the datasets look alike as sequences while
+their labels behave differently -- consistent with assay-specific label
+systematics dominating.}
+\label{fig:umap}
+\end{figure} The consensus label does not bridge the
 communities -- pooling across 1,000 lines does not recover what single
 assays share, consistent with each assay family's label being dominated
 by family-specific systematic components.

@@ -1,0 +1,8 @@
+{
+  "n_per_dataset": 600,
+  "umap_params": {
+    "n_neighbors": 30,
+    "min_dist": 0.3,
+    "random_state": 0
+  }
+}
