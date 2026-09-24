@@ -49,6 +49,43 @@ throughout: residual definitions, portability scores, and corrections
 below are invariant to the (unknown, screen-specific) monotone transforms
 that map raw assay readouts to reported activities.
 
+\subsection{AUROC as a concordance probability}
+For a scorer $s$ applied to $n_1$ positives and $n_0$ negatives, the
+Mann--Whitney statistic
+\begin{equation}
+U \;=\; \sum_{i:\,y_i=1}\sum_{j:\,y_j=0}
+\Big[\mathbb{1}\{s_i > s_j\} + \tfrac{1}{2}\mathbb{1}\{s_i = s_j\}\Big],
+\qquad
+\mathrm{AUROC} \;=\; \frac{U}{n_1 n_0}
+\label{eq:mwu}
+\end{equation}
+equals the trapezoidal area under the ROC curve.
+\begin{proposition}[concordance form of AUROC]
+\label{prop:auroc}
+Equation~\eqref{eq:mwu} satisfies
+$\mathrm{AUROC} = \Pr[s(X^+) > s(X^-)] + \tfrac12 \Pr[s(X^+) = s(X^-)]$
+for independently drawn positive $X^+$ and negative $X^-$.
+\end{proposition}
+\begin{proof}
+Each ordered positive--negative pair contributes $1$, $\tfrac12$, or $0$
+to $U$ exactly when $s(X^+) - s(X^-)$ is positive, zero, or negative, so
+$U/(n_1 n_0)$ is the empirical concordance probability; the population
+statement follows by the law of large numbers applied to the
+$U$-statistic. Equivalence with the trapezoidal ROC area follows because
+the empirical ROC curve steps at distinct negative scores, and each step
+rectangle's area equals the corresponding pair count.
+\end{proof}
+Two consequences we rely on. First, AUROC is a pure ranking functional,
+so by Proposition~\ref{prop:mono} it is invariant to the monotone
+recalibrations of Section~\ref{sec:discovery}: PORTA corrections change
+AUROC only through rank changes. Second, \eqref{eq:mwu} exposes why
+per-study AUROC degenerates at small positive counts: with $n_1 = 2$
+positives and $n_0 = 70$ negatives, AUROC is an average of only $140$
+pairwise comparisons and takes values on a grid of resolution
+$1/(2 n_1 n_0) = 1/280$ -- the seed-0 Anderson ``win'' in
+Table~\ref{tab:perstudy} is an average over $140$ pairs, and its
+standard error (Hanley--McNeil) exceeds $0.15$.
+
 \subsection{CFD as naive-Bayes odds}
 The CFD score for guide $g$ cleaving site $g'$ with mismatch set
 $M = \{(i, s_i \!\to\! t_i)\}$ is
