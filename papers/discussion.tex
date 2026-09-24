@@ -1,0 +1,65 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{What the residual is.}
+The target-inherent transfer residual (Section~\ref{sec:discovery}) is the
+component of a guide's behavior that a source-trained model gets wrong in
+the \emph{same way} across three nuclease screens whose own outcomes agree
+only at $\rho \approx 0.73$. Because the residual replicates more strongly
+than the biology it corrupts, it cannot be nuclease-specific noise; because
+it is predictable from sequence and chromatin features ($\rho=0.78$
+cross-screen, $0.86$ within-screen), it is not idiosyncratic measurement
+error either. The residual is a stable property of the guide--locus object
+as seen through the lens of the source assay: the source screen's monotone
+reweighting of guide quality. Mechanistic candidates include local DNA
+shape, repair-pathway context of the target locus, and sequence
+composition effects on uptake or transcription in the source assay's
+delivery system. The feature decomposition rules out any single simple
+driver (max $|\rho|=0.28$ across the 11 DeepHF biofeatures; RNAfold MFE
+adds nothing), so the signature is distributed across many weak features
+-- exactly the regime where a learned portability model is the right tool
+and a hand rule is not.
+
+\paragraph{What practitioners should do differently.}
+Three recommendations follow. First, \emph{never report} an efficacy
+model's within-screen performance as evidence of portability: our gap-1
+matrix shows within-family transfer ($0.43$--$0.50$) and cross-family
+collapse ($0.03$) coexist for the same model. Second, when a target
+library shares guides with any large public screen, a one-time
+portability calibration (a few minutes of ridge regression against the
+library's own residual) can recover most of the lost ranking signal on a
+new assay (Table~9) -- the destination assay's labels are not needed.
+Third, off-target scores should ship with calibration curves: isotonic
+recalibration on a held-out slice improves ECE even at moderate corpus
+sizes, while Platt scaling can actively hurt (Table~5), contradicting the
+common default.
+
+\paragraph{Why the pegRNA transfer negative matters.}
+The naive hypothesis that Cas9 efficacy motifs transfer to pegRNA design
+is attractive -- the models share a substrate -- and it fails at every
+sample size we tested (Figure~3). The honest reading is that prime-editing
+efficiency is dominated by the repair outcome of the flap intermediate,
+not by the cleavage-nick kinetics that Cas9 efficacy models capture. This
+argues for investment in pegRNA-specific screens (PRIDICT-scale and
+larger) rather than transfer shortcuts, and it makes the pegRNA gap a
+data problem, not a modeling problem.
+
+\paragraph{Relation to domain adaptation theory.}
+Proposition~\ref{prop:indisc} gives the classical sufficient condition
+(affine-equivalent conditional laws) under which transfer is free, and
+our gap-1 measurements show how violently it fails between assay
+families. The discovery adds structure to that failure: the error is not
+an unstructured shift but a stable, learnable, guide-level object. In
+domain-adaptation terms, the residual behaves like a shared labeling
+function artifact with low cross-screen variability -- the exact case
+where a cheap correction beats retraining. We are not aware of prior work
+identifying or exploiting this object in genomics.
+
+\paragraph{Scope of claims.}
+Every strong claim in this paper is confined to its measured regime:
+PORTA is validated between Doench-family source models and the three
+DeepHF nuclease screens; the calibration results hold on crisprSQL's
+17-study corpus with its 94\% positive prevalence; the pegRNA negative is
+at PRIDICT2 scale with motif-level features. Extrapolation beyond these
+regimes (base editors, Cas12a, non-U2OS chromatin) is future work, not
+implied.

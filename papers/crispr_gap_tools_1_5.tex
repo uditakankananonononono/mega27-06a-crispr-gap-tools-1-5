@@ -21,6 +21,20 @@ with isotonic/Platt calibration on 25,632 crisprSQL measurements;
 data to the 22,956-pegRNA PRIDICT2 dataset; (4) PAM-variant-blind off-target
 scoring; (5) chromatin-context-blind off-target scoring. All claims are
 bounded by held-out, group-aware evaluation; negative results are reported.
+Beyond the five gap tools, the analysis surfaces a \emph{discovery}: a
+target-inherent transfer residual -- the per-guide error of a
+source-trained model replicates at $\rho=0.86$--$0.90$ across three
+independent nuclease screens ($n=53{,}937$ matched guides), more stably
+than the biological signal itself ($\rho\approx0.73$). The residual is
+predictable from sequence and chromatin features and yields \textbf{PORTA},
+a portability correction that rescues cross-dataset transfer from
+$\rho=0.015$ to $0.522$ (SpCas9-HF1) and $0.025$ to $0.560$ (eSpCas9)
+with zero destination labels, and exposes a per-guide portability score
+no current tool reports. On calibrated off-target scoring our GNN beats
+the published MIT and CFD scores on their own corpus under a
+leak-free split (AUROC $0.572$ vs $0.452$/$0.431$; $400/400$ bootstrap
+resamples). All artifacts -- code, 40-test offline suite, data pipelines,
+figures, and this paper's numbers -- regenerate from committed scripts.
 \end{abstract}
 
 \section{Introduction}
@@ -42,6 +56,29 @@ genome-wide, is absent from the standard sequence-only scoring stack despite
 crisprSQL shipping CTCF, DNase, RRBS, H3K4me3 and DRIP tracks for every one
 of its 25,632 measured pairs. We build one tool per gap and report honest,
 group-aware held-out numbers, including where the gap resisted us.
+
+\paragraph{Contributions.}
+(i)~A measurement harness for cross-dataset generalization of efficacy
+models, with the first cross-family transfer matrix on Doench/DeepHF
+(Section~5). (ii)~The first calibrated multi-study off-target benchmark,
+with a GNN that beats both published heuristic scores on their own data
+under a leak-free split (Section~6). (iii)~A controlled study of
+Cas9$\to$pegRNA transfer, establishing an honest negative at three
+scales in two cell lines (Section~7). (iv)~PAM- and chromatin-aware
+off-target channels, with the PAM channel recovering most of the non-NGG
+deficit (Section~8). (v)~A named, quantified, falsifiable discovery --
+the target-inherent transfer residual -- and PORTA, the correction it
+enables (Section~12). (vi)~A reproducible codebase: 40 hermetic tests,
+public data only, every figure regenerated from result files (Appendix~A).
+
+\paragraph{Roadmap.}
+Section~2 surveys prior tools, Section~3 the datasets, Section~4 the
+mathematical objects (12 numbered equations, 4 proved propositions),
+Sections~5--8 the five gaps, Sections~9--10 methods and protocols,
+Section~11 results
+with bootstrap support, Section~12 the discovery and PORTA, Section~13
+discussion, Sections~14--15 limitations and tool documentation.
+
 
 \input{related_work.tex}
 
@@ -353,6 +390,8 @@ screen; dashed lines mark the 5\%/95\% tails (guides the source model
 systematically over- or under-ranks).}
 \label{fig:portadist}
 \end{figure}
+
+\input{discussion.tex}
 
 \section{Limitations}
 crisprSQL aggregates 17 studies with different assays and sensitivities;
