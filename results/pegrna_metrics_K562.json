@@ -1,0 +1,21 @@
+{
+  "target": "K562",
+  "n": 22956,
+  "conditions": {
+    "0": {
+      "ridge_numeric_spearman": 0.5542835452867185,
+      "scratch_spearman": 0.6110348325763953,
+      "transfer_spearman": 0.5854327060275969
+    },
+    "1": {
+      "ridge_numeric_spearman": 0.5534689607423915,
+      "scratch_spearman": 0.6094286624782947,
+      "transfer_spearman": 0.5912640252735282
+    }
+  },
+  "means": {
+    "ridge_numeric_spearman": 0.553876253014555,
+    "scratch_spearman": 0.6102317475273451,
+    "transfer_spearman": 0.5883483656505626
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "n_common_guides": 54909,
+  "spearman_residWT_GC": 0.24752027031262083,
+  "spearman_residESP_GC": 0.1854549159644574,
+  "spearman_residWT_residESP": 0.8623539005193022,
+  "spearman_wtScore_espScore": 0.7439298738433306
+}
