@@ -1,0 +1,5 @@
+{
+  "note": "post-encoding-fix, 5k seeded subsample (full 56k pending)",
+  "n": 5000,
+  "mfe_vs_resid_rho": -0.03719170557207447
+}
