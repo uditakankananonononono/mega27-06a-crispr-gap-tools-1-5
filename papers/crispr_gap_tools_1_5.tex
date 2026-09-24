@@ -457,6 +457,21 @@ concern for the epigen channel (tracks were measured in each source
 study's cell type, so the channel can encode study identity) as a
 plausible but untested explanation. Per-seed condition AUROCs are in
 Table~\ref{tab:ablperseed}.
+\paragraph{Direct chromatin-track queries: a coverage gap and a power
+ceiling.} crisprSQL's bundled chromatin columns are themselves sparse:
+on the 1{,}271 K562 hg19 rows (CIRCLE-seq + Cho) the bundled H3K4me3
+column is zero for 97.6\% of rows. Querying the ENCODE Broad K562
+H3K4me3 signal track directly (UCSC API,
+\texttt{wgEncodeBroadHistoneK562H3k4me3StdSig}) at a seeded 400-row
+subsample (373 returned) recovers signal everywhere: active off-targets
+sit in higher signal (median $1.62$ vs $1.14$), and the track alone
+scores AUROC $0.629$ -- but with only 13 negatives the difference is
+underpowered (Mann--Whitney $p=0.12$), and the track correlates with the
+bundled column at just $\rho=0.26$ where the latter is nonzero.
+Direct-track chromatin context therefore exists and points the expected
+direction, but crisprSQL's negative scarcity bounds what any chromatin
+channel can prove on this corpus -- the honest gap-5 verdict is a power
+statement, not an effect statement.
 \input{ablation_perseed_table.tex}
 \input{results_tables.tex}
 

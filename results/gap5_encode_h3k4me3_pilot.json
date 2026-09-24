@@ -1,0 +1,12 @@
+{
+  "track": "wgEncodeBroadHistoneK562H3k4me3StdSig (UCSC API, ENCODE Broad K562 H3K4me3, hg19)",
+  "rows": "crisprSQL K562 hg19 (Tsai_circle + Cho), seeded 400-row subsample",
+  "n_queried": 373,
+  "n_positive": 360,
+  "auroc_h3k4me3_alone": 0.628525641025641,
+  "bundled_nonzero_frac": 0.024128686327077747,
+  "spearman_bigwig_vs_bundled": 0.26333443395301565,
+  "median_signal_pos": 1.622272727272727,
+  "median_signal_neg": 1.1428571428571428,
+  "mannwhitney_p": 0.11551312222649715
+}
