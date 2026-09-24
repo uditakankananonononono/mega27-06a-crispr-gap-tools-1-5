@@ -362,7 +362,11 @@ out-edge is HL60 $+0.24$). Re-running Louvain on the $12\times 12$
 matrix leaves the two-community structure intact (identical partition
 across 3 seeds, $Q=0.300$; \texttt{results/transfer\_communities\_12ds.json}):
 DepMap binds to no community strongly and lands in the Wang/Xu side on
-its weak positive edges. The consensus label does not bridge the
+its weak positive edges. An independent Leiden partition (leidenalg
+0.12.0 / python-igraph 1.0.0, 3 seeds;
+\texttt{results/transfer\_communities\_leiden.json}) recovers the
+identical two-community assignment, so the structure is not an artifact
+of the Louvain heuristic. The consensus label does not bridge the
 communities -- pooling across 1,000 lines does not recover what single
 assays share, consistent with each assay family's label being dominated
 by family-specific systematic components.

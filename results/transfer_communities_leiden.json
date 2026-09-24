@@ -1,0 +1,81 @@
+{
+  "names": [
+    "crispron",
+    "crisprscan",
+    "dc_hct116",
+    "dc_hek293t",
+    "dc_hela",
+    "dc_hl60",
+    "deephf_wt",
+    "deepspcas9",
+    "depmap",
+    "fcres",
+    "sgdesigner",
+    "v1"
+  ],
+  "seeds": {
+    "0": {
+      "communities": [
+        [
+          "crispron",
+          "crisprscan",
+          "dc_hct116",
+          "dc_hela",
+          "dc_hl60",
+          "depmap"
+        ],
+        [
+          "dc_hek293t",
+          "deephf_wt",
+          "deepspcas9",
+          "fcres",
+          "sgdesigner",
+          "v1"
+        ]
+      ],
+      "modularity": 0.1071
+    },
+    "1": {
+      "communities": [
+        [
+          "dc_hek293t",
+          "deephf_wt",
+          "deepspcas9",
+          "fcres",
+          "sgdesigner",
+          "v1"
+        ],
+        [
+          "crispron",
+          "crisprscan",
+          "dc_hct116",
+          "dc_hela",
+          "dc_hl60",
+          "depmap"
+        ]
+      ],
+      "modularity": 0.1071
+    },
+    "2": {
+      "communities": [
+        [
+          "crispron",
+          "crisprscan",
+          "dc_hct116",
+          "dc_hela",
+          "dc_hl60",
+          "depmap"
+        ],
+        [
+          "dc_hek293t",
+          "deephf_wt",
+          "deepspcas9",
+          "fcres",
+          "sgdesigner",
+          "v1"
+        ]
+      ],
+      "modularity": 0.1071
+    }
+  }
+}
