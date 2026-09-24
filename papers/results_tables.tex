@@ -4,11 +4,12 @@ v1 & 0.458 & fcres: 0.434, deephf\_wt: 0.123 & 0.179 \\
 deephf\_wt & 0.732 & fcres: 0.137, v1: 0.166 & 0.580 \\
 \hline\end{tabular}\end{table}
 \begin{table}[h]\centering\caption{Cross-dataset generalization, CNN (2 seeds, 6-epoch compute budget; within-dataset numbers are undertrained relative to Table 1). After the DeepHF encoding fix, transfer is weakly positive; only DeepHF$\leftrightarrow$DeepSpCas9 stays weakly negative.}\label{tab:crosscnn}\begin{tabular}{lccc}\hline Train & Within & Cross & Gap \\\hline
-fcres & 0.229 & v1: 0.242, deephf\_wt: 0.158, deepspcas9: 0.245, crispron: 0.054 & 0.055 \\
-v1 & 0.217 & fcres: 0.162, deephf\_wt: 0.041, deepspcas9: 0.189, crispron: 0.024 & 0.113 \\
-deephf\_wt & 0.635 & fcres: 0.073, v1: 0.098, deepspcas9: -0.083, crispron: -0.027 & 0.620 \\
-deepspcas9 & 0.498 & fcres: 0.245, v1: 0.241, deephf\_wt: -0.087, crispron: 0.060 & 0.383 \\
-crispron & 0.063 & fcres: 0.158, v1: 0.144, deephf\_wt: 0.102, deepspcas9: 0.267 & -0.105 \\
+fcres & 0.229 & v1: 0.242, deephf\_wt: 0.158, deepspcas9: 0.245, crispron: 0.054, sgdesigner: 0.359 & 0.018 \\
+v1 & 0.217 & fcres: 0.162, deephf\_wt: 0.041, deepspcas9: 0.189, crispron: 0.024, sgdesigner: 0.234 & 0.087 \\
+deephf\_wt & 0.635 & fcres: 0.073, v1: 0.098, deepspcas9: -0.083, crispron: -0.027, sgdesigner: -0.036 & 0.630 \\
+deepspcas9 & 0.498 & fcres: 0.245, v1: 0.241, deephf\_wt: -0.087, crispron: 0.060, sgdesigner: 0.459 & 0.314 \\
+crispron & 0.063 & fcres: 0.158, v1: 0.144, deephf\_wt: 0.102, deepspcas9: 0.267, sgdesigner: 0.397 & -0.151 \\
+sgdesigner & 0.328 & fcres: 0.135, v1: 0.109, deephf\_wt: -0.062, deepspcas9: 0.270, crispron: 0.058 & 0.226 \\
 \hline\end{tabular}\end{table}
 \begin{table}[h]\centering\caption{Pooling mitigation attempt (gap 1, 3 seeds).}\label{tab:pooled}\begin{tabular}{lc}\hline Training & DeepHF Spearman \\\hline
 Doench-pooled & 0.118 \\

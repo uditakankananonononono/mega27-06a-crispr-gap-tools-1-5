@@ -258,10 +258,23 @@ et al.\ 2019) -- to the CNN matrix (Table~\ref{tab:crosscnn}) sharpens
 the picture: DeepSpCas9 is highly learnable within itself
 ($\rho=0.498$), transfers \emph{positively} to and from the Doench
 family ($0.18$--$0.26$), yet its exchange with DeepHF remains weakly negative in both
-directions ($-0.08$ and $-0.09$; 5-dataset matrix, two seeds, identical
-harness). The earlier stronger anti-correlation ($-0.12$/$-0.22$) was
-partly an artifact of the DeepHF sequence-encoding bug below; what
-survives is a weak negative residue specific to the DeepHF assay pair.
+directions ($-0.08$ and $-0.09$). The earlier stronger anti-correlation
+($-0.12$/$-0.22$) was partly an artifact of the DeepHF sequence-encoding
+bug below. Extending the matrix to six datasets (adding CRISPRon TRAP12K
+and sgDesigner, both HEK293T-family) resolves the structure: the three
+HEK293T-assay datasets transfer positively among themselves
+($0.19$--$0.46$) and with the Doench family ($0.02$--$0.36$), while
+DeepHF \emph{as a source} transfers weakly negative to all three
+HEK293T-cluster datasets ($-0.03$ to $-0.08$); transfer \emph{into}
+DeepHF is mixed ($-0.09$ from DeepSpCas9, $-0.06$ from sgDesigner,
+$+0.10$ from CRISPRon). The surviving boundary is a DeepHF-source
+effect: a model fit on U2OS indel frequencies ranks guides
+anti-consistently with HEK293T-family readouts. Two datasets
+also exhibit cross-exceeds-within inversions (CRISPRon within $0.06$ but
+$0.27$ to DeepSpCas9; sgDesigner within $0.33$ but $0.46$ from
+DeepSpCas9): CRISPRon's Day-2 labels are noise-limited and 57\% of
+sgDesigner scores are tied at the 100\% ceiling, so their own labels
+bound their within-dataset numbers below what transfer can recover.
 
 \subsection{Data-integrity audit: the DeepHF encoding bug}
 \label{sec:encoding-audit}

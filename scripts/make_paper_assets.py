@@ -92,9 +92,9 @@ def _esc(tex: str) -> str:
 
 
 def table_crossdata_cnn():
-    if not os.path.exists(f"{R}/crossdata_cnn_5ds.json"):
+    if not os.path.exists(f"{R}/crossdata_cnn_6ds.json"):
         return ""
-    d = json.load(open(f"{R}/crossdata_cnn_5ds.json"))["summary"]["cnn"]
+    d = json.load(open(f"{R}/crossdata_cnn_6ds.json"))["summary"]["cnn"]
     rows = []
     for train, v in d.items():
         cross = ", ".join(f"{o}: {s2:.3f}" for o, s2 in v["cross_mean"].items())

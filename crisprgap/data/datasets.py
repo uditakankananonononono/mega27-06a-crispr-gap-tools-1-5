@@ -167,6 +167,31 @@ def load_crispron(sheet: str = "SpCas9_eff_Day 2", max_n: int | None = None,
                            source="crispron_trap12k_" + sheet.lower().replace(" ", "_"))
 
 
+def load_sgdesigner(max_n: int | None = None, seed: int = 0) -> "EfficacyDataset":
+    """sgDesigner training dataset (Hiranniramol et al. 2020, Bioinformatics
+    36:2684, Suppl. Table 2): 1,309 plasmid-library sgRNAs with measured
+    edit efficiency in human cells. Extended targets are 48-mers laid out
+    as 16 + 20 (guide) + 3 (PAM) + 9; we extract the canonical 30-mer
+    (4+20+3+3) window at offset 12 to align with the other datasets.
+    """
+    import pandas as pd
+    path = os.path.join(DATA_DIR, "raw", "public_data_crisprCas9", "data",
+                        "sgDesigner", "Supplementary Tables 1-5.xlsx")
+    df = pd.read_excel(path, sheet_name="Supplementary Table 2", skiprows=2)
+    df.columns = ["efficiency", "grna", "extended"]
+    df = df.dropna(subset=["efficiency", "grna", "extended"])
+    seqs = [str(e).upper().replace("U", "T")[12:42] for e in df["extended"]]
+    keep = [i for i, s in enumerate(seqs) if len(s) == 30 and set(s) <= set("ACGT")]
+    seqs = [seqs[i] for i in keep]
+    scores = np.clip(df["efficiency"].to_numpy(dtype=np.float32)[keep] / 100.0, 0.0, 1.0)
+    if max_n is not None and len(seqs) > max_n:
+        rng = np.random.default_rng(seed)
+        idx = np.sort(rng.choice(len(seqs), max_n, replace=False))
+        seqs = [seqs[i] for i in idx]
+        scores = scores[idx]
+    return EfficacyDataset(sequences=seqs, scores=scores, source="sgdesigner_plasmid")
+
+
 PEGRNA_NUMERIC_COLS = (
     "Correction_Length", "Correction_Deletion", "Correction_Insertion", "Correction_Replacement",
     "RToverhangmatches", "RToverhanglength", "RTlength", "PBSlength",
