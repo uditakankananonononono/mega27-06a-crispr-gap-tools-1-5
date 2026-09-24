@@ -662,6 +662,17 @@ quantifies the drop directly: in-vitro read counts rank-order cellular
 indel rates at Spearman $0.577$, and only 17\% of in-vitro-detected
 sites reach $>0.1\%$ cellular indel
 (\texttt{results/changeseq\_cellular.json}).
+\paragraph{Bulge-carrying off-targets in cells (TAPE-seq).} TAPE-seq
+(Kim 2022, Nat Commun 10.1038/s41467-022-35743-y, Suppl.\ Data 3;
+prime-editor off-targets, cell-based, absent from crisprSQL) types each
+site's bulge explicitly. Across 74 off-targets of seven targets, 19\%
+carry an RNA or DNA bulge (7 each; \texttt{results/tapeseq\_bulges.json})
+-- the same order as the 34.9\% indel-carrying share in crisprSQL's
+cellular studies -- and mismatch counts run 1--4. Read-depth differences
+between bulge and non-bulge sites are not resolvable at $n=74$ (MWU
+$p=0.67$); the honest content is the prevalence number: roughly a fifth
+to a third of cellular off-targets sit in the substitution-only scorers'
+blind spot.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
