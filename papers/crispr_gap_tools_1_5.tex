@@ -332,17 +332,24 @@ ran the screen, not which cell line or which label -- is the dominant
 predictor of transferability, and the two communities are separated by
 exactly one editorial boundary (Wang 2014 / Xu 2015 vs the
 HEK-centered studies). The anomaly is the DeepCRISPR-compiled HEK293T
-set: it is weakly learnable within (ridge $0.161$) yet
-\emph{anti-correlated with all ten other datasets} (out
-$-0.24$--$-0.03$; in $-0.28$--$-0.06$), including its own Wang-family
-siblings (HCT116$\to$dc\_hek293t $-0.13$, HeLa$\to$ $-0.12$). A
+set: it is weakly learnable within (ridge $0.161$) and
+\emph{anti-correlated with nine of the ten other datasets} (out
+$-0.24$--$-0.06$; in $-0.28$--$-0.06$), including its own Wang-family
+siblings (HCT116$\to$dc\_hek293t $-0.13$, HeLa$\to$ $-0.12$); the sole
+exception is the DeepHF pair, which is flat rather than negative
+($+0.03$ out, $0.00$ in). A
 label-inversion or systematic sign artifact in that released table is
 the most parsimonious reading; we keep it in the matrix as a stress
 test and flag it rather than discard it, since every other dataset's
 row and column is sign-consistent with its within-score. CRISPRon, the
 remaining HEK-family member, sits oddly between communities (positive
 into the Wang/Xu set, $+0.17$--$+0.31$, near-zero out of it) --
-unresolved.
+unresolved. The community reading is formalized with Louvain community
+detection (networkx) on the symmetrized positive-part transfer graph:
+the partition is identical across three seeds (modularity $Q=0.295$),
+placing the four HEK-family datasets plus dc\_hek293t in one community
+and the Wang/Xu screens, CRISPRon and CRISPRscan in the other
+(\texttt{results/transfer\_communities.json}).
 
 \subsection{Data-integrity audit: the DeepHF encoding bug}
 \label{sec:encoding-audit}
