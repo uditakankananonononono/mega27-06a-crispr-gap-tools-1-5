@@ -1,0 +1,26 @@
+{
+ "n_guides": 53937,
+ "within_cv": {
+  "wt": 0.76,
+  "esp": 0.741,
+  "hf1": 0.73
+ },
+ "transfer": {
+  "wt_to_esp": 0.593,
+  "wt_to_hf1": 0.559,
+  "esp_to_wt": 0.614,
+  "esp_to_hf1": 0.654,
+  "hf1_to_wt": 0.562,
+  "hf1_to_esp": 0.657
+ },
+ "pairwise_spearman": {
+  "wt_esp": 0.745,
+  "wt_hf1": 0.726,
+  "esp_hf1": 0.822
+ },
+ "hf1_retention": {
+  "frac_gt80pct": 0.237,
+  "frac_lt20pct": 0.046,
+  "median": 0.696
+ }
+}
