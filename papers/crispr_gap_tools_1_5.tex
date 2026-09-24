@@ -673,6 +673,20 @@ between bulge and non-bulge sites are not resolvable at $n=74$ (MWU
 $p=0.67$); the honest content is the prevalence number: roughly a fifth
 to a third of cellular off-targets sit in the substitution-only scorers'
 blind spot.
+\paragraph{Mismatch-count decay in a new cellular corpus (Extru-seq).}
+Extru-seq's targeted amplicon validation (Kim lab 2022, Genome Biology
+10.1186/s13059-022-02842-4, Additional File 5; 309 candidate sites
+across seven human and mouse targets, 19-nt spacers, absent from
+crisprSQL) gives an independent cellular decay curve
+(\texttt{results/extruseq\_validation.json}): validation rates fall from
+89\% (one mismatch) to 82\% (two), 48\% (three), 26\% (four) and 0\% at
+seven or more; mismatch count correlates with indel rate at
+Spearman $\rho=-0.586$. The seed-versus-distal contrast does not
+separate here (MWU $p=0.87$, but only 15 seed-only sites), so the
+classical seed hierarchy is not independently confirmed at this sample
+size. Because the spacers are 19-nt, the 20-mer CFD matrix does not
+apply; we report the count-based curve rather than forcing an
+approximation.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch

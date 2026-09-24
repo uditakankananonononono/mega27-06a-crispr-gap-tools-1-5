@@ -1,0 +1,78 @@
+{
+ "source": "Extru-seq Kim lab 2022 Genome Biology 10.1186/s13059-022-02842-4 MOESM5",
+ "n_sites": 309,
+ "n_targets": 7,
+ "n_validated": 161,
+ "val_rate": 0.521,
+ "n_human": 234,
+ "n_mouse": 75,
+ "mismatch_curve": {
+  "0": {
+   "n": 11,
+   "val_rate": 1.0,
+   "median_indel": 0.2177
+  },
+  "1": {
+   "n": 28,
+   "val_rate": 0.893,
+   "median_indel": 0.07717139761530242
+  },
+  "2": {
+   "n": 74,
+   "val_rate": 0.824,
+   "median_indel": 0.029271009422499515
+  },
+  "3": {
+   "n": 79,
+   "val_rate": 0.481,
+   "median_indel": 0.0007581795476586687
+  },
+  "4": {
+   "n": 86,
+   "val_rate": 0.256,
+   "median_indel": 0.0002
+  },
+  "5": {
+   "n": 14,
+   "val_rate": 0.214,
+   "median_indel": 0.0002
+  },
+  "6": {
+   "n": 10,
+   "val_rate": 0.1,
+   "median_indel": 0.0
+  },
+  "7": {
+   "n": 1,
+   "val_rate": 0.0,
+   "median_indel": 0.0
+  },
+  "8": {
+   "n": 4,
+   "val_rate": 0.0,
+   "median_indel": 7.06343439008795e-05
+  },
+  "9": {
+   "n": 1,
+   "val_rate": 0.0,
+   "median_indel": 5.973236500422285e-05
+  },
+  "10": {
+   "n": 1,
+   "val_rate": 0.0,
+   "median_indel": 2.964861018850655e-05
+  }
+ },
+ "spearman_mm_indel": {
+  "rho": -0.586,
+  "p": 6.74245446727125e-30
+ },
+ "seed_vs_distal": {
+  "n_seed": 15,
+  "n_distal": 170,
+  "median_seed": 0.0069576392619106605,
+  "median_distal": 0.009766290576025002,
+  "mwu_p": 0.8720088161000709
+ },
+ "spacer_note": "19-nt spacers; CFD 20-mer matrix not applicable"
+}
