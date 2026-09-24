@@ -1,0 +1,12 @@
+{
+  "fcres_to_deephf_transfer": {
+    "mean": 0.03423085294397529,
+    "ci95": [
+      0.025928448004150558,
+      0.04240587413023156
+    ]
+  },
+  "within_deephf_reference": 0.728,
+  "bootstrap_reps": 400,
+  "n": 55604
+}
