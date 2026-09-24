@@ -1,0 +1,23 @@
+{
+ "n_epegrna_x_cellline": 3948,
+ "cell_lines": {
+  "PEmaxKO": 1974,
+  "PEmax": 1974
+ },
+ "eff_median": 0.3804,
+ "purity_median": 0.895,
+ "n_with_position": 3836,
+ "spearman_eff_vs": {
+  "pbs_len": -0.146,
+  "rtt_len": -0.055,
+  "edit_pos": -0.001
+ },
+ "spearman_eff_vs_purity": 0.856,
+ "pemax_vs_pemaxKO": {
+  "n": 1974,
+  "spearman": 0.744,
+  "median_pemax": 0.0788,
+  "median_pemaxko": 0.7084,
+  "median_ratio_ko_over_wt": 7.141
+ }
+}
