@@ -19,8 +19,8 @@ figure in this paper) completes in under one hour on this hardware.
 \texttt{github.com/dagrate/public\_data\_crisprCas9}
 (\texttt{data/deepHF/\{wt,esp,hf\}\_seq\_data\_array.pkl}); retrieved
 2026-09-24. The three arrays are \emph{not} in a common guide order;
-cross-screen analyses match guides by sequence string (54{,}279 WT--HF1
-matches). An index-based pairing produces spurious null concordance and
+cross-screen analyses match guides by sequence string (53{,}937 three-way
+matched guides). An index-based pairing produces spurious null concordance and
 was caught and corrected during figure review.
 \item \textbf{crisprSQL}: release 100720 from \texttt{crisprsql.com};
 25{,}632 guide--site pairs, 17 studies.
@@ -39,8 +39,15 @@ python scripts/run_crossdata_cnn.py        # gap 1 CNN transfer matrix
 python -m crisprgap.train_offtarget        # gap 2 GNN + baselines
 python -m crisprgap.train_offtarget_ablation  # gaps 4-5 channels
 python -m crisprgap.train_pegrna           # gap 3 ridge/scratch/transfer
-python -m pytest tests/                    # 40 hermetic tests, offline
+python -m pytest tests/                    # 61 hermetic tests, offline
 python scripts/make_paper_assets.py        # tables and figures from results/
+python scripts/make_audit_tables.py        # routing + per-seed ablation tables
+python experiments/study_routing.py        # gap-2 routing audit (falsification)
+python experiments/ablation_multiseed.py   # gaps 4-5 five-seed aggregate
+python experiments/rna_features_pegrna.py finalize  # seqfold/primer3 features
+python -m crisprgap cfd <wt23> <off23>     # CLI: CFD score (JSON out)
+python -m crisprgap mit <guide> <off>      # CLI: MIT score (JSON out)
+python -m crisprgap calibrate scores.csv --fit platt
 \end{verbatim}
 Every number in the paper is regenerated from \texttt{results/*.json} by
 \texttt{make\_paper\_assets.py}; no number is typed by hand. Split seeds,
@@ -50,7 +57,11 @@ group keys and model seeds are logged in each JSON sidecar.
 Preserved negatives: (i) CNN negative transfer Doench$\to$DeepHF
 ($-0.25$); (ii) pooled training fails both directions; (iii) pegRNA
 Cas9-transfer never beats scratch at any $n \in \{250, 1000, 4000\}$ in
-either cell line; (iv) epigenetic features alone do not improve
-off-target AUROC; (v) the crisprSQL-derived PAM-activity atlas ties CFD
-out-of-sample; (vi) ViennaRNA MFE features add nothing to the portability
-model ($+0.0002$) or to pegRNA prediction ($+0.0002$).
+either cell line; (iv) PAM and chromatin channels do not beat
+seq-only beyond split noise (five seeded splits); (v) the
+crisprSQL-derived PAM-activity atlas ties CFD out-of-sample; (vi) three
+thermodynamic feature channels (ViennaRNA MFE, seqfold $\Delta G$,
+primer3 $T_m$) add nothing to pegRNA prediction ($\le 10^{-4}$
+Spearman); (vii) study routing on crisprSQL is falsified (router
+$=$ always-MIT; oracle headroom $0.001$); (viii) torch init alone spans
+AUROC $0.530$--$0.606$ and ECE $0.209$--$0.389$ on a fixed split.
