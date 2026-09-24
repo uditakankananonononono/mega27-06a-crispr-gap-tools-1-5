@@ -114,3 +114,46 @@ def load_deephf(variant: str = "wt", max_n: int | None = None, seed: int = 0) ->
         seqs = [seqs[i] for i in idx]
         scores = scores[idx]
     return EfficacyDataset(sequences=seqs, scores=scores, source=f"deephf_{variant}")
+
+
+PEGRNA_NUMERIC_COLS = (
+    "Correction_Length", "Correction_Deletion", "Correction_Insertion", "Correction_Replacement",
+    "RToverhangmatches", "RToverhanglength", "RTlength", "PBSlength",
+    "RTmt", "RToverhangmt", "PBSmt", "protospacermt", "extensionmt",
+    "deepeditposition", "protospacerlocation_only_initial", "PBSlocation",
+    "RT_initial_location", "RT_mutated_location", "Editing_Position",
+)
+
+
+@dataclass
+class PegrnaDataset:
+    sequences: list          # 99-mer wide initial target context
+    mutated: list            # 99-mer wide mutated target
+    numerics: np.ndarray     # (n, len(PEGRNA_NUMERIC_COLS) + 3) float32: raw numerics + Correction_Type one-hot
+    targets: dict            # {"HEK": (n,) float32, "K562": (n,) float32} edited fractions
+    grp_ids: list            # pegRNA group ids for grouped splits
+    numeric_col_names: list = field(default_factory=list)
+    source: str = "pridict2_23k_v1"
+
+
+def load_pridict() -> PegrnaDataset:
+    """PRIDICT2 processed pegRNA library (Koeppel et al., bioRxiv 2023.10.09.561414;
+    underlying screens from Mathis et al. 2023, Nat Biotechnol): 22,956 pegRNAs,
+    99-mer wide target contexts, engineered features, and measured editing
+    efficiencies in HEK293T and K562 cells. Basis of the gap-3 transfer tool.
+    """
+    df = pd.read_csv(os.path.join(DATA_DIR, "pridict", "data_23k_v1.csv"))
+    ctype = pd.get_dummies(df["Correction_Type"]).astype(np.float32)
+    num = df[list(PEGRNA_NUMERIC_COLS)].astype(np.float32)
+    numerics = np.concatenate([num.to_numpy(), ctype.to_numpy()], axis=1)
+    names = list(PEGRNA_NUMERIC_COLS) + [f"ctype_{c}" for c in ctype.columns]
+    assert not np.isnan(numerics).any(), "unexpected NaN in pegRNA numerics"
+    return PegrnaDataset(
+        sequences=df["wide_initial_target"].tolist(),
+        mutated=df["wide_mutated_target"].tolist(),
+        numerics=numerics,
+        targets={"HEK": df["HEKaverageedited_clamped"].to_numpy(dtype=np.float32),
+                 "K562": df["K562averageedited_clamped"].to_numpy(dtype=np.float32)},
+        grp_ids=df["grp_id"].tolist(),
+        numeric_col_names=names,
+    )
