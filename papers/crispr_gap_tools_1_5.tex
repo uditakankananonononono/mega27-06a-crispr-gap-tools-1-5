@@ -1531,6 +1531,24 @@ eHAV (0.76\%) $>$ tevopreQ1 (0.49\%) $>$ tevo2 (0.25\%) at the top
 dose, and editor variants rank PE6c (50.4\%) $>$ PE6c-La (39.4\%)
 $>$ PEmax-La (24.3\%) $>$ PEmax (12.4\%) with indels tracking
 editing proportionally.
+Quadruple-pegRNA large-insertion editing (Nature 2026,
+10.1038/s41586-026-10395-w, MOESM6--8; 6 loci x 1.6--26\,kb payloads x
+5 cell lines) shows the payload-size penalty is a property of the
+vector, not the reaction
+(\texttt{results/quad\_pegrna\_insertion.json}). With the LV4
+vector, mean insertion falls from 15.7\% (1.6\,kb) to 5.0\%
+(9.5\,kb) --- a 3.3-fold decay; with the evolved cV6 vector the same
+panel is flat (29.3, 28.5, 28.0\%), a 1.09-fold decay, and cV6 wins
+all 36 locus-size-orientation cells (paired 3.2-fold). Even 15\,kb
+payloads retain 24--40\% and 26\,kb payloads 10--18\% per locus.
+Efficiency does not transfer across cell lines in magnitude (means
+28.6\% HEK293T, 21.6\% Hepa1-6, 9.0\% Jurkat, 6.1\% Huh-7,
+5.0\% mESCs; locus-rank HEK293T vs Huh-7 $\rho=0.50$ on the shared
+panel), a further gap-1 transfer caution. Method comparisons on the
+same targets: eePASSIGE 41.9\% vs eePASTE 2.2\% (19.5-fold), and cV6
+vs evoCAST 7.2-fold averaged over four loci. The 5-pegRNA off-target
+indel panel stays below 0.5\% at every candidate site (on-target
+indel 0.41--0.54\%), an honest low-signal negative.
 
 
 
