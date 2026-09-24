@@ -1,0 +1,13 @@
+{
+  "dataset": "ENCODE ENCSR000EKN / ENCFF526LYS (K562 DNase-seq, hg19, read-depth normalized)",
+  "rows": "crisprSQL K562 hg19, all loci, +/-500bp mean",
+  "n_ok": 1271,
+  "n_pos": 1236,
+  "n_neg": 35,
+  "auroc": 0.44241793804900603,
+  "median_pos": 0.04965696464604361,
+  "median_neg": 0.05821338692523262,
+  "mannwhitney_p": 0.24481793674346086,
+  "spearman_dnase_vs_cleavage_positives": 0.0749819650968932,
+  "spearman_p": 0.008360063100898152
+}

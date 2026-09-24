@@ -824,7 +824,13 @@ is therefore \emph{structurally unanswerable} on the largest curated
 corpus: the well-powered slices lack chromatin by design, and the
 chromatin-relevant slices lack negatives. Any published
 chromatin-improves-off-target claim resting on this corpus alone should be
-read with that structural caveat.
+read with that structural caveat. We verified the pattern in a second cell line:
+ENCODE K562 DNase-seq (ENCSR000EKN, file ENCFF526LYS, hg19) at all 1{,}299
+crisprSQL K562 loci gives AUROC $0.44$ on the 35 negatives
+(Mann--Whitney $p=0.24$) and a Spearman of only $0.075$ ($p=0.008$)
+between DNase signal and cleavage frequency across the 1{,}236 positives
+(\texttt{results/gap5\_k562\_dnase.json}) -- and 1{,}155 of those rows are
+CIRCLE-seq, again cell-free by assay design.
 \input{ablation_perseed_table.tex}
 \input{results_tables.tex}
 
