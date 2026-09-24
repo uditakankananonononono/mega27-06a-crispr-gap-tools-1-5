@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  25 SEP 2026 02:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  25 SEP 2026 02:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -591,21 +591,18 @@ Overfull \hbox (181.07483pt too wide) in paragraph at lines 728--741
 son\OT1/ptm/m/n/12 ).
  []
 
-(./routing_table.tex)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig_pegrna_scaling.pdf, id=461, 303.534pt x 216.81pt>
+(./routing_table.tex) [25]
+<fig_pegrna_scaling.pdf, id=465, 303.534pt x 216.81pt>
 File: fig_pegrna_scaling.pdf Graphic file (type pdf)
 <use fig_pegrna_scaling.pdf>
-Package pdftex.def Info: fig_pegrna_scaling.pdf  used on input line 771.
+Package pdftex.def Info: fig_pegrna_scaling.pdf  used on input line 785.
 (pdftex.def)             Requested size: 258.36668pt x 184.54741pt.
-[25]
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26] [27 <./fig_pegrna_scaling.pdf>]
-Overfull \hbox (3.05185pt too wide) in paragraph at lines 870--880
+Overfull \hbox (3.05185pt too wide) in paragraph at lines 884--894
  \OT1/ptm/b/n/12 Edit po-si-tion and mul-ti-plic-ity (DeepPE Li-brary 2).[] \OT
 1/ptm/m/n/12 The com-pan-ion po-si-tion/type li-brary (6,152
  []
@@ -613,47 +610,52 @@ Overfull \hbox (3.05185pt too wide) in paragraph at lines 870--880
 <figs/fig_ablation_bars.png, id=526, 397.485pt x 231.264pt>
 File: figs/fig_ablation_bars.png Graphic file (type png)
 <use figs/fig_ablation_bars.png>
-Package pdftex.def Info: figs/fig_ablation_bars.png  used on input line 884.
+Package pdftex.def Info: figs/fig_ablation_bars.png  used on input line 898.
 (pdftex.def)             Requested size: 281.85587pt x 163.99391pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig_pam_distribution.pdf, id=527, 303.534pt x 216.81pt>
+[28]
+<fig_pam_distribution.pdf, id=530, 303.534pt x 216.81pt>
 File: fig_pam_distribution.pdf Graphic file (type pdf)
 <use fig_pam_distribution.pdf>
-Package pdftex.def Info: fig_pam_distribution.pdf  used on input line 891.
+Package pdftex.def Info: fig_pam_distribution.pdf  used on input line 905.
 (pdftex.def)             Requested size: 258.36668pt x 184.54741pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Overfull \hbox (0.78506pt too wide) in paragraph at lines 909--926
+\OT1/ptm/b/n/12 find-ing \OT1/ptm/m/n/12 (Ta-ble 10[]): seq-only $\OT1/ztmcm/m/
+n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 590[]0\OML/ztmcm/m/it/12 :\OT1/ztmc
+m/m/n/12 094$\OT1/ptm/m/n/12 , PAM $\OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1
+/ztmcm/m/n/12 528[]0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 119$\OT1/ptm/m/n/12 ,
+ epi-gen $\OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 587[]0\OML/z
+tmcm/m/it/12 :\OT1/ztmcm/m/n/12 092$\OT1/ptm/m/n/12 , PAM+epigen
+ []
 
-[28]
-Overfull \hbox (97.11606pt too wide) in paragraph at lines 913--933
+[29 <./figs/fig_ablation_bars.png> <./fig_pam_distribution.pdf>]
+Overfull \hbox (97.11606pt too wide) in paragraph at lines 927--947
 \OT1/ptm/m/n/12 ESC), half with NAG-variant PAMs -- an in-de-pen-dent gap-4 tes
 t out-side crisprSQL (\OT1/cmtt/m/n/12 results/koike[]yusa[]nag.json\OT1/ptm/m/
 n/12 ).
  []
 
-[29 <./figs/fig_ablation_bars.png>]
-Overfull \hbox (3.52243pt too wide) in paragraph at lines 978--991
+[30]
+Overfull \hbox (3.52243pt too wide) in paragraph at lines 992--1005
 \OT1/ptm/m/n/12 (Xi-ang 2021, Nat Com-mun 10.1038/s41467-021-23576-0, MOESM4; 1
 1,446 gR-NAs with matched
  []
 
-[30 <./fig_pam_distribution.pdf>]
-Overfull \hbox (2.93439pt too wide) in paragraph at lines 992--1013
+
+Overfull \hbox (2.93439pt too wide) in paragraph at lines 1006--1027
 \OT1/ptm/m/n/12 DICT2.0 Li-brary 1 (Mathis 2023, Nat Biotech-nol 10.1038/s41587
 -022-01613-7, MOESM5; 92,423
  []
 
 
-Overfull \hbox (92.09561pt too wide) in paragraph at lines 992--1013
+Overfull \hbox (92.09561pt too wide) in paragraph at lines 1006--1027
 \OT1/ptm/m/n/12 pe-gR-NAs) yields ridge CV Spear-man 0.523 from 19 design-only 
 fea-tures (\OT1/cmtt/m/n/12 results/pridict2[]pechromatin.json\OT1/ptm/m/n/12 )
 ;
  []
 
 
-Overfull \hbox (52.26651pt too wide) in paragraph at lines 992--1013
+Overfull \hbox (52.26651pt too wide) in paragraph at lines 1006--1027
 \OT1/cmtt/m/n/12 results/pe[]cross[]library[]transfer.json\OT1/ptm/m/n/12 ) giv
 es DeepPE$\OMS/ztmcm/m/n/12 !$\OT1/ptm/m/n/12 PRIDICT2 0.194 and PRIDICT2$\OMS/
 ztmcm/m/n/12 !$\OT1/ptm/m/n/12 DeepPE
@@ -663,29 +665,29 @@ ztmcm/m/n/12 !$\OT1/ptm/m/n/12 DeepPE
 File: figs/fig_pam_variant_heatmap.png Graphic file (type png)
 <use figs/fig_pam_variant_heatmap.png>
 Package pdftex.def Info: figs/fig_pam_variant_heatmap.png  used on input line 1
-027.
+041.
 (pdftex.def)             Requested size: 399.29463pt x 239.58345pt.
-
-Overfull \hbox (140.95pt too wide) in paragraph at lines 1052--1068
+[31]
+Overfull \hbox (140.95pt too wide) in paragraph at lines 1066--1082
 \OT1/cmtt/m/n/12 wgEncodeBroadHistoneK562H3k27acStdSig\OT1/ptm/m/n/12 ), H3K9me
 3 (het-e-rochro-matin, \OT1/cmtt/m/n/12 wgEncodeBroadHistoneK562H3k9me3StdSig\O
 T1/ptm/m/n/12 )
  []
 
-[31]
-Overfull \hbox (5.00961pt too wide) in paragraph at lines 1069--1146
+
+Overfull \hbox (5.00961pt too wide) in paragraph at lines 1083--1160
 \OT1/ptm/m/n/12 cell line with enough neg-a-tives for a pow-ered test is the Ca
 meron SITE-Seq cor-pus (1,630 HEK293T
  []
 
 
-Overfull \hbox (12.92822pt too wide) in paragraph at lines 1069--1146
+Overfull \hbox (12.92822pt too wide) in paragraph at lines 1083--1160
 \OT1/ptm/m/n/12 (ENCFF745HXR), H3K27me3 (ENCFF312LYO) and H3K9me3 (ENCFF834YLI)
  ChIP fold-change
  []
 
 
-Overfull \hbox (139.73164pt too wide) in paragraph at lines 1069--1146
+Overfull \hbox (139.73164pt too wide) in paragraph at lines 1083--1160
 \OT1/ptm/m/n/12 388 loci; two HAP1 tracks: DNase ENCFF095QLZ, ATAC ENCFF559JGD 
 at 160 loci; \OT1/cmtt/m/n/12 results/gap5[]encode[]sweep2.json\OT1/ptm/m/n/12 
 )
@@ -695,33 +697,35 @@ at 160 loci; \OT1/cmtt/m/n/12 results/gap5[]encode[]sweep2.json\OT1/ptm/m/n/12
 <figs/karyotype_crisprsql.png, id=594, 628.749pt x 628.2672pt>
 File: figs/karyotype_crisprsql.png Graphic file (type png)
 <use figs/karyotype_crisprsql.png>
-Package pdftex.def Info: figs/karyotype_crisprsql.png  used on input line 1149.
+Package pdftex.def Info: figs/karyotype_crisprsql.png  used on input line 1163.
 
 (pdftex.def)             Requested size: 338.22418pt x 337.97462pt.
 
-Overfull \hbox (24.22083pt too wide) in paragraph at lines 1158--1167
+Overfull \hbox (24.22083pt too wide) in paragraph at lines 1172--1181
  \OT1/ptm/b/n/12 As-sem-bly har-mo-niza-tion au-dit.[] \OT1/ptm/m/n/12 pyliftov
 er (UCSC hg19$\OMS/ztmcm/m/n/12 !$\OT1/ptm/m/n/12 hg38 chain) lifts 9,332 of 9,
 346 crisprSQL
  []
 
 
-Overfull \hbox (0.75845pt too wide) in paragraph at lines 1158--1167
+Overfull \hbox (0.75845pt too wide) in paragraph at lines 1172--1181
 \OT1/ptm/m/n/12 recorded tar-get se-quence ex-actly (\OT1/cmtt/m/n/12 results/l
 iftover[]audit.json\OT1/ptm/m/n/12 ). Two data notes: crisprSQL's
  []
 
-<fig_k562_loess.pdf, id=595, 397.485pt x 245.718pt>
+[34 <./figs/karyotype_crisprsql.png>]
+<fig_k562_loess.pdf, id=599, 397.485pt x 245.718pt>
 File: fig_k562_loess.pdf Graphic file (type pdf)
 <use fig_k562_loess.pdf>
-Package pdftex.def Info: fig_k562_loess.pdf  used on input line 1170.
+Package pdftex.def Info: fig_k562_loess.pdf  used on input line 1184.
 (pdftex.def)             Requested size: 258.36668pt x 159.72229pt.
-(./ablation_perseed_table.tex) (./results_tables.tex
+ (./ablation_perseed_table.tex)
+(./results_tables.tex
 Overfull \hbox (108.60515pt too wide) in paragraph at lines 6--13
  [][] 
  []
 
-) [34 <./figs/karyotype_crisprsql.png>]
+)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -752,7 +756,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <figs/fig_porta_logo.png, id=600, 614.295pt x 260.172pt>
 File: figs/fig_porta_logo.png Graphic file (type png)
 <use figs/fig_porta_logo.png>
-Package pdftex.def Info: figs/fig_porta_logo.png  used on input line 1192.
+Package pdftex.def Info: figs/fig_porta_logo.png  used on input line 1206.
 (pdftex.def)             Requested size: 399.29463pt x 169.11374pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -776,7 +780,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: figs/fig_residual_concordance.png Graphic file (type png)
 <use figs/fig_residual_concordance.png>
 Package pdftex.def Info: figs/fig_residual_concordance.png  used on input line 
-1277.
+1291.
 (pdftex.def)             Requested size: 244.27461pt x 223.91954pt.
 
 
@@ -785,8 +789,8 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <figs/fig_porta_before_after.png, id=653, 664.884pt x 303.534pt>
 File: figs/fig_porta_before_after.png Graphic file (type png)
 <use figs/fig_porta_before_after.png>
-Package pdftex.def Info: figs/fig_porta_before_after.png  used on input line 12
-88.
+Package pdftex.def Info: figs/fig_porta_before_after.png  used on input line 13
+02.
 (pdftex.def)             Requested size: 446.26582pt x 203.72798pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -794,13 +798,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <figs/fig_porta_score_dist.png, id=654, 346.896pt x 289.08pt>
 File: figs/fig_porta_score_dist.png Graphic file (type png)
 <use figs/fig_porta_score_dist.png>
-Package pdftex.def Info: figs/fig_porta_score_dist.png  used on input line 1298
+Package pdftex.def Info: figs/fig_porta_score_dist.png  used on input line 1312
 .
 (pdftex.def)             Requested size: 234.8775pt x 195.7337pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./discussion.tex [37] [38]) (./tools_and_data.tex
+(./discussion.tex [37] [38]) (./tools_and_data.tex [39]
 Overfull \hbox (303.9724pt too wide) in paragraph at lines 11--61
  [][] 
  []
@@ -809,56 +813,55 @@ Overfull \hbox (303.9724pt too wide) in paragraph at lines 11--61
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (538.51935pt too wide) in paragraph at lines 71--153
+Overfull \hbox (538.51935pt too wide) in paragraph at lines 71--154
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 419.75102pt on input line 153.
+LaTeX Warning: Float too large for page by 433.35101pt on input line 154.
 
-[39]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (16.84058pt too wide) in paragraph at lines 156--166
+Overfull \hbox (16.84058pt too wide) in paragraph at lines 157--167
  \OT1/ptm/b/n/12 To-ward the 40-tool / 120-dataset bar.[] \OT1/ptm/m/n/12 Reach
 -able ad-di-tions with gen-uine use in this item: published-
  []
 
 
-Overfull \hbox (17.82321pt too wide) in paragraph at lines 156--166
+Overfull \hbox (17.82321pt too wide) in paragraph at lines 157--167
 \OT1/ptm/m/n/12 model ex-ter-nal val-i-da-tion (PRI-DICT2, CRISPRon, DeepHF BiL
 -STM weights as bench-mark columns),
  []
 
 
-Overfull \hbox (1.98587pt too wide) in paragraph at lines 156--166
+Overfull \hbox (1.98587pt too wide) in paragraph at lines 157--167
 \OT1/ptm/m/n/12 2019/2020 CRISPRon 15k, Xiang-2021, Chari-2015, GUIDE-seq/CIRCL
 E-seq/CHANGE-seq pri-
  []
 
-)
-Overfull \hbox (23.22455pt too wide) in paragraph at lines 168--1308
+[40 <./figs/fig_porta_logo.png>])
+Overfull \hbox (23.22455pt too wide) in paragraph at lines 169--1322
  \OT1/ptm/b/n/12 Ex-am-ined and not in-te-grated (with rea-sons).[] \OT1/ptm/m/
 n/12 Chari 2015 (nmeth.3473): Na-ture ESM MOESM297--
  []
 
-[40 <./figs/fig_porta_logo.png>]
-Overfull \hbox (14.37503pt too wide) in paragraph at lines 1323--1329
+[41]
+Overfull \hbox (14.37503pt too wide) in paragraph at lines 1337--1343
 \OT1/ptm/m/n/12 Each gap ships as a callable tool: \OT1/cmtt/m/n/12 crisprgap.c
 rossdata \OT1/ptm/m/n/12 (gap 1 har-ness), \OT1/cmtt/m/n/12 crisprgap.calibrati
 on
  []
 
 
-Overfull \hbox (9.04047pt too wide) in paragraph at lines 1323--1329
+Overfull \hbox (9.04047pt too wide) in paragraph at lines 1337--1343
 \OT1/ptm/m/n/12 + \OT1/cmtt/m/n/12 crisprgap.models.transfer[]cnn \OT1/ptm/m/n/
 12 (gap 3 pre-dic-tor), \OT1/cmtt/m/n/12 crisprgap.models.offtarget[]v2 \OT1/pt
 m/m/n/12 (gaps
  []
 
-[41] (./repro_appendix.tex [42]
+[42] (./repro_appendix.tex
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
 5.
 
@@ -882,7 +885,7 @@ m/n/12 data/deepHF/\OMS/cmtt/m/n/12 f\OT1/cmtt/m/n/12 wt,esp,hf\OMS/cmtt/m/n/12
  g[]\OT1/cmtt/m/n/12 seq[]data[]array.pkl\OT1/ptm/m/n/12 );
  []
 
-
+[43 <./figs/fig_residual_concordance.png>]
 Overfull \hbox (43.1291pt too wide) in paragraph at lines 27--29
 []\OT1/ptm/b/n/12 PRIDICT2\OT1/ptm/m/n/12 : \OT1/cmtt/m/n/12 data[]23k[]v1.csv 
 \OT1/ptm/m/n/12 from \OT1/cmtt/m/n/12 github.com/uzh-dqbm-cmi/PRIDICT2\OT1/ptm/
@@ -896,7 +899,7 @@ Overfull \hbox (20.71205pt too wide) in paragraph at lines 29--32
 ]Scoring/\OT1/ptm/m/n/12 )
  []
 
-[43 <./figs/fig_residual_concordance.png>]
+
 Overfull \hbox (5.72021pt too wide) in paragraph at lines 51--51
 []\OT1/cmtt/m/n/12 python scripts/make_paper_assets.py        # tables and figu
 res from results/[] 
@@ -920,8 +923,8 @@ Overfull \hbox (11.89522pt too wide) in paragraph at lines 51--51
 d/primer3 features[] 
  []
 
-) [44 <./figs/fig_porta_before_after.png>] (./references.tex [45 <./figs/fig_po
-rta_score_dist.png>] [46]) [47] [48] [49] (./crispr_gap_tools_1_5.aux)
+[44 <./figs/fig_porta_before_after.png>]) (./references.tex [45 <./figs/fig_por
+ta_score_dist.png>] [46]) [47] [48] [49] (./crispr_gap_tools_1_5.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -932,7 +935,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3705 strings out of 480247
  57153 string characters out of 5896151
- 379319 words of memory out of 5000000
+ 375057 words of memory out of 5000000
  21518 multiletter control sequences out of 15000+600000
  521004 words of font info for 139 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -951,7 +954,7 @@ hare/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on crispr_gap_tools_1_5.pdf (49 pages, 1601261 bytes).
+Output written on crispr_gap_tools_1_5.pdf (49 pages, 1601836 bytes).
 PDF statistics:
  765 PDF objects out of 1000 (max. 8388607)
  221 compressed objects within 3 object streams

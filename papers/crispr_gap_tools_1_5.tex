@@ -738,6 +738,20 @@ NIH3T3, the Tracking-seq score predicts cross-context replication
 (top-quartile sites replicate at 76\% vs 23\%, Spearman 0.54,
 $p=3\times10^{-14}$). Off-target catalogues are editor- and
 context-specific; scores rank transferability.
+\paragraph{What fidelity engineering buys (gap 4).} A 2023 variant
+screen (Nat Commun 10.1038/s41467-023-41393-5, MOESM8/9) measures
+amplicon indels for WT and high-fidelity SpCas9 variants on the same
+GUIDE-seq-detected off-targets
+(\texttt{results/hifi\_variants\_offtarget.json}). WT leaves 68\% of its
+off-target amplicons active ($\ge0.1\%$ indel); SpCas9-HF1,
+eSpCas9-plus, evoSpCas9 and B-HypaR-SpCas9 cut median off-target
+activity to 0.2--0.5\% of WT and eliminate 59--79\% of off-targets
+outright, and GUIDE-seq off-target counts drop from 10--85 (WT) to
+0--2 per site. The cost is on-target: mean on-target indel falls to
+71\% (evoSpCas9), 52\% (B-HypaR) and 10\% (B-HeFSpCas9) of WT. The
+fidelity--activity tradeoff is continuous and variant-specific, which
+is why a single shared penalty table (gap 4) cannot describe variant
+off-target behavior.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch

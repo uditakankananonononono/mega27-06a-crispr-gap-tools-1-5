@@ -1,0 +1,272 @@
+{
+ "n_amplicon_variant_pairs": 480,
+ "variants": [
+  "B-HeFSpCas9",
+  "B-HypaR SpCas9",
+  "B-HypaR SpCas9 RNP",
+  "B-HypaR-SpCas9",
+  "B-HypaR-SpCas9 RNP",
+  "B-HypaSpCas9",
+  "B-SpCas9-HF1",
+  "B-WT SpCas9",
+  "B-evo SpCas9",
+  "B-evo SpCas9 RNP",
+  "B-evoSpCas9",
+  "B-evoSpCas9 RNP",
+  "HeFSpCas9",
+  "HiFi SpCas9",
+  "HypaR SpCas9",
+  "HypaR-SpCas9",
+  "SpCas9-HF1",
+  "SpCas9-HF1-plus",
+  "WT SpCas9",
+  "dead SpCas9",
+  "eSpCas9-plus",
+  "evoSpCas9",
+  "evoSpCas9 RNP",
+  "non-targeted 1",
+  "non-targeted 2",
+  "untreated"
+ ],
+ "per_variant": {
+  "eSpCas9-plus": {
+   "n_offtarget_amplicons": 29,
+   "frac_active_ge_0p1": 0.138,
+   "median_retention_vs_wt": 0.004,
+   "frac_eliminated_lt10pct": 0.586,
+   "on_target_mean": 0.535
+  },
+  "B-SpCas9-HF1": {
+   "n_offtarget_amplicons": 30,
+   "frac_active_ge_0p1": 0.067,
+   "median_retention_vs_wt": 0.005,
+   "frac_eliminated_lt10pct": 0.633,
+   "on_target_mean": 0.518
+  },
+  "WT SpCas9": {
+   "n_offtarget_amplicons": 31,
+   "frac_active_ge_0p1": 0.677,
+   "median_retention_vs_wt": 1.0,
+   "frac_eliminated_lt10pct": 0.0,
+   "on_target_mean": 0.559
+  },
+  "B-WT SpCas9": {
+   "n_offtarget_amplicons": 29,
+   "frac_active_ge_0p1": 0.448,
+   "median_retention_vs_wt": 0.7443,
+   "frac_eliminated_lt10pct": 0.172,
+   "on_target_mean": 0.486
+  },
+  "SpCas9-HF1": {
+   "n_offtarget_amplicons": 26,
+   "frac_active_ge_0p1": 0.115,
+   "median_retention_vs_wt": 0.0029,
+   "frac_eliminated_lt10pct": 0.692,
+   "on_target_mean": 0.558
+  },
+  "B-HypaR-SpCas9": {
+   "n_offtarget_amplicons": 24,
+   "frac_active_ge_0p1": 0.083,
+   "median_retention_vs_wt": 0.0015,
+   "frac_eliminated_lt10pct": 0.792,
+   "on_target_mean": 0.293
+  },
+  "evoSpCas9": {
+   "n_offtarget_amplicons": 21,
+   "frac_active_ge_0p1": 0.095,
+   "median_retention_vs_wt": 0.0019,
+   "frac_eliminated_lt10pct": 0.762,
+   "on_target_mean": 0.395
+  },
+  "HeFSpCas9": {
+   "n_offtarget_amplicons": 5,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0018,
+   "frac_eliminated_lt10pct": 0.8,
+   "on_target_mean": 0.138
+  },
+  "untreated": {
+   "n_offtarget_amplicons": 29,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0013,
+   "frac_eliminated_lt10pct": 0.793,
+   "on_target_mean": 0.001
+  },
+  "non-targeted 1": {
+   "n_offtarget_amplicons": 29,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0015,
+   "frac_eliminated_lt10pct": 0.828,
+   "on_target_mean": NaN
+  },
+  "non-targeted 2": {
+   "n_offtarget_amplicons": 29,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0013,
+   "frac_eliminated_lt10pct": 0.793,
+   "on_target_mean": NaN
+  },
+  "HypaR SpCas9": {
+   "n_offtarget_amplicons": 4,
+   "frac_active_ge_0p1": 0.25,
+   "median_retention_vs_wt": 0.378,
+   "frac_eliminated_lt10pct": 0.25,
+   "on_target_mean": 0.441
+  },
+  "B-HypaSpCas9": {
+   "n_offtarget_amplicons": 9,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0357,
+   "frac_eliminated_lt10pct": 0.556,
+   "on_target_mean": 0.33
+  },
+  "HypaR-SpCas9": {
+   "n_offtarget_amplicons": 3,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0013,
+   "frac_eliminated_lt10pct": 1.0,
+   "on_target_mean": 0.529
+  },
+  "B-evoSpCas9": {
+   "n_offtarget_amplicons": 8,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0025,
+   "frac_eliminated_lt10pct": 1.0,
+   "on_target_mean": 0.201
+  },
+  "HiFi SpCas9": {
+   "n_offtarget_amplicons": 6,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.1352,
+   "frac_eliminated_lt10pct": 0.5,
+   "on_target_mean": 0.496
+  },
+  "SpCas9-HF1-plus": {
+   "n_offtarget_amplicons": 3,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.6604,
+   "frac_eliminated_lt10pct": 0.0,
+   "on_target_mean": 0.424
+  },
+  "B-HeFSpCas9": {
+   "n_offtarget_amplicons": 2,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0391,
+   "frac_eliminated_lt10pct": 1.0,
+   "on_target_mean": 0.058
+  },
+  "B-evoSpCas9 RNP": {
+   "n_offtarget_amplicons": 3,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0004,
+   "frac_eliminated_lt10pct": 1.0,
+   "on_target_mean": NaN
+  },
+  "B-HypaR SpCas9 RNP": {
+   "n_offtarget_amplicons": 3,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0008,
+   "frac_eliminated_lt10pct": 1.0,
+   "on_target_mean": 0.192
+  },
+  "evoSpCas9 RNP": {
+   "n_offtarget_amplicons": 6,
+   "frac_active_ge_0p1": 0.0,
+   "median_retention_vs_wt": 0.0062,
+   "frac_eliminated_lt10pct": 1.0,
+   "on_target_mean": 0.383
+  }
+ },
+ "guideseq_offtarget_counts": {
+  "HEK site 1": {
+   "WT SpCas9": 10,
+   "B-HypaR-SpCas9": 0,
+   "evoSpCas9": 0
+  },
+  "HEK site 2": {
+   "WT SpCas9": 3,
+   "B-SpCas9-HF1": 0,
+   "HypaR-SpCas9": 0
+  },
+  "HEK site 3": {
+   "WT SpCas9": 4,
+   "B-HypaSpCas9": 0,
+   "HypaR-SpCas9": 0
+  },
+  "VEGFA site 1": {
+   "WT SpCas9": 27,
+   "B-HypaR-SpCas9": 1,
+   "evoSpCas9": 2,
+   "B-HypaR-SpCas9 RNP": 0,
+   "evoSpCas9 RNP": 1
+  },
+  "DNMT1 site 4": {
+   "WT SpCas9": 40,
+   "evoSpCas9": 0,
+   "B-evoSpCas9": 0
+  },
+  "HPRT38087 site": {
+   "WT SpCas9": 8,
+   "B-SpCas9-HF1": 1,
+   "B-HypaSpCas9": 0
+  },
+  "AR site": {
+   "WT SpCas9": 62,
+   "HypaR-SpCas9": 0,
+   "B-HypaR-SpCas9": 0
+  },
+  "FANCF site 2": {
+   "WT SpCas9": 85,
+   "evoSpCas9": 1,
+   "B-evoSpCas9": 1,
+   "B-evoSpCas9 RNP": 0
+  },
+  "VEGFA site 3": {
+   "WT SpCas9": 85,
+   "B-HypaR-SpCas9": 1,
+   "evoSpCas9": 1,
+   "evoSpCas9 RNP": 0
+  },
+  "CCR5 site 11": {
+   "WT SpCas9": 2,
+   "HeFSpCas9": 1,
+   "B-HeFSpCas9": 0
+  },
+  "VEGFA site 2": {
+   "WT SpCas9": 197,
+   "SpCas9-HF1": 28,
+   "B-evoSpCas9": 2,
+   "B-evoSpCas9 + dRNA3 1:1": 1,
+   "B-evoSpCas9 + dRNA3 6:1": 0
+  },
+  "ERCC2 site 1": {
+   "WT SpCas9": 1,
+   "B-SpCas9-HF1": 1,
+   "B-SpCas9-HF1 repeat": 0,
+   "B-HypaSpCas9": 0
+  },
+  "EGFP site 10": {
+   "WT SpCas9": 2,
+   "eSpCas9": 1,
+   "SpCas9-HF1": 0,
+   "B-SpCas9-HF1": 0
+  },
+  "EGFP site 11": {
+   "WT SpCas9": 1,
+   "HiFi SpCas9": 0
+  },
+  "EGFP site 15": {
+   "WT SpCas9": 3,
+   "eSpCas9": 0,
+   "SpCas9-HF1": 0,
+   "B-SpCas9-Hypa": 0
+  },
+  "EGFP site 43": {
+   "WT SpCas9": 54,
+   "eSpCas9": 8,
+   "SpCas9-HF1": 5,
+   "B-evoSpCas9": 1,
+   "HeFSpCas9": 0
+  }
+ }
+}
