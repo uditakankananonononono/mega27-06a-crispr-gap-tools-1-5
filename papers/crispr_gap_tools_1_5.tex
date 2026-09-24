@@ -841,6 +841,17 @@ features alone do not carry across enzyme variants even with matched
 guides -- variant identity is a distribution shift of its own, and the
 DeepSpCas9variants authors' variant-specific fine-tuning is not
 optional.
+\paragraph{Mismatch tolerance by variant.} The same supplement's
+mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
+\texttt{results/gap4\_mismatch\_tolerance.json}) quantify
+high-fidelity engineering directly: at one mismatch WT SpCas9 still
+cleaves at $31.2\%$ mean (80\% of its on-target $39.1\%$), while
+eSpCas9(1.1) $9.0\%$, SpCas9-HF1 $6.5\%$, HypaCas9 $5.2\%$ and evoCas9
+$2.0\%$ -- a 3--16$\times$ reduction. Sniper-Cas9 is the exception at
+$25.1\%$, barely below WT despite its high-fidelity label. At two
+mismatches WT drops to $8.2\%$ and all fidelity variants sit at
+${\lesssim}2\%$. Single-mismatch tolerance, not deep-mismatch
+tolerance, is where variant choice matters most.
 
 \begin{figure}[t]
 \centering
