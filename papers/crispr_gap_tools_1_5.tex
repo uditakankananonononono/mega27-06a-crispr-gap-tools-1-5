@@ -1128,6 +1128,14 @@ rank correlation holds at $\rho=0.744$ -- MMR status scales efficiency
 broadly without scrambling the ranking; design-feature effects are weak
 (PBS length $\rho=-0.146$, RTT length $-0.055$, edit position $\approx
 0$) and efficiency correlates with purity ($\rho=0.856$).
+Base-editor outcome spectra from the multi-dataset BE study (Nat Commun
+2025, 10.1038/s41467-025-65200-5, MOESM3; 11,484 ABE7.10 + 11,406 BE4
+gRNAs) quantify product diversity (\texttt{results/be\_outcome\_spectrum.json}):
+ABE7.10 yields concentrated outcomes (median top-product share 0.89,
+entropy 0.41, 2 products $>$5\%) while BE4 is dispersed (top share 0.60,
+entropy 1.17, 3 products) -- outcome prediction for cytosine editors
+must model a wider product distribution (BE4's deposited efficiency
+column exceeds 100\%, a deposit-scale artifact we exclude).
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
 \texttt{results/gap4\_mismatch\_tolerance.json}) quantify

@@ -1,0 +1,17 @@
+{
+ "ABE7_10": {
+  "n_grnas": 11484,
+  "median_efficiency_pct": 93.0,
+  "median_entropy": 0.413,
+  "median_top1_share": 0.891,
+  "median_n_products_gt5pct": 2.0
+ },
+ "BE4": {
+  "n_grnas": 11406,
+  "median_efficiency_pct": 273.0,
+  "median_entropy": 1.171,
+  "median_top1_share": 0.6,
+  "median_n_products_gt5pct": 3.0,
+  "efficiency_metric_note": "scale artifact (>100%); excluded from claims"
+ }
+}
