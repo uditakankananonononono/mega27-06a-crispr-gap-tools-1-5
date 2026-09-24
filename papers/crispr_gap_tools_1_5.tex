@@ -771,6 +771,16 @@ carries real signal in someone else's assay, even though (as shown
 above) transferring the Cas9 \emph{sequence model} does not beat
 scratch. The two Cas9-transfer ideas are different: a Cas9 activity
 \emph{feature} helps; Cas9 motif \emph{weights} do not.
+\paragraph{Edit position and multiplicity (DeepPE Library 2).} The
+companion position/type library (6{,}152 pegRNAs; 5{,}431 with a
+resolvable edit) localizes the edit by lowercase-marked bases in the
+3$'$ extension (\texttt{results/gap3\_deeppe\_lib2.json}). Edit
+position within the RT template has a weak, non-monotone effect
+(Spearman $-0.15$; mean efficiency $8$--$19\%$ across positions
+5--19, peaking at position 10), while edit multiplicity is the sharp
+filter: 1--2 edited bases average $11.4$--$15.4\%$ but 10-base edits
+collapse to $1.9\%$. Substitution-vs-indel identity is not resolved
+by this encoding and we do not claim it.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 
 \begin{figure}[h]
