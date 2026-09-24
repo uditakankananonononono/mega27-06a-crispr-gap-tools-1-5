@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  25 SEP 2026 00:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  25 SEP 2026 00:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -663,7 +663,7 @@ Package pdftex.def Info: figs/fig_porta_score_dist.png  used on input line 946.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./discussion.tex [30]) [31] (./tools_and_data.tex
-Overfull \hbox (85.21564pt too wide) in paragraph at lines 11--52
+Overfull \hbox (303.9724pt too wide) in paragraph at lines 11--49
  [][] 
  []
 
@@ -671,7 +671,7 @@ Overfull \hbox (85.21564pt too wide) in paragraph at lines 11--52
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (262.38509pt too wide) in paragraph at lines 58--96
+Overfull \hbox (262.38509pt too wide) in paragraph at lines 55--93
  [][] 
  []
 
@@ -679,25 +679,25 @@ Overfull \hbox (262.38509pt too wide) in paragraph at lines 58--96
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (16.84058pt too wide) in paragraph at lines 99--109
+Overfull \hbox (16.84058pt too wide) in paragraph at lines 96--106
  \OT1/ptm/b/n/12 To-ward the 40-tool / 120-dataset bar.[] \OT1/ptm/m/n/12 Reach
 -able ad-di-tions with gen-uine use in this item: published-
  []
 
 
-Overfull \hbox (17.82321pt too wide) in paragraph at lines 99--109
+Overfull \hbox (17.82321pt too wide) in paragraph at lines 96--106
 \OT1/ptm/m/n/12 model ex-ter-nal val-i-da-tion (PRI-DICT2, CRISPRon, DeepHF BiL
 -STM weights as bench-mark columns),
  []
 
 
-Overfull \hbox (1.98587pt too wide) in paragraph at lines 99--109
+Overfull \hbox (1.98587pt too wide) in paragraph at lines 96--106
 \OT1/ptm/m/n/12 2019/2020 CRISPRon 15k, Xiang-2021, Chari-2015, GUIDE-seq/CIRCL
 E-seq/CHANGE-seq pri-
  []
 
 [32])
-Overfull \hbox (23.22455pt too wide) in paragraph at lines 111--956
+Overfull \hbox (23.22455pt too wide) in paragraph at lines 108--956
  \OT1/ptm/b/n/12 Ex-am-ined and not in-te-grated (with rea-sons).[] \OT1/ptm/m/
 n/12 Chari 2015 (nmeth.3473): Na-ture ESM MOESM297--
  []
@@ -790,7 +790,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3673 strings out of 480247
  56247 string characters out of 5896151
- 365309 words of memory out of 5000000
+ 365250 words of memory out of 5000000
  21490 multiletter control sequences out of 15000+600000
  521004 words of font info for 139 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -808,7 +808,7 @@ share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on crispr_gap_tools_1_5.pdf (41 pages, 1211877 bytes).
+Output written on crispr_gap_tools_1_5.pdf (41 pages, 1211866 bytes).
 PDF statistics:
  639 PDF objects out of 1000 (max. 8388607)
  188 compressed objects within 2 object streams

@@ -14,7 +14,7 @@ Tool (version) & Used for \\
 \hline
 PyTorch (2.14.0) & GNN/CNN model training (gaps 1--5) \\
 scikit-learn (1.7.2) & ridge models, Platt/isotonic calibration, splits, metrics \\
-SciPy (1.15.3) & rank statistics: \texttt{rankdata}, Spearman $\rho$ \\
+SciPy (1.15.3) & rank statistics (\texttt{rankdata}, Spearman $\rho$, Mann--Whitney) and hierarchical clustering of the transfer matrix (Fig.~\ref{fig:dendrogram}) \\
 NumPy (2.2.6) & all numerics \\
 pandas (2.3.3) & dataset assembly (crisprSQL, PRIDICT2) \\
 matplotlib & all figures (10) \\
@@ -27,21 +27,18 @@ SHAP (0.49.1) & TreeSHAP feature attribution for the GBM baseline \\
 Optuna (5.0.0) & TPE hyperparameter search for the tuned GBM \\
 XGBoost (3.2.0) & cross-library check of the tuned-GBM finding \\
 CatBoost (1.2.10) & third-library check; strongest tuned GBM on HEK ($0.8014$) \\
-statsmodels (0.15.0) & gap-2 GLM inference, guide-cluster-robust SEs \\
+statsmodels (0.15.0) & gap-2 GLM inference (guide-cluster-robust SEs); logistic regression with CIs on Koike-Yusa PAM/mismatch effects (gap 4) \\
 hyperopt (0.3.0) & independent tuner cross-check of the gap-3 tuning conclusion \\
 imbalanced-learn (0.14.2) & gap-2 prevalence-rebalancing mechanism probe \\
 pyBigWig (0.3.26) & local bigWig queries, HEK293T DNase (gap 5) \\
 networkx (3.4.2) & Louvain community detection on the gap-1 transfer graph \\
 parasail (2.6.1) & Smith--Waterman local-alignment baseline, gap 2 \\
-scipy (1.15.3) & hierarchical clustering of the transfer matrix (Fig.~\ref{fig:dendrogram}) \\
 scikit-optimize (0.10.2) & GP Bayesian search; third-algorithm gap-3 cross-check \\
 leidenalg (0.12.0) / python-igraph (1.0.0) & Leiden cross-check of the transfer communities \\
 umap-learn (0.5.12) & sequence-space embedding, covariate-shift check (Fig.~\ref{fig:umap}) \\
 biopython (1.88) & biophysical feature audit (GC, Tm, length), gap 1 \\
 seaborn (0.13.2) & transfer-matrix heatmap (Fig.~\ref{fig:transfer_heatmap}) \\
-statsmodels (0.15.0) & logistic regression with CIs on Koike-Yusa PAM/mismatch effects (gap 4) \\
-logomaker (0.8.7) & position-wise base-frequency logos, Chari high vs low (Fig.~\ref{fig:chari_logo}) \\
-logomaker (0.8.7) & sequence logos of extreme-portability guides (Fig.~8) \\
+logomaker (0.8.7) & sequence logos: extreme-portability guides (Fig.~8) and Chari high vs low (Fig.~\ref{fig:chari_logo}) \\
 CRISPOR CFD matrices & published off-target baseline (vendored, offline scorer) \\
 CRISPRoff (Alkan 2018, vendored RTH-tools) & published energy-based gap-2 baseline \\
 MIT/Hsu-2013 score & published off-target baseline (reimplemented from source) \\
