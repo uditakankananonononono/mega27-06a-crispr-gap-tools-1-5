@@ -1467,6 +1467,18 @@ relaxing NGG$\to$NG expands the precise space 2.7$\times$
 carries a 2.4\% pathogenic-bystander rate versus 7.9--8.1\% for ABE8e
 and 3.8--4.3\% for ABE9 --- a 3$\times$ safety gain per edit, bought
 with a smaller absolute precise space (3,282 NGG / 10,354 NG).
+Deep-learning-guided engineering of the compact Fanzor nuclease SpuFz1
+(Nat Commun 2026, 10.1038/s41467-026-74624-6, MOESM5) scores 7,448
+single-point mutants with 5 independently trained models
+(\texttt{results/spufz1\_dl\_prediction.json}). The ensemble agrees
+well on the ranking (pairwise Spearman 0.87--0.90) and the landscape is
+sharply skewed: median predicted effect $-2.85$ with only 7.0\% of
+mutants predicted beneficial. The top candidate (C536V, ensemble mean
+3.71) still carries a 0.63 ensemble s.d., so even the best predictions
+need experimental validation --- and we note this supplement ships
+predictions only (the ``mean'' column equals the mean of the five model
+outputs), an honest-negatives data-provenance caveat.
+
 
 
 
