@@ -1,0 +1,58 @@
+{
+ "n_epegrnas": 52703,
+ "by_pbs_length_among_enriched": {
+  "11": {
+   "n_enriched": 2508,
+   "median_fe": 3.5601773695
+  },
+  "12": {
+   "n_enriched": 2366,
+   "median_fe": 3.5350354929999996
+  },
+  "13": {
+   "n_enriched": 2030,
+   "median_fe": 3.707660014726665
+  },
+  "14": {
+   "n_enriched": 1668,
+   "median_fe": 3.58771675437653
+  }
+ },
+ "overall_frac_enriched_gt1": 0.16264728763068517,
+ "per_codon": {
+  "TAG": {
+   "n": 17579,
+   "median_fold_enrichment": 0.264390898,
+   "frac_enriched": 0.26156209113146367
+  },
+  "TGA": {
+   "n": 17579,
+   "median_fold_enrichment": 0.0,
+   "frac_enriched": 0.13760737243301666
+  },
+  "TAA": {
+   "n": 17545,
+   "median_fold_enrichment": 0.0,
+   "frac_enriched": 0.08862923909945854
+  }
+ },
+ "by_pbs_length": {
+  "11": {
+   "n": 14216,
+   "median_fe": 0.0
+  },
+  "12": {
+   "n": 13473,
+   "median_fe": 0.0
+  },
+  "13": {
+   "n": 12820,
+   "median_fe": 0.0
+  },
+  "14": {
+   "n": 12194,
+   "median_fe": 0.0
+  }
+ },
+ "sorted_replicate_spearman": 0.33209565814715714
+}
