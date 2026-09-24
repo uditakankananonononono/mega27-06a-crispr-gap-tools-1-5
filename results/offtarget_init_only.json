@@ -1,0 +1,61 @@
+{
+  "protocol": "identical seed-0 split/data order (seed=0); only torch init varies (init_seed 0-4)",
+  "runs": [
+    {
+      "init_seed": 0,
+      "gnn_auroc": 0.598422762938892,
+      "ece_uncalibrated": 0.38927606611584054,
+      "ece_platt": 0.35830487324472127,
+      "n_test": 526
+    },
+    {
+      "init_seed": 1,
+      "gnn_auroc": 0.5299278750891655,
+      "ece_uncalibrated": 0.33711531123204164,
+      "ece_platt": 0.33099253302907045,
+      "n_test": 526
+    },
+    {
+      "init_seed": 2,
+      "gnn_auroc": 0.5738051834826029,
+      "ece_uncalibrated": 0.209260462293858,
+      "ece_platt": 0.2582503581029402,
+      "n_test": 526
+    },
+    {
+      "init_seed": 3,
+      "gnn_auroc": 0.6064278354600935,
+      "ece_uncalibrated": 0.3309922695228728,
+      "ece_platt": 0.3029795018357071,
+      "n_test": 526
+    },
+    {
+      "init_seed": 4,
+      "gnn_auroc": 0.5337956725053499,
+      "ece_uncalibrated": 0.32567413129125194,
+      "ece_platt": 0.3897126868253325,
+      "n_test": 526
+    }
+  ],
+  "init_only": {
+    "auroc_mean": 0.5684758658952207,
+    "auroc_sd": 0.03179381597445332,
+    "auroc_range": [
+      0.5299278750891655,
+      0.6064278354600935
+    ],
+    "ece_uncal_range": [
+      0.209260462293858,
+      0.38927606611584054
+    ]
+  },
+  "split_and_init_reference": {
+    "gnn_mean": 0.608866418685219,
+    "gnn_sd": 0.08420295304426682,
+    "gnn_range": [
+      0.4539357387958823,
+      0.6852039096730704
+    ]
+  },
+  "reading": "init alone swings AUROC ~0.08 and uncalibrated ECE ~0.18 on an identical split; split choice adds the rest (total sd 0.084). Both sources dwarf the mean GNN-MIT gap (0.093)."
+}

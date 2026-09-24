@@ -23,9 +23,12 @@ from crisprgap.models.offtarget_gnn import OffTargetGNN, duplex_to_graph, collat
 torch.set_num_threads(2)
 
 
-def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int = 8, seed: int = 0) -> dict:
+def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int = 8, seed: int = 0,
+                    init_seed: int | None = None) -> dict:
     rng = np.random.default_rng(seed)
-    torch.manual_seed(seed)  # deterministic model init: reproducible artifacts
+    # split/data order from `seed`; model init from init_seed (defaults to seed).
+    # init_seed != seed lets us measure init-only variance on an identical split.
+    torch.manual_seed(seed if init_seed is None else init_seed)
     ds = load_crisprsql()
     pos_idx = np.where(ds.labels == 1)[0]
     neg_idx = np.where(ds.labels == 0)[0]

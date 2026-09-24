@@ -290,6 +290,15 @@ irreproducible by construction.} Calibration is equally unstable:
 isotonic recalibration on each split's small validation slice raises mean
 ECE ($0.326 \to 0.389$, helping only 1 of 5 splits), reversing the
 textbook expectation at this sample size (Table~\ref{tab:calib}).
+\paragraph{Init-only versus split variance.}
+Retraining the GNN on the \emph{identical} seed-0 split with five torch
+init draws (data order fixed) gives AUROC $0.530$--$0.606$ (sd $0.032$)
+and uncalibrated ECE $0.209$--$0.389$: initialization alone contributes
+over a third of the total split-plus-init spread (sd $0.032$ of $0.084$)
+and swings calibration error by $0.18$ on byte-identical data. ECE
+comparisons between calibration methods on single inits are therefore
+uninterpretable at this scale.
+
 Per-study analysis on the seed-0 split (Table~\ref{tab:perstudy})
 initially suggested structure -- a GNN win on Anderson-era GUIDE-seq data
 ($0.764$ vs MIT $0.550$) and a loss on Kim-style targeted libraries
