@@ -1,0 +1,21 @@
+{
+  "target": "HEK",
+  "n": 22956,
+  "conditions": {
+    "0": {
+      "ridge_numeric_spearman": 0.7352628048498986,
+      "scratch_spearman": 0.7919681942157185,
+      "transfer_spearman": 0.7882739024726562
+    },
+    "1": {
+      "ridge_numeric_spearman": 0.745824333475491,
+      "scratch_spearman": 0.7954006983837394,
+      "transfer_spearman": 0.7893516153853715
+    }
+  },
+  "means": {
+    "ridge_numeric_spearman": 0.7405435691626948,
+    "scratch_spearman": 0.793684446299729,
+    "transfer_spearman": 0.7888127589290138
+  }
+}
