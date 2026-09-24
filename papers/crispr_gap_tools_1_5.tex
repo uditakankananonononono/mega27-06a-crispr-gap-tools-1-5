@@ -187,6 +187,13 @@ as such.
 \caption{Within-dataset vs cross-dataset Spearman (ridge, 3 seeds).}
 \label{fig:crossdata}\end{figure}
 
+\subsection{Gap 1 (cont.): pooling does not fix the boundary}
+Naive multi-dataset pooling fails both ways: Doench-pooled training still
+transfers to DeepHF at only $\rho=0.014$, and adding Doench data to DeepHF
+training slightly \emph{hurts} held-out DeepHF ($0.68$--$0.70$ pooled vs.\
+$0.72$--$0.73$ pure, 3 seeds). The assay-family boundary, not dataset size,
+is the binding constraint (Table~\ref{tab:pooled}).
+
 \subsection{Gap 2: GNN beats published scores; isotonic calibrates}
 \begin{figure}[h]\centering\includegraphics[width=0.5\textwidth]{fig_calibration.pdf}
 \caption{Reliability curves on held-out crisprSQL pairs, before and after
@@ -202,6 +209,9 @@ holds only 1,494 validated negatives across 17 studies, capping achievable
 discrimination; the field's negative-scarcity is itself quantified here.
 
 \subsection{Gap 3: Cas9-to-pegRNA transfer}
+\begin{figure}[h]\centering\includegraphics[width=0.55\textwidth]{fig_pegrna_scaling.pdf}
+\caption{Scarce-regime scaling: Cas9-motif transfer never beats scratch.}
+\label{fig:scaling}\end{figure}
 On the PRIDICT2 23k library (grouped held-out pegRNAs, HEK293T), a CNN over
 the 99-mer target context beats the engineered-feature ridge baseline
 ($\rho=0.794$ vs.\ $0.741$). Transferring the Doench-pretrained conv trunk
@@ -221,6 +231,10 @@ training examples ($\rho=0.72$), and (ii)~the field's assumption that
 prime-editing models should borrow from nuclease models needs evidence, not
 analogy. We preserve the failed transfer as the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
+\begin{figure}[h]\centering\includegraphics[width=0.55\textwidth]{fig_pam_distribution.pdf}
+\caption{47\% of measured crisprSQL off-targets carry non-NGG PAMs -- the
+blind spot of NGG-trained scoring tools (gap 4 motivation).}
+\label{fig:pam}\end{figure}
 Adding a PAM one-hot channel lifts held-out AUROC from $0.506$ to $0.540$,
 and on the 2,248 non-NGG held-out pairs from $0.530$ to $0.607$ -- the gain
 concentrates exactly in the PAM-variant regime that SpG/SpRY-class editors

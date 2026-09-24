@@ -1,0 +1,17 @@
+{
+  "0": {
+    "doench_pooled_to_deephf": 0.013661927020079864,
+    "all_pooled_to_deephf_heldout": 0.6809066488997076,
+    "deephf_within": 0.723120723668824
+  },
+  "1": {
+    "doench_pooled_to_deephf": 0.013661927020079864,
+    "all_pooled_to_deephf_heldout": 0.6847244467153388,
+    "deephf_within": 0.7248326281664357
+  },
+  "2": {
+    "doench_pooled_to_deephf": 0.013661927020079864,
+    "all_pooled_to_deephf_heldout": 0.6981830196703482,
+    "deephf_within": 0.734647889306045
+  }
+}

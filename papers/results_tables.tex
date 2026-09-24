@@ -8,6 +8,11 @@ fcres & 0.231 & v1: 0.227, deephf\_wt: -0.248 & 0.241 \\
 v1 & 0.217 & fcres: 0.162, deephf\_wt: -0.256 & 0.264 \\
 deephf\_wt & 0.484 & fcres: 0.076, v1: 0.087 & 0.402 \\
 \hline\end{tabular}\end{table}
+\begin{table}[h]\centering\caption{Pooling mitigation attempt (gap 1, 3 seeds).}\label{tab:pooled}\begin{tabular}{lc}\hline Training & DeepHF Spearman \\\hline
+Doench-pooled & 0.014 \\
+All-pooled (incl.\ 80\% DeepHF) & 0.688 \\
+DeepHF only (within) & 0.728 \\
+\hline\end{tabular}\end{table}
 \begin{table}[h]\centering\caption{Off-target classification on crisprSQL, guide-grouped held-out split.}\label{tab:offtarget}\begin{tabular}{lcc}\hline Model & AUROC & AUPRC \\\hline
 GNN (this work) & 0.572 & 0.923 \\
 MIT / Hsu 2013 & 0.452 & 0.913 \\

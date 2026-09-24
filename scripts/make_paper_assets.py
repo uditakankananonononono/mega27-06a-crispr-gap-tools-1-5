@@ -102,6 +102,22 @@ def table_crossdata_cnn():
             + "\n".join(rows) + "\n\\hline\\end{tabular}\\end{table}\n")
 
 
+def table_pooled():
+    if not os.path.exists(f"{R}/crossdata_pooled.json"):
+        return ""
+    d = json.load(open(f"{R}/crossdata_pooled.json"))
+    import numpy as np
+    k1 = [v['doench_pooled_to_deephf'] for v in d.values()]
+    k2 = [v['all_pooled_to_deephf_heldout'] for v in d.values()]
+    k3 = [v['deephf_within'] for v in d.values()]
+    m = lambda xs: float(np.mean(xs))
+    return ("\\begin{table}[h]\\centering\\caption{Pooling mitigation attempt (gap 1, 3 seeds).}"
+            "\\label{tab:pooled}\\begin{tabular}{lc}\\hline Training & DeepHF Spearman \\\\\hline\n"
+            + f"Doench-pooled & {m(k1):.3f} " + chr(92)*2 + "\n"
+            + f"All-pooled (incl.\\ 80\\% DeepHF) & {m(k2):.3f} " + chr(92)*2 + "\n"
+            + f"DeepHF only (within) & {m(k3):.3f} " + chr(92)*2 + "\n\\hline\\end{tabular}\\end{table}\n")
+
+
 def table_scaling():
     if not os.path.exists(f"{R}/pegrna_transfer_scaling.json"):
         return ""
@@ -116,6 +132,6 @@ def table_scaling():
 if __name__ == "__main__":
     os.makedirs(P, exist_ok=True)
     with open(f"{P}/results_tables.tex", "w") as f:
-        f.write(_esc(table_crossdata() + table_crossdata_cnn() + table_offtarget() + table_ablation() + table_pegrna() + table_scaling()))
+        f.write(_esc(table_crossdata() + table_crossdata_cnn() + table_pooled() + table_offtarget() + table_ablation() + table_pegrna() + table_scaling()))
     fig_crossdata()
     print("assets written")
