@@ -761,6 +761,16 @@ single mismatches in the PAM-distal region (positions 1--7) retain
 in-vitro tolerance against low cellular off-target counts (Detect-seq,
 Tracking-seq) localizes base-editor specificity gains to the cellular
 context, not the enzyme's intrinsic recognition.
+Akcakaya 2018 (Nature 10.1038/s41586-018-0500-9, MOESM4/6; 3,382 +
+167 CIRCLE-seq sites, WT and KI conditions) maps the in-vitro capture
+landscape (\texttt{results/akcakaya\_circleseq.json}): unlike cellular
+assays, the site spectrum is dominated by high-mismatch loci (2,386 of
+3,382 at 4 mismatches, only 6 at $\le$1), with median readcount falling
+to 9\% of on-target at 2 mismatches and 1\% at 4; WT-versus-KI
+readcount concordance is $\rho=00.78$ and $0.65$ for the two targets.
+In-vitro capture is far more promiscuous than cellular detection, so
+CIRCLE-seq-derived candidate lists need modality-specific calibration
+before they can inform cellular off-target probabilities.
 \paragraph{What fidelity engineering buys (gap 4).} A 2023 variant
 screen (Nat Commun 10.1038/s41467-023-41393-5, MOESM8/9) measures
 amplicon indels for WT and high-fidelity SpCas9 variants on the same
