@@ -1,0 +1,94 @@
+{
+ "n_elements": 19000,
+ "n_usable_reads_ge100": 11490,
+ "by_variant_type": {
+  "COMBO": {
+   "n": 2638,
+   "pe7_median": 1.97,
+   "pe7_mean": 2.88,
+   "pe7_frac_gt10": 0.028,
+   "pemax_median": 2.76,
+   "indel_median": 0.32
+  },
+  "HPEXTEND": {
+   "n": 2516,
+   "pe7_median": 1.84,
+   "pe7_mean": 2.71,
+   "pe7_frac_gt10": 0.02,
+   "pemax_median": 2.56,
+   "indel_median": 0.31
+  },
+  "NEG": {
+   "n": 1940,
+   "pe7_median": 1.8,
+   "pe7_mean": 2.62,
+   "pe7_frac_gt10": 0.02,
+   "pemax_median": 1.89,
+   "indel_median": 0.3
+  },
+  "PARENT": {
+   "n": 4396,
+   "pe7_median": 1.89,
+   "pe7_mean": 2.76,
+   "pe7_frac_gt10": 0.025,
+   "pemax_median": 2.6,
+   "indel_median": 0.31
+  }
+ },
+ "top_parent_motifs": [
+  [
+   "HAV_PK1",
+   693,
+   2.07
+  ],
+  [
+   "tevopreq1",
+   596,
+   1.89
+  ],
+  [
+   "SBRMV1_UPD_PKb",
+   670,
+   1.89
+  ],
+  [
+   "Ec_PK1",
+   591,
+   1.88
+  ],
+  [
+   "HPeV1",
+   617,
+   1.83
+  ],
+  [
+   "FMDV_O1K_PKIV",
+   646,
+   1.83
+  ],
+  [
+   "FMDV_A_PKII",
+   583,
+   1.8
+  ]
+ ],
+ "bottom_parent_motifs": [
+  [
+   "HPeV1",
+   617,
+   1.83
+  ],
+  [
+   "FMDV_O1K_PKIV",
+   646,
+   1.83
+  ],
+  [
+   "FMDV_A_PKII",
+   583,
+   1.8
+  ]
+ ],
+ "pe7_vs_pemax_spearman": 0.881,
+ "pe7_vs_pe6c_spearman": 0.88
+}

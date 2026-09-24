@@ -1268,6 +1268,20 @@ from 34\% to 79\% when the degrader drug is added (dynamic range
 $\approx$2.3$\times$), while dTagV1 leaves non-degron Cas12a
 unchanged (34\%). Guide efficacy is thus a function of an externally
 set protein-level context, not sequence alone.
+A directed-evolution screen of pegRNA 3' RNA-stabilizing motifs (Nat
+Biotechnol 2026, 10.1038/s41587-026-03123-2, MOESM7; 19{,}000
+elements, 11{,}490 with $\geq$100 plasmid reads) gives an honest
+primary-screen baseline for gap-3
+(\texttt{results/pe\_motif\_screen.json}): PE7 median editing is
+1.8--2.0\% with only $\sim$2\% of elements above 10\%, and the
+median differs barely between parent motifs (1.89\%), combos,
+hp-extensions and negative controls (1.80\%) -- at primary-screen
+depth the element's edit context dominates the motif contribution,
+which only separates under selection. Element rankings nevertheless
+transfer strongly across editors (PE7 vs PEmax Spearman 0.88, PE7 vs
+PE6c 0.88), so a motif screen run on one editor ranks elements for
+the others.
+
 
 
 
