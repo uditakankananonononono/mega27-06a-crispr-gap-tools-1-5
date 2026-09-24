@@ -4,7 +4,7 @@ Per program requirements, every external resource actually used in this
 work is listed with its role. Counts are honest: an entry appears only if
 it was executed or analyzed in the pipeline.
 
-\subsection{External tools (24)}
+\subsection{External tools (39 analysis tools + 4 infrastructure)}
 \begin{table}[h]\centering\small
 \caption{External tools/packages used, with role.}
 \label{tab:tools}
@@ -31,7 +31,7 @@ statsmodels (0.15.0) & gap-2 GLM inference (guide-cluster-robust SEs); logistic 
 hyperopt (0.3.0) & independent tuner cross-check of the gap-3 tuning conclusion \\
 imbalanced-learn (0.14.2) & gap-2 prevalence-rebalancing mechanism probe \\
 pyBigWig (0.3.26) & local bigWig queries, HEK293T DNase (gap 5) \\
-networkx (3.4.2) & Louvain community detection on the gap-1 transfer graph \\
+networkx (3.4.2) & Louvain community detection on the gap-1 transfer graph; guide--guide locus-sharing network, component analysis (gap 2) \\
 parasail (2.6.1) & Smith--Waterman local-alignment baseline, gap 2 \\
 scikit-optimize (0.10.2) & GP Bayesian search; third-algorithm gap-3 cross-check \\
 leidenalg (0.12.0) / python-igraph (1.0.0) & Leiden cross-check of the transfer communities \\
@@ -45,7 +45,6 @@ pyfaidx (0.9.0.4) & indexed hg38 context extraction, $\pm$30/100bp features (gap
 pyliftover (0.4.1) & hg19$\to$hg38 liftOver audit, sequence-verified (gap 2/5 harmonization) \\
 rapidfuzz (3.14.5) & cross-dataset guide leakage audit, edit-distance-1 cdist (gap 1) \\
 pycirclize (1.10.1) & karyotype ideogram of crisprSQL sites, per-chromosome context (gap 5) \\
-networkx (3.4.2) & guide--guide locus-sharing network, component analysis (gap 2) \\
 edlib (1.3.9.post1) & full-alignment edit distance; indel audit of crisprSQL (gap 2) \\
 upsetplot (0.9.0) & guide-sharing UpSet figure, crisprSQL study dependence (Fig.~\ref{fig:guide_upset}) \\
 scikit-misc (0.5.2) & LOESS dose-response trend, K562 DNase vs cleavage (Fig.~\ref{fig:k562_loess}) \\
@@ -62,9 +61,9 @@ Google Drive API & artifact delivery (bundle + paper PDF) \\
 
 \noindent \emph{Not counted toward the tool tally (infrastructure):
 GitHub (hosting), Google Drive API (delivery), pytest (test runner),
-pyarrow (I/O caching). Counted analysis/software tools: 36.}
+pyarrow (I/O caching). Counted analysis/software tools: 39.}
 
-\subsection{Datasets and data sources (34 accession-level records + 13 sub-studies)}
+\subsection{Datasets and data sources (58 records, accession-level where available)}
 \begin{table}[h]\centering\small
 \caption{Datasets actually analyzed, with role.}
 \label{tab:datasets}
