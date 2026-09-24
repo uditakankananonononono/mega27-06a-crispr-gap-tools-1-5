@@ -333,9 +333,14 @@ analogy. The K562 track replicates the pattern (ridge $0.554$, scratch
 $0.610$, transfer $0.588$). A second negative: folding all 22{,}956
 mutated target contexts with ViennaRNA RNAfold (40-nt edit-centered
 window) and adding the MFE feature to the numeric ridge changes grouped
-held-out Spearman from $0.7329$ to $0.7331$ -- local target secondary
-structure, at least at this resolution, is not the missing signal. We
-preserve both negatives as the gap-3 result.
+held-out Spearman from $0.7329$ to $0.7331$. Two further thermodynamic
+channels confirm the null: seqfold minimum-ensemble $\Delta G$ on the same
+40-nt edit-centered window and primer3 nearest-neighbor protospacer $T_m$
+move grouped held-out Spearman by $-6\times10^{-5}$ (HEK) and
+$-1\times10^{-4}$ (K562) across three grouped splits
+($n=22{,}956$). Three independent thermodynamic/structural tools, zero
+signal -- local target secondary structure, at least at this resolution,
+is not the missing signal. We preserve all negatives as the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 
 \begin{figure}[h]

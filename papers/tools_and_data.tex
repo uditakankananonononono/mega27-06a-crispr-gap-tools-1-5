@@ -4,7 +4,7 @@ Per program requirements, every external resource actually used in this
 work is listed with its role. Counts are honest: an entry appears only if
 it was executed or analyzed in the pipeline.
 
-\subsection{External tools (12)}
+\subsection{External tools (14)}
 \begin{table}[h]\centering\small
 \caption{External tools/packages used, with role.}
 \label{tab:tools}
@@ -18,8 +18,10 @@ SciPy (1.15.3) & rank statistics: \texttt{rankdata}, Spearman $\rho$ \\
 NumPy (2.2.6) & all numerics \\
 pandas (2.3.3) & dataset assembly (crisprSQL, PRIDICT2) \\
 matplotlib & all figures (10) \\
-pytest & 43-test hermetic suite \\
+pytest & hermetic offline suite \\
 ViennaRNA RNAfold (2.7.2) & 135k-sequence folding; MFE features (2 experiments, honest negatives) \\
+seqfold & min-ensemble $\Delta G$ folding, pegRNA 40nt windows (honest negative) \\
+primer3 (2.3.1) & protospacer nearest-neighbor $T_m$ features (honest negative) \\
 CRISPOR CFD matrices & published off-target baseline (vendored, offline scorer) \\
 MIT/Hsu-2013 score & published off-target baseline (reimplemented from source) \\
 GitHub & code hosting (repo: mega27-06a-crispr-gap-tools-1-5) \\
