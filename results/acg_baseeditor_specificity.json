@@ -1,0 +1,97 @@
+{
+ "n_sites": 12,
+ "sites": [
+  "CCR5-sg18",
+  "CCR5-sg3",
+  "DMD-sg1",
+  "EGFR-sg22",
+  "GJB2-sg1",
+  "HEK site 6",
+  "PCSK9-sg26",
+  "PLS3-AS1-sg1",
+  "PPP1R12C site 3",
+  "TTR-sg1",
+  "hFGF6-sg1",
+  "hFGF6-sg3"
+ ],
+ "editors": [
+  "A&C-BE \u0394UGI",
+  "A&CBE \u0394UGI",
+  "smACG32",
+  "smACG34"
+ ],
+ "n_conversion_classes": 8,
+ "per_editor": {
+  "A&C-BE \u0394UGI": {
+   "n_sites": 12,
+   "total_conversions_mean": 69.38,
+   "ac_only_share": 0.965,
+   "g_editing_share": 0.035,
+   "top_class": "A>G/C/T and C>T/G/A",
+   "top_class_share": 0.483,
+   "class_means": {
+    "A>G/C/T and C>T/G/A": 33.48,
+    "A>G and C>T/G/A": 33.01,
+    "C>T/G/A and G>C/T/A": 1.39,
+    "A>G/C/T and C>T/G/A and G>C/T/A": 0.92,
+    "A>C/T and C>T/G/A": 0.47,
+    "A>G/C/T and G>C/T/A": 0.05,
+    "A>G and G>T/C/A": 0.03,
+    "A>C/T and G>C/T/A": 0.01
+   }
+  },
+  "smACG32": {
+   "n_sites": 12,
+   "total_conversions_mean": 107.81,
+   "ac_only_share": 0.581,
+   "g_editing_share": 0.419,
+   "top_class": "A>G/C/T and C>T/G/A",
+   "top_class_share": 0.291,
+   "class_means": {
+    "A>G/C/T and C>T/G/A": 31.33,
+    "A>G and C>T/G/A": 21.63,
+    "A>G/C/T and C>T/G/A and G>C/T/A": 18.43,
+    "A>G/C/T and G>C/T/A": 12.13,
+    "A>C/T and C>T/G/A": 9.69,
+    "A>C/T and G>C/T/A": 6.15,
+    "A>G and G>T/C/A": 5.98,
+    "C>T/G/A and G>C/T/A": 2.46
+   }
+  },
+  "smACG34": {
+   "n_sites": 12,
+   "total_conversions_mean": 104.88,
+   "ac_only_share": 0.56,
+   "g_editing_share": 0.44,
+   "top_class": "A>G/C/T and C>T/G/A",
+   "top_class_share": 0.28,
+   "class_means": {
+    "A>G/C/T and C>T/G/A": 29.35,
+    "A>G/C/T and C>T/G/A and G>C/T/A": 17.2,
+    "A>G and C>T/G/A": 15.81,
+    "A>C/T and C>T/G/A": 13.54,
+    "A>G/C/T and G>C/T/A": 13.42,
+    "A>C/T and G>C/T/A": 8.19,
+    "A>G and G>T/C/A": 5.24,
+    "C>T/G/A and G>C/T/A": 2.13
+   }
+  }
+ },
+ "codon_reach": {
+  "A&C-BE \u0394UGI": {
+   "n_codons": 142,
+   "mean_unique_aa": 2.81,
+   "max_unique_aa": 14
+  },
+  "smACs": {
+   "n_codons": 142,
+   "mean_unique_aa": 5.24,
+   "max_unique_aa": 20
+  },
+  "smACGs": {
+   "n_codons": 268,
+   "mean_unique_aa": 5.31,
+   "max_unique_aa": 20
+  }
+ }
+}
