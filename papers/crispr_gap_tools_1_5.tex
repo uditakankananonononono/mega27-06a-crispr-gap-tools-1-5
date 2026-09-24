@@ -963,6 +963,21 @@ Early-timepoint efficacy measurements are dominated by delivery and
 editing kinetics rather than intrinsic guide quality -- screens
 harvested early are, in effect, a different assay, which sharpens the
 gap-1 rule that assay conditions define the dataset boundary.
+\paragraph{Prime-editing design features replicate at 92k scale, cell
+context dominates (gap 3).} PRIDICT2.0 Library 1 (Mathis 2023, Nat
+Biotechnol 10.1038/s41587-022-01613-7, MOESM5; 92,423 pegRNAs) yields
+ridge CV Spearman 0.523 from 19 design-only features
+(\texttt{results/pridict2\_pechromatin.json}); a first pass over all
+numeric columns scored a perfect 1.0 because per-replicate outcome
+columns leak the target -- recorded here as a methods caution. The 2024
+chromatin-context screen (Nat Biotechnol
+10.1038/s41587-024-02268-2, MOESM3; 16,055 pegRNAs with matched HEK293T,
+K562, K562-MLH1dn and adenovirus-delivered measurements) shows
+cross-context rank agreement of 0.68--0.96 and a median 2.24-fold
+efficiency gain under MLH1 depletion: pegRNA ranking is portable across
+cellular contexts far better than Cas9 efficacy rankings (gap 1), and
+MMR status is a first-order covariate no sequence-only pegRNA model
+captures.
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
 \texttt{results/gap4\_mismatch\_tolerance.json}) quantify

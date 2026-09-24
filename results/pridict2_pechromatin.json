@@ -1,0 +1,21 @@
+{
+ "pridict2": {
+  "n_lib1": 92423,
+  "n_design_features": 19,
+  "ridge_cv_spearman": 0.523,
+  "median_edited": 46.319,
+  "leakage_note": "initial run with all-numeric features gave CV 1.0 (per-replicate outcome columns leaked); corrected to design-only features"
+ },
+ "pe_chromatin": {
+  "n": 16055,
+  "context_spearman": {
+   "HEKaverageed_vs_K562averagee": 0.778,
+   "HEKaverageed_vs_K562MLH1dnav": 0.958,
+   "HEKaverageed_vs_AdVaverageed": 0.676,
+   "K562averagee_vs_K562MLH1dnav": 0.844,
+   "K562averagee_vs_AdVaverageed": 0.765,
+   "K562MLH1dnav_vs_AdVaverageed": 0.725
+  },
+  "mlh1dn_median_fold": 2.238
+ }
+}
