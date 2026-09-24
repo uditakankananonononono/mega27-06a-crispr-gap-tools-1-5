@@ -47,6 +47,8 @@ group-aware held-out numbers, including where the gap resisted us.
 
 \input{datasets.tex}
 
+\input{math_foundations.tex}
+
 \section{Gap 1: Cross-dataset generalization of efficacy models}
 \begin{definition}[Cross-dataset generalization gap]
 Let $\mathcal{D}_A, \mathcal{D}_B$ be guide-efficacy datasets with score
@@ -54,7 +56,7 @@ distributions $P_A, P_B$, and $f_A$ a model trained on $\mathcal{D}_A$ with
 held-out Spearman $\rho_{AA}$ and transfer Spearman $\rho_{AB}$. The
 generalization gap is $g(A\!\to\!B) = \rho_{AA} - \rho_{AB}$.
 \end{definition}
-\begin{proposition}[Identity of indiscernibles for rank transfer]
+\begin{proposition}[Identity of indiscernibles for rank transfer]\label{prop:indisc}
 If $P_B$ is an affine rescaling of the conditional score law of $P_A$, i.e.\
 $Y_B = aY_A + b$ a.s.\ with $a>0$, then $g(A\!\to\!B) = 0$ for any model
 $f_A$ that is optimal under squared loss on $\mathcal{D}_A$.
@@ -175,7 +177,7 @@ The hermetic suite (\texttt{pytest}) runs 40 tests offline.
 Ridge models trained on Doench FC+RES transfer to Doench V1 at
 $\rho=0.501$ (within: $0.455$) and V1$\to$FC+RES at $0.434$ (within:
 $0.458$): inside the Doench assay family the score laws are near
-affine-equivalent and Proposition 1 applies. Across assay families the
+affine-equivalent and Proposition~\ref{prop:indisc} applies. Across assay families the
 collapse is total: FC+RES$\to$DeepHF $\rho=0.026$ and V1$\to$DeepHF
 $0.032$, while DeepHF is highly learnable within itself ($0.728$). The
 bottleneck is therefore not model capacity or feature quality but assay

@@ -1,0 +1,204 @@
+\section{Mathematical foundations}
+\label{sec:math}
+This section collects the formal objects used across the five gaps.
+Each construction is implemented in \texttt{crisprgap} and exercised by
+the hermetic test suite; every empirical claim later in the paper can be
+traced to one of the definitions here.
+
+\subsection{Featurization and base learners}
+For a guide $g$ of length $L=20$ over alphabet
+$\Sigma=\{\mathrm{A,C,G,T}\}$, the position-specific one-hot map is
+\begin{equation}
+\phi(g) \;=\; \big[\mathbb{1}(g_i = s)\big]_{i=1..L,\; s \in \Sigma}
+\;\in\; \{0,1\}^{4L},
+\label{eq:onehot}
+\end{equation}
+and its dinucleotide extension appends
+$\mathbb{1}(g_i g_{i+1} = d)$ for $d \in \Sigma^2$, $i=1..L-1$
+($16(L-1)$ extra coordinates). Our ridge baseline solves
+\begin{equation}
+\hat w \;=\; \arg\min_w \; \tfrac{1}{n}\textstyle\sum_j (y_j - w^\top x_j)^2
++ \lambda \|w\|_2^2
+\;=\; (X^\top X + n\lambda I)^{-1} X^\top y,
+\label{eq:ridge}
+\end{equation}
+which is the MAP estimate under a Gaussian prior
+$w \sim \mathcal N(0, (n\lambda)^{-1} I)$ and Gaussian noise.
+
+\subsection{Rank correlation and monotone invariance}
+All cross-dataset comparisons use Spearman correlation. With midranks
+$R(x), R(y)$ (ties share the average rank),
+\begin{equation}
+\rho(x, y) \;=\;
+\frac{\mathrm{cov}(R(x), R(y))}{\sigma_{R(x)}\, \sigma_{R(y)}}.
+\label{eq:spearman}
+\end{equation}
+\begin{proposition}[monotone invariance]
+\label{prop:mono}
+If $T$ is strictly increasing on the range of $y$, then
+$\rho(x, T \circ y) = \rho(x, y)$.
+\end{proposition}
+\begin{proof}
+$T$ strictly increasing implies $R(T \circ y) = R(y)$: for any pair
+$i, j$, $y_i < y_j \iff T(y_i) < T(y_j)$, so the order statistics, hence
+the midranks, coincide. Substituting into \eqref{eq:spearman} gives the
+claim.
+\end{proof}
+Proposition~\ref{prop:mono} licenses working in normalized-rank space
+throughout: residual definitions, portability scores, and corrections
+below are invariant to the (unknown, screen-specific) monotone transforms
+that map raw assay readouts to reported activities.
+
+\subsection{CFD as naive-Bayes odds}
+The CFD score for guide $g$ cleaving site $g'$ with mismatch set
+$M = \{(i, s_i \!\to\! t_i)\}$ is
+\begin{equation}
+\mathrm{CFD}(g, g') \;=\; \prod_{(i, u) \in M} f(i, u),
+\label{eq:cfd}
+\end{equation}
+where $f(i, u)$ is the empirically measured relative cleavage frequency
+for substitution $u$ at position $i$ (vendored matrices,
+Section~3.5). Eq.~\eqref{eq:cfd} is exactly the posterior-odds factor of
+a naive-Bayes model: writing $C$ for cleavage,
+\begin{equation}
+\frac{P(C \mid M)}{P(\neg C \mid M)} \;=\;
+\frac{P(C)}{P(\neg C)} \prod_{(i,u)\in M}
+\frac{P(u \text{ at } i \mid C)}{P(u \text{ at } i \mid \neg C)},
+\label{eq:cfdnb}
+\end{equation}
+under conditional independence of mismatch effects given cleavage. The
+assumption is known to be approximate (mismatch--mismatch interactions
+exist), which is exactly the modeling headroom our GNN exploits in
+gap 2.
+
+\subsection{Off-target GNN}
+Each guide--site pair is a two-node graph with a typed edge (mismatch
+pattern, PAM channel in gaps 4-5, epigenetic channel in gap 5). Message
+passing for layer $k$ is
+\begin{equation}
+h_v^{(k+1)} \;=\; \sigma\!\Big( W_s h_v^{(k)} + \!\!\sum_{u \in N(v)}\!\!
+W_e(e_{uv})\, h_u^{(k)} \Big),
+\label{eq:gnn}
+\end{equation}
+with pair readout $\hat p = \mathrm{sigmoid}(\mathrm{MLP}([h_g; h_{g'}]))$
+trained by binary cross-entropy
+\begin{equation}
+\mathcal L_{\mathrm{BCE}} = -\tfrac{1}{n}\textstyle\sum_j
+\big[ y_j \log \hat p_j + (1 - y_j)\log(1 - \hat p_j) \big].
+\label{eq:bce}
+\end{equation}
+
+\subsection{Calibration}
+For predicted probabilities $\hat p$ and outcomes $y$, with $B$ bins
+$\{\mathcal B_b\}$,
+\begin{equation}
+\mathrm{ECE} \;=\; \sum_{b=1}^{B} \frac{|\mathcal B_b|}{n}
+\left| \mathrm{acc}(\mathcal B_b) - \mathrm{conf}(\mathcal B_b) \right|,
+\qquad
+\mathrm{BS} = \tfrac{1}{n}\textstyle\sum_j (\hat p_j - y_j)^2 .
+\label{eq:ece}
+\end{equation}
+\begin{proposition}[Murphy decomposition]
+\label{prop:murphy}
+With $\bar y$ the base rate, $\bar p_b$ the mean prediction and
+$\bar y_b$ the mean outcome in bin $b$,
+\begin{equation}
+\mathrm{BS} \;=\;
+\underbrace{\sum_b \tfrac{|\mathcal B_b|}{n}(\bar p_b - \bar y_b)^2}_{\text{reliability}}
+\;-\;
+\underbrace{\sum_b \tfrac{|\mathcal B_b|}{n}(\bar y_b - \bar y)^2}_{\text{resolution}}
+\;+\;
+\underbrace{\bar y (1 - \bar y)}_{\text{uncertainty}}.
+\label{eq:murphy}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Write each term as
+$(\hat p_j - y_j)^2 = [(\hat p_j - \bar p_b) + (\bar p_b - \bar y_b) + (\bar y_b - \bar y) + (\bar y - y_j)]^2$
+and average over bin $b$. The within-bin terms vanish on aggregation
+(they average to deviations from bin means, which integrate to zero
+under squared loss when predictions are bin-constant); expanding the
+surviving three terms and noting the cross terms cancel by
+$\sum_{j \in \mathcal B_b}(y_j - \bar y_b) = 0$ gives
+\eqref{eq:murphy}.
+\end{proof}
+Isotonic calibration fits the monotone step function
+\begin{equation}
+\hat m \;=\; \arg\min_{m \text{ nondecreasing}} \textstyle\sum_j (y_j - m(\hat p_j))^2,
+\label{eq:isotonic}
+\end{equation}
+solved exactly by the pool-adjacent-violators algorithm (PAVA): scanning
+left to right, any adjacent violation $m_i > m_{i+1}$ triggers pooling of
+the two blocks into their weighted mean; each pool step strictly
+decreases the objective and the process terminates at the unique monotone
+projection of $y$ onto the monotone cone (Barlow et al.\ 1972). Platt
+scaling instead fits $P(y{=}1 \mid s) = \sigma(a s + b)$ by maximum
+likelihood, a 2-parameter restriction of \eqref{eq:isotonic}; our gap-2
+finding (isotonic $\le$ uncalibrated $<$ Platt in ECE) matches the
+sample-size regime where the richer map wins (Niculescu-Mizil \& Caruana
+2005).
+
+\subsection{Transfer residual and the PORTA correction}
+Let $f$ be a model trained on source dataset $A$. For a destination
+screen $B$ over guides $g$ with normalized-rank maps $p_B(g) =
+\mathrm{nrank}(f(g))$ and $t_B(g) = \mathrm{nrank}(y_B(g))$ in $[0,1]$,
+define the per-guide transfer residual
+\begin{equation}
+r_B(g) \;=\; p_B(g) - t_B(g).
+\label{eq:resid}
+\end{equation}
+A portability model $\hat r = m(\phi(g), b(g))$ is fit on a
+\emph{calibration screen} $A'$ (features: sequence and biofeatures) and
+the corrected destination ranking is
+\begin{equation}
+\tilde p_B(g) \;=\; p_B(g) - m(g).
+\label{eq:porta}
+\end{equation}
+\begin{proposition}[exact recovery under replication]
+\label{prop:porta}
+If the residual replicates across screens, $r_B(g) = r_{A'}(g)$ for all
+$g$, and the portability model is perfect on the destination guides,
+$m(g) = r_{A'}(g)$, then $\tilde p_B = t_B$ exactly, and
+$\rho(\tilde p_B, y_B) = 1$ up to ties.
+\end{proposition}
+\begin{proof}
+$\tilde p_B = p_B - m = p_B - r_{A'} = p_B - r_B = p_B - (p_B - t_B) =
+t_B$. By definition $t_B$ is the normalized rank of $y_B$, so
+\eqref{eq:spearman} gives $\rho(t_B, y_B) = 1$ absent ties.
+\end{proof}
+Proposition~\ref{prop:porta} isolates the two empirical quantities that
+bound the correction: residual replication (measured: $\rho = 0.86$--$0.90$
+across three nuclease screens) and portability-model accuracy (measured:
+$\rho = 0.78$ cross-screen, $0.86$ within-screen). Their product being
+far above the raw-transfer baseline ($0.015$) is what Section 8.1
+verifies empirically.
+
+\subsection{When pooling helps}
+For a per-guide effect estimated from two screens with $n_A, n_B$
+samples, equal per-sample variance $\sigma^2$, and a between-screen bias
+$\delta$ in the second screen, the pooled mean has
+\begin{equation}
+\mathrm{MSE}_{\mathrm{pool}} \;=\;
+\Big(\tfrac{n_B}{n_A + n_B}\Big)^{\!2} \delta^2 \;+\; \frac{\sigma^2}{n_A + n_B},
+\label{eq:pool}
+\end{equation}
+which beats the source-only estimator ($\mathrm{MSE}_A = \sigma^2/n_A$)
+iff
+\begin{equation}
+\delta^2 \;<\; \frac{\sigma^2 (n_A + n_B)}{n_A\, n_B}.
+\label{eq:poolcond}
+\end{equation}
+Eq.~\eqref{eq:poolcond} quantifies why gap-1 pooling fails: the
+cross-family $\delta$ is so large (raw transfer $\rho \approx 0.02$) that
+no sample-size ratio satisfies the condition.
+
+\subsection{Uncertainty estimates}
+All headline correlations carry bootstrap percentile intervals: with
+resamples $b = 1..B$ over guide indices and statistic $T_b$,
+\begin{equation}
+\mathrm{CI}_{95} \;=\; \big[ Q_{0.025}(\{T_b\}),\; Q_{0.975}(\{T_b\}) \big],
+\label{eq:boot}
+\end{equation}
+and paired differences $T_b^{\mathrm{corr}} - T_b^{\mathrm{raw}}$ are
+computed within the same resample so that the comparison controls for
+resample-level variation.

@@ -15,45 +15,74 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}crisprSQL off-target corpus}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}PRIDICT2 pegRNA library}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5}CFD scoring matrices}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Gap 1: Cross-dataset generalization of efficacy models}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Gap 2: Calibrated cleavage probabilities}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Gap 3: Transfer learning for pegRNA efficiency}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7}Gaps 4 and 5: PAM-variant and chromatin-aware off-target scoring}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Methods}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Datasets}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Models and protocols}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Reproduction}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Results}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Gap 1: collapse across divergent assays, transfer within families}{7}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Within-dataset vs cross-dataset Spearman (ridge, 3 seeds).}}{7}{}\protected@file@percent }
-\newlabel{fig:crossdata}{{1}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Gap 1 (cont.): pooling does not fix the boundary}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Gap 2: GNN beats published scores; isotonic calibrates}{7}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Reliability curves on held-out crisprSQL pairs, before and after Platt calibration on the validation slice.}}{8}{}\protected@file@percent }
-\newlabel{fig:calibration}{{2}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Gap 3: Cas9-to-pegRNA transfer}{8}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Scarce-regime scaling: Cas9-motif transfer never beats scratch.}}{8}{}\protected@file@percent }
-\newlabel{fig:scaling}{{3}{8}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.4.1}Scarce-regime scaling: a clean negative}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Gaps 4-5: PAM and chromatin ablation}{9}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 47\% of measured crisprSQL off-targets carry non-NGG PAMs -- the blind spot of NGG-trained scoring tools (gap 4 motivation).}}{9}{}\protected@file@percent }
-\newlabel{fig:pam}{{4}{9}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Cross-dataset generalization (ridge, 3 seeds): held-out vs transfer Spearman.}}{10}{}\protected@file@percent }
-\newlabel{tab:crossdata}{{1}{10}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Cross-dataset generalization, CNN (2 seeds, 6-epoch compute budget; within-dataset numbers are undertrained relative to Table 1). Negative transfer to DeepHF appears.}}{10}{}\protected@file@percent }
-\newlabel{tab:crosscnn}{{2}{10}}
-\@writefile{toc}{\contentsline {section}{\numberline {10}Discovery: target-inherent transfer residual}{10}{}\protected@file@percent }
-\newlabel{sec:discovery}{{10}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Portability correction: rescuing cross-dataset transfer}{10}{}\protected@file@percent }
-\newlabel{sec:porta}{{10.1}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Mathematical foundations}{4}{}\protected@file@percent }
+\newlabel{sec:math}{{4}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Featurization and base learners}{4}{}\protected@file@percent }
+\newlabel{eq:onehot}{{1}{4}}
+\newlabel{eq:ridge}{{2}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Rank correlation and monotone invariance}{5}{}\protected@file@percent }
+\newlabel{eq:spearman}{{3}{5}}
+\newlabel{prop:mono}{{1}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}CFD as naive-Bayes odds}{5}{}\protected@file@percent }
+\newlabel{eq:cfd}{{4}{5}}
+\newlabel{eq:cfdnb}{{5}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Off-target GNN}{5}{}\protected@file@percent }
+\newlabel{eq:gnn}{{6}{5}}
+\newlabel{eq:bce}{{7}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Calibration}{6}{}\protected@file@percent }
+\newlabel{eq:ece}{{8}{6}}
+\newlabel{prop:murphy}{{2}{6}}
+\newlabel{eq:murphy}{{9}{6}}
+\newlabel{eq:isotonic}{{10}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Transfer residual and the PORTA correction}{6}{}\protected@file@percent }
+\newlabel{eq:resid}{{11}{6}}
+\newlabel{eq:porta}{{12}{6}}
+\newlabel{prop:porta}{{3}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.7}When pooling helps}{7}{}\protected@file@percent }
+\newlabel{eq:pool}{{13}{7}}
+\newlabel{eq:poolcond}{{14}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8}Uncertainty estimates}{7}{}\protected@file@percent }
+\newlabel{eq:boot}{{15}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Gap 1: Cross-dataset generalization of efficacy models}{7}{}\protected@file@percent }
+\newlabel{prop:indisc}{{4}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Gap 2: Calibrated cleavage probabilities}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Gap 3: Transfer learning for pegRNA efficiency}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Gaps 4 and 5: PAM-variant and chromatin-aware off-target scoring}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Methods}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Datasets}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Models and protocols}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Reproduction}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Results}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Gap 1: collapse across divergent assays, transfer within families}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Within-dataset vs cross-dataset Spearman (ridge, 3 seeds).}}{10}{}\protected@file@percent }
+\newlabel{fig:crossdata}{{1}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Gap 1 (cont.): pooling does not fix the boundary}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Gap 2: GNN beats published scores; isotonic calibrates}{10}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Reliability curves on held-out crisprSQL pairs, before and after Platt calibration on the validation slice.}}{11}{}\protected@file@percent }
+\newlabel{fig:calibration}{{2}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}Gap 3: Cas9-to-pegRNA transfer}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Scarce-regime scaling: Cas9-motif transfer never beats scratch.}}{11}{}\protected@file@percent }
+\newlabel{fig:scaling}{{3}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {10.4.1}Scarce-regime scaling: a clean negative}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}Gaps 4-5: PAM and chromatin ablation}{12}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 47\% of measured crisprSQL off-targets carry non-NGG PAMs -- the blind spot of NGG-trained scoring tools (gap 4 motivation).}}{12}{}\protected@file@percent }
+\newlabel{fig:pam}{{4}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Cross-dataset generalization (ridge, 3 seeds): held-out vs transfer Spearman.}}{13}{}\protected@file@percent }
+\newlabel{tab:crossdata}{{1}{13}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Cross-dataset generalization, CNN (2 seeds, 6-epoch compute budget; within-dataset numbers are undertrained relative to Table 1). Negative transfer to DeepHF appears.}}{13}{}\protected@file@percent }
+\newlabel{tab:crosscnn}{{2}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Discovery: target-inherent transfer residual}{13}{}\protected@file@percent }
+\newlabel{sec:discovery}{{11}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Portability correction: rescuing cross-dataset transfer}{13}{}\protected@file@percent }
+\newlabel{sec:porta}{{11.1}{13}}
 \bibcite{doench2014}{1}
 \bibcite{doench2016}{2}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Pooling mitigation attempt (gap 1, 3 seeds).}}{11}{}\protected@file@percent }
-\newlabel{tab:pooled}{{3}{11}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Off-target classification on crisprSQL, guide-grouped held-out split.}}{11}{}\protected@file@percent }
-\newlabel{tab:offtarget}{{4}{11}}
-\@writefile{toc}{\contentsline {section}{\numberline {11}Limitations}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {12}Tool documentation}{11}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Pooling mitigation attempt (gap 1, 3 seeds).}}{14}{}\protected@file@percent }
+\newlabel{tab:pooled}{{3}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Off-target classification on crisprSQL, guide-grouped held-out split.}}{14}{}\protected@file@percent }
+\newlabel{tab:offtarget}{{4}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Limitations}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {13}Tool documentation}{14}{}\protected@file@percent }
 \bibcite{chari2015}{3}
 \bibcite{wang2019}{4}
 \bibcite{chuai2018}{5}
@@ -66,10 +95,10 @@
 \bibcite{walton2020}{12}
 \bibcite{anzalone2019}{13}
 \bibcite{kim2021}{14}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}}{12}{}\protected@file@percent }
-\newlabel{tab:calib}{{5}{12}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Ablation: PAM and chromatin feature channels (gaps 4-5).}}{12}{}\protected@file@percent }
-\newlabel{tab:ablation}{{6}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}}{15}{}\protected@file@percent }
+\newlabel{tab:calib}{{5}{15}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Ablation: PAM and chromatin feature channels (gaps 4-5).}}{15}{}\protected@file@percent }
+\newlabel{tab:ablation}{{6}{15}}
 \bibcite{mathis2023}{15}
 \bibcite{stortz2021}{16}
 \bibcite{platt1999}{17}
@@ -82,10 +111,10 @@
 \bibcite{barlow1972}{24}
 \bibcite{brier1950}{25}
 \bibcite{degroot1983}{26}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces pegRNA efficiency (HEK), grouped held-out Spearman (gap 3).}}{13}{}\protected@file@percent }
-\newlabel{tab:pegrna}{{7}{13}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces pegRNA scarce-regime scaling (HEK, grouped held-out Spearman). Transfer never beats scratch.}}{13}{}\protected@file@percent }
-\newlabel{tab:scaling}{{8}{13}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Residual-corrected cross-dataset transfer. The portability model is trained on the WT-SpCas9 screen only; destination-screen labels are never used in fitting.}}{14}{}\protected@file@percent }
-\newlabel{tab:porta}{{9}{14}}
-\gdef \@abspage@last{14}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces pegRNA efficiency (HEK), grouped held-out Spearman (gap 3).}}{16}{}\protected@file@percent }
+\newlabel{tab:pegrna}{{7}{16}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces pegRNA scarce-regime scaling (HEK, grouped held-out Spearman). Transfer never beats scratch.}}{16}{}\protected@file@percent }
+\newlabel{tab:scaling}{{8}{16}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Residual-corrected cross-dataset transfer. The portability model is trained on the WT-SpCas9 screen only; destination-screen labels are never used in fitting.}}{17}{}\protected@file@percent }
+\newlabel{tab:porta}{{9}{17}}
+\gdef \@abspage@last{17}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -325,52 +325,52 @@ Overfull \hbox (13.756pt too wide) in paragraph at lines 34--38
 ce con-text and de-sign fea-tures (PBS/RTT
  []
 
-) [4] [5]
-Overfull \hbox (0.76025pt too wide) in paragraph at lines 166--172
+) (./math_foundations.tex [4] [5] [6]) [7] [8]
+Overfull \hbox (0.76025pt too wide) in paragraph at lines 168--174
 \OT1/cmtt/m/n/12 python -m crisprgap.train[]efficacy\OT1/ptm/m/n/12 , \OT1/cmtt
 /m/n/12 python -m crisprgap.train[]offtarget\OT1/ptm/m/n/12 , \OT1/cmtt/m/n/12 
 python
  []
 
 
-Overfull \hbox (8.39647pt too wide) in paragraph at lines 166--172
+Overfull \hbox (8.39647pt too wide) in paragraph at lines 168--174
 \OT1/cmtt/m/n/12 -m crisprgap.train[]offtarget[]ablation\OT1/ptm/m/n/12 , \OT1/
 cmtt/m/n/12 python -m crisprgap.train[]pegrna\OT1/ptm/m/n/12 ; har-nesses
  []
 
 
-Overfull \hbox (10.71785pt too wide) in paragraph at lines 166--172
+Overfull \hbox (10.71785pt too wide) in paragraph at lines 168--174
 \OT1/ptm/m/n/12 in \OT1/cmtt/m/n/12 crisprgap/crossdata.py \OT1/ptm/m/n/12 and 
 \OT1/cmtt/m/n/12 scripts/run[]crossdata[]cnn.py\OT1/ptm/m/n/12 . The her-metic 
 suite (\OT1/cmtt/m/n/12 pytest\OT1/ptm/m/n/12 )
  []
 
-<fig_crossdata.pdf, id=30, 375.804pt x 245.718pt>
+<fig_crossdata.pdf, id=40, 375.804pt x 245.718pt>
 File: fig_crossdata.pdf Graphic file (type pdf)
 <use fig_crossdata.pdf>
-Package pdftex.def Info: fig_crossdata.pdf  used on input line 190.
+Package pdftex.def Info: fig_crossdata.pdf  used on input line 192.
 (pdftex.def)             Requested size: 328.82707pt x 215.01396pt.
-[6]
-<fig_calibration.pdf, id=34, 303.534pt x 289.08pt>
+[9]
+<fig_calibration.pdf, id=44, 303.534pt x 289.08pt>
 File: fig_calibration.pdf Graphic file (type pdf)
 <use fig_calibration.pdf>
-Package pdftex.def Info: fig_calibration.pdf  used on input line 202.
+Package pdftex.def Info: fig_calibration.pdf  used on input line 204.
 (pdftex.def)             Requested size: 234.8775pt x 223.69061pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7 <./fig_crossdata.pdf>]
-<fig_pegrna_scaling.pdf, id=80, 303.534pt x 216.81pt>
+[10 <./fig_crossdata.pdf>]
+<fig_pegrna_scaling.pdf, id=89, 303.534pt x 216.81pt>
 File: fig_pegrna_scaling.pdf Graphic file (type pdf)
 <use fig_pegrna_scaling.pdf>
-Package pdftex.def Info: fig_pegrna_scaling.pdf  used on input line 216.
+Package pdftex.def Info: fig_pegrna_scaling.pdf  used on input line 218.
 (pdftex.def)             Requested size: 258.36668pt x 184.54741pt.
- [8 <./fig_calibration.pdf> <./fig_pegrna_scaling.pdf>]
-<fig_pam_distribution.pdf, id=175, 303.534pt x 216.81pt>
+ [11 <./fig_calibration.pdf> <./fig_pegrna_scaling.pdf>]
+<fig_pam_distribution.pdf, id=184, 303.534pt x 216.81pt>
 File: fig_pam_distribution.pdf Graphic file (type pdf)
 <use fig_pam_distribution.pdf>
-Package pdftex.def Info: fig_pam_distribution.pdf  used on input line 238.
+Package pdftex.def Info: fig_pam_distribution.pdf  used on input line 240.
 (pdftex.def)             Requested size: 258.36668pt x 184.54741pt.
  (./results_tables.tex)
 
@@ -397,35 +397,35 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9 <./fig_pam_distribution.pdf>] [10]
+[12 <./fig_pam_distribution.pdf>] [13]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./references.tex
-Overfull \hbox (14.37503pt too wide) in paragraph at lines 333--1
+Overfull \hbox (14.37503pt too wide) in paragraph at lines 335--1
 \OT1/ptm/m/n/12 Each gap ships as a callable tool: \OT1/cmtt/m/n/12 crisprgap.c
 rossdata \OT1/ptm/m/n/12 (gap 1 har-ness), \OT1/cmtt/m/n/12 crisprgap.calibrati
 on
  []
 
 
-Overfull \hbox (9.04047pt too wide) in paragraph at lines 333--1
+Overfull \hbox (9.04047pt too wide) in paragraph at lines 335--1
 \OT1/ptm/m/n/12 + \OT1/cmtt/m/n/12 crisprgap.models.transfer[]cnn \OT1/ptm/m/n/
 12 (gap 3 pre-dic-tor), \OT1/cmtt/m/n/12 crisprgap.models.offtarget[]v2 \OT1/pt
 m/m/n/12 (gaps
  []
 
-[11] [12]) [13] [14] (./crispr_gap_tools_1_5.aux)
+[14] [15]) [16] [17] (./crispr_gap_tools_1_5.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3413 strings out of 480247
- 50993 string characters out of 5896151
- 350141 words of memory out of 5000000
- 21291 multiletter control sequences out of 15000+600000
- 510916 words of font info for 114 fonts, out of 8000000 for 9000
+ 3444 strings out of 480247
+ 51361 string characters out of 5896151
+ 350311 words of memory out of 5000000
+ 21315 multiletter control sequences out of 15000+600000
+ 513760 words of font info for 120 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,10n,62p,367b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
@@ -440,10 +440,10 @@ rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb>
 ive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmri8a.pfb>
-Output written on crispr_gap_tools_1_5.pdf (14 pages, 190001 bytes).
+Output written on crispr_gap_tools_1_5.pdf (17 pages, 209098 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 300 PDF objects out of 1000 (max. 8388607)
+ 104 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
