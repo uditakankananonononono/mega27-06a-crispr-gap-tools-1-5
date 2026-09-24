@@ -1633,6 +1633,23 @@ geometry, not the mismatch alone, sets the magnitude. For gap-2/4
 diagnostics design: guide length is a continuous specificity dial,
 and single mismatches cannot be assumed to silence collateral
 cleavage.
+Curve-modeling extras over the committed results
+(\texttt{results/curve\_modeling\_extras.json}) sharpen three earlier
+findings. Hill fits to the LNP dose ladder explain the dose--precision
+decoupling mechanistically: editing saturates early (EC$_{50}$
+1.08\,mg/kg, Hill $n=2.9$, $R^2=0.997$) while indels accumulate later
+(EC$_{50}$ 2.54\,mg/kg, $n=1.3$, $R^2=0.999$) --- the precision peak
+at 1--2\,mg/kg is exactly the window between the two EC$_{50}$s. A
+kneed knee-point search on the 4-point dose curve returns no knee,
+which we keep as an honest null rather than forcing a detection.
+The trans-cleavage spacer ladder is inverse-length linear
+($R^2=0.87$), consistent with a simple kinetic window. Change-point
+detection (PELT) on the positional editing profiles finds a sharp
+window edge after position index 5 in all three Sdd7 variants but not
+in BE4max --- the engineered deaminases impose a hard window boundary
+that the parent lacks. Distance correlation between editor
+site-activity vectors (0.64--0.91) tracks the Spearman picture with a
+modest nonlinear premium, minimum again at BE4max vs Sdd7e2.
 
 
 

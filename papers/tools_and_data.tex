@@ -4,7 +4,7 @@ Per program requirements, every external resource actually used in this
 work is listed with its role. Counts are honest: an entry appears only if
 it was executed or analyzed in the pipeline.
 
-\subsection{External tools (40 analysis tools + 4 infrastructure)}
+\subsection{External tools (44 analysis tools + 4 infrastructure)}
 \begin{table}[h]\centering\small
 \caption{External tools/packages used, with role.}
 \label{tab:tools}
@@ -54,6 +54,10 @@ pyarrow (25.0.1) & parquet caching of large tables (2$\times$ faster loads, roun
 CRISPOR CFD matrices & published off-target baseline (vendored, offline scorer) \\
 CRISPRoff (Alkan 2018, vendored RTH-tools) & published energy-based gap-2 baseline \\
 MIT/Hsu-2013 score & published off-target baseline (reimplemented from source) \\
+lmfit (1.3.4) & Hill dose--response fits: LNP editing vs indel EC$_{50}$ separation (gap 3) \\
+kneed (0.8.6) & knee-point search on dose curves (honest null at 4 points) \\
+dcor (0.7) & distance correlation between editor activity vectors, nonlinear dependence (gap 1) \\
+ruptures (1.1.10) & PELT change-point detection on positional editing windows (gap 2) \\
 GitHub & code hosting (repo: mega27-06a-crispr-gap-tools-1-5) \\
 Google Drive API & artifact delivery (bundle + paper PDF) \\
 \hline
@@ -62,7 +66,7 @@ Google Drive API & artifact delivery (bundle + paper PDF) \\
 
 \noindent \emph{Not counted toward the tool tally (infrastructure):
 GitHub (hosting), Google Drive API (delivery), pytest (test runner),
-pyarrow (I/O caching). Counted analysis/software tools: 40.}
+pyarrow (I/O caching). Counted analysis/software tools: 44.}
 
 \subsection{Datasets and data sources (124 working; 131 literal rows incl.\ 4 UCSC alias rows)}
 \begin{table}[h]\centering\small
