@@ -1,0 +1,88 @@
+{
+ "dose_response": [
+  {
+   "dose": 100.0,
+   "hm": 31.35,
+   "epeg": 69.64,
+   "ratio": 2.22
+  },
+  {
+   "dose": 50.0,
+   "hm": 21.64,
+   "epeg": 56.71,
+   "ratio": 2.62
+  },
+  {
+   "dose": 25.0,
+   "hm": 10.39,
+   "epeg": 37.37,
+   "ratio": 3.6
+  },
+  {
+   "dose": 12.5,
+   "hm": 2.3,
+   "epeg": 13.91,
+   "ratio": 6.05
+  },
+  {
+   "dose": 6.25,
+   "hm": 0.33,
+   "epeg": 2.66,
+   "ratio": 7.99
+  }
+ ],
+ "editor_ladder": [
+  {
+   "editor": "Untreated",
+   "edit": 0.01,
+   "indel": 0.115
+  },
+  {
+   "editor": "PEmax (s0.2)",
+   "edit": 2.32,
+   "indel": 0.106
+  },
+  {
+   "editor": "PE6a",
+   "edit": 1.57,
+   "indel": 0.083
+  },
+  {
+   "editor": "PE6b",
+   "edit": 4.07,
+   "indel": 0.087
+  },
+  {
+   "editor": "PE6c (s1)",
+   "edit": 10.54,
+   "indel": 0.313
+  },
+  {
+   "editor": "PE6d",
+   "edit": 6.24,
+   "indel": 0.181
+  }
+ ],
+ "kinetics": [
+  {
+   "hours": 1.0,
+   "pemax": 0.789,
+   "pe6c": 1.57
+  },
+  {
+   "hours": 4.0,
+   "pemax": 0.455,
+   "pe6c": 2.921
+  },
+  {
+   "hours": 24.0,
+   "pemax": 0.02,
+   "pe6c": 0.433
+  },
+  {
+   "hours": 48.0,
+   "pemax": 0.0,
+   "pe6c": 0.026
+  }
+ ]
+}
