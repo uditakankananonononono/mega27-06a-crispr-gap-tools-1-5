@@ -1,0 +1,12 @@
+{
+ "activation": {
+  "n_common": 2005,
+  "spearman": 0.701,
+  "pvalue": 6.188679279351312e-297
+ },
+ "gefitinib": {
+  "n_common": 2005,
+  "spearman": 0.675,
+  "pvalue": 1.3358918186441651e-266
+ }
+}
