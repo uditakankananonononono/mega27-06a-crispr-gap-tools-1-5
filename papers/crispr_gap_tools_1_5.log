@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -499,6 +499,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<figs/fig_porta_logo.png, id=211, 614.295pt x 260.172pt>
+File: figs/fig_porta_logo.png Graphic file (type png)
+<use figs/fig_porta_logo.png>
+Package pdftex.def Info: figs/fig_porta_logo.png  used on input line 401.
+(pdftex.def)             Requested size: 399.29463pt x 169.11374pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [18 <./fig_pam_distribution.pdf>] [19]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -514,29 +522,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
-<figs/fig_residual_concordance.png, id=261, 346.896pt x 317.988pt>
+<figs/fig_residual_concordance.png, id=262, 346.896pt x 317.988pt>
 File: figs/fig_residual_concordance.png Graphic file (type png)
 <use figs/fig_residual_concordance.png>
 Package pdftex.def Info: figs/fig_residual_concordance.png  used on input line 
-471.
+484.
 (pdftex.def)             Requested size: 244.27461pt x 223.91954pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs/fig_porta_before_after.png, id=262, 664.884pt x 303.534pt>
+<figs/fig_porta_before_after.png, id=263, 664.884pt x 303.534pt>
 File: figs/fig_porta_before_after.png Graphic file (type png)
 <use figs/fig_porta_before_after.png>
-Package pdftex.def Info: figs/fig_porta_before_after.png  used on input line 48
-2.
+Package pdftex.def Info: figs/fig_porta_before_after.png  used on input line 49
+5.
 (pdftex.def)             Requested size: 446.26582pt x 203.72798pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs/fig_porta_score_dist.png, id=263, 346.896pt x 289.08pt>
+<figs/fig_porta_score_dist.png, id=264, 346.896pt x 289.08pt>
 File: figs/fig_porta_score_dist.png Graphic file (type png)
 <use figs/fig_porta_score_dist.png>
-Package pdftex.def Info: figs/fig_porta_score_dist.png  used on input line 492.
+Package pdftex.def Info: figs/fig_porta_score_dist.png  used on input line 505.
 
 (pdftex.def)             Requested size: 234.8775pt x 195.7337pt.
 
@@ -550,38 +558,38 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
-Overfull \hbox (16.84058pt too wide) in paragraph at lines 59--502
+Overfull \hbox (16.84058pt too wide) in paragraph at lines 59--515
  \OT1/ptm/b/n/12 To-ward the 40-tool / 120-dataset bar.[] \OT1/ptm/m/n/12 Reach
 -able ad-di-tions with gen-uine use in this item: published-
  []
 
 
-Overfull \hbox (17.82321pt too wide) in paragraph at lines 59--502
+Overfull \hbox (17.82321pt too wide) in paragraph at lines 59--515
 \OT1/ptm/m/n/12 model ex-ter-nal val-i-da-tion (PRI-DICT2, CRISPRon, DeepHF BiL
 -STM weights as bench-mark columns),
  []
 
 
-Overfull \hbox (1.98587pt too wide) in paragraph at lines 59--502
+Overfull \hbox (1.98587pt too wide) in paragraph at lines 59--515
 \OT1/ptm/m/n/12 2019/2020 CRISPRon 15k, Xiang-2021, Chari-2015, GUIDE-seq/CIRCL
 E-seq/CHANGE-seq pri-
  []
 
-
-Overfull \hbox (14.37503pt too wide) in paragraph at lines 517--523
+[23 <./figs/fig_porta_logo.png>]
+Overfull \hbox (14.37503pt too wide) in paragraph at lines 530--536
 \OT1/ptm/m/n/12 Each gap ships as a callable tool: \OT1/cmtt/m/n/12 crisprgap.c
 rossdata \OT1/ptm/m/n/12 (gap 1 har-ness), \OT1/cmtt/m/n/12 crisprgap.calibrati
 on
  []
 
 
-Overfull \hbox (9.04047pt too wide) in paragraph at lines 517--523
+Overfull \hbox (9.04047pt too wide) in paragraph at lines 530--536
 \OT1/ptm/m/n/12 + \OT1/cmtt/m/n/12 crisprgap.models.transfer[]cnn \OT1/ptm/m/n/
 12 (gap 3 pre-dic-tor), \OT1/cmtt/m/n/12 crisprgap.models.offtarget[]v2 \OT1/pt
 m/m/n/12 (gaps
  []
 
-[23] (./repro_appendix.tex [24]
+[24] (./repro_appendix.tex
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
 5.
 
@@ -605,7 +613,7 @@ m/n/12 data/deepHF/\OMS/cmtt/m/n/12 f\OT1/cmtt/m/n/12 wt,esp,hf\OMS/cmtt/m/n/12
  g[]\OT1/cmtt/m/n/12 seq[]data[]array.pkl\OT1/ptm/m/n/12 );
  []
 
-[25 <./figs/fig_residual_concordance.png>]
+
 Overfull \hbox (43.1291pt too wide) in paragraph at lines 27--29
 []\OT1/ptm/b/n/12 PRIDICT2\OT1/ptm/m/n/12 : \OT1/cmtt/m/n/12 data[]23k[]v1.csv 
 \OT1/ptm/m/n/12 from \OT1/cmtt/m/n/12 github.com/uzh-dqbm-cmi/PRIDICT2\OT1/ptm/
@@ -619,7 +627,7 @@ Overfull \hbox (20.71205pt too wide) in paragraph at lines 29--32
 ]Scoring/\OT1/ptm/m/n/12 )
  []
 
-
+[25]
 Overfull \hbox (5.72021pt too wide) in paragraph at lines 51--51
 []\OT1/cmtt/m/n/12 python scripts/make_paper_assets.py        # tables and figu
 res from results/[] 
@@ -643,8 +651,9 @@ Overfull \hbox (11.89522pt too wide) in paragraph at lines 51--51
 d/primer3 features[] 
  []
 
-[26 <./figs/fig_porta_before_after.png>]) (./references.tex [27 <./figs/fig_por
-ta_score_dist.png>] [28]) [29] (./crispr_gap_tools_1_5.aux)
+) [26 <./figs/fig_residual_concordance.png>] (./references.tex [27 <./figs/fig_
+porta_before_after.png>] [28 <./figs/fig_porta_score_dist.png>]) [29] [30]
+(./crispr_gap_tools_1_5.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -653,13 +662,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3620 strings out of 480247
- 54836 string characters out of 5896151
- 356587 words of memory out of 5000000
- 21443 multiletter control sequences out of 15000+600000
+ 3628 strings out of 480247
+ 55039 string characters out of 5896151
+ 356597 words of memory out of 5000000
+ 21450 multiletter control sequences out of 15000+600000
  521004 words of font info for 139 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,10n,62p,535b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,10n,62p,550b,278s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -673,10 +682,10 @@ share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on crispr_gap_tools_1_5.pdf (29 pages, 756738 bytes).
+Output written on crispr_gap_tools_1_5.pdf (30 pages, 908916 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 361 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
