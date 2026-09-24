@@ -769,6 +769,17 @@ retention of WT activity at 1-mismatch off-targets falls Sniper 0.84
 $>$ eSpCas9 0.27 $>$ HF1 0.14 $>$ Hypa 0.06 $>$ evoCas9 0.006 -- the
 fidelity ladder is monotone in mismatch intolerance, and evoCas9's
 extreme specificity matches its 33\% activity retention.
+\paragraph{Base editors: same tradeoff (evolved ABEs).} The evolved-ABE
+screen (Nat Commun 2024, 10.1038/s41467-024-52483-3, MOESM8 S~Fig.~12;
+20 guide blocks, 30 OT measurements)
+(\texttt{results/be\_evolved\_offtarget.json}) shows the same axis:
+ABE8e keeps the highest on-target activity (mean 70\%) but the worst
+off-target retention (median 9.5\% of on-target, 53\% of OTs
+eliminated), while evolved variants (E2/E4/M1/M3/E18) cut median OT
+retention to 0.4--2.3\% with 67--73\% eliminated at 16--38\% mean
+on-target activity. Across Cas9 nucleases and base editors alike,
+specificity is bought with activity -- no free-lunch variant appears in
+any of the four variant corpora analyzed here.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch

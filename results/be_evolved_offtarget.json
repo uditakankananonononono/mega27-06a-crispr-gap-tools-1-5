@@ -1,0 +1,76 @@
+{
+ "n_blocks": 20,
+ "n_ot_rows": 30,
+ "editors": {
+  "ABE8e": {
+   "n_sites": 5,
+   "mean_on_target": 70.26,
+   "n_ot": 15,
+   "median_ot_retention": 0.0953,
+   "frac_ot_eliminated": 0.533
+  },
+  "ABEmax": {
+   "n_sites": 5,
+   "mean_on_target": 32.39,
+   "n_ot": 15,
+   "median_ot_retention": 0.0118,
+   "frac_ot_eliminated": 0.733
+  },
+  "E11": {
+   "n_sites": 5,
+   "mean_on_target": 37.96,
+   "n_ot": 15,
+   "median_ot_retention": 0.0153,
+   "frac_ot_eliminated": 0.667
+  },
+  "E14": {
+   "n_sites": 5,
+   "mean_on_target": 52.66,
+   "n_ot": 15,
+   "median_ot_retention": 0.0189,
+   "frac_ot_eliminated": 0.667
+  },
+  "E18": {
+   "n_sites": 5,
+   "mean_on_target": 15.94,
+   "n_ot": 15,
+   "median_ot_retention": 0.0227,
+   "frac_ot_eliminated": 0.733
+  },
+  "E2": {
+   "n_sites": 5,
+   "mean_on_target": 21.79,
+   "n_ot": 15,
+   "median_ot_retention": 0.0121,
+   "frac_ot_eliminated": 0.733
+  },
+  "E21": {
+   "n_sites": 5,
+   "mean_on_target": 38.27,
+   "n_ot": 15,
+   "median_ot_retention": 0.0186,
+   "frac_ot_eliminated": 0.667
+  },
+  "E4": {
+   "n_sites": 5,
+   "mean_on_target": 26.28,
+   "n_ot": 15,
+   "median_ot_retention": 0.0139,
+   "frac_ot_eliminated": 0.667
+  },
+  "M1": {
+   "n_sites": 5,
+   "mean_on_target": 29.58,
+   "n_ot": 15,
+   "median_ot_retention": 0.0035,
+   "frac_ot_eliminated": 0.733
+  },
+  "M3": {
+   "n_sites": 5,
+   "mean_on_target": 24.64,
+   "n_ot": 15,
+   "median_ot_retention": 0.0187,
+   "frac_ot_eliminated": 0.733
+  }
+ }
+}
