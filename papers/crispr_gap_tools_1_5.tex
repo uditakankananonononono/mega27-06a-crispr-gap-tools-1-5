@@ -482,6 +482,23 @@ Direct-track chromatin context therefore exists and points the expected
 direction, but crisprSQL's negative scarcity bounds what any chromatin
 channel can prove on this corpus -- the honest gap-5 verdict is a power
 statement, not an effect statement.
+\paragraph{Multi-track control: the bottleneck is negatives, not track
+choice.} To test whether the weak single-track result was a track-choice
+artifact, we re-ran the direct-query protocol on the identical seed-0
+400-locus subsample with three further ENCODE K562 tracks -- H3K27ac
+(active enhancer, \texttt{wgEncodeBroadHistoneK562H3k27acStdSig}),
+H3K9me3 (heterochromatin, \texttt{wgEncodeBroadHistoneK562H3k9me3StdSig})
+and DNase (open chromatin, \texttt{wgEncodeOpenChromDnaseK562SigV2}) --
+plus H3K4me3 for within-run consistency
+(\texttt{results/gap5\_encode\_multitrack.json}). Per-track AUROCs:
+H3K4me3 $0.575$, H3K27ac $0.588$, H3K9me3 $0.439$, DNase $0.508$; no
+track reaches significance (Mann--Whitney $p=0.28$--$0.92$) because every
+track sees the same 13 negatives. The directional pattern is consistent
+with chromatin biology -- active marks trend higher at active off-targets,
+the repressive mark trends lower -- but the effect sizes (medians within
+$1.1\times$) are far below what 13 negatives can resolve. Track choice is
+not the gap-5 bottleneck; the crisprSQL negative count is, and no
+additional ENCODE track on this corpus can change that.
 \input{ablation_perseed_table.tex}
 \input{results_tables.tex}
 

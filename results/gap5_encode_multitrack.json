@@ -1,0 +1,48 @@
+{
+  "tracks": {
+    "h3k4me3": "wgEncodeBroadHistoneK562H3k4me3StdSig",
+    "h3k27ac": "wgEncodeBroadHistoneK562H3k27acStdSig",
+    "h3k9me3": "wgEncodeBroadHistoneK562H3k9me3StdSig",
+    "dnase": "wgEncodeOpenChromDnaseK562SigV2"
+  },
+  "rows": "crisprSQL K562 hg19, seed-0 400-locus subsample",
+  "labels_positive": 387,
+  "per_track": {
+    "h3k4me3": {
+      "n_ok": 394,
+      "n_pos": 381,
+      "n_neg": 13,
+      "auroc": 0.5745003028467596,
+      "median_pos": 1.606153846153846,
+      "median_neg": 1.3433333333333335,
+      "mannwhitney_p": 0.3614215298488932
+    },
+    "h3k27ac": {
+      "n_ok": 391,
+      "n_pos": 378,
+      "n_neg": 13,
+      "auroc": 0.5876068376068376,
+      "median_pos": 1.5612499999999998,
+      "median_neg": 1.49,
+      "mannwhitney_p": 0.28315493713663475
+    },
+    "h3k9me3": {
+      "n_ok": 398,
+      "n_pos": 385,
+      "n_neg": 13,
+      "auroc": 0.43936063936063935,
+      "median_pos": 3.337142857142857,
+      "median_neg": 3.4899999999999998,
+      "mannwhitney_p": 0.45763081065346056
+    },
+    "dnase": {
+      "n_ok": 400,
+      "n_pos": 387,
+      "n_neg": 13,
+      "auroc": 0.5082488570860664,
+      "median_pos": 0.006381115459882584,
+      "median_neg": 0.006311448140900196,
+      "mannwhitney_p": 0.9203488670444506
+    }
+  }
+}
