@@ -1,0 +1,7 @@
+{
+  "mfe_residual_corr_wt": -0.08456450272205054,
+  "porta_cross_screen_baseline": 0.7812176526511863,
+  "porta_cross_screen_plus_mfe": 0.7813855432233586,
+  "delta": 0.0001678905721723689,
+  "external_tool": "ViennaRNA 2.7.2 RNAfold MFE on 23nt guide+PAM"
+}
