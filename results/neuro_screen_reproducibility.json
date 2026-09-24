@@ -1,0 +1,570 @@
+{
+ "n_sgrna": 1139,
+ "sgrna_conditions": [
+  "exp139.glut",
+  "exp139.kcl",
+  "exp139.survival",
+  "exp139.ttx",
+  "exp222.cocult.glut",
+  "exp222.cocult.spont",
+  "exp222.glut.antagonist",
+  "ipsc.glut",
+  "ipsc.notx",
+  "primary",
+  "primary.A",
+  "primary.B"
+ ],
+ "sgrna_condition_transfer": {
+  "exp139.glut_vs_exp139.kcl": {
+   "n": 1139,
+   "spearman": 0.21291461792953748
+  },
+  "exp139.glut_vs_exp139.survival": {
+   "n": 1139,
+   "spearman": 0.14635940907908562
+  },
+  "exp139.glut_vs_exp139.ttx": {
+   "n": 1139,
+   "spearman": -0.047917288093639224
+  },
+  "exp139.glut_vs_exp222.cocult.glut": {
+   "n": 1139,
+   "spearman": 0.35219796537669457
+  },
+  "exp139.glut_vs_exp222.cocult.spont": {
+   "n": 1139,
+   "spearman": -0.07515556010693429
+  },
+  "exp139.glut_vs_exp222.glut.antagonist": {
+   "n": 1139,
+   "spearman": -0.10378291580072942
+  },
+  "exp139.glut_vs_ipsc.glut": {
+   "n": 1139,
+   "spearman": -0.041510807295646525
+  },
+  "exp139.glut_vs_ipsc.notx": {
+   "n": 1139,
+   "spearman": 0.07211228316082752
+  },
+  "exp139.glut_vs_primary": {
+   "n": 1139,
+   "spearman": 0.4702605197824314
+  },
+  "exp139.glut_vs_primary.A": {
+   "n": 1139,
+   "spearman": 0.46463278602410524
+  },
+  "exp139.glut_vs_primary.B": {
+   "n": 1139,
+   "spearman": 0.3611080851300203
+  },
+  "exp139.kcl_vs_exp139.survival": {
+   "n": 1139,
+   "spearman": 0.04035912281397277
+  },
+  "exp139.kcl_vs_exp139.ttx": {
+   "n": 1139,
+   "spearman": 0.06600626436152335
+  },
+  "exp139.kcl_vs_exp222.cocult.glut": {
+   "n": 1139,
+   "spearman": 0.0820074205019605
+  },
+  "exp139.kcl_vs_exp222.cocult.spont": {
+   "n": 1139,
+   "spearman": 0.08672655149127967
+  },
+  "exp139.kcl_vs_exp222.glut.antagonist": {
+   "n": 1139,
+   "spearman": 0.025392230950900884
+  },
+  "exp139.kcl_vs_ipsc.glut": {
+   "n": 1139,
+   "spearman": 0.0019181584587332314
+  },
+  "exp139.kcl_vs_ipsc.notx": {
+   "n": 1139,
+   "spearman": -0.0016455228227895355
+  },
+  "exp139.kcl_vs_primary": {
+   "n": 1139,
+   "spearman": 0.1416726568809348
+  },
+  "exp139.kcl_vs_primary.A": {
+   "n": 1139,
+   "spearman": 0.17759615782349997
+  },
+  "exp139.kcl_vs_primary.B": {
+   "n": 1139,
+   "spearman": 0.06262618347095787
+  },
+  "exp139.survival_vs_exp139.ttx": {
+   "n": 1139,
+   "spearman": -0.009477884400411928
+  },
+  "exp139.survival_vs_exp222.cocult.glut": {
+   "n": 1139,
+   "spearman": 0.14994367668802844
+  },
+  "exp139.survival_vs_exp222.cocult.spont": {
+   "n": 1139,
+   "spearman": -0.056895900502601605
+  },
+  "exp139.survival_vs_exp222.glut.antagonist": {
+   "n": 1139,
+   "spearman": 0.010733442322792712
+  },
+  "exp139.survival_vs_ipsc.glut": {
+   "n": 1139,
+   "spearman": -0.03313542509888844
+  },
+  "exp139.survival_vs_ipsc.notx": {
+   "n": 1139,
+   "spearman": -0.009151038789306903
+  },
+  "exp139.survival_vs_primary": {
+   "n": 1139,
+   "spearman": 0.23323935421999292
+  },
+  "exp139.survival_vs_primary.A": {
+   "n": 1139,
+   "spearman": 0.1841786841828716
+  },
+  "exp139.survival_vs_primary.B": {
+   "n": 1139,
+   "spearman": 0.1824411435398651
+  },
+  "exp139.ttx_vs_exp222.cocult.glut": {
+   "n": 1139,
+   "spearman": -0.1057453270248192
+  },
+  "exp139.ttx_vs_exp222.cocult.spont": {
+   "n": 1139,
+   "spearman": 0.2551460162879985
+  },
+  "exp139.ttx_vs_exp222.glut.antagonist": {
+   "n": 1139,
+   "spearman": 0.2660402141382192
+  },
+  "exp139.ttx_vs_ipsc.glut": {
+   "n": 1139,
+   "spearman": 0.011479889660112399
+  },
+  "exp139.ttx_vs_ipsc.notx": {
+   "n": 1139,
+   "spearman": -0.006790330874074663
+  },
+  "exp139.ttx_vs_primary": {
+   "n": 1139,
+   "spearman": -0.105441998926564
+  },
+  "exp139.ttx_vs_primary.A": {
+   "n": 1139,
+   "spearman": -0.08442987515079688
+  },
+  "exp139.ttx_vs_primary.B": {
+   "n": 1139,
+   "spearman": -0.10966277558975025
+  },
+  "exp222.cocult.glut_vs_exp222.cocult.spont": {
+   "n": 1139,
+   "spearman": -0.06647632898206546
+  },
+  "exp222.cocult.glut_vs_exp222.glut.antagonist": {
+   "n": 1139,
+   "spearman": -0.09485197376034506
+  },
+  "exp222.cocult.glut_vs_ipsc.glut": {
+   "n": 1139,
+   "spearman": 0.04185341687385936
+  },
+  "exp222.cocult.glut_vs_ipsc.notx": {
+   "n": 1139,
+   "spearman": 0.05331434732663877
+  },
+  "exp222.cocult.glut_vs_primary": {
+   "n": 1139,
+   "spearman": 0.41842185255173303
+  },
+  "exp222.cocult.glut_vs_primary.A": {
+   "n": 1139,
+   "spearman": 0.3690316482704623
+  },
+  "exp222.cocult.glut_vs_primary.B": {
+   "n": 1139,
+   "spearman": 0.33642330442711543
+  },
+  "exp222.cocult.spont_vs_exp222.glut.antagonist": {
+   "n": 1139,
+   "spearman": 0.28527366486626426
+  },
+  "exp222.cocult.spont_vs_ipsc.glut": {
+   "n": 1139,
+   "spearman": 0.04383316311168799
+  },
+  "exp222.cocult.spont_vs_ipsc.notx": {
+   "n": 1139,
+   "spearman": -0.0990547203831019
+  },
+  "exp222.cocult.spont_vs_primary": {
+   "n": 1139,
+   "spearman": -0.14952245578898155
+  },
+  "exp222.cocult.spont_vs_primary.A": {
+   "n": 1139,
+   "spearman": -0.14831575014424092
+  },
+  "exp222.cocult.spont_vs_primary.B": {
+   "n": 1139,
+   "spearman": -0.13031114295271562
+  },
+  "exp222.glut.antagonist_vs_ipsc.glut": {
+   "n": 1139,
+   "spearman": 0.03965400923524638
+  },
+  "exp222.glut.antagonist_vs_ipsc.notx": {
+   "n": 1139,
+   "spearman": -0.03897039349774129
+  },
+  "exp222.glut.antagonist_vs_primary": {
+   "n": 1139,
+   "spearman": -0.12471861285886669
+  },
+  "exp222.glut.antagonist_vs_primary.A": {
+   "n": 1139,
+   "spearman": -0.1470744039987286
+  },
+  "exp222.glut.antagonist_vs_primary.B": {
+   "n": 1139,
+   "spearman": -0.06899530597108317
+  },
+  "ipsc.glut_vs_ipsc.notx": {
+   "n": 1139,
+   "spearman": -0.09305546423070951
+  },
+  "ipsc.glut_vs_primary": {
+   "n": 1139,
+   "spearman": -0.03953947037369538
+  },
+  "ipsc.glut_vs_primary.A": {
+   "n": 1139,
+   "spearman": -0.04118450480856391
+  },
+  "ipsc.glut_vs_primary.B": {
+   "n": 1139,
+   "spearman": -0.022157901716111927
+  },
+  "ipsc.notx_vs_primary": {
+   "n": 1139,
+   "spearman": -0.005916040477986332
+  },
+  "ipsc.notx_vs_primary.A": {
+   "n": 1139,
+   "spearman": -0.021559315389848017
+  },
+  "ipsc.notx_vs_primary.B": {
+   "n": 1139,
+   "spearman": 0.018535061970536133
+  },
+  "primary_vs_primary.A": {
+   "n": 1139,
+   "spearman": 0.8353319510997276
+  },
+  "primary_vs_primary.B": {
+   "n": 1139,
+   "spearman": 0.7860559299299179
+  },
+  "primary.A_vs_primary.B": {
+   "n": 1139,
+   "spearman": 0.40922228028816915
+  }
+ },
+ "within_gene_concordance": {
+  "n_genes_multi_sgRNA": 377,
+  "n_sign_concordant": 268,
+  "fraction": 0.7108753315649867,
+  "mean_abs_spread": 0.8335637272095491
+ },
+ "n_genes_genelevel": 389,
+ "genelevel_conditions": [
+  "coculture.glut",
+  "coculture.spontaneous",
+  "glut.A",
+  "glut.B",
+  "glut.antagonists",
+  "glut.primary",
+  "glut.secondary",
+  "ipsc.glut",
+  "ipsc.notx",
+  "kcl.secondary",
+  "survival",
+  "ttx.secondary"
+ ],
+ "genelevel_condition_transfer": {
+  "coculture.glut_vs_coculture.spontaneous": {
+   "n": 389,
+   "spearman": -0.1352812983534103
+  },
+  "coculture.glut_vs_glut.A": {
+   "n": 389,
+   "spearman": 0.41769151263228066
+  },
+  "coculture.glut_vs_glut.B": {
+   "n": 389,
+   "spearman": 0.41664468359668844
+  },
+  "coculture.glut_vs_glut.antagonists": {
+   "n": 389,
+   "spearman": -0.10407661932322045
+  },
+  "coculture.glut_vs_glut.primary": {
+   "n": 389,
+   "spearman": 0.47384456372609984
+  },
+  "coculture.glut_vs_glut.secondary": {
+   "n": 389,
+   "spearman": 0.44303415292469966
+  },
+  "coculture.glut_vs_ipsc.glut": {
+   "n": 389,
+   "spearman": -0.014367550134650551
+  },
+  "coculture.glut_vs_ipsc.notx": {
+   "n": 389,
+   "spearman": 0.04297992575362518
+  },
+  "coculture.glut_vs_kcl.secondary": {
+   "n": 389,
+   "spearman": 0.08858171484254754
+  },
+  "coculture.glut_vs_survival": {
+   "n": 389,
+   "spearman": 0.18498233539709172
+  },
+  "coculture.glut_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": -0.08062214466422984
+  },
+  "coculture.spontaneous_vs_glut.A": {
+   "n": 389,
+   "spearman": -0.21347320953501223
+  },
+  "coculture.spontaneous_vs_glut.B": {
+   "n": 389,
+   "spearman": -0.21361285469360627
+  },
+  "coculture.spontaneous_vs_glut.antagonists": {
+   "n": 389,
+   "spearman": 0.34838979958371474
+  },
+  "coculture.spontaneous_vs_glut.primary": {
+   "n": 389,
+   "spearman": -0.23693787727127244
+  },
+  "coculture.spontaneous_vs_glut.secondary": {
+   "n": 389,
+   "spearman": -0.1428247871175812
+  },
+  "coculture.spontaneous_vs_ipsc.glut": {
+   "n": 389,
+   "spearman": -0.03363735885136251
+  },
+  "coculture.spontaneous_vs_ipsc.notx": {
+   "n": 389,
+   "spearman": -0.07032469028334716
+  },
+  "coculture.spontaneous_vs_kcl.secondary": {
+   "n": 389,
+   "spearman": 0.13002187434382065
+  },
+  "coculture.spontaneous_vs_survival": {
+   "n": 389,
+   "spearman": -0.03241235482509699
+  },
+  "coculture.spontaneous_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": 0.3152231570406643
+  },
+  "glut.A_vs_glut.B": {
+   "n": 389,
+   "spearman": 0.5537005967027434
+  },
+  "glut.A_vs_glut.antagonists": {
+   "n": 389,
+   "spearman": -0.1842525110645854
+  },
+  "glut.A_vs_glut.primary": {
+   "n": 389,
+   "spearman": 0.8537984502445319
+  },
+  "glut.A_vs_glut.secondary": {
+   "n": 389,
+   "spearman": 0.49966954043491824
+  },
+  "glut.A_vs_ipsc.glut": {
+   "n": 389,
+   "spearman": -0.04258158029392758
+  },
+  "glut.A_vs_ipsc.notx": {
+   "n": 389,
+   "spearman": -0.06334936364618605
+  },
+  "glut.A_vs_kcl.secondary": {
+   "n": 389,
+   "spearman": 0.19481661634684191
+  },
+  "glut.A_vs_survival": {
+   "n": 389,
+   "spearman": 0.19316656099843232
+  },
+  "glut.A_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": -0.1346609476707799
+  },
+  "glut.B_vs_glut.antagonists": {
+   "n": 389,
+   "spearman": -0.14291000124355543
+  },
+  "glut.B_vs_glut.primary": {
+   "n": 389,
+   "spearman": 0.8588134442611955
+  },
+  "glut.B_vs_glut.secondary": {
+   "n": 389,
+   "spearman": 0.4748650946223363
+  },
+  "glut.B_vs_ipsc.glut": {
+   "n": 389,
+   "spearman": -0.04727753099205144
+  },
+  "glut.B_vs_ipsc.notx": {
+   "n": 389,
+   "spearman": 0.07349881454511355
+  },
+  "glut.B_vs_kcl.secondary": {
+   "n": 389,
+   "spearman": 0.08978327479109288
+  },
+  "glut.B_vs_survival": {
+   "n": 389,
+   "spearman": 0.18186182672176365
+  },
+  "glut.B_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": -0.16333815126118947
+  },
+  "glut.antagonists_vs_glut.primary": {
+   "n": 389,
+   "spearman": -0.1972584699375572
+  },
+  "glut.antagonists_vs_glut.secondary": {
+   "n": 389,
+   "spearman": -0.11953972140281206
+  },
+  "glut.antagonists_vs_ipsc.glut": {
+   "n": 389,
+   "spearman": 0.053430684016643255
+  },
+  "glut.antagonists_vs_ipsc.notx": {
+   "n": 389,
+   "spearman": -0.03301965836882223
+  },
+  "glut.antagonists_vs_kcl.secondary": {
+   "n": 389,
+   "spearman": 0.05125751994275569
+  },
+  "glut.antagonists_vs_survival": {
+   "n": 389,
+   "spearman": -0.015386042415433135
+  },
+  "glut.antagonists_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": 0.31993867844714585
+  },
+  "glut.primary_vs_glut.secondary": {
+   "n": 389,
+   "spearman": 0.5277243547272434
+  },
+  "glut.primary_vs_ipsc.glut": {
+   "n": 389,
+   "spearman": -0.061620210018164076
+  },
+  "glut.primary_vs_ipsc.notx": {
+   "n": 389,
+   "spearman": 0.004176103757372143
+  },
+  "glut.primary_vs_kcl.secondary": {
+   "n": 389,
+   "spearman": 0.16172682960640453
+  },
+  "glut.primary_vs_survival": {
+   "n": 389,
+   "spearman": 0.21793451559438892
+  },
+  "glut.primary_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": -0.16049530201068643
+  },
+  "glut.secondary_vs_ipsc.glut": {
+   "n": 389,
+   "spearman": -0.05774052094779309
+  },
+  "glut.secondary_vs_ipsc.notx": {
+   "n": 389,
+   "spearman": 0.03334624456454155
+  },
+  "glut.secondary_vs_kcl.secondary": {
+   "n": 389,
+   "spearman": 0.23424690487208705
+  },
+  "glut.secondary_vs_survival": {
+   "n": 389,
+   "spearman": 0.15193515571964145
+  },
+  "glut.secondary_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": 0.0014508826185607785
+  },
+  "ipsc.glut_vs_ipsc.notx": {
+   "n": 389,
+   "spearman": -0.05133784139164045
+  },
+  "ipsc.glut_vs_kcl.secondary": {
+   "n": 389,
+   "spearman": -0.058267299181088174
+  },
+  "ipsc.glut_vs_survival": {
+   "n": 389,
+   "spearman": -0.07400092553141609
+  },
+  "ipsc.glut_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": 0.023950673660476755
+  },
+  "ipsc.notx_vs_kcl.secondary": {
+   "n": 389,
+   "spearman": -0.09338102334418556
+  },
+  "ipsc.notx_vs_survival": {
+   "n": 389,
+   "spearman": 0.05850887511237868
+  },
+  "ipsc.notx_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": 0.00030151122563599705
+  },
+  "kcl.secondary_vs_survival": {
+   "n": 389,
+   "spearman": 0.06420884392156223
+  },
+  "kcl.secondary_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": 0.0976971799832426
+  },
+  "survival_vs_ttx.secondary": {
+   "n": 389,
+   "spearman": -0.016021071129331804
+  }
+ }
+}

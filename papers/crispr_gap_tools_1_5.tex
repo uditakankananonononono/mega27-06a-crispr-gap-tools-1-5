@@ -1566,6 +1566,21 @@ swap buys only a 2.0-fold reduction there. On-target activity is
 equally locus-dependent: ABE9 ranges from near-dead (0.1 at
 Tpc2-K188) to strong (73.9 at Trpm4-L903), so the fidelity gain is
 real but its cost must be re-measured per locus.
+A massively parallel neuronal-depolarization CRISPR screen (Nat
+Commun 2026, 10.1038/s41467-026-75882-0, MOESM4/8/9; 1{,}139 sgRNAs x
+12 assay conditions, 881-gene primary, 390-gene multi-condition
+follow-up) measures how far screen results transfer
+(\texttt{results/neuro\_screen\_reproducibility.json}). Same-assay
+replicates transfer well (primary vs primary.A $\rho=0.84$ at
+sgRNA level; glut primary vs glut.A $\rho=0.85$ at gene level), but
+cross-condition transfer collapses: glutamate readout vs TTX
+$\rho=-0.05$, vs iPSC-glutamate $\rho=-0.04$, and 30 of 66 sgRNA
+condition pairs are near zero or negative --- the same guide in the
+same cell lineage answers a different question when the assay
+condition changes. Within-gene sgRNA agreement is moderate: 71\% of
+377 multi-sgRNA genes are sign-concordant, with a mean within-gene
+spread of 0.83 log2FC --- single-guide phenotypes should not be
+trusted without a second guide.
 
 
 
