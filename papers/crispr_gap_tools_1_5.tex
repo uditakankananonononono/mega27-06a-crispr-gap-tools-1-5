@@ -830,6 +830,17 @@ peaks at NGA ($\sim$20\%) as designed -- while WT SpCas9 falls to
 ${<}1\%$ outside NG$*$. Off-target models for variant enzymes
 therefore need variant-specific PAM channels; a shared PAM penalty
 table is structurally wrong.
+\paragraph{Cross-enzyme transfer (gap 1 $\times$ gap 4).} Training a
+mono+dinucleotide ridge on WT-SpCas9 activities and testing on each
+variant's activities over the \emph{same} guides (Kim 2020 MOESM4,
+$n=23{,}999$; MOESM5, $n=7{,}999$;
+\texttt{results/gap1\_variant\_transfer.json}) transfers poorly:
+WT$\to$variant Spearman $0.22$--$0.45$ on MOESM4 and $0.39$--$0.53$ on
+MOESM5 (WT$\to$WT within-library holdout: $0.28$ / $0.53$). Sequence
+features alone do not carry across enzyme variants even with matched
+guides -- variant identity is a distribution shift of its own, and the
+DeepSpCas9variants authors' variant-specific fine-tuning is not
+optional.
 
 \begin{figure}[t]
 \centering

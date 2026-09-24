@@ -1,0 +1,48 @@
+{
+ "moesm4": {
+  "n": 23999,
+  "wt_to_variant": {
+   "SpCas9": 0.281,
+   "xCas9": 0.4,
+   "SpCas9-NG": 0.423,
+   "eSpCas9(1.1)": 0.314,
+   "SpCas9-HF1": 0.277,
+   "HypaCas9": 0.336,
+   "evoCas9": 0.216,
+   "Sniper-Cas9": 0.302,
+   "VRQR": 0.448
+  },
+  "variant_to_wt": {
+   "SpCas9": 0.281,
+   "xCas9": 0.277,
+   "SpCas9-NG": 0.255,
+   "eSpCas9(1.1)": 0.24,
+   "SpCas9-HF1": 0.214,
+   "HypaCas9": 0.235,
+   "evoCas9": 0.203,
+   "Sniper-Cas9": 0.284,
+   "VRQR": 0.283
+  }
+ },
+ "moesm5": {
+  "n": 7999,
+  "wt_to_variant": {
+   "SpCas9": 0.528,
+   "xCas9": 0.5,
+   "eSpCas9(1.1)": 0.478,
+   "SpCas9-HF1": 0.393,
+   "HypaCas9": 0.463,
+   "evoCas9": 0.415,
+   "Sniper-Cas9": 0.5
+  },
+  "variant_to_wt": {
+   "SpCas9": 0.528,
+   "xCas9": 0.472,
+   "eSpCas9(1.1)": 0.451,
+   "SpCas9-HF1": 0.309,
+   "HypaCas9": 0.337,
+   "evoCas9": 0.248,
+   "Sniper-Cas9": 0.519
+  }
+ }
+}
