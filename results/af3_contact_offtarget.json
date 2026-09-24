@@ -1,0 +1,68 @@
+{
+ "n_measured_regions": 41,
+ "measured_edit_summary": {
+  "max": 42.066,
+  "frac_ge_0.5": 0.5609756097560976
+ },
+ "panels": {
+  "Fig. 3a": {
+   "n_sites": 2008,
+   "n_guides": 4,
+   "label_distribution": {
+    "Only contact prob changed": 680,
+    "Both changed": 1300,
+    "Neither changed": 28
+   },
+   "joined_measured": 33,
+   "auroc_struc_ma_diff": 0.3153846153846154,
+   "auroc_cp_ma_diff": 0.24615384615384617,
+   "class_measured": {
+    "Both changed": {
+     "n": 22,
+     "mean_measured_edit": 6.248818181818183,
+     "frac_edited_ge_0.5": 0.5
+    },
+    "Neither changed": {
+     "n": 1,
+     "mean_measured_edit": 0.611,
+     "frac_edited_ge_0.5": 1.0
+    },
+    "Only contact prob changed": {
+     "n": 10,
+     "mean_measured_edit": 3.6307,
+     "frac_edited_ge_0.5": 0.8
+    }
+   }
+  },
+  "Fig. 3e": {
+   "n_sites": 2231,
+   "n_guides": 4,
+   "label_distribution": {
+    "Only contact prob changed": 660,
+    "Both changed": 1462,
+    "Neither changed": 105,
+    "None": 4
+   },
+   "joined_measured": 39,
+   "auroc_struc_ma_diff": 0.3423913043478261,
+   "auroc_cp_ma_diff": 0.47282608695652173,
+   "class_measured": {
+    "Both changed": {
+     "n": 26,
+     "mean_measured_edit": 5.671653846153846,
+     "frac_edited_ge_0.5": 0.5769230769230769
+    },
+    "Neither changed": {
+     "n": 2,
+     "mean_measured_edit": 0.386,
+     "frac_edited_ge_0.5": 0.5
+    },
+    "Only contact prob changed": {
+     "n": 11,
+     "mean_measured_edit": 2.8433636363636365,
+     "frac_edited_ge_0.5": 0.6363636363636364
+    }
+   }
+  }
+ }
+}

@@ -1581,6 +1581,23 @@ condition changes. Within-gene sgRNA agreement is moderate: 71\% of
 377 multi-sgRNA genes are sign-concordant, with a mean within-gene
 spread of 0.83 log2FC --- single-guide phenotypes should not be
 trusted without a second guide.
+AlphaFold3 contact-model guided base editing (Nature 2026,
+10.1038/s41586-026-10794-z, MOESM5/7; $\sim$2{,}000--2{,}200 candidate
+sites per panel x 4 guides, with per-site measured off-target editing
+for 41 regions) lets us test whether structure-model scores rank
+measured editing --- and they do not
+(\texttt{results/af3\_contact\_offtarget.json}). Across both panels,
+sites classify as ``Both changed'' (65--66\%), ``Only contact
+probability changed'' (30--34\%), and ``Neither changed''
+(1--5\%); yet on the measured subset, the structural and
+contact-probability differences score AUROC 0.25--0.47 for calling
+sites edited $\geq$0.5\% --- at or below chance --- and the single
+``Neither changed'' site with measurements in panel 3a is edited
+(0.61\%). The model's value here is generative (designing
+contact-disrupting variants), not predictive ranking of which
+off-targets are dangerous; that ranking still needs measurement. We
+flag this as an honest negative for gap-2 with the caveat that the
+joined measured subset is small (33--39 regions).
 
 
 
