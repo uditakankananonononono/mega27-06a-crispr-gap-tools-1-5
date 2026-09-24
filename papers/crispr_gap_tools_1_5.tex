@@ -1,8 +1,8 @@
 \documentclass[12pt]{article}
-\usepackage{newtxtext,newtxmath} % Times New Roman
+\usepackage{mathptmx} % Times New Roman text+math
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage{graphicx,booktabs,hyperref}
+\usepackage{graphicx}
 \newtheorem{proposition}{Proposition}
 \newtheorem{definition}{Definition}
 \title{Five Tools for Verified Gaps in CRISPR Guide-RNA and Off-Target Modeling:\\Cross-Dataset Generalization, Calibrated Cleavage Probabilities,\\Transfer Learning for pegRNAs, PAM-Variant Awareness,\\and Chromatin-Context Scoring}
@@ -128,6 +128,44 @@ $\prod_i (1-w_i)$ over mismatch positions and CFD as a product of
 per-position terms, so neither can represent any interaction term.
 \end{proof}
 
+\section{Methods}
+\subsection{Datasets}
+All datasets are public and pulled by \texttt{scripts/fetch\_data.sh} or
+vendored mirrors; no live calls occur inside the test suite.
+\textbf{Doench FC+RES} (5,310 30-mer guide contexts; Azimuth mirror of
+Doench et al.\ 2016) with \texttt{score\_drug\_gene\_rank} efficacy in
+$[0,1]$. \textbf{Doench V1} (2,144 mouse guides; 34-mer extended contexts
+trimmed to the Azimuth 30-mer convention) with Percent Rank efficacy.
+\textbf{DeepHF} (55,604 guides with indel frequencies for WT-SpCas9 in
+U2OS; Wang et al.\ 2019) as the divergent assay family. \textbf{crisprSQL}
+100720 release (25,632 experimentally measured guide/off-target pairs from
+17 studies, with cleavage frequencies, five epigenetic tracks,
+thermodynamic energies, cell line and study provenance; St\"ortz \&
+Minary 2021). \textbf{PRIDICT2 23k} (22,956 pegRNAs with 99-mer wide
+target contexts, engineered PBS/RT features and measured editing
+efficiencies in HEK293T and K562; Koeppel et al.\ 2023, underlying screens
+from Mathis et al.\ 2023).
+\subsection{Models and protocols}
+Efficacy models: ridge on one-hot+dinucleotide+GC features, and a
+fully-convolutional CNN (two Conv1d layers, global mean+max pooling).
+Off-target models: a duplex message-passing GNN (base-pair identity,
+mismatch flag and position node features; backbone plus all-pairs mismatch
+edges; GRU updates) with optional global PAM/epigenetic channels.
+Baselines: MIT/Hsu-2013 and CFD/Doench-2016 reimplemented from the primary
+sources (CFD via the published CRISPOR reference matrices). Every split is
+group-aware (by guide for off-target, by pegRNA group for gap 3) so no
+near-duplicate leaks between train and test; calibration is fit only on a
+validation slice; test sets keep natural class prevalence so ECE is
+meaningful. Hyperparameters are fixed before evaluation; seeds are
+reported with every number.
+\subsection{Reproduction}
+\texttt{python -m crisprgap.train\_efficacy},
+\texttt{python -m crisprgap.train\_offtarget},
+\texttt{python -m crisprgap.train\_offtarget\_ablation},
+\texttt{python -m crisprgap.train\_pegrna}; harnesses in
+\texttt{crisprgap/crossdata.py} and \texttt{scripts/run\_crossdata\_cnn.py}.
+The hermetic suite (\texttt{pytest}) runs 40 tests offline.
+
 \section{Results}
 \subsection{Gap 1: collapse across divergent assays, transfer within families}
 Ridge models trained on Doench FC+RES transfer to Doench V1 at
@@ -144,6 +182,10 @@ Table~\ref{tab:crossdata}).
 \label{fig:crossdata}\end{figure}
 
 \subsection{Gap 2: GNN beats published scores; isotonic calibrates}
+\begin{figure}[h]\centering\includegraphics[width=0.5\textwidth]{fig_calibration.pdf}
+\caption{Reliability curves on held-out crisprSQL pairs, before and after
+Platt calibration on the validation slice.}
+\label{fig:calibration}\end{figure}
 On a guide-grouped crisprSQL split (4,073 held-out pairs at natural 91\%
 prevalence) the duplex GNN reaches AUROC $0.572$ vs.\ MIT/Hsu-2013 $0.452$
 and CFD/Doench-2016 $0.431$ (Table~\ref{tab:offtarget}). Isotonic
@@ -154,8 +196,56 @@ holds only 1,494 validated negatives across 17 studies, capping achievable
 discrimination; the field's negative-scarcity is itself quantified here.
 
 \subsection{Gap 3: Cas9-to-pegRNA transfer}
-% filled when pegrna_metrics_HEK.json lands
+On the PRIDICT2 23k library (grouped held-out pegRNAs, HEK293T), a CNN over
+the 99-mer target context beats the engineered-feature ridge baseline
+($\rho=0.794$ vs.\ $0.741$). Transferring the Doench-pretrained conv trunk
+does \emph{not} beat training from scratch at this scale ($0.789$ vs.\
+$0.794$).
+\subsubsection{Scarce-regime scaling: a clean negative}
+Subsampling pegRNA training data to the truly scarce regime does not rescue
+the transfer hypothesis: at $n=250$ scratch reaches $\rho=0.725$ vs.\
+transfer $0.724$; at $n=1000$, $0.762$ vs.\ $0.758$; at $n=4000$, $0.771$
+vs.\ $0.767$. Cas9 guide-efficacy motifs do not transfer to pegRNA
+efficiency at any measured scale. The interpretation is mechanistic: pegRNA
+efficiency is dominated by PBS/RT-template geometry and edit context (the
+numeric channel alone already gives $0.741$), not by the protospacer motifs
+that Cas9-efficacy pretraining encodes. Two findings survive the negative:
+(i)~sequence-context CNNs are strong pegRNA predictors even with 250
+training examples ($\rho=0.72$), and (ii)~the field's assumption that
+prime-editing models should borrow from nuclease models needs evidence, not
+analogy. We preserve the failed transfer as the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
-% filled when offtarget_ablation.json lands
+Adding a PAM one-hot channel lifts held-out AUROC from $0.506$ to $0.540$,
+and on the 2,248 non-NGG held-out pairs from $0.530$ to $0.607$ -- the gain
+concentrates exactly in the PAM-variant regime that SpG/SpRY-class editors
+inhabit (Table~\ref{tab:ablation}). Chromatin tracks alone add nothing
+($0.509$) and degrade calibration (ECE $0.260$), an honest negative we
+attribute to study-confounded track provenance: each epigenetic track was
+measured in the cell type of its source study, so the channel can encode
+study identity rather than cleavage biology. Combined with PAM the epigen
+channel contributes to the best overall AUROC ($0.577$), suggesting the two
+channels decorrelate each other's confounds; we report the interaction
+without overclaiming it.
 \input{results_tables.tex}
+
+\section{Limitations}
+crisprSQL aggregates 17 studies with different assays and sensitivities;
+its 94\% positive prevalence and 1,494 validated negatives cap
+discrimination and make cross-study confounds unavoidable (we split by
+guide\,$\times$\,study to bound leakage). Our off-target AUROCs
+($0.51$--$0.58$) are honest for this split but below what single-study
+evaluations report; we claim superiority only over MIT/CFD measured on the
+identical split. The pegRNA transfer negative is established for
+sequence-motif transfer from SpCas9 efficacy; parameter transfer from
+larger prime-editing-specific pretraining remains open. Epigenetic tracks
+in crisprSQL are study-confounded. Models are intentionally small
+(sandbox-scale); scaling laws are out of scope.
+
+\section{Tool documentation}
+Each gap ships as a callable tool: \texttt{crisprgap.crossdata} (gap 1
+harness), \texttt{crisprgap.calibration} + \texttt{crisprgap.cfd} (gap 2
+calibrated scorer with MIT/CFD baselines), \texttt{crisprgap.train\_pegrna}
++ \texttt{crisprgap.models.transfer\_cnn} (gap 3 predictor),
+\texttt{crisprgap.models.offtarget\_v2} (gaps 4--5 PAM/chromatin-aware
+scorer). All tools are covered by the hermetic pytest suite.
 \end{document}

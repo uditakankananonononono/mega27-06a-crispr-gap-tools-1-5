@@ -16,8 +16,8 @@ def table_crossdata():
         rows.append(f"{train} & {v['within_mean']:.3f} & {cross} & {v['generalization_gap']:.3f} \\\\")
     return ("\\begin{table}[h]\\centering\\caption{Cross-dataset generalization "
             "(ridge, 3 seeds): held-out vs transfer Spearman.}\\label{tab:crossdata}"
-            "\\begin{tabular}{lccc}\\toprule Train & Within & Cross & Gap \\\\\\midrule\n"
-            + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\\end{table}\n")
+            "\\begin{tabular}{lccc}\\hline Train & Within & Cross & Gap \\\\\\hline\n"
+            + "\n".join(rows) + "\n\\hline\\end{tabular}\\end{table}\n")
 
 
 def fig_crossdata():
@@ -43,15 +43,15 @@ def table_offtarget():
     ]
     cal = (f"\\begin{{table}}[h]\\centering\\caption{{Calibration on held-out crisprSQL pairs "
            f"(isotonic/Platt fit on validation slice).}}\\label{{tab:calib}}"
-           "\\begin{tabular}{lcc}\\toprule & ECE & Brier \\\\\\midrule\n"
+           "\\begin{tabular}{lcc}\\hline & ECE & Brier \\\\\\hline\n"
            f"Uncalibrated & {d['ece_uncalibrated']:.3f} & {d['brier_uncalibrated']:.3f} \\\\\n"
            f"Platt & {d['ece_platt_calibrated']:.3f} & {d['brier_platt_calibrated']:.3f} \\\\\n"
            f"Isotonic & {d['ece_isotonic_calibrated']:.3f} & {d['brier_isotonic_calibrated']:.3f} \\\\\n"
-           "\\bottomrule\\end{tabular}\\end{table}\n")
+           "\\hline\\end{tabular}\\end{table}\n")
     return ("\\begin{table}[h]\\centering\\caption{Off-target classification on crisprSQL, "
             "guide-grouped held-out split.}\\label{tab:offtarget}"
-            "\\begin{tabular}{lcc}\\toprule Model & AUROC & AUPRC \\\\\\midrule\n"
-            + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\\end{table}\n") + cal
+            "\\begin{tabular}{lcc}\\hline Model & AUROC & AUPRC \\\\\\hline\n"
+            + "\n".join(rows) + "\n\\hline\\end{tabular}\\end{table}\n") + cal
 
 
 def table_ablation():
@@ -64,8 +64,8 @@ def table_ablation():
         rows.append(f"{name} & {v['auroc']:.3f} & {v['auprc']:.3f}{extra} \\\\")
     return ("\\begin{table}[h]\\centering\\caption{Ablation: PAM and chromatin feature channels "
             "(gaps 4-5).}\\label{tab:ablation}"
-            "\\begin{tabular}{lccc}\\toprule Features & AUROC & AUPRC & AUROC non-NGG \\\\\\midrule\n"
-            + "\n".join(rows) + "\n\\bottomrule\\end{tabular}\\end{table}\n")
+            "\\begin{tabular}{lccc}\\hline Features & AUROC & AUPRC & AUROC non-NGG \\\\\\hline\n"
+            + "\n".join(rows) + "\n\\hline\\end{tabular}\\end{table}\n")
 
 
 def table_pegrna():
@@ -79,13 +79,28 @@ def table_pegrna():
     ])
     return ("\\begin{table}[h]\\centering\\caption{pegRNA efficiency (HEK), grouped held-out "
             "Spearman (gap 3).}\\label{tab:pegrna}"
-            "\\begin{tabular}{lc}\\toprule Model & Spearman \\\\\\midrule\n"
-            + rows + "\n\\bottomrule\\end{tabular}\\end{table}\n")
+            "\\begin{tabular}{lc}\\hline Model & Spearman \\\\\\hline\n"
+            + rows + "\n\\hline\\end{tabular}\\end{table}\n")
+
+
+def _esc(tex: str) -> str:
+    return tex.replace("_", "\\_")
+
+
+def table_scaling():
+    if not os.path.exists(f"{R}/pegrna_transfer_scaling.json"):
+        return ""
+    d = json.load(open(f"{R}/pegrna_transfer_scaling.json"))
+    rows = [f"{n} & {v['scratch']:.3f} & {v['transfer']:.3f} " + chr(92)*2 for n, v in sorted(d.items(), key=lambda kv: int(kv[0]))]
+    return ("\\begin{table}[h]\\centering\\caption{pegRNA scarce-regime scaling (HEK, grouped "
+            "held-out Spearman). Transfer never beats scratch.}\\label{tab:scaling}"
+            "\\begin{tabular}{lcc}\\hline $n$ train & Scratch & Cas9-pretrained \\\\\hline\n"
+            + "\n".join(rows) + "\n\\hline\\end{tabular}\\end{table}\n")
 
 
 if __name__ == "__main__":
     os.makedirs(P, exist_ok=True)
     with open(f"{P}/results_tables.tex", "w") as f:
-        f.write(table_crossdata() + table_offtarget() + table_ablation() + table_pegrna())
+        f.write(_esc(table_crossdata() + table_offtarget() + table_ablation() + table_pegrna() + table_scaling()))
     fig_crossdata()
     print("assets written")

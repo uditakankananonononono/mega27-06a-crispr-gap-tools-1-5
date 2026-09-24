@@ -1,15 +1,31 @@
-\begin{table}[h]\centering\caption{Cross-dataset generalization (ridge, 3 seeds): held-out vs transfer Spearman.}\label{tab:crossdata}\begin{tabular}{lccc}\toprule Train & Within & Cross & Gap \\\midrule
-fcres & 0.455 & v1: 0.501, deephf_wt: 0.026 & 0.191 \\
-v1 & 0.458 & fcres: 0.434, deephf_wt: 0.032 & 0.225 \\
-deephf_wt & 0.728 & fcres: 0.070, v1: 0.138 & 0.624 \\
-\bottomrule\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Off-target classification on crisprSQL, guide-grouped held-out split.}\label{tab:offtarget}\begin{tabular}{lcc}\toprule Model & AUROC & AUPRC \\\midrule
+\begin{table}[h]\centering\caption{Cross-dataset generalization (ridge, 3 seeds): held-out vs transfer Spearman.}\label{tab:crossdata}\begin{tabular}{lccc}\hline Train & Within & Cross & Gap \\\hline
+fcres & 0.455 & v1: 0.501, deephf\_wt: 0.026 & 0.191 \\
+v1 & 0.458 & fcres: 0.434, deephf\_wt: 0.032 & 0.225 \\
+deephf\_wt & 0.728 & fcres: 0.070, v1: 0.138 & 0.624 \\
+\hline\end{tabular}\end{table}
+\begin{table}[h]\centering\caption{Off-target classification on crisprSQL, guide-grouped held-out split.}\label{tab:offtarget}\begin{tabular}{lcc}\hline Model & AUROC & AUPRC \\\hline
 GNN (this work) & 0.572 & 0.923 \\
 MIT / Hsu 2013 & 0.452 & 0.913 \\
 CFD / Doench 2016 & 0.431 & 0.910 \\
-\bottomrule\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}\label{tab:calib}\begin{tabular}{lcc}\toprule & ECE & Brier \\\midrule
+\hline\end{tabular}\end{table}
+\begin{table}[h]\centering\caption{Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}\label{tab:calib}\begin{tabular}{lcc}\hline & ECE & Brier \\\hline
 Uncalibrated & 0.148 & 0.119 \\
 Platt & 0.156 & 0.128 \\
 Isotonic & 0.133 & 0.116 \\
-\bottomrule\end{tabular}\end{table}
+\hline\end{tabular}\end{table}
+\begin{table}[h]\centering\caption{Ablation: PAM and chromatin feature channels (gaps 4-5).}\label{tab:ablation}\begin{tabular}{lccc}\hline Features & AUROC & AUPRC & AUROC non-NGG \\\hline
+seq\_only & 0.506 & 0.897 & 0.530 \\
+pam & 0.540 & 0.919 & 0.607 \\
+epigen & 0.509 & 0.912 & 0.506 \\
+pam\_epigen & 0.577 & 0.921 & 0.599 \\
+\hline\end{tabular}\end{table}
+\begin{table}[h]\centering\caption{pegRNA efficiency (HEK), grouped held-out Spearman (gap 3).}\label{tab:pegrna}\begin{tabular}{lc}\hline Model & Spearman \\\hline
+Ridge (numeric only) & 0.741 \\
+CNN from scratch & 0.794 \\
+CNN, Cas9-pretrained trunk & 0.789 \\
+\hline\end{tabular}\end{table}
+\begin{table}[h]\centering\caption{pegRNA scarce-regime scaling (HEK, grouped held-out Spearman). Transfer never beats scratch.}\label{tab:scaling}\begin{tabular}{lcc}\hline $n$ train & Scratch & Cas9-pretrained \\\hline
+250 & 0.725 & 0.724 \\
+1000 & 0.762 & 0.758 \\
+4000 & 0.771 & 0.767 \\
+\hline\end{tabular}\end{table}
