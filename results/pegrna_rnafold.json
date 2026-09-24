@@ -1,0 +1,20 @@
+{
+  "numeric_only_spearman_by_split": [
+    0.7345654548156213,
+    0.7197266074813562,
+    0.7443006695762218
+  ],
+  "plus_rnafold_spearman_by_split": [
+    0.7346707846233221,
+    0.7199497091408428,
+    0.7445689451467227
+  ],
+  "mean_numeric": 0.732864243957733,
+  "mean_plus_fold": 0.7330631463036292,
+  "fold_features": [
+    "MFE(40nt edit-centered window of wide_mutated_target)"
+  ],
+  "external_tool": "ViennaRNA 2.7.2",
+  "n": 22956,
+  "n_numeric_features": 19
+}
