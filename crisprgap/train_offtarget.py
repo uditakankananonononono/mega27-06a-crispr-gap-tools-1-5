@@ -14,7 +14,9 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 from torch import nn
 
 from crisprgap.baselines import mit_score
-from crisprgap.calibration import expected_calibration_error, fit_platt, apply_platt
+from crisprgap.cfd import cfd_score
+from crisprgap.calibration import (expected_calibration_error, fit_platt, apply_platt,
+                                   fit_isotonic, brier_score)
 from crisprgap.data.datasets import load_crisprsql
 from crisprgap.models.offtarget_gnn import OffTargetGNN, duplex_to_graph, collate_graphs
 
@@ -74,10 +76,18 @@ def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int
     val_logits = logits_for(val)
     y_te, y_val = ds.labels[te], ds.labels[val]
     mit_te = np.array([mit_score(ds.guides[i], ds.offtargets[i]) for i in te])
+    # CFD needs both 23-mers (guide+PAM, off-target+PAM); subset where both are reported
+    cfd_mask = np.array([bool(ds.pam[i]) and bool(ds.off_pam[i]) for i in te])
+    cfd_idx = np.where(cfd_mask)[0]
+    te_l = list(te)
+    cfd_te = np.array([cfd_score(ds.guides[te_l[j]] + ds.pam[te_l[j]],
+                                 ds.offtargets[te_l[j]] + ds.off_pam[te_l[j]]) for j in cfd_idx])
 
     a, b = fit_platt(val_logits, y_val)
     p_uncal = apply_platt(te_logits, 1.0, 0.0)
     p_cal = apply_platt(te_logits, a, b)
+    iso = fit_isotonic(val_logits, y_val)
+    p_iso = iso.predict(te_logits)
 
     result = {
         "dataset": "crisprsql_100720",
@@ -87,8 +97,16 @@ def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int
         "gnn_test_auprc": float(average_precision_score(y_te, te_logits)),
         "mit_test_auroc": float(roc_auc_score(y_te, mit_te)),
         "mit_test_auprc": float(average_precision_score(y_te, mit_te)),
+        "cfd_subset_auroc": float(roc_auc_score(y_te[cfd_idx], cfd_te)) if len(cfd_idx) > 10 else None,
+        "cfd_subset_auprc": float(average_precision_score(y_te[cfd_idx], cfd_te)) if len(cfd_idx) > 10 else None,
+        "gnn_auroc_on_cfd_subset": float(roc_auc_score(y_te[cfd_idx], te_logits[cfd_idx])) if len(cfd_idx) > 10 else None,
+        "n_cfd_subset": int(len(cfd_idx)),
         "ece_uncalibrated": expected_calibration_error(p_uncal, y_te),
         "ece_platt_calibrated": expected_calibration_error(p_cal, y_te),
+        "ece_isotonic_calibrated": expected_calibration_error(p_iso, y_te),
+        "brier_uncalibrated": brier_score(y_te, p_uncal),
+        "brier_platt_calibrated": brier_score(y_te, p_cal),
+        "brier_isotonic_calibrated": brier_score(y_te, p_iso),
         "platt_a": a, "platt_b": b,
         "epochs": epochs, "seed": seed,
     }

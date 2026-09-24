@@ -45,7 +45,8 @@ class OfftargetDataset:
     cleavage_freq: np.ndarray  # float32 measured cleavage frequency
     studies: list
     cell_lines: list
-    pam: list                # 3-nt PAM where reported (else "")
+    pam: list                # guide 3-nt PAM where reported (else "")
+    off_pam: list            # off-target 3-nt PAM where reported (else "")
     epigen: dict = field(default_factory=dict)   # col -> float32 array
     energies: dict = field(default_factory=dict)  # col -> float32 array
     source: str = "crisprsql_100720"
@@ -76,6 +77,7 @@ def load_crisprsql() -> OfftargetDataset:
     assert (df.grna_target_sequence.str.len() >= 20).all()
     assert (df.target_sequence.str.len() >= 20).all()
     pam = [g[20:23] if len(g) >= 23 else "" for g in df.grna_target_sequence]
+    off_pam = [o[20:23] if len(o) >= 23 else "" for o in df.target_sequence]
     return OfftargetDataset(
         guides=[g[:20] for g in df.grna_target_sequence],
         offtargets=[o[:20] for o in df.target_sequence],
@@ -84,6 +86,7 @@ def load_crisprsql() -> OfftargetDataset:
         studies=df.study_name.tolist(),
         cell_lines=df.cell_line.tolist(),
         pam=pam,
+        off_pam=off_pam,
         epigen={c: df[c].to_numpy(dtype=np.float32) for c in EPIGEN_COLS},
         energies={c: df[c].to_numpy(dtype=np.float32) for c in ENERGY_COLS},
     )
