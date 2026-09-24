@@ -71,9 +71,9 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Gap 1: collapse across divergent assays, transfer within families}{13}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Gap 1 transfer matrix (ridge, seed 0): within-family transfer is moderate ($0.43$--$0.50$) but every cross-family entry collapses to $\le 0.13$, against within-screen $0.73$. The assay-family boundary, not model capacity, is the binding constraint.}}{13}{}\protected@file@percent }
 \newlabel{fig:matrix}{{1}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Gap 1 (cont.): pooling does not fix the boundary}{13}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Within-dataset vs cross-dataset Spearman (ridge, 3 seeds).}}{14}{}\protected@file@percent }
 \newlabel{fig:crossdata}{{2}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Gap 1 (cont.): pooling does not fix the boundary}{14}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.3}Gap 2: determinism audit and the split-variance meta-finding}{14}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Gap 2, canonical fully-seeded split of crisprSQL. Left: ROC for the GNN and the MIT score. Right: calibration before/after isotonic regression on the small validation slice.}}{14}{}\protected@file@percent }
 \newlabel{fig:roc_cal}{{3}{14}}
@@ -85,9 +85,9 @@
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Study-routing audit: every (study, split) row with $\ge $30 test pairs. Top block: rows with $\ge $5 positives and $\ge $5 negatives (the estimable set; GNN wins 1 of 13). Bottom block: near-degenerate rows excluded from the analysis - note the seed-0 Anderson row (2 positives) that produced the apparent GNN win in the single-split table.}}{16}{}\protected@file@percent }
 \newlabel{tab:routing}{{2}{16}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.4}Gap 3: Cas9-to-pegRNA transfer}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {11.4.1}Scarce-regime scaling: a clean negative}{16}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Scarce-regime scaling: Cas9-motif transfer never beats scratch.}}{17}{}\protected@file@percent }
 \newlabel{fig:scaling}{{5}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {11.4.1}Scarce-regime scaling: a clean negative}{17}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.5}Gaps 4-5: PAM and chromatin ablation}{18}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Gaps 4--5 channel ablation, five fully-seeded splits (mean $\pm $ sd). Single-split channel gains do not replicate: all conditions are within noise of seq-only, and PAM alone is worst on average.}}{18}{}\protected@file@percent }
 \newlabel{fig:ablation}{{6}{18}}
@@ -107,21 +107,21 @@
 \newlabel{tab:offtarget}{{7}{20}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.1}Portability correction: rescuing cross-dataset transfer}{20}{}\protected@file@percent }
 \newlabel{sec:porta}{{12.1}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Statistical support: bootstrap intervals}{20}{}\protected@file@percent }
-\newlabel{sec:bootstrap}{{12.2}{20}}
 \@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}}{21}{}\protected@file@percent }
 \newlabel{tab:calib}{{8}{21}}
 \@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Calibration on crisprSQL: mean ECE over the five fully-seeded splits (recalibrators fit on each split's validation slice). At this sample size, recalibration hurts on average.}}{21}{}\protected@file@percent }
 \newlabel{tab:calib}{{9}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Statistical support: bootstrap intervals}{21}{}\protected@file@percent }
+\newlabel{sec:bootstrap}{{12.2}{21}}
 \@writefile{toc}{\contentsline {section}{\numberline {13}Discussion}{21}{}\protected@file@percent }
 \newlabel{sec:discussion}{{13}{21}}
 \@writefile{toc}{\contentsline {paragraph}{What the residual is.}{21}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{What practitioners should do differently.}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Why the pegRNA transfer negative matters.}{21}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Ablation: PAM and chromatin feature channels (gaps 4-5), five fully-seeded guide-grouped splits (mean $\pm $ sd AUROC). All conditions are within noise of seq-only; the winner varies by seed (pam\_epigen 3/5, epigen 2/5).}}{22}{}\protected@file@percent }
 \newlabel{tab:ablation}{{10}{22}}
 \@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces pegRNA efficiency (HEK), grouped held-out Spearman (gap 3).}}{22}{}\protected@file@percent }
 \newlabel{tab:pegrna}{{11}{22}}
+\@writefile{toc}{\contentsline {paragraph}{Why the pegRNA transfer negative matters.}{22}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Relation to domain adaptation theory.}{22}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Scope of claims.}{22}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Negative-results ledger.}{22}{}\protected@file@percent }
@@ -139,46 +139,46 @@
 \@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Residual-corrected cross-dataset transfer. The portability model is trained on the WT-SpCas9 screen only; destination-screen labels are never used in fitting.}}{24}{}\protected@file@percent }
 \newlabel{tab:porta}{{14}{24}}
 \@writefile{toc}{\contentsline {section}{\numberline {15}Limitations}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {16}Tool documentation}{24}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Gap 2: guide-grouped AUROC on the canonical fully-seeded split, bootstrap 95\% intervals (400 reps). The paired difference includes zero: this corpus cannot separate the models on any single split; Table\nobreakspace  {}7\hbox {} gives the five-split picture.}}{25}{}\protected@file@percent }
 \newlabel{tab:boot-offtarget}{{15}{25}}
 \@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Gap 1: Doench FC+RES $\to $ DeepHF-WT transfer, bootstrap 95\% intervals (400 reps over destination guides).}}{25}{}\protected@file@percent }
 \newlabel{tab:boot-gap1}{{16}{25}}
+\@writefile{toc}{\contentsline {section}{\numberline {16}Tool documentation}{25}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {16.1}PORTA: portability scoring and corrected transfer}{25}{}\protected@file@percent }
 \newlabel{sec:porta-tool}{{16.1}{25}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Reproducibility appendix}{25}{}\protected@file@percent }
-\newlabel{sec:repro}{{A}{25}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Environment}{25}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces PORTA on SpCas9-HF1: bootstrap 95\% intervals (400 reps over guides).}}{26}{}\protected@file@percent }
 \newlabel{tab:boot-porta}{{17}{26}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Transfer-residual concordance across nuclease screens (sequence-matched guides): the Doench transfer error on the same guide in WT-SpCas9 and SpCas9-HF1 screens agrees at $\rho =0.856$ ($n=53{,}937$), far above the cross-screen correlation of the measured activities ($\sim $$0.73$).}}{26}{}\protected@file@percent }
 \newlabel{fig:concordance}{{9}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Reproducibility appendix}{26}{}\protected@file@percent }
+\newlabel{sec:repro}{{A}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Environment}{26}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Data provenance}{26}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces PORTA correction on SpCas9-HF1. Left: raw Doench$\to $HF1 transfer ranking vs measured ranks ($\rho =0.015$, no visible structure). Right: after subtracting the WT-trained portability model ($\rho =0.522$).}}{27}{}\protected@file@percent }
 \newlabel{fig:porta}{{10}{27}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Entry points and tests}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Negative results register}{27}{}\protected@file@percent }
 \bibcite{doench2014}{1}
 \bibcite{doench2016}{2}
 \bibcite{chari2015}{3}
 \bibcite{wang2019}{4}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Distribution of the predicted portability residual on the HF1 screen; dashed lines mark the 5\%/95\% tails (guides the source model systematically over- or under-ranks).}}{28}{}\protected@file@percent }
+\newlabel{fig:portadist}{{11}{28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Negative results register}{28}{}\protected@file@percent }
 \bibcite{chuai2018}{5}
 \bibcite{kim2020}{6}
 \bibcite{hsu2013}{7}
 \bibcite{haeussler2016}{8}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Distribution of the predicted portability residual on the HF1 screen; dashed lines mark the 5\%/95\% tails (guides the source model systematically over- or under-ranks).}}{28}{}\protected@file@percent }
-\newlabel{fig:portadist}{{11}{28}}
 \bibcite{listgarten2018}{9}
 \bibcite{concordet2018}{10}
 \bibcite{lin2020}{11}
 \bibcite{walton2020}{12}
 \bibcite{anzalone2019}{13}
+\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces External tools/packages used, with role.}}{29}{}\protected@file@percent }
+\newlabel{tab:tools}{{18}{29}}
 \bibcite{kim2021}{14}
 \bibcite{mathis2023}{15}
 \bibcite{stortz2021}{16}
 \bibcite{platt1999}{17}
-\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces External tools/packages used, with role.}}{29}{}\protected@file@percent }
-\newlabel{tab:tools}{{18}{29}}
 \bibcite{zadrozny2002}{18}
 \bibcite{niculescu2005}{19}
 \bibcite{guo2017}{20}
@@ -190,4 +190,4 @@
 \bibcite{degroot1983}{26}
 \@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces Datasets actually analyzed, with role.}}{30}{}\protected@file@percent }
 \newlabel{tab:datasets}{{19}{30}}
-\gdef \@abspage@last{30}
+\gdef \@abspage@last{31}

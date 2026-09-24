@@ -14,7 +14,8 @@
 Public CRISPR tooling concentrates on a narrow slice of the editing problem.
 We attack five evidence-backed gaps with working tools benchmarked on real
 public data: (1) cross-dataset collapse of guide efficacy models, which we
-quantify on Doench-2016 FC+RES, Doench V1 and the DeepHF U2OS screen;
+quantify on Doench-2016 FC+RES, Doench V1, the DeepHF U2OS screen and the
+DeepSpCas9 HEK293T dataset (Kim 2019);
 (2) absence of calibrated probabilities from off-target scorers, addressed
 with isotonic/Platt calibration on 25,632 crisprSQL measurements;
 (3) pegRNA data scarcity, attacked with transfer learning from Cas9 efficacy
@@ -252,6 +253,14 @@ as such.
 \begin{figure}[h]\centering\includegraphics[width=0.7\textwidth]{fig_crossdata.pdf}
 \caption{Within-dataset vs cross-dataset Spearman (ridge, 3 seeds).}
 \label{fig:crossdata}\end{figure}
+Adding a third assay family -- DeepSpCas9 (12,832 HEK293T contexts, Kim
+et al.\ 2019) -- to the CNN matrix (Table~\ref{tab:crosscnn}) sharpens
+the picture: DeepSpCas9 is highly learnable within itself
+($\rho=0.498$), transfers \emph{positively} to and from the Doench
+family ($0.18$--$0.26$), yet its exchange with DeepHF is negative in both
+directions ($-0.12$ and $-0.22$). The anti-correlation is thus specific
+to the DeepHF assay rather than a property of any divergent pair, and
+three assay families now reproduce it (two seeds, identical harness).
 
 \subsection{Gap 1 (cont.): pooling does not fix the boundary}
 Naive multi-dataset pooling fails both ways: Doench-pooled training still

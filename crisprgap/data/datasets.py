@@ -116,6 +116,28 @@ def load_deephf(variant: str = "wt", max_n: int | None = None, seed: int = 0) ->
     return EfficacyDataset(sequences=seqs, scores=scores, source=f"deephf_{variant}")
 
 
+def load_deepspcas9(sheet: str = "HT_Cas9_Train", max_n: int | None = None,
+                    seed: int = 0) -> "EfficacyDataset":
+    """DeepSpCas9 high-throughput dataset (Kim et al. 2019, Sci Adv 5:eaax9249,
+    Table S1; SRA SRP150719): 12,832 guide-contexts (30-mer: 4+20+3+3) with
+    background-subtracted indel frequencies in HEK293T cells. A third assay
+    family for cross-dataset generalization (gap 1).
+    """
+    import pandas as pd
+    df = pd.read_excel(os.path.join(DATA_DIR, "aax9249_Table_S1.xlsx"), sheet_name=sheet)
+    seq_col = "Target context sequence (4+20+3+3)"
+    y_col = "Background subtracted indel (%)"
+    df = df.dropna(subset=[seq_col, y_col])
+    seqs = [s.upper().replace("U", "T") for s in df[seq_col]]
+    scores = np.clip(df[y_col].to_numpy(dtype=np.float32) / 100.0, 0.0, 1.0)
+    if max_n is not None and len(seqs) > max_n:
+        rng = np.random.default_rng(seed)
+        idx = np.sort(rng.choice(len(seqs), max_n, replace=False))
+        seqs = [seqs[i] for i in idx]
+        scores = scores[idx]
+    return EfficacyDataset(sequences=seqs, scores=scores, source=f"deepspcas9_{sheet.lower()}")
+
+
 PEGRNA_NUMERIC_COLS = (
     "Correction_Length", "Correction_Deletion", "Correction_Insertion", "Correction_Replacement",
     "RToverhangmatches", "RToverhanglength", "RTlength", "PBSlength",
