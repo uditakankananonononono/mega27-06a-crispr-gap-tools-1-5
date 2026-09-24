@@ -1,0 +1,106 @@
+{
+ "conditions": [
+  "Cas12a",
+  "Cas12aDeg",
+  "Cas12aDeg_1uMdTagV1",
+  "Cas12a_1uMdTagV1"
+ ],
+ "raw": {
+  "Cas12a": {
+   "Guide_025": {
+    "CD47": 81.67,
+    "CD63": 98.97,
+    "CD81": 97.33,
+    "CD9": 98.8
+   },
+   "Guide_034": {
+    "CD47": 18.47,
+    "CD63": 41.1,
+    "CD81": 40.93,
+    "CD9": 3.44
+   }
+  },
+  "Cas12aDeg": {
+   "Guide_025": {
+    "CD47": 60.47,
+    "CD63": 96.3,
+    "CD81": 95.13,
+    "CD9": 98.03
+   },
+   "Guide_034": {
+    "CD47": 19.97,
+    "CD63": 32.8,
+    "CD81": 46.53,
+    "CD9": 20.07
+   }
+  },
+  "Cas12aDeg_1uMdTagV1": {
+   "Guide_025": {
+    "CD47": 52.83,
+    "CD63": 92.27,
+    "CD81": 91.8,
+    "CD9": 96.13
+   },
+   "Guide_034": {
+    "CD47": 41.1,
+    "CD63": 83.7,
+    "CD81": 86.7,
+    "CD9": 51.33
+   }
+  },
+  "Cas12a_1uMdTagV1": {
+   "Guide_025": {
+    "CD47": 82.97,
+    "CD63": 99.13,
+    "CD81": 98.43,
+    "CD9": 98.93
+   },
+   "Guide_034": {
+    "CD47": 17.87,
+    "CD63": 60.3,
+    "CD81": 47.8,
+    "CD9": 3.81
+   }
+  }
+ },
+ "knockdown_residual": {
+  "Cas12a": {
+   "mean_residual_frac": 0.274,
+   "per_marker_residual": {
+    "CD47": 0.226,
+    "CD63": 0.415,
+    "CD81": 0.421,
+    "CD9": 0.035
+   }
+  },
+  "Cas12aDeg": {
+   "mean_residual_frac": 0.341,
+   "per_marker_residual": {
+    "CD47": 0.33,
+    "CD63": 0.341,
+    "CD81": 0.489,
+    "CD9": 0.205
+   }
+  },
+  "Cas12aDeg_1uMdTagV1": {
+   "mean_residual_frac": 0.791,
+   "per_marker_residual": {
+    "CD47": 0.778,
+    "CD63": 0.907,
+    "CD81": 0.944,
+    "CD9": 0.534
+   }
+  },
+  "Cas12a_1uMdTagV1": {
+   "mean_residual_frac": 0.337,
+   "per_marker_residual": {
+    "CD47": 0.215,
+    "CD63": 0.608,
+    "CD81": 0.486,
+    "CD9": 0.039
+   }
+  }
+ },
+ "degron_dynamic_range": 0.43,
+ "constitutive_residual": 0.274
+}

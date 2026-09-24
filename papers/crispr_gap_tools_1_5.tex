@@ -1258,6 +1258,17 @@ what the breadth buys: reachable unique amino acids per codon rise
 from 2.8 (A\&C) to 5.2--5.3 (smAC/smACG), with coverage expanding
 from 142 to 268 codons. Broadening conversion chemistry is paid for
 in product purity -- the same trade-off structure as PAM broadening.
+A tunable Cas12a CRISPRi platform (Nat Commun 2026,
+10.1038/s41467-026-73955-8, MOESM6) adds a control dimension to guide
+efficacy (\texttt{results/cas12a\_tunable\_control.json}): across 4
+surface markers in triplicate, a targeting guide leaves 27\% residual
+surface expression under constitutive Cas12a, and the degron-tagged
+variant responds to dTagV1 specifically -- residual expression rises
+from 34\% to 79\% when the degrader drug is added (dynamic range
+$\approx$2.3$\times$), while dTagV1 leaves non-degron Cas12a
+unchanged (34\%). Guide efficacy is thus a function of an externally
+set protein-level context, not sequence alone.
+
 
 
 
