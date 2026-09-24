@@ -642,6 +642,21 @@ model's internal-loop table (loop $>$11) and were excluded. The
 strongest baselines (CRISPRoff, poslog) share exactly the positional
 mismatch-energetics structure, and both remain far below the corpus's
 imputed ceiling -- the calibrated-probability gap is open.
+\paragraph{In-vitro contrast: CFD works much better on CHANGE-seq.}
+CHANGE-seq (Lazzarotto 2020, Nat Biotechnol 10.1038/s41587-020-0555-7
+MOESM3; absent from the crisprSQL snapshot) measures cleavage of
+202{,}043 candidate sites for 110 guides on \emph{cell-free} genomic
+DNA. Scoring the 190{,}704 substitution-only sites (5.2\% carry indels
+and are unscorable by CFD) with our vendored CFD implementation gives
+AUROC $0.741$ for $\geq 20$ reads and $0.799$ for $\geq 100$ reads,
+with Spearman $0.514$ between CFD and log-reads across positives
+(\texttt{results/changeseq\_cfd.json}). Because the table lists only
+detected sites, these AUROCs separate strong from weak cleavage, not
+cleaved from uncleaved. The contrast is the point: the same CFD model
+that scores $0.552$ on cellular assays scores $0.74$--$0.80$ on the
+biochemical readout -- the cellular layer (delivery, chromatin, repair,
+nuclease exposure time), not sequence energetics, is what collapses
+off-target predictability in cells.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch

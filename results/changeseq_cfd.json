@@ -1,0 +1,13 @@
+{
+ "n_rows_total": 202043,
+ "n_indel_excluded": 10420,
+ "n_scored": 190704,
+ "n_guides": 109,
+ "frac_scorable": 0.944,
+ "auroc_ge20": 0.741,
+ "n_pos_ge20": 129834,
+ "auroc_ge100": 0.799,
+ "n_pos_ge100": 68195,
+ "spearman_cfd_logreads_pos": 0.514,
+ "n_pos": 190704
+}
