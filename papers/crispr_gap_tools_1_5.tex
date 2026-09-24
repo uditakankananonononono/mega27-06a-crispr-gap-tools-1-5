@@ -24,7 +24,24 @@ bounded by held-out, group-aware evaluation; negative results are reported.
 \end{abstract}
 
 \section{Introduction}
-% CRISPR tooling landscape; the five gaps; dataset evidence for each.
+Computational CRISPR tooling has converged on a narrow problem shape:
+SpCas9 on-target efficacy in a handful of human cell lines, and off-target
+\emph{ranking} scores for NGG-PAM targets. Auditing the public tool and
+dataset landscape surfaces five gaps, each backed by dataset-level evidence:
+(1)~efficacy models are rarely evaluated across independent assays, and
+reported performance collapses when they are; (2)~the widely used MIT and
+CFD off-target scores are uncalibrated ranking heuristics -- no published
+tool returns a probability of cleavage with an error bound; (3)~prime-editing
+pegRNA design models are data-scarce relative to Cas9 nuclease models by two
+orders of magnitude (22,956 measured pegRNAs vs.\ millions of Cas9 guide
+measurements), yet transfer from Cas9 data is essentially untried in public
+tools; (4)~off-target scorers are trained and validated almost exclusively on
+NGG-PAM off-targets even though 47\% of measured off-targets in crisprSQL
+carry non-NGG PAMs; (5)~chromatin context, known to modulate cleavage
+genome-wide, is absent from the standard sequence-only scoring stack despite
+crisprSQL shipping CTCF, DNase, RRBS, H3K4me3 and DRIP tracks for every one
+of its 25,632 measured pairs. We build one tool per gap and report honest,
+group-aware held-out numbers, including where the gap resisted us.
 
 \section{Gap 1: Cross-dataset generalization of efficacy models}
 \begin{definition}[Cross-dataset generalization gap]
@@ -83,7 +100,33 @@ on 30-mer Cas9 contexts and fine-tuning on 99-mer pegRNA contexts therefore
 transfers motif detectors without architectural surgery.
 
 \section{Gaps 4 and 5: PAM-variant and chromatin-aware off-target scoring}
-% global feature channels; ablation design
+We extend a message-passing duplex GNN with a global channel
+$g_i = [\,\mathrm{onehot}(\mathrm{PAM}_i);\ \mathbf{e}_i\,]$ concatenated
+after pooling, where $\mathbf{e}_i\in\mathbb{R}^5$ is the crisprSQL
+epigenetic track vector. The ablation
+$\{\varnothing, \mathrm{PAM}, \mathbf{e}, \mathrm{PAM}{+}\mathbf{e}\}$
+isolates each channel's contribution on an identical guide-grouped split.
+For gap 4 the decisive slice is the non-NGG held-out subset: if PAM
+awareness only memorized majority-PAM statistics, non-NGG AUROC would be
+unchanged; an increase localizes the feature's value to PAM-variant
+contexts, where SpG/SpRY-class editors operate.
+\begin{proposition}[Pooling preserves mismatch interaction signals]
+Let $G$ be the duplex graph with backbone edges and all-pairs mismatch
+edges, and $h_v^{(T)}$ the node states after $T$ message-passing steps with
+a GRU update. Then for any two positions $u,v$ carrying mismatches, $h_u$
+and $h_v$ are functions of each other's input features for $T\ge 1$, so
+mean/max-pooled readout retains mismatch--mismatch interaction information
+that position-independent scoring rules (MIT, CFD) discard by construction.
+\end{proposition}
+\begin{proof}
+Mismatch nodes are mutually adjacent by construction. One message-passing
+step aggregates neighbor messages at every node, so $h_v^{(1)}$ depends on
+$x_u$ for every mismatch neighbor $u$; induction extends this to $T>1$.
+Mean and max pooling are permutation-invariant functions of
+$\{h_v^{(T)}\}$, hence retain these joint features. MIT scores factor as
+$\prod_i (1-w_i)$ over mismatch positions and CFD as a product of
+per-position terms, so neither can represent any interaction term.
+\end{proof}
 
 \section{Results}
 % tables filled from results/*.json
