@@ -1,0 +1,41 @@
+{
+  "dataset": "crisprsql_100720",
+  "n_train": 7571,
+  "n_val": 841,
+  "n_test": 3588,
+  "seed": 1,
+  "conditions": {
+    "seq_only": {
+      "auroc": 0.5513774471980151,
+      "auprc": 0.9130216152932085,
+      "ece_isotonic": 0.11687084888979613,
+      "brier_isotonic": 0.1062066761346626,
+      "auroc_non_ngg_pam": 0.5613538661599742,
+      "n_non_ngg_te": 2175
+    },
+    "pam": {
+      "auroc": 0.4798120347676107,
+      "auprc": 0.9004136290316649,
+      "ece_isotonic": 0.2085264064419519,
+      "brier_isotonic": 0.15774928432788562,
+      "auroc_non_ngg_pam": 0.5409893758719297,
+      "n_non_ngg_te": 2175
+    },
+    "epigen": {
+      "auroc": 0.5927089006899056,
+      "auprc": 0.9103209186726047,
+      "ece_isotonic": 0.05119868293486894,
+      "brier_isotonic": 0.08557733561688184,
+      "auroc_non_ngg_pam": 0.5504835461736095,
+      "n_non_ngg_te": 2175
+    },
+    "pam_epigen": {
+      "auroc": 0.5335700155833939,
+      "auprc": 0.9038879468240908,
+      "ece_isotonic": 0.17808473413657286,
+      "brier_isotonic": 0.13094369947694154,
+      "auroc_non_ngg_pam": 0.5227806430027839,
+      "n_non_ngg_te": 2175
+    }
+  }
+}

@@ -52,9 +52,11 @@ def run_ablation(out_dir="results", max_pairs=12000, epochs=8, seed=0) -> dict:
     y_tr = torch.from_numpy(ds.labels[tr]).float()
     y_te, y_val = ds.labels[te], ds.labels[val]
 
-    def logits_for(model, idx, flags):
+    te_graphs = [duplex_to_graph(ds.guides[i], ds.offtargets[i]) for i in te]
+    val_graphs = [duplex_to_graph(ds.guides[i], ds.offtargets[i]) for i in val]
+
+    def logits_for(model, idx, flags, gs):
         out = []
-        gs = [duplex_to_graph(ds.guides[i], ds.offtargets[i]) for i in idx]
         gl = np.stack([global_features(i, ds, **flags) for i in idx])
         for s in range(0, len(gs), 512):
             xb, eib, batch = collate_graphs(gs[s:s + 512])
@@ -88,8 +90,8 @@ def run_ablation(out_dir="results", max_pairs=12000, epochs=8, seed=0) -> dict:
                 loss.backward()
                 opt.step()
         model.eval()
-        te_logits = logits_for(model, te, flags)
-        val_logits = logits_for(model, val, flags)
+        te_logits = logits_for(model, te, flags, te_graphs)
+        val_logits = logits_for(model, val, flags, val_graphs)
         iso = fit_isotonic(val_logits, y_val)
         p_cal = iso.predict(te_logits)
         cond = {
