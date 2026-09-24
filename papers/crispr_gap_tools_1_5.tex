@@ -1218,6 +1218,20 @@ canonical sites carry any TDO signal; TDO read counts are mostly low
 (median 9) but reach 1{,}365. Guide-independent cleavage is a real but
 separable background: calibrated off-target probabilities must model
 it as its own class rather than as guide-homology noise.
+Compact-Cas9 engineering data (Nat Commun 2026,
+10.1038/s41467-026-71626-2, MOESM7) quantify the PAM-broadening versus
+fidelity trade-off for SaCas9 (\texttt{results/sacas9\_variants.json}):
+across 35 DYRK1A targets in triplicate, PAM-broadened SaCas9-NNG raises
+the active fraction ($>$10\% indel) from 0.63 (WT) to 0.80 and lifts
+NNGTTT-PAM targets to 36\% mean indel, with the same broadening in
+AID base editors (0.20 $\to$ 0.37). On a 74-site off-target panel the
+enhanced-fidelity versions cut total reads by 38\% (eWT,
+78{,}725$\to$48{,}652; sites $\geq$10 reads 52$\to$36) and 56\%
+(eNNG, 17{,}562$\to$7{,}763; 26$\to$16), while the site ranking is
+preserved (WT--eWT Spearman 0.75): fidelity engineering attenuates the
+off-target landscape without erasing it, and PAM broadening re-opens
+it -- the gap-4 interaction is direct.
+
 
 
 \paragraph{Mismatch tolerance by variant.} The same supplement's

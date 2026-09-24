@@ -1,0 +1,156 @@
+{
+ "nuclease_indel": {
+  "SaCas9-WT": {
+   "n_targets": 35,
+   "top_pams": [
+    [
+     "NNGAAT",
+     40.96,
+     5
+    ],
+    [
+     "NNGAAA",
+     38.47,
+     5
+    ],
+    [
+     "NNGGGT",
+     36.81,
+     5
+    ],
+    [
+     "NNGAAG",
+     29.02,
+     5
+    ],
+    [
+     "NNGAAC",
+     16.48,
+     5
+    ]
+   ],
+   "active_frac_gt10pct": 0.629
+  },
+  "SaCas9-NNG": {
+   "n_targets": 35,
+   "top_pams": [
+    [
+     "NNGAAA",
+     42.83,
+     5
+    ],
+    [
+     "NNGAAG",
+     36.97,
+     5
+    ],
+    [
+     "NNGTTT",
+     36.0,
+     5
+    ],
+    [
+     "NNGAAT",
+     31.59,
+     5
+    ],
+    [
+     "NNGAAC",
+     25.05,
+     5
+    ]
+   ],
+   "active_frac_gt10pct": 0.8
+  }
+ },
+ "base_editing": {
+  "SaCas9-WT-AID": {
+   "n_targets": 35,
+   "top_pams": [
+    [
+     "NNGGGT",
+     10.81,
+     5
+    ],
+    [
+     "NNGAAT",
+     10.76,
+     5
+    ],
+    [
+     "NNGAAA",
+     8.61,
+     5
+    ],
+    [
+     "NNGAAG",
+     8.4,
+     5
+    ],
+    [
+     "NNGAAC",
+     1.21,
+     5
+    ]
+   ],
+   "active_frac_gt10pct": 0.2
+  },
+  "SaCas9-NNG-AID": {
+   "n_targets": 35,
+   "top_pams": [
+    [
+     "NNGTTT",
+     15.02,
+     5
+    ],
+    [
+     "NNGAAG",
+     12.07,
+     5
+    ],
+    [
+     "NNGAAA",
+     8.76,
+     5
+    ],
+    [
+     "NNGCCT",
+     7.05,
+     5
+    ],
+    [
+     "NNGAAT",
+     5.92,
+     5
+    ]
+   ],
+   "active_frac_gt10pct": 0.371
+  }
+ },
+ "offtarget_panel": {
+  "n_sites": 74,
+  "WT": {
+   "total_reads": 78725,
+   "sites_with_ge10_reads": 52,
+   "median_reads": 46.5
+  },
+  "eWT": {
+   "total_reads": 48652,
+   "sites_with_ge10_reads": 36,
+   "median_reads": 4.0
+  },
+  "NNG": {
+   "total_reads": 17562,
+   "sites_with_ge10_reads": 26,
+   "median_reads": 0.0
+  },
+  "eNNG": {
+   "total_reads": 7763,
+   "sites_with_ge10_reads": 16,
+   "median_reads": 0.0
+  },
+  "eWT_read_reduction_frac": 0.382,
+  "eNNG_read_reduction_frac": 0.558,
+  "wt_vs_ewt_spearman": 0.751
+ }
+}
