@@ -1,0 +1,64 @@
+\section{Experimental protocols}
+\label{sec:protocols}
+All hyperparameters below are the values in the committed code; nothing
+was tuned on test data. Splits are fixed by seed and logged in the
+result JSONs.
+
+\subsection{Gap 1: cross-dataset harness}
+Source datasets: Doench FC+RES (5{,}310 contexts) and V1 (2{,}144
+contexts); destination: DeepHF WT-SpCas9 (55{,}604 guides) plus eSpCas9
+and SpCas9-HF1 for the residual analysis. Ridge uses
+one-hot+dinucleotide features with $\alpha=1.0$
+(Eq.~\eqref{eq:ridge}). The CNN (GuideEfficacyCNN) is two Conv1d blocks
+(kernel 5, ReLU, channel doubling) with global mean+max pooling and a
+two-layer MLP head; trained with Adam (lr $10^{-3}$, batch 128, up to
+10 epochs, early stopping on a held-out slice). Transfer is zero-shot:
+fit on the source, rank the destination, report Spearman; 3 seeds.
+Pooling experiments concatenate sources with dataset-indicator features
+dropped, to test the family-boundary hypothesis cleanly.
+
+\subsection{Gap 2: off-target GNN and calibration}
+Each crisprSQL pair becomes a two-node graph: node features are base
+identity, mismatch flag, and position (NODE\_DIM dimensions); edges are
+the duplex backbone plus all mismatch pairs. The encoder is a GRU-cell
+message-passing stack (hidden 48, 3 steps; Eq.~\eqref{eq:gnn}); the pair
+readout concatenates mean- and max-pooled node states and a two-layer MLP
+(hidden 64) ending in a single logit (Eq.~\eqref{eq:bce}). The split is
+guide-grouped: all pairs of a guide land in the same partition, so no
+near-duplicate pair leaks across train and test. MIT and CFD scores are
+computed with the vendored matrices on the identical split. Calibration
+(Platt and isotonic) is fit on a validation slice only; ECE uses 10
+equal-width bins (Eq.~\eqref{eq:ece}) and Brier is decomposed by
+Proposition~\ref{prop:murphy}.
+
+\subsection{Gap 3: Cas9-to-pegRNA transfer}
+The TransferCNN (two Conv1d layers, 48 filters, kernel 5, dropout 0.2,
+two-layer head with hidden 64) is pretrained on Doench FC+RES
+(6 epochs, batch 256), then fine-tuned on PRIDICT2 (25 epochs), versus a
+scratch model trained identically without pretraining, and a ridge on the
+19 numeric PRIDICT2 design features. Splits are grouped by pegRNA
+\texttt{grp\_id} (5-fold GroupKFold, first three folds reported); targets
+are clamped editing efficiencies in HEK293T and, separately, K562. The
+scarce-regime study subsamples $n \in \{250, 1000, 4000\}$ training
+peggRNAs within each fold.
+
+\subsection{Gaps 4 and 5: PAM and chromatin channels}
+The gap-2 architecture is extended with global feature channels: the PAM
+channel encodes the measured off-target PAM trinucleotide, and the
+epigenetic channel concatenates the five crisprSQL tracks (DNase,
+H3K4me3, CTCF, methylation, chromatin state). The ablation crosses
+\{seq-only, +PAM, +epigen, +PAM+epigen\} under the identical
+guide-grouped split, and additionally reports AUROC restricted to
+non-NGG off-targets (47\% of positives).
+
+\subsection{PORTA: portability model and correction}
+The portability model is ridge regression ($\alpha=1.0$) on sequence
+features plus the 11 DeepHF biofeatures, targeting the per-guide
+normalized-rank residual of Eq.~\eqref{eq:resid}, fit on the WT-SpCas9
+screen only. Destination screens receive zero labels. The corrected
+ranking is Eq.~\eqref{eq:porta}. We report (i) within-screen held-out
+predictability, (ii) cross-screen portability prediction, (iii) the
+unseen-guide slice (guides absent from the training screen), and (iv)
+400-replicate guide bootstrap intervals with paired differences
+(Eq.~\eqref{eq:boot}). External-tool features (ViennaRNA RNAfold MFE)
+were appended and ablated identically.
