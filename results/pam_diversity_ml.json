@@ -1,0 +1,71 @@
+{
+ "confidence_threshold_calibration": [
+  {
+   "min_confidence": 0.4,
+   "median_accuracy": 0.753444,
+   "n_cas9_clusters": 79
+  },
+  {
+   "min_confidence": 0.5,
+   "median_accuracy": 0.755897,
+   "n_cas9_clusters": 77
+  },
+  {
+   "min_confidence": 0.6,
+   "median_accuracy": 0.785992,
+   "n_cas9_clusters": 65
+  },
+  {
+   "min_confidence": 0.7,
+   "median_accuracy": 0.823908,
+   "n_cas9_clusters": 51
+  },
+  {
+   "min_confidence": 0.8,
+   "median_accuracy": 0.893903,
+   "n_cas9_clusters": 37
+  },
+  {
+   "min_confidence": 0.9,
+   "median_accuracy": 0.946707,
+   "n_cas9_clusters": 9
+  }
+ ],
+ "accuracy_by_confidence_bin": {
+  "0.7-0.8": {
+   "n": 1624,
+   "mean_accuracy": 0.575136046182266
+  },
+  "0.8-0.9": {
+   "n": 2718,
+   "mean_accuracy": 0.6730334378219279
+  },
+  "0.9-1.0": {
+   "n": 1419,
+   "mean_accuracy": 0.7679647011980268
+  }
+ },
+ "clinvar_targetability": {
+  "G_to_A": {
+   "Targetable by CRISPR-PAMdb/CICERO Cas9 Variants": {
+    "count": 8897,
+    "pct": 100.0
+   },
+   "Targetable by SpCas9 (NGG PAM)": {
+    "count": 4184,
+    "pct": 47.0
+   }
+  },
+  "T_to_C": {
+   "Targetable by CRISPR-PAMdb/CICERO Cas9 Variants": {
+    "count": 37636,
+    "pct": 100.0
+   },
+   "Targetable by SpCas9 (NGG PAM)": {
+    "count": 18145,
+    "pct": 48.2
+   }
+  }
+ },
+ "calibration_gap_at_top_bin": 0.23203529880197316
+}

@@ -1373,6 +1373,19 @@ enrichment threshold, and the mutant landscape is reproducible across
 replicate selections (Spearman 0.58--0.88). The WT residue averages
 88.6\% of every position in the input library, so max-residue profiles
 are uninformative and the mutant fraction carries the entire signal.
+Metagenome mining plus ML PAM prediction (Nat Commun 2026,
+10.1038/s41467-026-69098-5, MOESM8) both expands the targetable
+pathogenic-variant space and exposes a calibration problem
+(\texttt{results/pam\_diversity\_ml.json}). Mined CRISPR-PAMdb/CICERO
+PAMs render 8,897 pathogenic ClinVar G$\to$A and 37,636 T$\to$C
+variants targetable, versus 4,184 (47\%) and 18,145 (48\%) for SpCas9
+NGG alone --- a $\sim$2.1$\times$ expansion. Prediction confidence is
+rank-informative (median per-cluster accuracy rises monotonically from
+0.75 to 0.95 as the confidence threshold increases 0.4$\to$0.9) but
+miscalibrated in absolute terms: mean accuracy in the 0.9--1.0
+confidence bin is only 0.77 ($n=1{,}419$ cluster--PAM pairs), a 0.23
+overconfidence gap that any deployed PAM-expansion tool must correct.
+
 
 
 
