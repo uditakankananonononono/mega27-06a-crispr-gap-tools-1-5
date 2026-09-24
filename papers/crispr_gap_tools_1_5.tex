@@ -756,7 +756,12 @@ calibration in the near-background mass -- while still separating the
 few high-cleavage sites (AUROC $0.90$ at the $\ge 1\%$ level, but only
 3--4 positives). Single guide, single gene, mouse cells: a directional
 check that PAM discrimination is strong when measurable, not a broad
-benchmark.
+benchmark. A statsmodels logistic regression
+(cleaved $>0.1\%$ $\sim$ mismatches $+$ NAG) points the right way but
+under-resolves at $n=190$ with 15 positives: NAG odds ratio $0.34$
+(95\% CI $0.10$--$1.11$, $p=0.074$), per-mismatch OR $0.50$
+($0.22$--$1.14$, $p=0.097$) (\texttt{results/koike\_yusa\_stats.json}).
+We report the direction and the interval, not a claim.
 \paragraph{Direct chromatin-track queries: a coverage gap and a power
 ceiling.} crisprSQL's bundled chromatin columns are themselves sparse:
 on the 1{,}271 K562 hg19 rows (CIRCLE-seq + Cho) the bundled H3K4me3
