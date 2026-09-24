@@ -1,0 +1,51 @@
+{
+  "dataset_sizes": {
+    "fcres": 4379,
+    "v1": 2143,
+    "crisprscan": 492,
+    "sgdesigner": 1309,
+    "sgrnascorer": 430
+  },
+  "pairs": {
+    "fcres|v1": {
+      "identical_20mers": 1830,
+      "edit1_pairs": 4
+    },
+    "fcres|crisprscan": {
+      "identical_20mers": 0,
+      "edit1_pairs": 0
+    },
+    "fcres|sgdesigner": {
+      "identical_20mers": 0,
+      "edit1_pairs": 0
+    },
+    "fcres|sgrnascorer": {
+      "identical_20mers": 0,
+      "edit1_pairs": 0
+    },
+    "v1|crisprscan": {
+      "identical_20mers": 0,
+      "edit1_pairs": 0
+    },
+    "v1|sgdesigner": {
+      "identical_20mers": 0,
+      "edit1_pairs": 0
+    },
+    "v1|sgrnascorer": {
+      "identical_20mers": 0,
+      "edit1_pairs": 0
+    },
+    "crisprscan|sgdesigner": {
+      "identical_20mers": 0,
+      "edit1_pairs": 0
+    },
+    "crisprscan|sgrnascorer": {
+      "identical_20mers": 0,
+      "edit1_pairs": 0
+    },
+    "sgdesigner|sgrnascorer": {
+      "identical_20mers": 0,
+      "edit1_pairs": 0
+    }
+  }
+}

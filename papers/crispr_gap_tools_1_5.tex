@@ -349,7 +349,15 @@ Wang/Xu community in return (${\le}0.17$). Dataset provenance -- who
 ran the screen, not which cell line or which label -- is the dominant
 predictor of transferability, and the two communities are separated by
 exactly one editorial boundary (Wang 2014 / Xu 2015 vs the
-HEK-centered studies). The anomaly is the DeepCRISPR-compiled HEK293T
+HEK-centered studies). A rapidfuzz leakage audit of unique 20-mers
+confirms the community structure is not a leakage artifact
+(\texttt{results/leakage\_audit.json}): crisprscan, sgDesigner,
+sgRNAScorer and the Wang/Xu side share \emph{zero} identical or
+edit-distance-1 guides with each other or with the HEK family. The one
+exception is fcres$\leftrightarrow$v1: 1{,}830 shared 20-mers (fcres
+re-screens the v1 library by design), so the fcres$\to$v1 transfer score
+($+0.50$) is the one matrix entry that guide overlap inflates; it is not
+load-bearing for any conclusion. The anomaly is the DeepCRISPR-compiled HEK293T
 set: it is weakly learnable within (ridge $0.161$) and
 \emph{anti-correlated with nine of the ten other datasets} (out
 $-0.24$--$-0.06$; in $-0.28$--$-0.06$), including its own Wang-family
