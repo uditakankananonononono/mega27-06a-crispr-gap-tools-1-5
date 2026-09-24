@@ -66,3 +66,12 @@ def test_deepcrispr_loads():
         assert len(ds.sequences) == n
         assert all(len(s) == 23 and set(s) <= set("ACGT") for s in ds.sequences)
         assert ds.scores.min() >= 0 and ds.scores.max() <= 1
+
+
+@pytest.mark.skipif(not _have("depmap/CRISPRInferredGuideEfficacy.csv"), reason="data not fetched")
+def test_depmap_loads():
+    from crisprgap.data.datasets import load_depmap_efficacy
+    ds = load_depmap_efficacy()
+    assert len(ds.sequences) == 193475
+    assert all(set(s) <= set("ACGT") and len(s) in (19, 20, 23) for s in ds.sequences[:5000])
+    assert ds.scores.min() >= 0 and ds.scores.max() <= 1

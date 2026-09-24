@@ -351,6 +351,22 @@ placing the four HEK-family datasets plus dc\_hek293t in one community
 and the Wang/Xu screens, CRISPRon and CRISPRscan in the other
 (\texttt{results/transfer\_communities.json}).
 
+\paragraph{A twelfth family: the DepMap consensus label.} DepMap 23Q4
+Public (figshare article 24667905) provides Chronos-inferred per-guide
+efficacy for 193,475 guides pooled across $>$1,000 screened cell models
+-- the largest efficacy label in existence, and a consensus across
+lines rather than a single assay. It is learnable within (ridge
+$0.328$, 3 seeds; \texttt{results/crossdata\_ridge\_12ds.json}) but
+transfers only weakly in both directions ($\le 0.12$ into it; its best
+out-edge is HL60 $+0.24$). Re-running Louvain on the $12\times 12$
+matrix leaves the two-community structure intact (identical partition
+across 3 seeds, $Q=0.300$; \texttt{results/transfer\_communities\_12ds.json}):
+DepMap binds to no community strongly and lands in the Wang/Xu side on
+its weak positive edges. The consensus label does not bridge the
+communities -- pooling across 1,000 lines does not recover what single
+assays share, consistent with each assay family's label being dominated
+by family-specific systematic components.
+
 \subsection{Data-integrity audit: the DeepHF encoding bug}
 \label{sec:encoding-audit}
 A mid-project audit of the DeepHF pkl arrays caught a decoding error:

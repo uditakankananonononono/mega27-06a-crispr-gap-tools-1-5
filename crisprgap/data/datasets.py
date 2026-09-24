@@ -286,3 +286,23 @@ def load_deepcrispr(cell_line: str) -> EfficacyDataset:
     return EfficacyDataset(sequences=seqs,
                            scores=np.clip(np.asarray(scores, dtype=np.float32), 0, 1),
                            source=f"deepcrispr_{cell_line}")
+
+
+def load_depmap_efficacy() -> EfficacyDataset:
+    """DepMap 23Q4 Public (figshare article 24667905):
+    CRISPRInferredGuideEfficacy.csv - Chronos-inferred per-guide efficacy for
+    193,475 guides pooled across >1,000 screened cell models. Lengths 19/20/23
+    (multiple libraries), scores in [0,1]. Gap-1 twelfth assay family: the
+    label is a cross-line consensus, not a single assay."""
+    path = os.path.join(DATA_DIR, "depmap", "CRISPRInferredGuideEfficacy.csv")
+    seqs, scores = [], []
+    with open(path) as fh:
+        next(fh)
+        for line in fh:
+            s, v = line.rstrip("\n").split(",")
+            seqs.append(s)
+            scores.append(float(v))
+    assert all(set(s) <= set("ACGT") for s in seqs)
+    return EfficacyDataset(sequences=seqs,
+                           scores=np.clip(np.asarray(scores, dtype=np.float32), 0, 1),
+                           source="depmap_23q4")
