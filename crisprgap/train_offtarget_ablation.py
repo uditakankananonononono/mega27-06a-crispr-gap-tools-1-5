@@ -30,7 +30,7 @@ CONDITIONS = {
 }
 
 
-def run_ablation(out_dir="results", max_pairs=12000, epochs=8, seed=0) -> dict:
+def run_ablation(out_dir="results", max_pairs=12000, epochs=8, seed=0, only=None) -> dict:
     rng = np.random.default_rng(seed)
     ds = load_crisprsql()
     pos_idx = np.where(ds.labels == 1)[0]
@@ -71,6 +71,12 @@ def run_ablation(out_dir="results", max_pairs=12000, epochs=8, seed=0) -> dict:
     non_ngg_te = np.array([not ds.off_pam[i].upper().endswith("GG") if ds.off_pam[i] else False for i in te])
 
     for name, flags in CONDITIONS.items():
+        if only is not None and name not in only:
+            # fast-forward the numpy rng stream exactly as the monolithic run would:
+            # one permutation draw per training epoch, so later conditions match bit-for-bit
+            for _ in range(epochs):
+                rng.permutation(len(tr_graphs))
+            continue
         torch.manual_seed(seed)
         n_glob = len(global_features(int(tr[0]), ds, **flags))
         model = OffTargetGNNv2(n_global=n_glob)
@@ -105,7 +111,17 @@ def run_ablation(out_dir="results", max_pairs=12000, epochs=8, seed=0) -> dict:
             cond["n_non_ngg_te"] = int(non_ngg_te.sum())
         result["conditions"][name] = cond
         print(f"[ablation] {name}: {cond}", flush=True)
-    os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "offtarget_ablation.json"), "w") as f:
-        json.dump(result, f, indent=2)
+        os.makedirs(out_dir, exist_ok=True)
+        with open(os.path.join(out_dir, f"cond_{name}.json"), "w") as f:
+            json.dump(cond, f, indent=2)
+    # assemble the full artifact from per-condition partials when all are present
+    partials = {}
+    for name in CONDITIONS:
+        p = os.path.join(out_dir, f"cond_{name}.json")
+        if os.path.exists(p):
+            partials[name] = json.load(open(p))
+    if set(partials) == set(CONDITIONS):
+        result["conditions"] = partials
+        with open(os.path.join(out_dir, "offtarget_ablation.json"), "w") as f:
+            json.dump(result, f, indent=2)
     return result
