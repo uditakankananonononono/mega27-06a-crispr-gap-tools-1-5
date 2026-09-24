@@ -837,7 +837,13 @@ outside (Fisher odds ratio $1.25$, $p=1.0$;
 Cohen's $d$) tell the same story: Koike-Yusa NAG-vs-NGG $r=0.15$
 ($p=0.071$; the action is in the tail, not the bulk), K562 DNase
 $r=-0.12$, HEK293T SITE-Seq DNase $r=0.014$
-(\texttt{results/effect\_sizes\_pingouin.json}).
+(\texttt{results/effect\_sizes\_pingouin.json}). Genomic-context features around the locus
+(pyfaidx extraction from the UCSC hg38 primary assembly: $\pm 30/100$ bp
+GC, homopolymer run, site GC) add nothing on top of mismatch count in a
+grouped-split logistic model (mean AUROC $0.505$ vs $0.490$ over 3
+seeds; \texttt{results/gap2\_context\_features.json}) -- again on the
+cell-free SITE-Seq slice, where no cellular covariate can help by
+construction.
 \input{ablation_perseed_table.tex}
 \input{results_tables.tex}
 

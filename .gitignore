@@ -2,3 +2,6 @@ data/raw/
 __pycache__/
 *.pyc
 *.bigWig
+data/hg38.fa
+data/hg38.fa.gz
+data/hg38.fa.fai
