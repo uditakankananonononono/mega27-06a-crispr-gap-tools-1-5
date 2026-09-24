@@ -1,0 +1,211 @@
+{
+ "fig2a": {
+  "ref_enzyme": "Un1Cas12f1-WT",
+  "n_targets": 40,
+  "median_fold": 10.2,
+  "max_fold": 99.65,
+  "ref_median": 1.97,
+  "evo_median": 20.59,
+  "targets_ref_lt2_evo_gt10": 12
+ },
+ "fig2c": {
+  "ref_enzyme": "Un1Cas12f1-WT",
+  "n_targets": 40,
+  "median_fold": 6.4,
+  "max_fold": 34.06,
+  "ref_median": 3.36,
+  "evo_median": 21.74,
+  "targets_ref_lt2_evo_gt10": 9
+ },
+ "fig2fg": {
+  "ref_enzyme": "enAsCas12a",
+  "n_targets": 12,
+  "median_fold": 0.9,
+  "max_fold": 1.76,
+  "ref_median": 75.64,
+  "evo_median": 67.94,
+  "targets_ref_lt2_evo_gt10": 0
+ },
+ "pam_class": {
+  "AATA": {
+   "n": 2,
+   "wt_median": 0.69,
+   "evo_median": 15.39
+  },
+  "AATG": {
+   "n": 1,
+   "wt_median": 0.51,
+   "evo_median": 24.88
+  },
+  "ACTG": {
+   "n": 2,
+   "wt_median": 0.24,
+   "evo_median": 4.19
+  },
+  "AGTG": {
+   "n": 2,
+   "wt_median": 0.6,
+   "evo_median": 17.48
+  },
+  "ATAG": {
+   "n": 1,
+   "wt_median": 6.84,
+   "evo_median": 18.55
+  },
+  "ATCA": {
+   "n": 3,
+   "wt_median": 3.97,
+   "evo_median": 31.76
+  },
+  "ATGG": {
+   "n": 2,
+   "wt_median": 0.46,
+   "evo_median": 12.82
+  },
+  "ATTA": {
+   "n": 2,
+   "wt_median": 7.94,
+   "evo_median": 23.81
+  },
+  "ATTG": {
+   "n": 3,
+   "wt_median": 7.23,
+   "evo_median": 18.19
+  },
+  "CATG": {
+   "n": 2,
+   "wt_median": 1.76,
+   "evo_median": 18.24
+  },
+  "CCTG": {
+   "n": 3,
+   "wt_median": 3.26,
+   "evo_median": 38.73
+  },
+  "CGTG": {
+   "n": 3,
+   "wt_median": 0.74,
+   "evo_median": 11.62
+  },
+  "CTAG": {
+   "n": 2,
+   "wt_median": 0.64,
+   "evo_median": 12.02
+  },
+  "CTCA": {
+   "n": 1,
+   "wt_median": 2.26,
+   "evo_median": 13.63
+  },
+  "CTCG": {
+   "n": 2,
+   "wt_median": 1.58,
+   "evo_median": 11.38
+  },
+  "CTGA": {
+   "n": 1,
+   "wt_median": 2.52,
+   "evo_median": 22.27
+  },
+  "CTGG": {
+   "n": 1,
+   "wt_median": 0.53,
+   "evo_median": 7.93
+  },
+  "CTTA": {
+   "n": 2,
+   "wt_median": 10.28,
+   "evo_median": 50.21
+  },
+  "CTTG": {
+   "n": 4,
+   "wt_median": 9.59,
+   "evo_median": 38.72
+  },
+  "GATG": {
+   "n": 2,
+   "wt_median": 0.43,
+   "evo_median": 9.99
+  },
+  "GCTG": {
+   "n": 2,
+   "wt_median": 0.36,
+   "evo_median": 13.75
+  },
+  "GGTG": {
+   "n": 2,
+   "wt_median": 1.13,
+   "evo_median": 13.83
+  },
+  "GTAA": {
+   "n": 2,
+   "wt_median": 2.89,
+   "evo_median": 17.92
+  },
+  "GTCA": {
+   "n": 4,
+   "wt_median": 3.11,
+   "evo_median": 22.82
+  },
+  "GTGG": {
+   "n": 3,
+   "wt_median": 1.55,
+   "evo_median": 21.21
+  },
+  "GTTA": {
+   "n": 6,
+   "wt_median": 2.0,
+   "evo_median": 19.98
+  },
+  "TATG": {
+   "n": 2,
+   "wt_median": 4.08,
+   "evo_median": 20.74
+  },
+  "TCTG": {
+   "n": 3,
+   "wt_median": 5.39,
+   "evo_median": 19.33
+  },
+  "TGTA": {
+   "n": 1,
+   "wt_median": 1.65,
+   "evo_median": 14.61
+  },
+  "TGTG": {
+   "n": 1,
+   "wt_median": 4.66,
+   "evo_median": 22.45
+  },
+  "TTAA": {
+   "n": 2,
+   "wt_median": 9.84,
+   "evo_median": 36.92
+  },
+  "TTAG": {
+   "n": 1,
+   "wt_median": 8.89,
+   "evo_median": 45.64
+  },
+  "TTCA": {
+   "n": 2,
+   "wt_median": 3.42,
+   "evo_median": 20.16
+  },
+  "TTGA": {
+   "n": 1,
+   "wt_median": 3.96,
+   "evo_median": 15.41
+  },
+  "TTGG": {
+   "n": 1,
+   "wt_median": 1.51,
+   "evo_median": 11.27
+  },
+  "TTTG": {
+   "n": 6,
+   "wt_median": 47.52,
+   "evo_median": 82.59
+  }
+ }
+}
