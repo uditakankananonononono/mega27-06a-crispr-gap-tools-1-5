@@ -978,6 +978,13 @@ efficiency gain under MLH1 depletion: pegRNA ranking is portable across
 cellular contexts far better than Cas9 efficacy rankings (gap 1), and
 MMR status is a first-order covariate no sequence-only pegRNA model
 captures.
+Cross-library transfer on five matched design features (PBS/RT length,
+PBS/RT GC, Cas9 score; z-scored per library;
+\texttt{results/pe\_cross\_library\_transfer.json}) gives
+DeepPE$\to$PRIDICT2 0.194 and PRIDICT2$\to$DeepPE 0.389 against
+within-library CV 0.669/0.523: pegRNA design models do not transfer
+across library generations even on shared features, the gap-1 boundary
+reappearing inside prime editing.
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
 \texttt{results/gap4\_mismatch\_tolerance.json}) quantify

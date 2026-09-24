@@ -1,0 +1,16 @@
+{
+ "n_deeppe": 43149,
+ "n_pridict2": 92423,
+ "features": [
+  "pbs",
+  "rt",
+  "gc_pbs",
+  "gc_rt",
+  "cas9"
+ ],
+ "deeppe_to_pridict2": 0.194,
+ "pridict2_to_deeppe": 0.389,
+ "deeppe_within_cv": 0.669,
+ "pridict2_within_cv": 0.523,
+ "note": "within-CV references from results/gap3_deeppe.json and results/pridict2_pechromatin.json"
+}
