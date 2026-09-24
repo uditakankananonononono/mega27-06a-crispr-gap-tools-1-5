@@ -1,0 +1,40 @@
+{
+ "n_promoters_celltype_panel": 209,
+ "n_promoters_locus_panel": 17,
+ "n_scaffold_variants_locus_panel": 278,
+ "promoter_cross_celltype_spearman": {
+  "iPSC_vs_mESC": 0.9406105356424493,
+  "iPSC_vs_K562": 0.9638406045950498,
+  "iPSC_vs_HEK293T": 0.9326221089701989,
+  "mESC_vs_K562": 0.9099043779079374,
+  "mESC_vs_HEK293T": 0.9322962759228579,
+  "K562_vs_HEK293T": 0.903740892214264
+ },
+ "promoter_cross_locus_spearman": {
+  "synHEK3_vs_HBB": 0.5171568627450981,
+  "synHEK3_vs_EMX1": 0.5000000000000001,
+  "synHEK3_vs_FANCF": 0.7303921568627452,
+  "synHEK3_vs_CLYBL": 0.8259803921568629,
+  "HBB_vs_EMX1": 0.32352941176470595,
+  "HBB_vs_FANCF": 0.2377450980392157,
+  "HBB_vs_CLYBL": 0.6299019607843138,
+  "EMX1_vs_FANCF": 0.4460784313725491,
+  "EMX1_vs_CLYBL": 0.5220588235294118,
+  "FANCF_vs_CLYBL": 0.5196078431372549
+ },
+ "scaffold_cross_locus_spearman": {
+  "synHEK3_vs_HBB": 0.5128099220867861,
+  "synHEK3_vs_EMX1": 0.4646544788159224,
+  "synHEK3_vs_FANCF": 0.5719132624493162,
+  "synHEK3_vs_CLYBL": 0.48182783690364583,
+  "HBB_vs_EMX1": 0.3026724073169553,
+  "HBB_vs_FANCF": 0.4669065027470279,
+  "HBB_vs_CLYBL": 0.4423894912252333,
+  "EMX1_vs_FANCF": 0.3279479130099902,
+  "EMX1_vs_CLYBL": 0.2616628951409735,
+  "FANCF_vs_CLYBL": 0.49577731549475684
+ },
+ "promoter_cross_celltype_min": 0.903740892214264,
+ "promoter_cross_locus_min": 0.2377450980392157,
+ "scaffold_cross_locus_min": 0.2616628951409735
+}
