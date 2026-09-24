@@ -115,8 +115,10 @@ def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int
     }
     os.makedirs(out_dir, exist_ok=True)
     torch.save(model.state_dict(), os.path.join(out_dir, "offtarget_gnn.pt"))
+    studies_te = np.array(ds.studies)[te]
     np.savez_compressed(os.path.join(out_dir, "offtarget_preds.npz"),
-                        logits=te_logits, y_test=y_te, mit=mit_te, p_cal=p_cal)
+                        logits=te_logits, y_test=y_te, mit=mit_te, p_cal=p_cal,
+                        studies=studies_te)
     with open(os.path.join(out_dir, "offtarget_metrics.json"), "w") as f:
         json.dump(result, f, indent=2)
     return result
