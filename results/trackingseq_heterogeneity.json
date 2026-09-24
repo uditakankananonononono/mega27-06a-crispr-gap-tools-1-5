@@ -1,0 +1,42 @@
+{
+ "vegfa_site2_editor_sets": {
+  "CBE": 47,
+  "Cas9": 239,
+  "PE2": 6,
+  "PE3": 6
+ },
+ "vegfa_site2_editor_jaccard": {
+  "CBE_vs_Cas9": 0.0,
+  "CBE_vs_PE2": 0.0,
+  "CBE_vs_PE3": 0.0,
+  "Cas9_vs_PE2": 0.025,
+  "Cas9_vs_PE3": 0.025,
+  "PE2_vs_PE3": 1.0
+ },
+ "pcsk9_context_sets": {
+  "AML12": 53,
+  "Liver": 38,
+  "NIH3T3": 197,
+  "mESC": 65,
+  "mHSPC": 24
+ },
+ "pcsk9_context_jaccard": {
+  "AML12_vs_Liver": 0.0,
+  "AML12_vs_NIH3T3": 0.232,
+  "AML12_vs_mESC": 0.356,
+  "AML12_vs_mHSPC": 0.328,
+  "Liver_vs_NIH3T3": 0.0,
+  "Liver_vs_mESC": 0.0,
+  "Liver_vs_mHSPC": 0.0,
+  "NIH3T3_vs_mESC": 0.266,
+  "NIH3T3_vs_mHSPC": 0.1,
+  "mESC_vs_mHSPC": 0.328
+ },
+ "nih3t3_rep_vs_score": {
+  "n": 197,
+  "spearman_score_replicated": 0.543,
+  "top_quartile_rep_rate": 0.755,
+  "rest_rep_rate": 0.23,
+  "mwu_p": 3.046694661260179e-14
+ }
+}

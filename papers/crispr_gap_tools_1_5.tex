@@ -725,6 +725,19 @@ carry significantly higher PEAC-seq enrichment (MWU $p=3\times10^{-6}$
 TS1, $4\times10^{-10}$ TS2): cross-method agreement is an enrichment
 gradient, not a set boundary. Detection chemistry -- not only cell
 context -- redraws the off-target map.
+\paragraph{Editor chemistry and context (Tracking-seq).} Tracking-seq
+(Nat Biotechnol 2024, 10.1038/s41587-024-02307-y, MOESM4--6) applies
+one capture chemistry across editors and contexts
+(\texttt{results/trackingseq\_heterogeneity.json}). For the same
+VEGFA-site-2 guide, the CBE off-target set shares \emph{zero} sites
+with Cas9's 239, and PE2/PE3 share 2.5\%; the editor -- not only the
+guide -- defines the off-target set. For one Pcsk9 guide across five
+mouse contexts, cultured lines overlap at Jaccard 0.10--0.36 while
+ex-vivo liver shares \emph{no} site with any cultured context; within
+NIH3T3, the Tracking-seq score predicts cross-context replication
+(top-quartile sites replicate at 76\% vs 23\%, Spearman 0.54,
+$p=3\times10^{-14}$). Off-target catalogues are editor- and
+context-specific; scores rank transferability.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
