@@ -1,0 +1,18 @@
+{
+  "crisprsql_100720": {
+    "rows": 25632,
+    "csv_mb": 17.2,
+    "parquet_mb": 4.4,
+    "csv_load_s": 0.179,
+    "parquet_load_s": 0.089,
+    "roundtrip_identical": true
+  },
+  "depmap_guide_efficacy": {
+    "rows": 193475,
+    "csv_mb": 7.7,
+    "parquet_mb": 3.0,
+    "csv_load_s": 0.101,
+    "parquet_load_s": 0.053,
+    "roundtrip_identical": true
+  }
+}
