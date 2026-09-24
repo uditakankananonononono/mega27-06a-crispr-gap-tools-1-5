@@ -66,3 +66,32 @@ DeepHF nuclease screens; the calibration results hold on crisprSQL's
 at PRIDICT2 scale with motif-level features. Extrapolation beyond these
 regimes (base editors, Cas12a, non-U2OS chromatin) is future work, not
 implied.
+
+\paragraph{Negative-results ledger.}
+This project produced more informative negatives than positives, and we
+consolidate them here because each is load-bearing for the next
+practitioner.
+(i)~\emph{Pooling datasets does not fix cross-dataset collapse} (gap 1):
+pooling Doench FC+RES with DeepHF degrades transfer in both directions.
+(ii)~\emph{Cas9$\to$pegRNA transfer never beats scratch} (gap 3):
+not at $n=250$, $1000$, or $4000$, in HEK or K562.
+(iii)~\emph{Three independent thermodynamic channels add nothing} to
+pegRNA numerics (gap 3): ViennaRNA MFE ($+0.0002$), seqfold ensemble
+$\Delta G$ and primer3 $T_m$ ($\le 10^{-4}$ Spearman).
+(iv)~\emph{Isotonic recalibration hurts} on validation slices of this
+size (gap 2): mean ECE $0.326 \to 0.389$, helping 1 of 5 splits.
+(v)~\emph{PAM and chromatin channels do not robustly beat seq-only}
+(gaps 4--5): five-seed replication places every condition within noise
+($0.590 \pm 0.094$ seq-only; PAM-alone worst at $0.528 \pm 0.119$).
+(vi)~\emph{Study routing is not estimable} on crisprSQL (gap 2): a
+leave-one-out router collapses to always-MIT, the prevalence rule
+underperforms it, and an oracle gains $0.001$; apparent per-study wins
+rest on as few as two positives.
+(vii)~\emph{Initialization is a first-class variance source} (gap 2):
+on a byte-identical split, torch init alone spans AUROC
+$0.530$--$0.606$ and ECE $0.209$--$0.389$.
+We report these because each was, at some point, our own leading
+hypothesis, and each fell to a control we initially considered
+pedantic. The pattern generalizes: on negative-scarce,
+study-confounded corpora, the honest effect size of most modeling
+choices is smaller than the evaluation noise.
