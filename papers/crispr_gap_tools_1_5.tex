@@ -1418,6 +1418,18 @@ variants (278 variants x 5 loci, $\rho$ 0.26--0.57). Expression
 machinery transfers between cell types; the chromatin locus is the
 generalization bottleneck, consistent with the locus-dependence seen in
 the motif screens above.
+The Sequence Display platform (Nat Biotechnol 2026,
+10.1038/s41587-026-03087-3, MOESM4) supplies the missing scaling law
+for sequence--activity models (\texttt{results/seq\_display\_learning.json}):
+across 4 SlugCas9 PAM-context libraries x 3 seeds, mean test $R^2$ is
+$-1.32$ at 100 training examples and $-0.84$ at 1{,}000 --- worse than
+predicting the mean --- turning positive only at 16{,}000
+($R^2 = 0.40$; per-PAM 0.35--0.44). On the 16k NNGA library, protein
+language models lead (ESM-2 0.48, SaProt 0.47) over random forest
+(0.41), MLP (0.33), linear regression (0.35) and CNN (0.28).
+Sequence--activity prediction is decisively data-limited below
+$10^{4}$ examples, a caution for every small-library CRISPR model.
+
 
 
 
