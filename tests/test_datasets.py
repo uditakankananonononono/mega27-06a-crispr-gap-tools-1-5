@@ -56,3 +56,13 @@ def test_crisprscan_loads():
     assert len(ds.sequences) == 492
     assert all(len(s) == 20 and set(s) <= set("ACGT") for s in ds.sequences)
     assert ds.scores.min() >= 0 and ds.scores.max() <= 1
+
+
+@pytest.mark.skipif(not _have("deepcrispr/hct116.repisgt"), reason="data not fetched")
+def test_deepcrispr_loads():
+    from crisprgap.data.datasets import load_deepcrispr
+    for cl, n in (("hct116", 4239), ("hek293t", 4566), ("hela", 8101), ("hl60", 2076)):
+        ds = load_deepcrispr(cl)
+        assert len(ds.sequences) == n
+        assert all(len(s) == 23 and set(s) <= set("ACGT") for s in ds.sequences)
+        assert ds.scores.min() >= 0 and ds.scores.max() <= 1

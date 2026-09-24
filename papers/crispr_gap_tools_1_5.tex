@@ -313,6 +313,37 @@ seed-0 appearance of CRISPRscan$\to$sgDesigner $+0.32$ did not replicate
 on seed 1 ($-0.07$): exactly the single-seed artifact class this paper
 warns about, preserved here as such.
 
+\paragraph{Eleven datasets: two transfer communities and one inversion.}
+The DeepCRISPR regression release (Chuai et al.\ 2018, Genome Biol;
+bm2-lab/DeepCRISPR \texttt{paper\_data-regression}) contributes four
+further guide-level screens -- HCT116 (4,239) and HeLa (8,101), derived
+from Wang et al.\ 2014; HL60 (2,076), derived from Xu et al.\ 2015; and a
+DeepCRISPR-compiled HEK293T set (4,566) -- taking the ridge matrix to
+11${\times}$11 (3 seeds, identical harness;
+\texttt{results/crossdata\_ridge\_11ds.json}). The enlarged matrix
+resolves the transfer graph into \emph{two communities}. The
+Wang/Xu-derived screens predict each other well (HCT116$\to$HeLa
+$+0.34$, HeLa$\to$HCT116 $+0.37$, HL60$\leftrightarrow$both
+$+0.26$--$+0.30$) but barely transfer into the HEK-family datasets
+(${\le}0.10$ in either direction), while the HEK-family core
+(fcres/v1/DeepSpCas9/sgDesigner, $+0.41$--$+0.56$ mutual) ignores the
+Wang/Xu community in return (${\le}0.17$). Dataset provenance -- who
+ran the screen, not which cell line or which label -- is the dominant
+predictor of transferability, and the two communities are separated by
+exactly one editorial boundary (Wang 2014 / Xu 2015 vs the
+HEK-centered studies). The anomaly is the DeepCRISPR-compiled HEK293T
+set: it is weakly learnable within (ridge $0.161$) yet
+\emph{anti-correlated with all ten other datasets} (out
+$-0.24$--$-0.03$; in $-0.28$--$-0.06$), including its own Wang-family
+siblings (HCT116$\to$dc\_hek293t $-0.13$, HeLa$\to$ $-0.12$). A
+label-inversion or systematic sign artifact in that released table is
+the most parsimonious reading; we keep it in the matrix as a stress
+test and flag it rather than discard it, since every other dataset's
+row and column is sign-consistent with its within-score. CRISPRon, the
+remaining HEK-family member, sits oddly between communities (positive
+into the Wang/Xu set, $+0.17$--$+0.31$, near-zero out of it) --
+unresolved.
+
 \subsection{Data-integrity audit: the DeepHF encoding bug}
 \label{sec:encoding-audit}
 A mid-project audit of the DeepHF pkl arrays caught a decoding error:

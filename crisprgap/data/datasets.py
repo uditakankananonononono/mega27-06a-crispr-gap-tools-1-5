@@ -266,3 +266,23 @@ def load_crisprscan() -> EfficacyDataset:
     assert all(len(s) == 20 and set(s) <= set("ACGT") for s in seqs)
     scores = np.clip(j.activity_raw_prank.to_numpy(dtype=np.float32), 0.0, 1.0)
     return EfficacyDataset(sequences=seqs, scores=scores, source="crisprscan")
+
+
+def load_deepcrispr(cell_line: str) -> EfficacyDataset:
+    """DeepCRISPR on-target regression screens (Chuai et al. 2018, Genome Biol;
+    bm2-lab/DeepCRISPR paper_data-regression): guide-level efficacies for four
+    cell lines - hct116 and hela (from Wang et al. 2014), hl60 (Xu et al. 2015),
+    hek293t (DeepCRISPR-compiled). 23-mer sequences (20-mer + PAM), scores in
+    [0,1]. Four further gap-1 assay families across three more cell lines.
+    """
+    path = os.path.join(DATA_DIR, "deepcrispr", f"{cell_line}.repisgt")
+    seqs, scores = [], []
+    with open(path) as fh:
+        for line in fh:
+            f = line.rstrip("\n").split("\t")
+            seqs.append(f[4].upper())
+            scores.append(float(f[-1]))
+    assert all(len(s) == 23 and set(s) <= set("ACGT") for s in seqs)
+    return EfficacyDataset(sequences=seqs,
+                           scores=np.clip(np.asarray(scores, dtype=np.float32), 0, 1),
+                           source=f"deepcrispr_{cell_line}")
