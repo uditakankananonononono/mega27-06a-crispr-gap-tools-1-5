@@ -41,3 +41,28 @@ The CFD per-position substitution frequencies (Doench et al.\ 2016) are
 taken from the CRISPOR source tree (Haeussler \& Konczak 2016) and
 vendored into \texttt{crisprgap/matrices/} so the scorer is reproducible
 offline.
+
+\subsection{Usage matrix}
+\begin{table}[h]\centering\small
+\caption{Which dataset powers which analysis. Counts are rows actually
+consumed by the committed pipelines (not release sizes).}
+\label{tab:usage}
+\begin{tabular}{l p{4.2cm} l l}
+\hline
+Dataset & Used for & $n$ used & Selection \\
+\hline
+Doench FC+RES & gap-1 source training; PORTA base model & 5{,}310 guides & all \\
+Doench V1 & gap-1 within-family transfer target & 2{,}144 guides & all \\
+DeepHF WT & gap-1 destination; residual screen A & 12{,}000--55{,}604 & capped / all \\
+DeepHF eSpCas9 & residual screen B; PORTA destination & 58{,}617 & all \\
+DeepHF SpCas9-HF1 & residual screen C; PORTA destination & 56{,}888 & all \\
+crisprSQL 100720 & gaps 2, 4, 5; routing audit & 25{,}632 pairs & all \\
+PRIDICT2 23k & gap 3 benchmark; thermo feature studies & 22{,}956 pegRNAs & all \\
+CFD matrices & gap-2 published baseline (vendored) & 23-mer table & all \\
+\hline
+\end{tabular}
+\end{table}
+The three DeepHF screens intersect to 53{,}937 sequence-matched guides
+(the residual analysis set); pairwise intersections are larger
+(54{,}909 WT--eSp). crisprSQL contributes only 1{,}494 validated
+negatives -- the binding constraint behind the gap-2 meta-finding.
