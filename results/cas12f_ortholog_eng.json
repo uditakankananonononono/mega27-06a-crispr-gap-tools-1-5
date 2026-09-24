@@ -1,0 +1,40 @@
+{
+ "guide_variants": [
+  {
+   "variant": "gRNA WT",
+   "mean_fold": 1066.7
+  },
+  {
+   "variant": "d40-58 nt",
+   "mean_fold": 1222.2
+  },
+  {
+   "variant": "d106-125 nt",
+   "mean_fold": 10886.3
+  },
+  {
+   "variant": "gRNA WT",
+   "mean_fold": 38.3
+  },
+  {
+   "variant": "d50-60 nt",
+   "mean_fold": 1.3
+  }
+ ],
+ "guide_truncation_retention": {
+  "block1:d40-58 nt": 1.146,
+  "block1:d106-125 nt": 10.206,
+  "block2:d50-60 nt": 0.034
+ },
+ "n_mutants": 19,
+ "mutant_fold_median": 0.47,
+ "mutant_fold_min": 0.01,
+ "mutants_below_half": 10,
+ "most_sensitive": [
+  "Y60A",
+  "Y62A",
+  "F112A",
+  "R63A",
+  "L46A"
+ ]
+}

@@ -1352,6 +1352,16 @@ it matches enAsCas12a (median fold 0.9). PAM-class medians quantify
 the relaxation: WT is near-dead at ACTG (0.24\%) and ATGG (0.46\%)
 where evoCas12f reaches 4--13\%. PAM engineering rescues otherwise
 unusable genomic addresses.
+Comparative Cas12f ortholog engineering (Nat Struct Mol Biol 2026,
+10.1038/s41594-026-01788-6, MOESM9/10) shows guide architecture is
+itself an editable axis (\texttt{results/cas12f\_ortholog\_eng.json}):
+deleting the 3' guide segment d106-125 nt \emph{improves} interference
+10.2$\times$ over the full-length guide while deleting the d50-60 core
+abolishes it (0.03$\times$), and 10 of 19 interface point mutants
+retain less than half of WT activity (median 0.47; most sensitive
+Y60A, Y62A, F112A, R63A, L46A). Guide length is not a floor but a
+design variable, and the protein--RNA interface is brittle.
+
 
 
 
