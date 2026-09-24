@@ -762,7 +762,13 @@ evoCas9 0.33 (\texttt{results/kim\_hf\_variant\_on.json}), and HF1's
 library -- variant behavior is replicable across datasets even when
 guide-level ranks are not. WT-trained ridge transfers to variants at
 $0.33$--$0.53$ against within-variant CV $0.49$--$0.81$, the same
-transfer gap measured twice more above.
+transfer gap measured twice more above. The same deposit's mismatch screen
+(1,802 guide--target pairs, \\texttt{results/kim\\_mms\\_tolerance.json})
+orders single-mismatch tolerance in the opposite direction: median
+retention of WT activity at 1-mismatch off-targets falls Sniper 0.84
+$>$ eSpCas9 0.27 $>$ HF1 0.14 $>$ Hypa 0.06 $>$ evoCas9 0.006 -- the
+fidelity ladder is monotone in mismatch intolerance, and evoCas9's
+extreme specificity matches its 33\% activity retention.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch

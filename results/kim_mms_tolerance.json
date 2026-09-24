@@ -1,0 +1,50 @@
+{
+ "n_rows": 1952,
+ "n_offtarget_pairs": 1802,
+ "retention_by_mm": {
+  "1": {
+   "Sniper": {
+    "n": 1714,
+    "median_ret": 0.8423
+   },
+   "eSpCas9": {
+    "n": 1716,
+    "median_ret": 0.2728
+   },
+   "HF1": {
+    "n": 1716,
+    "median_ret": 0.1382
+   },
+   "Hypa": {
+    "n": 1718,
+    "median_ret": 0.0612
+   },
+   "evo": {
+    "n": 1715,
+    "median_ret": 0.0061
+   }
+  },
+  "2": {
+   "Sniper": {
+    "n": 2,
+    "median_ret": 0.4247
+   },
+   "eSpCas9": {
+    "n": 2,
+    "median_ret": 0.0557
+   },
+   "HF1": {
+    "n": 2,
+    "median_ret": 0.0246
+   },
+   "Hypa": {
+    "n": 2,
+    "median_ret": 0.3599
+   },
+   "evo": {
+    "n": 2,
+    "median_ret": 0.0287
+   }
+  }
+ }
+}
