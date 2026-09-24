@@ -382,7 +382,11 @@ systematics dominating.}
 \end{figure} The consensus label does not bridge the
 communities -- pooling across 1,000 lines does not recover what single
 assays share, consistent with each assay family's label being dominated
-by family-specific systematic components.
+by family-specific systematic components. A CNN on a 60k
+subsample (6 epochs, seed 0) reaches $0.262$ versus ridge $0.296$ on the
+same split (\texttt{results/depmap\_cnn\_within.json}) -- the deep model
+does not beat the linear one even at 193k-guide scale, echoing the
+pegRNA regime where tuned GBMs match or beat the CNN.
 
 \begin{figure}[t]
 \centering
