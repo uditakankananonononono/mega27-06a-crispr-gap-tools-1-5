@@ -345,6 +345,25 @@ mismatch indicators, and the entire model ordering is small beside the
 split-to-split swing ($0.484$ within the logistic model alone). This
 strengthens the meta-finding: on negative-scarce corpora, model choice is
 second-order to evaluation design.
+\paragraph{Inferential layer: per-position mismatch effects.} Refitting a
+reduced main-effects model (one mismatch indicator per position, 20
+features) on the seed-0 train split with guide-cluster-robust standard
+errors (statsmodels GLM, Binomial;
+\texttt{results/poslog\_inference.json}) gives an interpretable effect
+profile -- and it does \emph{not} reproduce the textbook seed gradient.
+The strongest protective effects sit at positions 1 ($\hat\beta=-0.65$,
+95\% CI $[-1.17, -0.13]$), 12 ($-0.57$ [$-0.96, -0.18$]) and 11
+($-0.48$ [$-0.91, -0.04]$), while the PAM-proximal positions 18--20 are
+null and position 15 is significantly \emph{positive}
+($+1.21$ [$0.58, 1.83$], cluster-robust $p=1.3\times10^{-4}$). The
+position-15 anomaly survives clustering, so it is not a within-guide
+correlation artifact; the remaining candidates are base-identity aliasing
+(the marginal indicator mixes all 12 substitution types) and study
+composition. We report it as an unresolved anomaly rather than a claim.
+Clustering matters: naive Wald intervals are 2--3$\times$ narrower, and
+three nominally significant positions (4, 17) lose significance under
+guide-cluster-robust errors -- a concrete instance of the corpus's
+guide-level dependence structure corrupting naive inference.
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
 init draws (data order fixed) gives AUROC $0.530$--$0.606$ (sd $0.032$)
