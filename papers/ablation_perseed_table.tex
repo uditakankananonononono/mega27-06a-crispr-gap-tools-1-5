@@ -1,0 +1,8 @@
+\begin{table}[h]\centering\small\caption{Gaps 4--5 ablation, per-seed held-out AUROC (fully seeded guide-grouped splits). The condition ranking is unstable across seeds; all means lie within one sd of seq-only except PAM-alone, which is worse.}\label{tab:ablperseed}
+\begin{tabular}{lcccccc}\hline
+Channel & seed 0 & seed 1 & seed 2 & seed 3 & seed 4 & mean $\pm$ sd \\\hline
+seq\_only & 0.513 & 0.551 & 0.610 & 0.763 & 0.510 & $0.590 \pm 0.094$ \\
+pam & 0.540 & 0.480 & 0.531 & 0.731 & 0.361 & $0.528 \pm 0.119$ \\
+epigen & 0.498 & 0.593 & 0.632 & 0.731 & 0.479 & $0.587 \pm 0.092$ \\
+pam\_epigen & 0.568 & 0.534 & 0.557 & 0.772 & 0.596 & $0.605 \pm 0.086$ \\
+\hline\end{tabular}\end{table}

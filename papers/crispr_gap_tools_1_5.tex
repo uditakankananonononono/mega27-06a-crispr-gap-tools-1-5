@@ -306,7 +306,8 @@ only $0.001$ -- there is no routing headroom on this corpus. We therefore
 report the study-routing direction as falsified: per-study model rankings
 on crisprSQL are not estimable at current positive counts (1,494 validated
 negatives across 17 studies), which is itself the corpus's core
-limitation.
+limitation. Table~\ref{tab:routing} lists every audited row.
+\input{routing_table.tex}
 
 \subsection{Gap 3: Cas9-to-pegRNA transfer}
 \begin{figure}[h]\centering\includegraphics[width=0.55\textwidth]{fig_pegrna_scaling.pdf}
@@ -371,7 +372,9 @@ duplex GNN -- consistent with the gap-2 meta-finding that this corpus
 cannot resolve modest effect sizes. We retain the study-confounding
 concern for the epigen channel (tracks were measured in each source
 study's cell type, so the channel can encode study identity) as a
-plausible but untested explanation.
+plausible but untested explanation. Per-seed condition AUROCs are in
+Table~\ref{tab:ablperseed}.
+\input{ablation_perseed_table.tex}
 \input{results_tables.tex}
 
 \section{Discovery: target-inherent transfer residual}
@@ -450,7 +453,7 @@ eSpCas9 (all guides) & 0.025 & \textbf{0.560} & 58{,}617 \\
 \includegraphics[width=0.52\textwidth]{figs/fig_residual_concordance.png}
 \caption{Transfer-residual concordance across nuclease screens
 (sequence-matched guides): the Doench transfer error on the same guide in
-WT-SpCas9 and SpCas9-HF1 screens agrees at $\rho=0.856$ ($n=54{,}279$),
+WT-SpCas9 and SpCas9-HF1 screens agrees at $\rho=0.856$ ($n=53{,}937$),
 far above the cross-screen correlation of the measured activities
 ($\sim$$0.73$).}
 \label{fig:concordance}

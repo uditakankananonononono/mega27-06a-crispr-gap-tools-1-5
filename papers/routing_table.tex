@@ -1,0 +1,22 @@
+\begin{table}[h]\centering\small\caption{Study-routing audit: every (study, split) row with $\ge$30 test pairs. Top block: rows with $\ge$5 positives and $\ge$5 negatives (the estimable set; GNN wins 1 of 13). Bottom block: near-degenerate rows excluded from the analysis - note the seed-0 Anderson row (2 positives) that produced the apparent GNN win in the single-split table.}\label{tab:routing}
+\begin{tabular}{lccccccc}\hline
+Study & split & $n$ & pos/neg & prev. & GNN & MIT & winner \\\hline
+Cameron & 0 & 301 & 72/229 & 0.239 & 0.525 & 0.541 & MIT \\
+Kim & 0 & 47 & 18/29 & 0.383 & 0.487 & 0.692 & MIT \\
+Anderson & 1 & 56 & 5/51 & 0.089 & 0.408 & 0.657 & MIT \\
+Cameron & 1 & 587 & 141/446 & 0.240 & 0.504 & 0.509 & MIT \\
+Tsai & 1 & 96 & 77/19 & 0.802 & 0.499 & 0.822 & MIT \\
+Cameron & 2 & 248 & 67/181 & 0.270 & 0.481 & 0.569 & MIT \\
+Kim & 2 & 49 & 20/29 & 0.408 & 0.631 & 0.612 & GNN \\
+Kim16 & 2 & 40 & 26/14 & 0.650 & 0.516 & 0.640 & MIT \\
+Tsai & 2 & 42 & 36/6 & 0.857 & 0.755 & 0.847 & MIT \\
+KimChromatin & 3 & 46 & 17/29 & 0.370 & 0.347 & 0.621 & MIT \\
+Cameron & 4 & 216 & 60/156 & 0.278 & 0.414 & 0.508 & MIT \\
+Kim & 4 & 40 & 10/30 & 0.250 & 0.368 & 0.458 & MIT \\
+KimChromatin & 4 & 30 & 13/17 & 0.433 & 0.353 & 0.692 & MIT \\
+\hline
+Anderson & 0 & 72 & 2/70 & - & 0.764 & 0.550 & (degenerate) \\
+Anderson & 3 & 52 & 4/48 & - & 0.349 & 0.828 & (degenerate) \\
+Tsai & 3 & 30 & 28/2 & - & 0.536 & 0.804 & (degenerate) \\
+Anderson & 4 & 86 & 1/85 & - & 0.118 & 0.547 & (degenerate) \\
+\hline\end{tabular}\end{table}
