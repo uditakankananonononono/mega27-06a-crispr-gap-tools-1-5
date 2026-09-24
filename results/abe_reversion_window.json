@@ -1,0 +1,112 @@
+{
+ "n_records": 10712,
+ "n_editors": 13,
+ "per_editor": {
+  "ABE7.10": {
+   "n": 1189,
+   "median_pct_edit": 0.0013,
+   "mean_pct_edit": 0.04166830797322434,
+   "window_4to8_share": 0.9482776680272386,
+   "motif_max_over_min": 39.54870489237758
+  },
+  "ABE7.10-HHSK": {
+   "n": 615,
+   "median_pct_edit": 0.0009,
+   "mean_pct_edit": 0.040037073170731706,
+   "window_4to8_share": 0.9595415631041169,
+   "motif_max_over_min": 14.84154668249963
+  },
+  "ABE7.10-HK": {
+   "n": 615,
+   "median_pct_edit": 0.001,
+   "mean_pct_edit": 0.04112682926829268,
+   "window_4to8_share": 0.9573834657810486,
+   "motif_max_over_min": 16.850627040027483
+  },
+  "ABE7.10-HRHSK": {
+   "n": 615,
+   "median_pct_edit": 0.001,
+   "mean_pct_edit": 0.04022195121951219,
+   "window_4to8_share": 0.9565459947850364,
+   "motif_max_over_min": 13.282907325431959
+  },
+  "ABE7.10-HSK": {
+   "n": 615,
+   "median_pct_edit": 0.0009,
+   "mean_pct_edit": 0.039501626016260165,
+   "window_4to8_share": 0.9589519830407346,
+   "motif_max_over_min": 16.093271656854494
+  },
+  "ABE7.10-K": {
+   "n": 584,
+   "median_pct_edit": 0.00204863548852615,
+   "mean_pct_edit": 0.06079510484209581,
+   "window_4to8_share": 0.9282954876974181,
+   "motif_max_over_min": 21.451414297273242
+  },
+  "ABE8.20": {
+   "n": 1189,
+   "median_pct_edit": 0.0053,
+   "mean_pct_edit": 0.07424360738736632,
+   "window_4to8_share": 0.7782051358468431,
+   "motif_max_over_min": 7.554348756287214
+  },
+  "ABE8.20-HRSK": {
+   "n": 584,
+   "median_pct_edit": 0.0053536373734468495,
+   "mean_pct_edit": 0.0840937810636333,
+   "window_4to8_share": 0.7849413200032602,
+   "motif_max_over_min": 7.4739552605885775
+  },
+  "ABE8.20-K": {
+   "n": 575,
+   "median_pct_edit": 0.0079162729331217,
+   "mean_pct_edit": 0.09543253956437223,
+   "window_4to8_share": 0.7596059636762927,
+   "motif_max_over_min": 7.734944023591232
+  },
+  "ABE8e": {
+   "n": 1189,
+   "median_pct_edit": 0.0234,
+   "mean_pct_edit": 0.09393993230074332,
+   "window_4to8_share": 0.6787665828089688,
+   "motif_max_over_min": 5.654626665797945
+  },
+  "ABE8e-HK": {
+   "n": 575,
+   "median_pct_edit": 0.0378684941218172,
+   "mean_pct_edit": 0.11181418622466814,
+   "window_4to8_share": 0.6624825501845577,
+   "motif_max_over_min": 6.026671192228792
+  },
+  "ABE8e-HRHSK": {
+   "n": 584,
+   "median_pct_edit": 0.0355529676114997,
+   "mean_pct_edit": 0.10470105228991719,
+   "window_4to8_share": 0.6882827166483334,
+   "motif_max_over_min": 5.156730173651731
+  },
+  "ABE8e-K": {
+   "n": 584,
+   "median_pct_edit": 0.0384199618150683,
+   "mean_pct_edit": 0.11904395438244697,
+   "window_4to8_share": 0.6670836620650844,
+   "motif_max_over_min": 5.592413359770632
+  }
+ },
+ "mean_activity_vs_ABE7.10": {
+  "ABE7.10": 1.0,
+  "ABE7.10-HHSK": 0.961,
+  "ABE7.10-HK": 0.987,
+  "ABE7.10-HRHSK": 0.965,
+  "ABE7.10-HSK": 0.948,
+  "ABE7.10-K": 1.459,
+  "ABE8.20": 1.782,
+  "ABE8.20-HRSK": 2.018,
+  "ABE8.20-K": 2.29,
+  "ABE8e": 2.254,
+  "ABE8e-HK": 2.683,
+  "ABE8e-HRHSK": 2.513,
+  "ABE8e-K": 2.857
+ }
+}

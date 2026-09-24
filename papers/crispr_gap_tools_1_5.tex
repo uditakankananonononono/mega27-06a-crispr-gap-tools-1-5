@@ -1394,6 +1394,18 @@ edits) separates site-level from pegRNA-level difficulty
 \emph{negatively} correlated with indels across pegRNAs (Spearman
 $-0.35$) --- efficient pegRNAs are cleaner, not dirtier, so pegRNA
 selection buys efficiency and purity together.
+Mutation-reversion analysis of ABEs (Nat Biotechnol 2026,
+10.1038/s41587-026-03045-z, MOESM5; 10,712 editing measurements across
+14 editors, 28 endogenous sites, all tri-motif contexts) quantifies the
+window--generality tradeoff (\texttt{results/abe\_reversion\_window.json}):
+ABE7.10 concentrates 94.8\% of editing at canonical window positions
+4--8 but is strongly motif-dependent (39.5$\times$ max/min across
+tri-motifs), whereas ABE8e is motif-general (5.7$\times$) at the cost
+of a broader window (67.9\% in-window). Reversion variants recover
+window precision without losing activity --- ABE8e-K restores 76.0\%
+in-window editing at 102\% of ABE8e mean activity --- evidence that
+precision and activity are independently tunable axes of the deaminase.
+
 
 
 
