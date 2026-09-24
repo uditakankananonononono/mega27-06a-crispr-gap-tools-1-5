@@ -713,6 +713,18 @@ recur in iPSC, 47\% at four, 19\% at five, 7\% at six. High-mismatch
 off-targets are largely cell-context-specific -- a direct caveat for
 any off-target catalogue built in one cell type and applied in
 another.
+\paragraph{PE-based versus nuclease-based detection (PEAC-seq).}
+PEAC-seq (Nat Commun 2022, 10.1038/s41467-022-35086-8, MOESM4--8)
+profiles the classic GUIDE-seq panel (VEGFA TS1--3, EMX1, RNF2) with a
+prime-editor tag instead of a nuclease
+(\texttt{results/peacseq\_crossmethod.json}). Cross-method replication
+against crisprSQL's GUIDE-seq sets for the same guides is partial:
+Jaccard 0.41 (TS1), 0.28 (TS2), 0.013 (TS3, where PEAC-seq reports 284
+sites to GUIDE-seq's 16), 0.125 (EMX1). Sites that both methods detect
+carry significantly higher PEAC-seq enrichment (MWU $p=3\times10^{-6}$
+TS1, $4\times10^{-10}$ TS2): cross-method agreement is an enrichment
+gradient, not a set boundary. Detection chemistry -- not only cell
+context -- redraws the off-target map.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch

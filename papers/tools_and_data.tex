@@ -64,7 +64,7 @@ Google Drive API & artifact delivery (bundle + paper PDF) \\
 GitHub (hosting), Google Drive API (delivery), pytest (test runner),
 pyarrow (I/O caching). Counted analysis/software tools: 40.}
 
-\subsection{Datasets and data sources (68 working; 74 literal rows incl.\ 4 UCSC alias rows)}
+\subsection{Datasets and data sources (69 working; 75 literal rows incl.\ 4 UCSC alias rows)}
 \begin{table}[h]\centering\small
 \caption{Datasets actually analyzed, with role.}
 \label{tab:datasets}
@@ -102,6 +102,7 @@ CRISPRon TRAP12K Xiang 2021 (Nat Commun, 10.1038/s41467-021-23576-0 MOESM4; 11,4
 DeepHF Wang 2019 (Nat Commun, 10.1038/s41467-019-12281-8 MOESM3; 53,937 gRNAs x 3 enzymes) & gap-1/4 high-fidelity variant transfer \\
 PRIDICT2.0 Mathis 2023 (Nat Biotechnol, 10.1038/s41587-022-01613-7 MOESM5; 92,423 pegRNAs) & gap-3 design-feature replication \\
 PE chromatin contexts 2024 (Nat Biotechnol, 10.1038/s41587-024-02268-2 MOESM3; 16,055 pegRNAs x 4 contexts) & gap-3/5 context transfer, MMR effect \\
+PEAC-seq Nat Commun 2022 (10.1038/s41467-022-35086-8 MOESM4-8; 1,062 sites, 5 guides) & gap-2 PE-vs-nuclease detection replication \\
 Horlbeck 2016 CRISPRi activity (eLife 19760, CRISPRiaDesign tables) & gap-1 thirteenth family (18,380 guides) \\
 Horlbeck 2016 CRISPRa activity (eLife 19760, CRISPRiaDesign tables) & gap-1 fourteenth family (2,792 guides) \\
 Koike-Yusa 2014 MiSeq off-targets (nbt.2800 ST1) & gap-4 PAM-variant validation (190 sites, 1 guide, mESC) \\
@@ -184,4 +185,6 @@ patterns) and the PMC supplement bundle ships no tables; Kim 2018
 Cas12a GUIDE-seq (s41592-018-0170-0), enAsCas12a (s41587-019-0011-0)
 and CAST-seq (s41467-022-34031-6): no xlsx supplements at the publisher
 deposit -- Cas12a off-target corpora remain a fetchability gap, not an
-analytic one.
+analytic one. iGUIDE (Nobles 2019, Genome Biology):
+supplements ship method comparisons and oligo lists only; the
+site-level tables are pipeline outputs, not deposited.
