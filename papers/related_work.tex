@@ -1,0 +1,74 @@
+\section{Related work}
+\label{sec:related}
+
+\subsection{gRNA efficacy models}
+On-target activity prediction began with position-specific sequence models.
+Rule Set 1 (Doench et al.\ 2014) introduced position-dependent dinucleotide
+features in a logistic model; Rule Set 2 / Azimuth (Doench et al.\ 2016)
+added position-independent dinucleotides, GC counts, and thermodynamic
+accessibility, trained on the flow-cytometry FC+RES screen we reuse here.
+Chari et al.\ (2015) built a support-vector model on a smaller
+lentiviral screen. Deep learning entered with DeepHF (Wang et al.\ 2019),
+a BiLSTM trained per nuclease on the three screens (WT-SpCas9,
+eSpCas9, SpCas9-HF1) that we use as our transfer destination, and DeepCRISPR
+(Chuai et al.\ 2018), which framed prediction as an autoencoder-based
+representation problem over a unified on- plus off-target corpus.
+CRISPRon (Kim et al.\ 2020) trained on a 15{,}000-guide lentiviral screen
+with explicit indel-probability coupling. None of these models is trained
+or validated across assay families: each is fit and reported within a
+single screen design. Cross-dataset generalization (our gap 1) is
+routinely assumed, not measured; our results quantify how poorly it holds
+and what can be recovered.
+
+\subsection{Off-target scoring}
+The MIT/Hsu score (Hsu et al.\ 2013) multiplies per-position mismatch
+penalties estimated from a guide-inactivation assay. The CFD score
+(Doench et al.\ 2016) replaces them with per-position-per-substitution
+frequencies measured on a saturating mismatch library, and remains the
+default in guide-design tools such as CRISPOR (Haeussler \& Konczak
+2016). Elevation (Listgarten et al.\ 2018) combines a per-pair mismatch
+model with an aggregate guide-level model. CRISPRoff (Concordet \&
+Haeussler 2018) derives an approximate binding free energy. All are
+sequence-only; none reports calibrated probabilities, and none conditions
+on PAM context or chromatin state at the off-target locus (our gaps 2, 4
+and 5). Deep-learning off-target models (DeepCRISPR; CRISPR-Net, Lin et
+al.\ 2020) report high accuracy on single-study benchmarks with
+near-saturated negatives; our guide-grouped evaluation on crisprSQL
+(Section~\ref{sec:results-offtarget}) shows how these numbers change
+under a split that prevents guide leakage.
+
+\subsection{PAM-variant and engineered-nuclease models}
+Engineered Cas9 variants relax or shift the PAM requirement: SpG accepts
+NGN and SpRY is near-PAMless (Walton et al.\ 2020). Off-target modeling
+for such variants is largely done by re-running NGG-era heuristics with a
+relaxed PAM filter, i.e.\ by ignoring the PAM channel entirely. Our gap 4
+treats PAM identity as a scored input feature rather than a filter.
+
+\subsection{pegRNA efficacy}
+Prime editing (Anzalone et al.\ 2019) introduced the pegRNA design
+problem. DeepPE (Kim et al.\ 2021) and PRIDICT (Mathis et al.\ 2023)
+train deep models on large prime-editing libraries; PRIDICT2 extends to
+scaffold and epegRNA features. Whether Cas9-efficacy knowledge transfers
+to pegRNA design has been conjectured but, to our knowledge, never
+benchmarked. Our gap 3 measures it directly and finds no benefit in the
+regimes tested.
+
+\subsection{Calibration of biological predictors}
+Calibrated probabilities matter whenever a score triggers a downstream
+cost (off-target validation assays, clinical trial enrollment).
+Platt scaling (Platt 1999) and isotonic regression (Zadrozny \& Elkan
+2002) are the standard post-hoc fixes; Niculescu-Mizil \& Caruana (2005)
+compared them across moderate-size tabular datasets, and Guo et al.\ (2017)
+documented systematic miscalibration of modern deep networks. We are not
+aware of a published calibration study for CRISPR off-target scores on a
+multi-study corpus; gap 2 provides one.
+
+\subsection{Domain shift and transfer theory}
+Our discovery connects to the theory of domain adaptation (Ben-David et
+al.\ 2010; Pan \& Yang 2010). Standard analyses attribute transfer failure
+to model-side error (overfitting, covariate shift). The target-inherent
+transfer residual (Section~\ref{sec:discovery}) is a stable,
+cross-replicating component of the transfer error that lives in the
+\emph{assay gap itself}: it is a property of the guide, invariant to the
+nuclease screen in which it is measured, and predictable from sequence
+and chromatin features (the basis of the PORTA correction).

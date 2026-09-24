@@ -43,6 +43,10 @@ crisprSQL shipping CTCF, DNase, RRBS, H3K4me3 and DRIP tracks for every one
 of its 25,632 measured pairs. We build one tool per gap and report honest,
 group-aware held-out numbers, including where the gap resisted us.
 
+\input{related_work.tex}
+
+\input{datasets.tex}
+
 \section{Gap 1: Cross-dataset generalization of efficacy models}
 \begin{definition}[Cross-dataset generalization gap]
 Let $\mathcal{D}_A, \mathcal{D}_B$ be guide-efficacy datasets with score
@@ -332,4 +336,5 @@ calibrated scorer with MIT/CFD baselines), \texttt{crisprgap.train\_pegrna}
 + \texttt{crisprgap.models.transfer\_cnn} (gap 3 predictor),
 \texttt{crisprgap.models.offtarget\_v2} (gaps 4--5 PAM/chromatin-aware
 scorer). All tools are covered by the hermetic pytest suite.
+\input{references.tex}
 \end{document}

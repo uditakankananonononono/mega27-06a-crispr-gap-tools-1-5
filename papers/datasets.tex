@@ -1,0 +1,43 @@
+\section{Datasets}
+\label{sec:data}
+All datasets are public; URLs and access dates are in
+Appendix~\ref{sec:repro}. No simulated or synthetic outcome data is used anywhere in this work.
+
+\subsection{Doench FC+RES and V1 (on-target, Rule Set 2 family)}
+The flow-cytometry FC+RES screen (Doench et al.\ 2016) measures the
+activity of ${\sim}$1.8k guides targeting surface-protein genes by
+fluorescence shift. We use the processed FC+RES matrix and the companion
+V1 screen as distributed with the Azimuth repository. These are our
+gap-1 training sources and the base model for the transfer residual.
+
+\subsection{DeepHF three-nuclease screens}
+The DeepHF resource (Wang et al.\ 2019) provides genome-scale activity
+measurements for three SpCas9 variants (WT, eSpCas9, SpCas9-HF1) over
+${\sim}$54k--59k guides each, together with per-guide biofeatures
+(chromatin accessibility, gene context). The three screens measure the
+same guide library under different nucleases, which enables the matched
+residual analysis of Section~\ref{sec:discovery}; guide identity across
+screens is established by sequence matching, as the released arrays are
+not in a common order (see Section~\ref{sec:discovery} and commit history
+for the pairing correction).
+
+\subsection{crisprSQL off-target corpus}
+crisprSQL (St\"ortz \& Minary 2021) is a curated database of measured
+CRISPR off-target cleavage sites aggregated from 17 studies. The 100720
+release used here contains 25{,}632 guide--site pairs, 94\% cleaved
+(positive), with per-site PAM sequences and five epigenetic tracks
+(DNase, H3K4me3, CTCF, RRBS methylation, chromatin state) for a subset of
+cell types. 47\% of measured off-targets carry non-NGG PAMs, which
+motivates gap 4.
+
+\subsection{PRIDICT2 pegRNA library}
+The PRIDICT2 dataset (Mathis et al.\ 2023) contains ${\sim}$23k pegRNA
+designs with measured prime-editing efficiencies in HEK293T and K562
+cells, with sequence context and design features (PBS/RTT lengths,
+edit type, position). Used for gap 3.
+
+\subsection{CFD scoring matrices}
+The CFD per-position substitution frequencies (Doench et al.\ 2016) are
+taken from the CRISPOR source tree (Haeussler \& Konczak 2016) and
+vendored into \texttt{crisprgap/matrices/} so the scorer is reproducible
+offline.
