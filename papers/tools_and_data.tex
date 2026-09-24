@@ -64,7 +64,7 @@ Google Drive API & artifact delivery (bundle + paper PDF) \\
 GitHub (hosting), Google Drive API (delivery), pytest (test runner),
 pyarrow (I/O caching). Counted analysis/software tools: 40.}
 
-\subsection{Datasets and data sources (58 records, accession-level where available)}
+\subsection{Datasets and data sources (54 working; 58 literal rows incl.\ 4 UCSC alias rows)}
 \begin{table}[h]\centering\small
 \caption{Datasets actually analyzed, with role.}
 \label{tab:datasets}
@@ -84,10 +84,10 @@ crisprSQL 100720 & gaps 2/4/5 corpus (17 component studies) \\
 DeepSpCas9 HT screen (Sci Adv eaax9249 Table S1, SRA SRP150719) & gap-1 third assay family (12,832 HEK293T contexts) \\
 CRISPRon TRAP12K (Nat Commun 2021, PMC8163799 Suppl.\ Data 4) & gap-1 HEK293T assay family (11,488 guides) \\
 sgDesigner training set (Bioinformatics 2020, Suppl.\ Table 2) & gap-1 plasmid assay; ceiling-tie artifact case (1,309 guides) \\
-ENCODE Broad K562 H3K4me3 signal (UCSC track wgEncodeBroadHistoneK562H3k4me3StdSig) & gap-5 direct chromatin queries at crisprSQL K562 loci \\
-ENCODE Broad K562 H3K27ac signal (UCSC track wgEncodeBroadHistoneK562H3k27acStdSig) & gap-5 multi-track control \\
-ENCODE Broad K562 H3K9me3 signal (UCSC track wgEncodeBroadHistoneK562H3k9me3StdSig) & gap-5 multi-track control \\
-ENCODE OpenChrom K562 DNase signal (UCSC track wgEncodeOpenChromDnaseK562SigV2) & gap-5 multi-track control \\
+\quad \emph{alias (not counted):} ENCODE Broad K562 H3K4me3 signal (UCSC track wgEncodeBroadHistoneK562H3k4me3StdSig) = same experiment as ENCFF291SWG \\
+\quad \emph{alias (not counted):} ENCODE Broad K562 H3K27ac signal (UCSC track wgEncodeBroadHistoneK562H3k27acStdSig) = same experiment as ENCFF010PHG \\
+\quad \emph{alias (not counted):} ENCODE Broad K562 H3K9me3 signal (UCSC track wgEncodeBroadHistoneK562H3k9me3StdSig) = same experiment as ENCFF834YLI \\
+\quad \emph{alias (not counted):} ENCODE OpenChrom K562 DNase signal (UCSC track wgEncodeOpenChromDnaseK562SigV2) = same experiment as ENCFF526LYS \\
 ENCODE HEK293T DNase-seq (ENCSR000EJR, file ENCFF529BOG, GRCh38) & gap-5 powered null on SITE-Seq loci \\
 PRIDICT2 23k (HEK293T + K562) & gap-3 benchmark + ViennaRNA fold study \\
 PRIDICT v1 Library\_1 (Mathis 2023, Nat Biotechnol, ESM MOESM5) & gap-3 cross-library transfer (92,423 pegRNAs) \\
