@@ -1446,6 +1446,18 @@ $>$ TAA 8.9\%), and among successful designs the PBS length barely
 matters (median fold enrichment 3.5--3.7 for PBS 11--14 nt). Sorted
 replicates correlate only at $\rho = 0.33$, so single-screen calls at
 the low end are noise --- a calibration caveat for pegRNA screens.
+Chimeric oligonucleotide-directed editing (Nat Commun 2026,
+10.1038/s41467-026-71624-4, MOESM5; 6 endogenous sites x 8 editor
+configurations x 3 replicates) separates activity from precision
+(\texttt{results/code\_editing\_precision.json}): CODEMax reaches a
+median intended:unintended ratio of 30.6 versus 16.1--16.3 for
+PE2/PEMax, and adding a nicking guide pushes CODEMax to 116.5 because
+nicking raises its intended edits 1.6$\times$ while leaving unintended
+edits nearly flat (1.13$\times$). The same nicking on PEMax raises
+intended edits 28$\times$ but unintended edits 15$\times$, halving
+precision --- nicking is precision-positive only for the
+chimeric-oligonucleotide mechanism.
+
 
 
 

@@ -1,0 +1,67 @@
+{
+ "n_sites": 6,
+ "per_editor": {
+  "CODEMax": {
+   "n_sites": 6,
+   "median_precision_ratio": 30.555555555555554,
+   "mean_intended": 9.612222222222222
+  },
+  "CODEMax + nicking": {
+   "n_sites": 4,
+   "median_precision_ratio": 116.54301572617945,
+   "mean_intended": 11.11
+  },
+  "CODEMax(exo+)": {
+   "n_sites": 6,
+   "median_precision_ratio": 21.018955256777605,
+   "mean_intended": 12.448888888888888
+  },
+  "CODEMax(exo+) + nicking": {
+   "n_sites": 4,
+   "median_precision_ratio": 29.24279436359108,
+   "mean_intended": 23.655
+  },
+  "PE2": {
+   "n_sites": 6,
+   "median_precision_ratio": 16.10919540229885,
+   "mean_intended": 4.890555555555555
+  },
+  "PE2 + nicking": {
+   "n_sites": 4,
+   "median_precision_ratio": 10.801969769549082,
+   "mean_intended": 11.408333333333333
+  },
+  "PEMax": {
+   "n_sites": 6,
+   "median_precision_ratio": 16.261316872427983,
+   "mean_intended": 6.925
+  },
+  "PEMax + nicking": {
+   "n_sites": 4,
+   "median_precision_ratio": 8.996461431311934,
+   "mean_intended": 12.228333333333333
+  }
+ },
+ "nicking_effect": {
+  "PE2": {
+   "n_sites": 4,
+   "intended_fold": 4.225518950233974,
+   "unintended_fold": 3.5184455911843013
+  },
+  "PEMax": {
+   "n_sites": 4,
+   "intended_fold": 28.38477329994817,
+   "unintended_fold": 15.024025454258366
+  },
+  "CODEMax": {
+   "n_sites": 4,
+   "intended_fold": 1.572392043799829,
+   "unintended_fold": 1.1259201019653982
+  },
+  "CODEMax(exo+)": {
+   "n_sites": 4,
+   "intended_fold": 3.16336386206172,
+   "unintended_fold": 3.809777209786961
+  }
+ }
+}
