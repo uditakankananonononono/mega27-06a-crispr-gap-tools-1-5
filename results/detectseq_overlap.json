@@ -1,0 +1,48 @@
+{
+ "detectseq_counts": {
+  "VEGFA2": 512,
+  "EMX1": 49,
+  "HEK4_HEK293T": 246,
+  "HEK4_MCF7": 150,
+  "RUNX1_Cpf1BE": 950,
+  "RUNX1_BE4max": 27
+ },
+ "crisprsql_tsai_counts": {
+  "VEGFA2": 224,
+  "EMX1": 32,
+  "HEK4": 134
+ },
+ "crisprsql_genomes": {
+  "VEGFA2": [
+   "hg19"
+  ],
+  "EMX1": [
+   "hg19"
+  ],
+  "HEK4": [
+   "hg19"
+  ]
+ },
+ "detectseq_vs_guideseq_VEGFA2": {
+  "n_detect": 512,
+  "n_guide": 224,
+  "overlap": 5,
+  "jaccard": 0.007
+ },
+ "detectseq_vs_guideseq_EMX1": {
+  "n_detect": 49,
+  "n_guide": 32,
+  "overlap": 0,
+  "jaccard": 0.0
+ },
+ "detectseq_vs_guideseq_HEK4": {
+  "n_detect": 246,
+  "n_guide": 134,
+  "overlap": 2,
+  "jaccard": 0.005
+ },
+ "hek4_hek293t_vs_mcf7": {
+  "overlap": 149,
+  "jaccard": 0.603
+ }
+}
