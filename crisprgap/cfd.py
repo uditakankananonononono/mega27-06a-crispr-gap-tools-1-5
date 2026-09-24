@@ -2,13 +2,14 @@
 
 Python 3 port of the reference calculator published with CRISPOR
 (CFD_Scoring/cfd-score-calculator.py) using the vendored mismatch/PAM matrices
-fitted in the original paper. Used as a benchmark baseline for off-target tools.
+fitted in the original paper. Benchmark baseline for the gap-2/4/5 tools
+alongside the Hsu 2013 MIT score in baselines.py.
 """
 from __future__ import annotations
 import pickle
 from pathlib import Path
 
-_DATA = Path(__file__).resolve().parent / "data"
+_DATA = Path(__file__).resolve().parent / "matrices"
 _cache: tuple[dict, dict] | None = None
 
 
@@ -29,10 +30,7 @@ def revcom(s: str) -> str:
 
 
 def cfd_score(wt_23mer: str, off_23mer: str) -> float:
-    """CFD specificity score in [0, 1]; 1.0 = perfect match with canonical PAM.
-
-    wt_23mer / off_23mer: 23 nt sequences (20 nt guide + 3 nt PAM), DNA alphabet.
-    """
+    """CFD specificity score in [0, 1]; 1.0 = perfect match with canonical PAM."""
     mm_scores, pam_scores = _mm_pam_scores()
     wt, off = wt_23mer.upper(), off_23mer.upper()
     if len(wt) != 23 or len(off) != 23:
