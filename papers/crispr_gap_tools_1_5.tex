@@ -272,6 +272,46 @@ CFD failed its out-of-sample test (mean guide-held-out $\rho$: atlas
 $0.464$ vs CFD $0.469$) and is preserved as a negative
 (\texttt{results/pam\_atlas\_falsification.json}).
 
+\subsection{Portability correction: rescuing cross-dataset transfer}
+\label{sec:porta}
+If the residual is target-inherent and predictable, it should be
+\emph{correctable}. We test this directly. A ridge \emph{portability model}
+is fit on the WT-SpCas9 screen only: inputs are the guide's sequence
+features and DeepHF biofeatures, and the target is the per-guide transfer
+residual (rank of the Doench-FC+RES prediction minus rank of the measured
+WT activity). The model never sees any label from the destination screen.
+Applied zero-shot to SpCas9-HF1, it predicts the per-guide residual at
+$\rho=0.781$ on all 56{,}888 guides and $\rho=0.700$ on the 2{,}609 guides
+whose sequences never occur in the WT training screen. Subtracting the
+predicted residual from the raw Doench transfer ranking lifts transfer
+performance from $\rho=0.015$ (effectively zero) to $\rho=0.522$; on
+strictly unseen guides it goes from $-0.019$ (anti-correlated) to $0.359$.
+On eSpCas9 the same WT-trained model lifts transfer from $0.025$ to
+$0.560$ (n$=$58{,}617). Corrected performance approaches the within-screen
+CNN baseline ($0.55$--$0.61$), i.e.\ the correction recovers most of the
+signal that domain shift destroys. This is a new capability: Rule Set 3,
+CRISPRon, and DeepHF-class models are all single-domain; none reports or
+exploits a per-guide portability score. We expose it as the
+\texttt{crisprgap} portability tool: given a guide set and one calibration
+screen, it outputs a per-guide portability score and a corrected ranking.
+
+\begin{table}[h]
+\centering
+\caption{Residual-corrected cross-dataset transfer. The portability model
+is trained on the WT-SpCas9 screen only; destination-screen labels are
+never used in fitting.}
+\label{tab:porta}
+\begin{tabular}{lccc}
+\hline
+Destination screen & Raw transfer $\rho$ & Corrected $\rho$ & n \\
+\hline
+SpCas9-HF1 (all guides) & 0.015 & \textbf{0.522} & 56{,}888 \\
+SpCas9-HF1 (unseen guides) & $-0.019$ & \textbf{0.359} & 2{,}609 \\
+eSpCas9 (all guides) & 0.025 & \textbf{0.560} & 58{,}617 \\
+\hline
+\end{tabular}
+\end{table}
+
 \section{Limitations}
 crisprSQL aggregates 17 studies with different assays and sensitivities;
 its 94\% positive prevalence and 1,494 validated negatives cap
