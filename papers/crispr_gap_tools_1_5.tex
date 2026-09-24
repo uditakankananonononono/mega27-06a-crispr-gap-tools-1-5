@@ -301,7 +301,16 @@ DeepSpCas9 ($+0.08$ into zebrafish, $+0.13$--$+0.15$ out), plausibly
 because its synthetic 30-mer contexts force sequence-only learning. The
 gap-1 verdict hardens: cross-dataset generalization fails by assay family
 \emph{and} by species, and the failure magnitude tracks biological
-distance.
+distance. The CNN row/column (2 seeds;
+\texttt{results/crossdata\_cnn\_7ds\_crisprscan\_seed*.json})
+replicates the bridge structure: DeepSpCas9$\to$CRISPRscan stays positive
+($+0.19$/$+0.18$) and DeepHF stays negative in both directions
+($-0.06$/$-0.14$ out, $-0.26$/$-0.27$ in), while CRISPRscan's own CNN
+within-score collapses to $0.11$--$0.15$ (vs ridge $0.33$--$0.40$) --
+492 guides are too few for the CNN, a clean small-data regime example. A
+seed-0 appearance of CRISPRscan$\to$sgDesigner $+0.32$ did not replicate
+on seed 1 ($-0.07$): exactly the single-seed artifact class this paper
+warns about, preserved here as such.
 
 \subsection{Data-integrity audit: the DeepHF encoding bug}
 \label{sec:encoding-audit}
