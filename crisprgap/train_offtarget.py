@@ -28,9 +28,10 @@ def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int
     ds = load_crisprsql()
     pos_idx = np.where(ds.labels == 1)[0]
     neg_idx = np.where(ds.labels == 0)[0]
-    n_pos = min(len(pos_idx), max_pairs // 2)
-    keep = np.concatenate([rng.choice(pos_idx, n_pos, replace=False),
-                           rng.choice(neg_idx, n_pos, replace=False)])
+    # keep every negative (crisprSQL is ~94% positive); fill with positives so the
+    # test split keeps the natural prevalence - required for honest ECE (gap 2).
+    n_pos = min(len(pos_idx), max_pairs - len(neg_idx))
+    keep = np.concatenate([rng.choice(pos_idx, n_pos, replace=False), neg_idx])
     rng.shuffle(keep)
 
     # group split by guide: no guide appears in both train and test
@@ -48,6 +49,7 @@ def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int
 
     model = OffTargetGNN()
     opt = torch.optim.Adam(model.parameters(), lr=2e-3)
+    n_tr_pos = int(ds.labels[tr].sum()) if 'tr' in dir() else None
     lossf = nn.BCEWithLogitsLoss()
     tr_graphs = graphs_for(tr)
     y_tr = torch.from_numpy(ds.labels[tr])
@@ -93,6 +95,7 @@ def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int
         "dataset": "crisprsql_100720",
         "n_train": int(len(tr)), "n_val": int(len(val)), "n_test": int(len(te)),
         "n_test_positive": int(y_te.sum()),
+        "test_prevalence": float(y_te.mean()),
         "gnn_test_auroc": float(roc_auc_score(y_te, te_logits)),
         "gnn_test_auprc": float(average_precision_score(y_te, te_logits)),
         "mit_test_auroc": float(roc_auc_score(y_te, mit_te)),
