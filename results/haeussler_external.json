@@ -1,0 +1,11 @@
+{
+  "dataset": "Haeussler 2016 CRISPOR benchmark via microsoft/Elevation repo",
+  "n_total": 26052,
+  "n_overlap_crisprsql": 2550,
+  "n_external": 23502,
+  "n_pos": 8,
+  "auroc_poslog_external": 0.4611177321869413,
+  "auroc_cfd_bundled_external": 0.9851531242019239,
+  "auroc_mit_external": 0.9981032391248829,
+  "note": "poslog trained on crisprSQL seed-0 train split; pairs present in crisprSQL excluded"
+}

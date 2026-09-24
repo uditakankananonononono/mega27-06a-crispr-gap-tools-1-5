@@ -400,6 +400,21 @@ gradient: PAM-proximal positions are null, and the position-15 positive
 anomaly survives clustering.}
 \label{fig:poslog}
 \end{figure}
+\paragraph{External validation on the CRISPOR benchmark (Haeussler
+2016).} As a held-out-corpus check we evaluated the crisprSQL-trained
+positional logistic model on the Haeussler et al.\ 2016 benchmark
+(26{,}052 guide--site pairs; 2{,}550 present in crisprSQL and excluded,
+leaving 23{,}502 external pairs; \texttt{results/haeussler\_external.json}).
+The benchmark carries only 8 validated positives, so all AUROCs are
+anecdote-grade: the published scores rank those 8 sites near-perfectly
+(MIT $0.998$, bundled CFD $0.985$) while the crisprSQL-trained poslog
+inverts ($0.461$). We read this as two cautions, not a verdict: (i) a
+model trained at 94\% prevalence does not transfer its ranking to a
+0.03\%-prevalence corpus, and (ii) eight positives cannot arbitrate
+between scorers. External off-target validation needs corpora with
+hundreds of validated negatives \emph{and} positives -- reinforcing the
+gap-2 meta-finding.
+
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
 init draws (data order fixed) gives AUROC $0.530$--$0.606$ (sd $0.032$)
