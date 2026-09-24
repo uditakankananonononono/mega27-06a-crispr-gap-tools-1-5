@@ -1,0 +1,116 @@
+{
+ "n_s5_rows": 5844,
+ "editors": [
+  "Cas9",
+  "RYCas9",
+  "TadA-8e-nCas9",
+  "TadA-8e-nRYCas9",
+  "rAPOBEC1-nCas9",
+  "rAPOBEC1-nRYCas9"
+ ],
+ "n_features": 13,
+ "feature_enrichment": {
+  "TRIM28": {
+   "mean_ratio": 1.799,
+   "max_ratio": 2.113,
+   "min_ratio": 1.587
+  },
+  "H3K27ac": {
+   "mean_ratio": 1.373,
+   "max_ratio": 1.488,
+   "min_ratio": 1.272
+  },
+  "FPKM": {
+   "mean_ratio": 1.31,
+   "max_ratio": 1.405,
+   "min_ratio": 1.187
+  },
+  "H3K4me1": {
+   "mean_ratio": 1.281,
+   "max_ratio": 1.413,
+   "min_ratio": 1.153
+  },
+  "RNAP-II": {
+   "mean_ratio": 1.248,
+   "max_ratio": 1.418,
+   "min_ratio": 1.107
+  },
+  "DNase-seq": {
+   "mean_ratio": 1.213,
+   "max_ratio": 1.284,
+   "min_ratio": 1.156
+  },
+  "TCF7L2": {
+   "mean_ratio": 1.175,
+   "max_ratio": 1.241,
+   "min_ratio": 1.135
+  },
+  "ELK4": {
+   "mean_ratio": 1.156,
+   "max_ratio": 1.164,
+   "min_ratio": 1.127
+  },
+  "ZNF274": {
+   "mean_ratio": 1.1,
+   "max_ratio": 1.137,
+   "min_ratio": 1.077
+  },
+  "H3K36me3": {
+   "mean_ratio": 1.062,
+   "max_ratio": 1.168,
+   "min_ratio": 0.873
+  },
+  "ATAC-seq": {
+   "mean_ratio": 1.038,
+   "max_ratio": 1.074,
+   "min_ratio": 1.008
+  },
+  "H3K9me3": {
+   "mean_ratio": 0.981,
+   "max_ratio": 1.075,
+   "min_ratio": 0.926
+  },
+  "Methylation-of-DNA": {
+   "mean_ratio": 0.915,
+   "max_ratio": 1.096,
+   "min_ratio": 0.829
+  }
+ },
+ "per_editor_top_feature": {
+  "TadA-8e-nCas9": "TRIM28",
+  "TadA-8e-nRYCas9": "TRIM28",
+  "rAPOBEC1-nCas9": "TRIM28",
+  "rAPOBEC1-nRYCas9": "TRIM28",
+  "Cas9": "TRIM28",
+  "RYCas9": "TRIM28"
+ },
+ "per_editor_h3k9me3_ratio": {
+  "TadA-8e-nCas9": 0.97,
+  "TadA-8e-nRYCas9": 0.926,
+  "rAPOBEC1-nCas9": 0.966,
+  "rAPOBEC1-nRYCas9": 0.941,
+  "Cas9": 1.011,
+  "RYCas9": 1.075
+ },
+ "per_editor_atac_ratio": {
+  "TadA-8e-nCas9": 1.063,
+  "TadA-8e-nRYCas9": 1.029,
+  "rAPOBEC1-nCas9": 1.074,
+  "rAPOBEC1-nRYCas9": 1.034,
+  "Cas9": 1.02,
+  "RYCas9": 1.008
+ },
+ "candidate_burden": {
+  "n_guides": 3000,
+  "median_sites_le4mm": 193722.0,
+  "p90": 426832.1,
+  "max": 697726.0,
+  "per_class_median": {
+   "m1": 250.0,
+   "m2": 8962.5,
+   "m3": 59775.0,
+   "m4": 55587.5,
+   "m5plus": 23009.0
+  }
+ }
+}

@@ -1231,6 +1231,21 @@ enhanced-fidelity versions cut total reads by 38\% (eWT,
 preserved (WT--eWT Spearman 0.75): fidelity engineering attenuates the
 off-target landscape without erasing it, and PAM broadening re-opens
 it -- the gap-4 interaction is direct.
+A dedicated chromatin-context study (Cell Res 2026,
+10.1038/s41421-026-00889-2, MOESM2) measures 13 epigenetic features at
+5{,}844 off-target sites versus matched non-off-targets for six
+editors (\texttt{results/chromatin\_offtarget\_enrich.json}).
+TRIM28 occupancy is the single most discriminative feature for every
+editor (mean off-target/non-off-target ratio 1.80, range
+1.59--2.11), ahead of H3K27ac (1.37), transcription (FPKM 1.31,
+RNAP-II 1.25), H3K4me1 (1.28) and DNase-seq (1.21), while DNA
+methylation is depleted (0.92) and ATAC-seq is surprisingly weak
+(1.04) -- off-targets concentrate in TRIM28-marked, transcriptionally
+active chromatin, not simply in accessible DNA. The companion
+genome-wide scan of 3{,}000 guides puts the median candidate haystack
+at 193{,}722 sites with $\leq$4 mismatches per guide (median 250 at
+exactly one), so chromatin gating operates on a vast candidate space.
+
 
 
 
