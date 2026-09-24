@@ -52,7 +52,7 @@ def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int
     n_tr_pos = int(ds.labels[tr].sum()) if 'tr' in dir() else None
     lossf = nn.BCEWithLogitsLoss()
     tr_graphs = graphs_for(tr)
-    y_tr = torch.from_numpy(ds.labels[tr])
+    y_tr = torch.from_numpy(ds.labels[tr]).float()
     for epoch in range(epochs):
         model.train()
         ep = rng.permutation(len(tr_graphs))

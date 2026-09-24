@@ -90,3 +90,27 @@ def load_crisprsql() -> OfftargetDataset:
         epigen={c: df[c].to_numpy(dtype=np.float32) for c in EPIGEN_COLS},
         energies={c: df[c].to_numpy(dtype=np.float32) for c in ENERGY_COLS},
     )
+
+
+_INT2BASE = {1: "A", 2: "C", 3: "G", 4: "T", 0: "N", 5: "N"}
+
+
+def load_deephf(variant: str = "wt", max_n: int | None = None, seed: int = 0) -> EfficacyDataset:
+    """DeepHF screen data (Wang et al. 2019, Nat Commun): ~55.6k guides with
+    measured indel frequencies for WT-SpCas9 ('wt'), eSpCas9 ('esp') or
+    SpCas9-HF1 ('hf') in U2OS cells. A genuinely divergent assay from the
+    Doench family - the hard case for cross-dataset generalization (gap 1).
+    """
+    import pickle
+    path = os.path.join(DATA_DIR, "raw", "public_data_crisprCas9", "data", "deepHF",
+                        f"{variant}_seq_data_array.pkl")
+    with open(path, "rb") as fh:
+        seq_int, _biofeat, indel = pickle.load(fh)
+    seqs = ["".join(_INT2BASE[b] for b in row) for row in seq_int]
+    scores = np.clip(np.asarray(indel, dtype=np.float32), 0.0, 1.0)
+    if max_n is not None and len(seqs) > max_n:
+        rng = np.random.default_rng(seed)
+        idx = np.sort(rng.choice(len(seqs), max_n, replace=False))
+        seqs = [seqs[i] for i in idx]
+        scores = scores[idx]
+    return EfficacyDataset(sequences=seqs, scores=scores, source=f"deephf_{variant}")

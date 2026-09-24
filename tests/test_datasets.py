@@ -36,3 +36,13 @@ def test_crisprsql_loads():
     assert all(len(g) == 20 and len(o) == 20 for g, o in zip(ds.guides, ds.offtargets))
     assert ds.labels.sum() > 1000  # plenty of true cleaved off-targets
     assert len(set(ds.studies)) >= 10  # aggregated from many studies
+
+
+@pytest.mark.skipif(not os.path.exists(os.path.join(DATA_DIR, "raw/public_data_crisprCas9/data/deepHF/wt_seq_data_array.pkl")),
+                    reason="deepHF data not fetched")
+def test_deephf_loads():
+    from crisprgap.data.datasets import load_deephf
+    ds = load_deephf("wt", max_n=500)
+    assert len(ds.sequences) == 500
+    assert all(len(s) == 22 for s in ds.sequences)
+    assert ds.scores.min() >= 0 and ds.scores.max() <= 1
