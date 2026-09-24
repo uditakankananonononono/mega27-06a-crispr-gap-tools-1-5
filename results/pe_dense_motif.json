@@ -1,0 +1,66 @@
+{
+ "n_records": 84,
+ "loci": [
+  "EMX1",
+  "HEK3"
+ ],
+ "editors": [
+  "PE6c",
+  "PE6d",
+  "PEmax"
+ ],
+ "n_variants": 14,
+ "top_variants": [
+  {
+   "variant": "evopreQ1-M2",
+   "n": 6,
+   "mean_edit": 35.84,
+   "mean_indel": 0.5
+  },
+  {
+   "variant": "evopreQ1-M1",
+   "n": 6,
+   "mean_edit": 35.72,
+   "mean_indel": 0.46
+  },
+  {
+   "variant": "Scaffold-M2",
+   "n": 6,
+   "mean_edit": 22.97,
+   "mean_indel": 0.25
+  },
+  {
+   "variant": "PBS-M3",
+   "n": 6,
+   "mean_edit": 22.63,
+   "mean_indel": 0.27
+  },
+  {
+   "variant": "PBS-M4",
+   "n": 6,
+   "mean_edit": 20.14,
+   "mean_indel": 0.3
+  },
+  {
+   "variant": "PBS-M2",
+   "n": 6,
+   "mean_edit": 18.92,
+   "mean_indel": 0.36
+  }
+ ],
+ "baseline_variant": {
+  "variant": "evopreQ1-Em/Scaffold-UM/RTT-UM/PBS-UM",
+  "n": 6,
+  "mean_edit": 15.42,
+  "mean_indel": 0.17
+ },
+ "best_fold_over_baseline": 2.32,
+ "locus_rank_spearman": {
+  "n": 42,
+  "rho": 0.724
+ },
+ "pemax_vs_pe6c_spearman": {
+  "n": 28,
+  "rho": 0.851
+ }
+}

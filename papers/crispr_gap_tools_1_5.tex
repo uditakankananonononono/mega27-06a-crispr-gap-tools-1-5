@@ -1301,6 +1301,18 @@ deconvolved landscapes are editor-specific (Spearman 0.21 over 127
 shared positions; top-quartile Jaccard 0.26). Base-editor choice
 reshapes the regulatory-element map, and single-replicate raw tiling
 tracks should not be trusted.
+Dense-motif pegRNA engineering (Nat Biomed Eng 2026,
+10.1038/s41551-026-01787-4, MOESM4) quantifies how far 3'-motif
+variants move PE efficiency directly (\texttt{results/pe\_dense\_motif.json}):
+14 motif variants x 3 editors (PEmax, PE6c, PE6d) x 2 loci in
+triplicate. The top variants (evopreQ1-M1/M2) reach 35.7--35.8\%
+mean intended edit versus 15.4\% for the unmodified baseline
+(2.3$\times$), with indels staying at 0.5\%; variant rankings are
+consistent across loci (Spearman 0.72) and across PEmax/PE6c (0.85),
+so motif gains transfer rather than re-sorting per context --
+contrast with the primary-screen flatness above: motif effects are
+real once selection-grade measurements resolve them.
+
 
 
 
