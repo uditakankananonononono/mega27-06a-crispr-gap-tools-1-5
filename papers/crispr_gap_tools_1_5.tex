@@ -656,7 +656,12 @@ cleaved from uncleaved. The contrast is the point: the same CFD model
 that scores $0.552$ on cellular assays scores $0.74$--$0.80$ on the
 biochemical readout -- the cellular layer (delivery, chromatin, repair,
 nuclease exposure time), not sequence energetics, is what collapses
-off-target predictability in cells.
+off-target predictability in cells. The matched rhAmpSeq
+validation arm (Table 7, 151 sites with cellular RNP indel rates)
+quantifies the drop directly: in-vitro read counts rank-order cellular
+indel rates at Spearman $0.577$, and only 17\% of in-vitro-detected
+sites reach $>0.1\%$ cellular indel
+(\texttt{results/changeseq\_cellular.json}).
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch

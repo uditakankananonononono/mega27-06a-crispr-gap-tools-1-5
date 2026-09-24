@@ -1,0 +1,7 @@
+{
+ "n_matched": 151,
+ "spearman_change_vs_cellular": 0.577,
+ "frac_cell_positive": 0.17218543046357615,
+ "cell_indel_median_pos": 0.846835525475552,
+ "change_reads_median": 430.0
+}
