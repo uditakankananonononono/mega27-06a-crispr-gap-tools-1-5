@@ -44,5 +44,6 @@ def test_deephf_loads():
     from crisprgap.data.datasets import load_deephf
     ds = load_deephf("wt", max_n=500)
     assert len(ds.sequences) == 500
-    assert all(len(s) == 22 for s in ds.sequences)
+    assert all(len(s) == 21 for s in ds.sequences)
+    assert all(set(s) <= set("ACGT") for s in ds.sequences)  # encoding fix: no Ns
     assert ds.scores.min() >= 0 and ds.scores.max() <= 1

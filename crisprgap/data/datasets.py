@@ -92,7 +92,11 @@ def load_crisprsql() -> OfftargetDataset:
     )
 
 
-_INT2BASE = {1: "A", 2: "C", 3: "G", 4: "T", 0: "N", 5: "N"}
+# DeepHF pkl encoding, verified against the bundled biofeature GC column
+# (corr -0.966): array is (n, 22); position 0 is a fixed sentinel (value 1);
+# positions 1..21 are the 21-mer with 2=C, 3=G, 4=T, 5=A. An earlier
+# mapping read 5 as N, zeroing ~25%% of positions - that was a bug.
+_INT2BASE = {2: "C", 3: "G", 4: "T", 5: "A"}
 
 
 def load_deephf(variant: str = "wt", max_n: int | None = None, seed: int = 0) -> EfficacyDataset:
@@ -106,7 +110,9 @@ def load_deephf(variant: str = "wt", max_n: int | None = None, seed: int = 0) ->
                         f"{variant}_seq_data_array.pkl")
     with open(path, "rb") as fh:
         seq_int, _biofeat, indel = pickle.load(fh)
-    seqs = ["".join(_INT2BASE[b] for b in row) for row in seq_int]
+    arr = np.asarray(seq_int)
+    assert (arr[:, 0] == 1).all(), "DeepHF sentinel column changed - re-verify encoding"
+    seqs = ["".join(_INT2BASE[b] for b in row[1:]) for row in arr]
     scores = np.clip(np.asarray(indel, dtype=np.float32), 0.0, 1.0)
     if max_n is not None and len(seqs) > max_n:
         rng = np.random.default_rng(seed)
@@ -136,6 +142,29 @@ def load_deepspcas9(sheet: str = "HT_Cas9_Train", max_n: int | None = None,
         seqs = [seqs[i] for i in idx]
         scores = scores[idx]
     return EfficacyDataset(sequences=seqs, scores=scores, source=f"deepspcas9_{sheet.lower()}")
+
+
+def load_crispron(sheet: str = "SpCas9_eff_Day 2", max_n: int | None = None,
+                  seed: int = 0) -> "EfficacyDataset":
+    """CRISPRon TRAP12K dataset (Xiang et al. 2021, Nat Commun 12:3238,
+    Suppl. Data 4 / PMC8163799): 11,488 gRNAs with total indel efficiency
+    in HEK293T (TRAP-seq surrogate assay, Day 2). A fourth assay family
+    for cross-dataset generalization (gap 1). Sequences are 20-mer guides
+    (no flanking context in the published table).
+    """
+    import pandas as pd
+    df = pd.read_excel(os.path.join(DATA_DIR, "41467_2021_23576_MOESM4_ESM.xlsx"),
+                       sheet_name=sheet)
+    df = df.dropna(subset=["gRNA", "total_indel_eff"])
+    seqs = [s.upper().replace("U", "T") for s in df["gRNA"]]
+    scores = np.clip(df["total_indel_eff"].to_numpy(dtype=np.float32) / 100.0, 0.0, 1.0)
+    if max_n is not None and len(seqs) > max_n:
+        rng = np.random.default_rng(seed)
+        idx = np.sort(rng.choice(len(seqs), max_n, replace=False))
+        seqs = [seqs[i] for i in idx]
+        scores = scores[idx]
+    return EfficacyDataset(sequences=seqs, scores=scores,
+                           source="crispron_trap12k_" + sheet.lower().replace(" ", "_"))
 
 
 PEGRNA_NUMERIC_COLS = (

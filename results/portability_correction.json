@@ -1,9 +1,9 @@
 {
-  "hf_base_transfer": 0.014735721907747853,
-  "hf_residual_corrected": 0.5224093820179584,
+  "hf_base_transfer": 0.07977167235453475,
+  "hf_residual_corrected": 0.5239129590108499,
   "unseen_guides": {
-    "base": -0.018589886145835493,
-    "corrected": 0.35895725832903125,
+    "base": 0.03395023561110937,
+    "corrected": 0.35157306527426757,
     "n": 2609
   }
 }

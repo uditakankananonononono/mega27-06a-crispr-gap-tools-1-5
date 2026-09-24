@@ -29,7 +29,7 @@ independent nuclease screens ($n=53{,}937$ matched guides), more stably
 than the biological signal itself ($\rho\approx0.73$). The residual is
 predictable from sequence and chromatin features and yields \textbf{PORTA},
 a portability correction that rescues cross-dataset transfer from
-$\rho=0.015$ to $0.522$ (SpCas9-HF1) and $0.025$ to $0.560$ (eSpCas9)
+$\rho=0.080$ to $0.524$ (SpCas9-HF1) and $0.052$ to $0.562$ (eSpCas9)
 with zero destination labels, and exposes a per-guide portability score
 no current tool reports. On calibrated off-target scoring, five fully-seeded
 guide-grouped splits of crisprSQL yield a meta-finding: every model's
@@ -238,16 +238,16 @@ model capacity, is the binding constraint.}
 Ridge models trained on Doench FC+RES transfer to Doench V1 at
 $\rho=0.501$ (within: $0.455$) and V1$\to$FC+RES at $0.434$ (within:
 $0.458$): inside the Doench assay family the score laws are near
-affine-equivalent and Proposition~\ref{prop:indisc} applies. Across assay families the
-collapse is total: FC+RES$\to$DeepHF $\rho=0.026$ and V1$\to$DeepHF
-$0.032$, while DeepHF is highly learnable within itself ($0.728$). The
+affine-equivalent and Proposition~\ref{prop:indisc} applies. Across assay families
+transfer drops to a weak positive residue: FC+RES$\to$DeepHF
+$\rho=0.138$ and V1$\to$DeepHF $0.123$, while DeepHF is highly
+learnable within itself ($0.732$) -- a generalization gap of ${\sim}0.6$. The
 bottleneck is therefore not model capacity or feature quality but assay
 distribution shift -- the quantified form of the gap (Figure~\ref{fig:crossdata},
 Table~\ref{tab:crossdata}). A CNN under a tight compute budget shows the
-same structure, and something stronger: transfer to DeepHF goes
-\emph{negative} ($\rho=-0.25$ from both Doench datasets,
-Table~\ref{tab:crosscnn}), i.e.\ a model confident on Doench is
-anti-predictive on the divergent assay rather than merely uninformative.
+same structure (Table~\ref{tab:crosscnn}): positive but weak transfer
+to DeepHF ($0.16$ from FC+RES, $0.04$ from V1) against within-dataset
+$0.64$.
 Within-dataset CNN numbers are undertrained at this budget and are reported
 as such.
 \begin{figure}[h]\centering\includegraphics[width=0.7\textwidth]{fig_crossdata.pdf}
@@ -257,16 +257,37 @@ Adding a third assay family -- DeepSpCas9 (12,832 HEK293T contexts, Kim
 et al.\ 2019) -- to the CNN matrix (Table~\ref{tab:crosscnn}) sharpens
 the picture: DeepSpCas9 is highly learnable within itself
 ($\rho=0.498$), transfers \emph{positively} to and from the Doench
-family ($0.18$--$0.26$), yet its exchange with DeepHF is negative in both
-directions ($-0.12$ and $-0.22$). The anti-correlation is thus specific
-to the DeepHF assay rather than a property of any divergent pair, and
-three assay families now reproduce it (two seeds, identical harness).
+family ($0.18$--$0.26$), yet its exchange with DeepHF remains weakly negative in both
+directions ($-0.08$ and $-0.09$; 5-dataset matrix, two seeds, identical
+harness). The earlier stronger anti-correlation ($-0.12$/$-0.22$) was
+partly an artifact of the DeepHF sequence-encoding bug below; what
+survives is a weak negative residue specific to the DeepHF assay pair.
 
+\subsection{Data-integrity audit: the DeepHF encoding bug}
+\label{sec:encoding-audit}
+A mid-project audit of the DeepHF pkl arrays caught a decoding error:
+the arrays are (n, 22) integer matrices whose first column is a fixed
+sentinel (value 1 on every row) and whose remaining 21 columns encode
+bases as $2{=}C, 3{=}G, 4{=}T, 5{=}A$ -- verified by correlating the
+decoded GC content against the bundled biofeature GC column
+($|\rho|=0.966$). Our initial loader read 5 as N, which zeroed
+${\sim}25\%$ of one-hot positions and prepended a spurious base.
+Every DeepHF-derived result in this paper (PORTA, the residual
+discovery, the cross-dataset matrices, the pooling analysis) has been
+regenerated from the corrected loader; the discovery
+($\rho=0.845$--$0.900$ residual concordance) and PORTA's corrected
+transfer ($0.524$/$0.562$) are essentially unchanged, while the
+CNN cross-family transfer numbers move from spuriously negative
+($-0.25$) to weakly positive ($+0.04$ to $+0.16$). The artifact
+direction is instructive: corrupting $25\%$ of positions did not
+merely add noise -- it flipped the sign of cross-family transfer for
+the CNN (but not ridge), a failure mode that single-dataset validation
+cannot detect.
 \subsection{Gap 1 (cont.): pooling does not fix the boundary}
 Naive multi-dataset pooling fails both ways: Doench-pooled training still
-transfers to DeepHF at only $\rho=0.014$, and adding Doench data to DeepHF
-training slightly \emph{hurts} held-out DeepHF ($0.68$--$0.70$ pooled vs.\
-$0.72$--$0.73$ pure, 3 seeds). The assay-family boundary, not dataset size,
+transfers to DeepHF at only $\rho=0.118$, and adding Doench data to DeepHF
+training slightly \emph{hurts} held-out DeepHF ($0.67$--$0.69$ pooled vs.\
+$0.72$--$0.74$ pure, 3 seeds). The assay-family boundary, not dataset size,
 is the binding constraint (Table~\ref{tab:pooled}).
 
 \subsection{Gap 2: determinism audit and the split-variance meta-finding}
@@ -444,8 +465,8 @@ signature behind the residual (Section~\ref{sec:discovery}).}
 Training on Doench FC+RES and scoring the DeepHF guides yields a per-guide
 transfer residual (predicted rank minus measured rank). Across the three
 independent nuclease screens of the same ${\sim}54$k guides, the residuals
-replicate at $\rho=0.86$ (WT vs eSpCas9), $0.90$ (eSpCas9 vs SpCas9-HF1)
-and $0.86$ (WT vs HF1), while the measured efficacies themselves correlate
+replicate at $\rho=0.856$ (WT vs eSpCas9), $0.900$ (eSpCas9 vs SpCas9-HF1)
+and $0.845$ (WT vs HF1), while the measured efficacies themselves correlate
 at only ${\sim}0.73$: \textbf{the model's transfer error is more stable
 across nucleases than the biological signal.} The residual is therefore a
 target-inherent property (sequence and/or locus context), not a nuclease or
@@ -476,13 +497,13 @@ features and DeepHF biofeatures, and the target is the per-guide transfer
 residual (rank of the Doench-FC+RES prediction minus rank of the measured
 WT activity). The model never sees any label from the destination screen.
 Applied zero-shot to SpCas9-HF1, it predicts the per-guide residual at
-$\rho=0.781$ on all 56{,}888 guides and $\rho=0.700$ on the 2{,}609 guides
+$\rho=0.763$ on all 56{,}888 guides and $\rho=0.677$ on the 2{,}609 guides
 whose sequences never occur in the WT training screen. Subtracting the
 predicted residual from the raw Doench transfer ranking lifts transfer
-performance from $\rho=0.015$ (effectively zero) to $\rho=0.522$; on
-strictly unseen guides it goes from $-0.019$ (anti-correlated) to $0.359$.
-On eSpCas9 the same WT-trained model lifts transfer from $0.025$ to
-$0.560$ (n$=$58{,}617). Corrected performance approaches the within-screen
+performance from $\rho=0.080$ to $\rho=0.524$; on
+strictly unseen guides it goes from $0.034$ to $0.352$.
+On eSpCas9 the same WT-trained model lifts transfer from $0.052$ to
+$0.562$ (n$=$58{,}617). Corrected performance approaches the within-screen
 CNN baseline ($0.55$--$0.61$), i.e.\ the correction recovers most of the
 signal that domain shift destroys. This is a new capability: Rule Set 3,
 CRISPRon, and DeepHF-class models are all single-domain; none reports or

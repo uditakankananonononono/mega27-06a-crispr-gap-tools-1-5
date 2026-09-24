@@ -1,7 +1,6 @@
-"""Gap 1 extension: 4-dataset CNN cross-dataset matrix (adds DeepSpCas9,
-Kim 2019 Sci Adv, HEK293T indel assay - a third assay family beyond
-Doench-family screens and DeepHF U2OS). Same CNN config and harness as
-the 3-dataset matrix; one seed per invocation, merged by hand."""
+"""Gap 1 extension: 5-dataset CNN cross-dataset matrix (adds CRISPRon
+TRAP12K, Xiang 2021 Nat Commun, HEK293T surrogate-indel assay). Same
+harness/config as the 3- and 4-dataset matrices; one seed per invocation."""
 import json
 import sys
 
@@ -10,7 +9,7 @@ import torch
 
 from crisprgap.crossdata import run_cross_dataset, summarize
 from crisprgap.data.datasets import (load_doench_fcres, load_doench_v1,
-                                     load_deephf, load_deepspcas9)
+                                     load_deephf, load_deepspcas9, load_crispron)
 import sys as _sys
 _sys.path.insert(0, "scripts")
 from run_crossdata_cnn import cnn_model  # noqa: E402
@@ -22,8 +21,9 @@ if __name__ == "__main__":
     torch.manual_seed(seed)
     ds = {"fcres": load_doench_fcres(), "v1": load_doench_v1(),
           "deephf_wt": load_deephf("wt", max_n=12000),
-          "deepspcas9": load_deepspcas9(max_n=12000)}
+          "deepspcas9": load_deepspcas9(max_n=12000),
+          "crispron": load_crispron(max_n=12000)}
     res = run_cross_dataset(ds, {"cnn": cnn_model()}, seeds=(seed,))
     out = {"raw": {str(k): v for k, v in res.items()}, "summary": summarize(res)}
-    json.dump(out, open(f"results/crossdata_cnn_4ds_seed{seed}.json", "w"), indent=2)
-    print(json.dumps(out["summary"], indent=2))
+    json.dump(out, open(f"results/crossdata_cnn_5ds_seed{seed}.json", "w"), indent=2)
+    print(json.dumps(out["summary"]["cnn"]["crispron"], indent=2))

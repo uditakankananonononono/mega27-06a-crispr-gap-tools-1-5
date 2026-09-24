@@ -1,7 +1,7 @@
 {
   "n_common": 53937,
-  "resid_esp_vs_wt": 0.8627150189574867,
-  "resid_esp_vs_hf": 0.9037523895790762,
-  "resid_hf_vs_wt": 0.8559881538642541,
+  "resid_esp_vs_wt": 0.8557023211178364,
+  "resid_esp_vs_hf": 0.9004741745483708,
+  "resid_hf_vs_wt": 0.844764342992435,
   "score_wt_vs_hf": 0.7263721090796732
 }

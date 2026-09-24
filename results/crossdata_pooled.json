@@ -1,17 +1,17 @@
 {
   "0": {
-    "doench_pooled_to_deephf": 0.013661927020079864,
-    "all_pooled_to_deephf_heldout": 0.6809066488997076,
-    "deephf_within": 0.723120723668824
+    "doench_pooled_to_deephf": 0.118,
+    "all_pooled_to_deephf_heldout": 0.680349911962018,
+    "deephf_within": 0.7279840688583314
   },
   "1": {
-    "doench_pooled_to_deephf": 0.013661927020079864,
-    "all_pooled_to_deephf_heldout": 0.6847244467153388,
-    "deephf_within": 0.7248326281664357
+    "doench_pooled_to_deephf": 0.118,
+    "all_pooled_to_deephf_heldout": 0.6695312149076612,
+    "deephf_within": 0.7234525493675114
   },
   "2": {
-    "doench_pooled_to_deephf": 0.013661927020079864,
-    "all_pooled_to_deephf_heldout": 0.6981830196703482,
-    "deephf_within": 0.734647889306045
+    "doench_pooled_to_deephf": 0.118,
+    "all_pooled_to_deephf_heldout": 0.6898574503765729,
+    "deephf_within": 0.7357939480995096
   }
 }
