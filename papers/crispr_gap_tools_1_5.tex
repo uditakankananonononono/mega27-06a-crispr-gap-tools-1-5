@@ -771,6 +771,15 @@ readcount concordance is $\rho=00.78$ and $0.65$ for the two targets.
 In-vitro capture is far more promiscuous than cellular detection, so
 CIRCLE-seq-derived candidate lists need modality-specific calibration
 before they can inform cellular off-target probabilities.
+BreakTag (Nat Protoc 2025, 10.1038/s41596-025-01271-4, MOESM2/4) adds a
+third in-vitro modality (\texttt{results/breaktag.json}): for VEGFA
+site 1 it captures 772 candidate sites (hg38) where crisprSQL GUIDE-seq
+recorded 36; lifting GUIDE-seq hg19$\to$hg38, 21 of the 36 (58\%) are
+rediscovered, but overall Jaccard is 0.027 -- sensitivity has grown
+twenty-fold across a decade of assays. BreakTag also resolves scission
+geometry by variant: 51\% of SpCas9-WT cuts are blunt-dominant versus
+44\% for LZ3 and 47\% for xCas9 (n=1{,}606/347/427), a
+variant-dependent cleavage-mode axis that off-target scorers ignore.
 \paragraph{What fidelity engineering buys (gap 4).} A 2023 variant
 screen (Nat Commun 10.1038/s41467-023-41393-5, MOESM8/9) measures
 amplicon indels for WT and high-fidelity SpCas9 variants on the same

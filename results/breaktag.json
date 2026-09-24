@@ -1,0 +1,23 @@
+{
+ "vegfa1": {
+  "n_breaktag": 772,
+  "n_guideseq": 36,
+  "overlap": 21,
+  "guideseq_rediscovered": 0.583,
+  "jaccard": 0.027
+ },
+ "variant_blunt": {
+  "spcas9_wt": {
+   "n": 1606,
+   "frac_blunt": 0.511
+  },
+  "lz3": {
+   "n": 347,
+   "frac_blunt": 0.444
+  },
+  "xcas9": {
+   "n": 427,
+   "frac_blunt": 0.473
+  }
+ }
+}
