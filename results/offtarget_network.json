@@ -1,0 +1,10 @@
+{
+ "n_guides": 83,
+ "n_edges": 23,
+ "n_components": 69,
+ "largest_component": 10,
+ "isolated_guides": 65,
+ "max_degree": 6,
+ "mean_degree": 0.5542168674698795,
+ "density": 0.006758742286218043
+}

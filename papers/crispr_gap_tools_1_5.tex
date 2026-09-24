@@ -203,7 +203,13 @@ pairs (34.9\%) carry at least one insertion or deletion
 scorers (CFD, MIT/Hsu) structurally cannot score a third of the corpus. The 25{,}632 pairs measure only 87 unique guides,
 13 of them (14.9\%) by two or more studies
 (Fig.~\ref{fig:guide_upset}) -- the guide-level dependence this creates
-is why all gap-2 evaluations use guide-clustered splits and SEs.
+is why all gap-2 evaluations use guide-clustered splits and SEs. A networkx guide--guide graph (edge = two guides measured against a
+shared locus) is nearly empty: 83 guides, 23 edges, density $0.0068$,
+largest connected component 10, and 65 guides (78\%) isolated
+(\texttt{results/offtarget\_network.json}). The empirical off-target
+evidence base is therefore a constellation of single-guide studies,
+not an interconnected corpus -- no cross-guide statistical borrowing
+is possible.
 
 \begin{figure}[t]
 \centering
