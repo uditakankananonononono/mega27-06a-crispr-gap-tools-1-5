@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  24 SEP 2026 20:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -410,15 +410,47 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./repro_appendix.tex
-Overfull \hbox (14.37503pt too wide) in paragraph at lines 340--1
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+<figs/fig_residual_concordance.png, id=238, 346.896pt x 317.988pt>
+File: figs/fig_residual_concordance.png Graphic file (type png)
+<use figs/fig_residual_concordance.png>
+Package pdftex.def Info: figs/fig_residual_concordance.png  used on input line 
+329.
+(pdftex.def)             Requested size: 244.27461pt x 223.91954pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figs/fig_porta_before_after.png, id=240, 664.884pt x 303.534pt>
+File: figs/fig_porta_before_after.png Graphic file (type png)
+<use figs/fig_porta_before_after.png>
+Package pdftex.def Info: figs/fig_porta_before_after.png  used on input line 34
+0.
+(pdftex.def)             Requested size: 446.26582pt x 203.72798pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figs/fig_porta_score_dist.png, id=241, 346.896pt x 289.08pt>
+File: figs/fig_porta_score_dist.png Graphic file (type png)
+<use figs/fig_porta_score_dist.png>
+Package pdftex.def Info: figs/fig_porta_score_dist.png  used on input line 350.
+
+(pdftex.def)             Requested size: 234.8775pt x 195.7337pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./repro_appendix.tex
+Overfull \hbox (14.37503pt too wide) in paragraph at lines 371--1
 \OT1/ptm/m/n/12 Each gap ships as a callable tool: \OT1/cmtt/m/n/12 crisprgap.c
 rossdata \OT1/ptm/m/n/12 (gap 1 har-ness), \OT1/cmtt/m/n/12 crisprgap.calibrati
 on
  []
 
 
-Overfull \hbox (9.04047pt too wide) in paragraph at lines 340--1
+Overfull \hbox (9.04047pt too wide) in paragraph at lines 371--1
 \OT1/ptm/m/n/12 + \OT1/cmtt/m/n/12 crisprgap.models.transfer[]cnn \OT1/ptm/m/n/
 12 (gap 3 pre-dic-tor), \OT1/cmtt/m/n/12 crisprgap.models.offtarget[]v2 \OT1/pt
 m/m/n/12 (gaps
@@ -468,24 +500,26 @@ res from results/[]
  []
 
 )
-Overfull \hbox (8.93242pt too wide) in paragraph at lines 50--347
+Overfull \hbox (8.93242pt too wide) in paragraph at lines 50--378
 \OT1/ptm/m/n/12 in ei-ther cell line; (iv) epi-ge-netic fea-tures alone do not 
 im-prove off-target AU-ROC; (v) the crisprSQL-
  []
 
-(./references.tex [17] [18]) [19] (./crispr_gap_tools_1_5.aux)
+(./references.tex [17] [18]) [19] [20 <./figs/fig_residual_concordance.png> <./
+figs/fig_porta_before_after.png>] [21 <./figs/fig_porta_score_dist.png>]
+(./crispr_gap_tools_1_5.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3518 strings out of 480247
- 52576 string characters out of 5896151
- 350373 words of memory out of 5000000
- 21371 multiletter control sequences out of 15000+600000
+ 3545 strings out of 480247
+ 53372 string characters out of 5896151
+ 351410 words of memory out of 5000000
+ 21393 multiletter control sequences out of 15000+600000
  514074 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,10n,62p,367b,276s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,10n,62p,435b,276s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -498,10 +532,10 @@ rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb>
 ive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmri8a.pfb>
-Output written on crispr_gap_tools_1_5.pdf (19 pages, 221445 bytes).
+Output written on crispr_gap_tools_1_5.pdf (21 pages, 582577 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
+ 320 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

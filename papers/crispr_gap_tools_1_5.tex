@@ -323,6 +323,37 @@ eSpCas9 (all guides) & 0.025 & \textbf{0.560} & 58{,}617 \\
 
 \input{bootstrap_tables.tex}
 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.52\textwidth]{figs/fig_residual_concordance.png}
+\caption{Transfer-residual concordance across nuclease screens
+(sequence-matched guides): the Doench transfer error on the same guide in
+WT-SpCas9 and SpCas9-HF1 screens agrees at $\rho=0.856$ ($n=54{,}279$),
+far above the cross-screen correlation of the measured activities
+($\sim$$0.73$).}
+\label{fig:concordance}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{figs/fig_porta_before_after.png}
+\caption{PORTA correction on SpCas9-HF1. Left: raw Doench$\to$HF1
+transfer ranking vs measured ranks ($\rho=0.015$, no visible structure).
+Right: after subtracting the WT-trained portability model
+($\rho=0.522$).}
+\label{fig:porta}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/fig_porta_score_dist.png}
+\caption{Distribution of the predicted portability residual on the HF1
+screen; dashed lines mark the 5\%/95\% tails (guides the source model
+systematically over- or under-ranks).}
+\label{fig:portadist}
+\end{figure}
+
 \section{Limitations}
 crisprSQL aggregates 17 studies with different assays and sensitivities;
 its 94\% positive prevalence and 1,494 validated negatives cap
