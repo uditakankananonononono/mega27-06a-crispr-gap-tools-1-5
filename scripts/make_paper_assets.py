@@ -6,6 +6,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 R, P = "results", "papers"
+import sys as _sys
+if "scripts" not in _sys.path:
+    _sys.path.insert(0, "scripts")
+from _extra_tables import table_ablation5, table_calib, table_perstudy
 
 
 def table_crossdata():
@@ -132,6 +136,6 @@ def table_scaling():
 if __name__ == "__main__":
     os.makedirs(P, exist_ok=True)
     with open(f"{P}/results_tables.tex", "w") as f:
-        f.write(_esc(table_crossdata() + table_crossdata_cnn() + table_pooled() + table_offtarget() + table_ablation() + table_pegrna() + table_scaling()))
+        f.write(_esc(table_crossdata() + table_crossdata_cnn() + table_pooled() + table_offtarget() + table_calib() + table_ablation5() + table_pegrna() + table_scaling() + table_perstudy()))
     fig_crossdata()
     print("assets written")

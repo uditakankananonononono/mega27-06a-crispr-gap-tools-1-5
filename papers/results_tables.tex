@@ -3,7 +3,7 @@ fcres & 0.455 & v1: 0.501, deephf\_wt: 0.026 & 0.191 \\
 v1 & 0.458 & fcres: 0.434, deephf\_wt: 0.032 & 0.225 \\
 deephf\_wt & 0.728 & fcres: 0.070, v1: 0.138 & 0.624 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Cross-dataset generalization, CNN (3 seeds, 6-epoch compute budget; within-dataset numbers are undertrained relative to Table 1). Negative transfer to DeepHF appears.}\label{tab:crosscnn}\begin{tabular}{lccc}\hline Train & Within & Cross & Gap \\ \hline
+\begin{table}[h]\centering\caption{Cross-dataset generalization, CNN (3 seeds, 6-epoch compute budget; within-dataset numbers are undertrained relative to Table 1). Negative transfer to DeepHF appears.}\label{tab:crosscnn}\begin{tabular}{lccc}\hline Train & Within & Cross & Gap \\\hline
 fcres & 0.220 & v1: 0.240, deephf\_wt: -0.239 & 0.219 \\
 v1 & 0.217 & fcres: 0.162, deephf\_wt: -0.256 & 0.264 \\
 deephf\_wt & 0.484 & fcres: 0.076, v1: 0.087 & 0.402 \\
@@ -13,17 +13,20 @@ Doench-pooled & 0.014 \\
 All-pooled (incl.\ 80\% DeepHF) & 0.688 \\
 DeepHF only (within) & 0.728 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Off-target classification on crisprSQL: guide-grouped held-out AUROC across five fully-seeded splits (test-pair counts in parentheses).}\label{tab:offtarget}\begin{tabular}{lcccccc}\hline Model & seed 0 (526) & seed 1 (1019) & seed 2 (739) & seed 3 (1079) & seed 4 (487) & mean $\pm$ sd \\
-\hline
-GNN (this work) & 0.598 & 0.681 & 0.454 & 0.685 & 0.626 & $0.609 \pm 0.084$ \\
-MIT / Hsu 2013 & 0.643 & 0.485 & 0.550 & 0.302 & 0.600 & $0.516 \pm 0.119$ \\
-CFD / Doench 2016 & 0.616 & 0.572 & 0.576 & 0.370 & 0.627 & $0.552 \pm 0.094$ \\
+\begin{table}[h]\centering\caption{Off-target classification on crisprSQL, guide-grouped held-out split.}\label{tab:offtarget}\begin{tabular}{lcc}\hline Model & AUROC & AUPRC \\\hline
+GNN (this work) & 0.598 & 0.473 \\
+MIT / Hsu 2013 & 0.643 & 0.504 \\
+CFD / Doench 2016 & 0.616 & 0.457 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Calibration on crisprSQL: mean ECE over the five fully-seeded splits (recalibrators fit on each split's validation slice). At this sample size, recalibration hurts on average.}\label{tab:calib}\begin{tabular}{lc}\hline & mean ECE (5 splits) \\
-\hline
-Uncalibrated & 0.326 \\
-Platt & 0.367 \\
-Isotonic & 0.389 \\
+\begin{table}[h]\centering\caption{Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}\label{tab:calib}\begin{tabular}{lcc}\hline & ECE & Brier \\\hline
+Uncalibrated & 0.389 & 0.373 \\
+Platt & 0.358 & 0.351 \\
+Isotonic & 0.360 & 0.349 \\
+\hline\end{tabular}\end{table}
+\begin{table}[h]\centering\caption{Calibration on crisprSQL: mean ECE over the five fully-seeded splits (recalibrators fit on each split's validation slice). At this sample size, recalibration hurts on average.}\label{tab:calib}\begin{tabular}{lc}\hline & mean ECE (5 splits) \\\hline
+uncalibrated & 0.326 \\
+isotonic (val slice) & 0.389 \\
+Platt (val slice) & 0.367
 \hline\end{tabular}\end{table}
 \begin{table}[h]\centering\caption{Ablation: PAM and chromatin feature channels (gaps 4-5), five fully-seeded guide-grouped splits (mean $\pm$ sd AUROC). All conditions are within noise of seq-only; the winner varies by seed (pam\_epigen 3/5, epigen 2/5).}\label{tab:ablation}\begin{tabular}{lcc}\hline Features & AUROC (5 seeds) & AUROC non-NGG (5 seeds) \\\hline
 seq\_only & $0.590 \pm 0.094$ & $0.580 \pm 0.065$ \\
@@ -41,8 +44,7 @@ CNN, Cas9-pretrained trunk & 0.789 \\
 1000 & 0.762 & 0.758 \\
 4000 & 0.771 & 0.767 \\
 \hline\end{tabular}\end{table}
-\begin{table}[h]\centering\caption{Per-study held-out AUROC on the canonical split, with class counts. The Anderson GNN ``win'' rests on \textbf{2 positives}; across five seeded splits only 13 (study, split) rows carry $\ge$5 positives and $\ge$5 negatives, and the GNN wins one of them -- per-study rankings on this corpus are not estimable (Section~6).}\label{tab:perstudy}\begin{tabular}{lcccc}\hline Study & $n$ test & pos / neg & GNN & MIT \\
-\hline
+\begin{table}[h]\centering\caption{Per-study held-out AUROC on the canonical split, with class counts. The Anderson GNN ``win'' rests on \textbf{2 positives}; across five seeded splits only 13 (study, split) rows carry $\ge$5 positives and $\ge$5 negatives, and the GNN wins one of them -- per-study rankings on this corpus are not estimable (Section~6).}\label{tab:perstudy}\begin{tabular}{lcccc}\hline Study & $n$ test & pos / neg & GNN & MIT \\\hline
 Anderson & 72 & 2 / 70 & 0.764 & 0.550 \\
 Cameron & 301 & 72 / 229 & 0.525 & 0.541 \\
 Kim & 47 & 18 / 29 & 0.487 & 0.692 \\
