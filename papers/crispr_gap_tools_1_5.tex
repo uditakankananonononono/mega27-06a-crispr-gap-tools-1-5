@@ -877,6 +877,19 @@ H3K27ac (ENCFF010PHG) fold-change bigWigs -- show the same: AUROC
 $0.42$ / $0.49$ on the negatives ($p=0.11$ / $0.79$) and positive-side
 Spearman $0.084$ / $0.043$ (\texttt{results/gap5\_k562\_multitrack.json}).
 Three chromatin modalities, two cell lines, seven readouts: no signal.
+A systematic ENCODE per-modality sweep widens the test to eight further
+accessions: K562 H3K4me3 (ENCFF291SWG), H3K4me1 (ENCFF526QTS),
+H3K36me3 (ENCFF745HXR), H3K27me3 (ENCFF312LYO) and H3K9me3
+(ENCFF834YLI) ChIP fold-change tracks, K562 ATAC-seq (ENCFF915UDE) and
+an independent K562 DNase-seq p-value track (ENCFF643IZX) at the 1{,}271
+K562 loci, plus HEK293T ATAC-seq (ENCFF128DKF) at the 1{,}629 hg38 loci
+(\texttt{results/gap5\_encode\_sweep.json}). Every AUROC sits between
+$0.40$ and $0.52$; the largest positive-side correlations are
+${\rho}=0.080$ (ATAC) and $0.077$ (DNase p-value), nominally
+$p=0.005$--$0.007$ but neither survives Bonferroni across the eleven
+chromatin tracks tested ($\alpha=0.0045$). Across fifteen readouts on
+eleven tracks and two cell lines, chromatin state at $\pm 500$\,bp adds
+no predictive signal for cell-free off-target cleavage.
 Chromosome-level context is also flat: on the hg38 slice (1{,}630
 sites; Fig.~\ref{fig:karyotype}), per-chromosome mean cleavage ranges
 $0.008\%$--$2.4\%$ with no significant chromosome effect (Kruskal--Wallis

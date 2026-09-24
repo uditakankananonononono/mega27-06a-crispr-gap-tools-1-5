@@ -7,3 +7,4 @@ data/hg38.fa.gz
 data/hg38.fa.fai
 data/gencode_v47_basic.gtf.gz
 data/cache/
+data/encode_sweep/
