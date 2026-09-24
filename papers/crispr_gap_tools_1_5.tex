@@ -871,6 +871,23 @@ H3K27ac (ENCFF010PHG) fold-change bigWigs -- show the same: AUROC
 $0.42$ / $0.49$ on the negatives ($p=0.11$ / $0.79$) and positive-side
 Spearman $0.084$ / $0.043$ (\texttt{results/gap5\_k562\_multitrack.json}).
 Three chromatin modalities, two cell lines, seven readouts: no signal.
+Chromosome-level context is also flat: on the hg38 slice (1{,}630
+sites; Fig.~\ref{fig:karyotype}), per-chromosome mean cleavage ranges
+$0.008\%$--$2.4\%$ with no significant chromosome effect (Kruskal--Wallis
+$H=25.8$, $p=0.26$; \texttt{results/karyotype.json}). 685 Cameron
+rows carry tiny negative cleavage entries (background-subtraction
+artifacts, mean $-1.7\times10^{-4}$); we clip them to zero.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.72\textwidth]{figs/karyotype_crisprsql.png}
+\caption{Karyotype of the 1{,}630 hg38 crisprSQL off-target sites
+(pycirclize, UCSC hg38 cytobands). Inner ring: each site, colored by
+cleavage frequency (dark = $\approx$0, bright = high). Sites
+distribute across all canonical chromosomes with no chromosome-level
+cleavage effect (Kruskal--Wallis $p=0.26$).}
+\label{fig:karyotype}
+\end{figure}
 
 \paragraph{Assembly harmonization audit.} pyliftover (UCSC
 hg19$\to$hg38 chain) lifts 9{,}332 of 9{,}346 crisprSQL hg19 loci

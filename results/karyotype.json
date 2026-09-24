@@ -1,0 +1,14 @@
+{
+ "n_sites": 1630,
+ "n_negative_clipped": 685,
+ "n_chromosomes_ge20": 23,
+ "per_chrom_mean_min": 7.752631578947367e-05,
+ "per_chrom_mean_max": 0.02388735135135135,
+ "kruskal_H": 25.75331099623657,
+ "kruskal_p": 0.2624241882574961,
+ "top3": {
+  "chr11": 0.0239,
+  "chr1": 0.0189,
+  "chr10": 0.0097
+ }
+}
