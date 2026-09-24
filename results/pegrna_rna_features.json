@@ -1,0 +1,41 @@
+{
+  "n": 22956,
+  "n_nan_dg_imputed": 0,
+  "n_nan_tm_imputed": 0,
+  "external_tools": [
+    "seqfold (min-ensemble dG, 40nt edit-centered window)",
+    "primer3 2.3.1 (protospacer Tm, nearest-neighbor)"
+  ],
+  "targets": {
+    "HEK": {
+      "numeric_only_by_split": [
+        0.7352675246133298,
+        0.7458361136708683,
+        0.7287721033464096
+      ],
+      "plus_rna_by_split": [
+        0.7346977771685727,
+        0.7460063834471001,
+        0.7289859258510765
+      ],
+      "mean_numeric": 0.7366252472102026,
+      "mean_plus_rna": 0.7365633621555832,
+      "delta": -6.188505461945937e-05
+    },
+    "K562": {
+      "numeric_only_by_split": [
+        0.5542740392194581,
+        0.5534583486359478,
+        0.5458709452643167
+      ],
+      "plus_rna_by_split": [
+        0.5541339457041345,
+        0.5534429163358726,
+        0.5457196362717949
+      ],
+      "mean_numeric": 0.5512011110399075,
+      "mean_plus_rna": 0.5510988327706007,
+      "delta": -0.00010227826930686579
+    }
+  }
+}
