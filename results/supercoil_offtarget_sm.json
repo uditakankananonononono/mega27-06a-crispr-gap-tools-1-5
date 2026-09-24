@@ -1,0 +1,62 @@
+{
+ "relaxed": {
+  "on rel": {
+   "n": 697,
+   "median": 38.58,
+   "mean": 38.51,
+   "iqr": 3.36
+  },
+  "ot1 rel": {
+   "n": 164,
+   "median": 37.56,
+   "mean": 37.59,
+   "iqr": 2.49
+  },
+  "ot2 rel": {
+   "n": 1351,
+   "median": 39.1,
+   "mean": 39.49,
+   "iqr": 4.11
+  }
+ },
+ "supercoiled": {
+  "on sc": {
+   "n": 960,
+   "median": 34.8,
+   "mean": 34.4,
+   "iqr": 5.9
+  },
+  "ot1 sc": {
+   "n": 475,
+   "median": 35.64,
+   "mean": 35.34,
+   "iqr": 4.62
+  },
+  "ot2 sc": {
+   "n": 224,
+   "median": 34.27,
+   "mean": 34.06,
+   "iqr": 5.66
+  }
+ },
+ "supercoiled_rep2": {
+  "on sc": {
+   "n": 128,
+   "median": 36.03,
+   "mean": 35.7,
+   "iqr": 8.11
+  },
+  "ot1 sc": {
+   "n": 46,
+   "median": 37.61,
+   "mean": 37.95,
+   "iqr": 6.44
+  },
+  "ot2 sc": {
+   "n": 56,
+   "median": 38.09,
+   "mean": 37.13,
+   "iqr": 7.37
+  }
+ }
+}
