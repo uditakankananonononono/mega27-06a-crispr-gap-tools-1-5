@@ -1185,6 +1185,13 @@ extends replication to primary cells
 cellular off-target landscape does not transfer from a lab cell line to
 primary therapeutic cell types (the near-identical T-cell/HSPC sets,
 0.993, share a candidate list and are not independent discovery).
+UNCOVERseq (Nat Commun 2026, 10.1038/s41467-026-74623-7, MOESM9; 968
+amplicon-validated candidates across 9 nomination methods for EMX1 and
+FANCF) turns nomination frequency into a calibration axis
+(\texttt{results/uncoverseq.json}): validation rate ($>$1\% indel)
+falls from 19\% in the top nomination-frequency bin to 9\%, 6\%, 9\%
+and 2\% across descending bins -- off-target nomination is a graded
+confidence signal that gap-2 calibration can exploit directly.
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
 \texttt{results/gap4\_mismatch\_tolerance.json}) quantify
