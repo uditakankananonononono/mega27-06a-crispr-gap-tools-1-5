@@ -4,7 +4,7 @@ Per program requirements, every external resource actually used in this
 work is listed with its role. Counts are honest: an entry appears only if
 it was executed or analyzed in the pipeline.
 
-\subsection{External tools (22)}
+\subsection{External tools (23)}
 \begin{table}[h]\centering\small
 \caption{External tools/packages used, with role.}
 \label{tab:tools}
@@ -29,6 +29,7 @@ XGBoost (3.2.0) & cross-library check of the tuned-GBM finding \\
 CatBoost (1.2.10) & third-library check; strongest tuned GBM on HEK ($0.8014$) \\
 statsmodels (0.15.0) & gap-2 GLM inference, guide-cluster-robust SEs \\
 hyperopt (0.3.0) & independent tuner cross-check of the gap-3 tuning conclusion \\
+imbalanced-learn (0.14.2) & gap-2 prevalence-rebalancing mechanism probe \\
 logomaker (0.8.7) & sequence logos of extreme-portability guides (Fig.~8) \\
 CRISPOR CFD matrices & published off-target baseline (vendored, offline scorer) \\
 MIT/Hsu-2013 score & published off-target baseline (reimplemented from source) \\

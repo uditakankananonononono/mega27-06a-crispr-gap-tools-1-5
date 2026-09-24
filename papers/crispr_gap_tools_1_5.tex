@@ -413,7 +413,11 @@ model trained at 94\% prevalence does not transfer its ranking to a
 0.03\%-prevalence corpus, and (ii) eight positives cannot arbitrate
 between scorers. External off-target validation needs corpora with
 hundreds of validated negatives \emph{and} positives -- reinforcing the
-gap-2 meta-finding.
+gap-2 meta-finding. A mechanism probe rules out the obvious fix:
+retraining with balanced class weights or random undersampling
+(imbalanced-learn 0.14.2) \emph{deepens} the inversion ($0.461 \to
+0.385$ and $0.338$; \texttt{results/prevalence\_rebalance.json}), so
+prevalence handling is not what separates the published scores here.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch

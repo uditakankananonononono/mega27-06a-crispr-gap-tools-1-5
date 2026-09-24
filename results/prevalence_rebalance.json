@@ -1,0 +1,12 @@
+{
+  "n_external": 23502,
+  "n_pos_external": 8,
+  "auroc_unweighted": 0.4611177321869413,
+  "auroc_class_weight_balanced": 0.3845609517323572,
+  "auroc_undersampled": 0.3377032433812888,
+  "reference": {
+    "cfd_bundled": 0.9852,
+    "mit": 0.9981
+  },
+  "note": "imbalanced-learn 0.14.2 RandomUnderSampler; identical external pairs; 8 external positives - still anecdote-grade, mechanism probe only"
+}
