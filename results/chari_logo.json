@@ -1,0 +1,34 @@
+{
+  "top_divergent_positions": [
+    {
+      "pos0": 19,
+      "max_abs_freq_diff": 0.41860465116279066,
+      "hi_top_base": "G",
+      "lo_top_base": "C"
+    },
+    {
+      "pos0": 17,
+      "max_abs_freq_diff": 0.20930232558139536,
+      "hi_top_base": "C",
+      "lo_top_base": "T"
+    },
+    {
+      "pos0": 18,
+      "max_abs_freq_diff": 0.15813953488372096,
+      "hi_top_base": "C",
+      "lo_top_base": "A"
+    },
+    {
+      "pos0": 15,
+      "max_abs_freq_diff": 0.15348837209302327,
+      "hi_top_base": "C",
+      "lo_top_base": "G"
+    },
+    {
+      "pos0": 11,
+      "max_abs_freq_diff": 0.14883720930232555,
+      "hi_top_base": "A",
+      "lo_top_base": "T"
+    }
+  ]
+}

@@ -414,7 +414,21 @@ Doench-2016 fcres \emph{anti-predicts} it (AUROC $0.464$), as does v1
 positively but far below the within-Chari 5-fold ridge ($0.807$). The
 two communities behave differently even on a binary endpoint, and the
 HEK-family training data is not merely weak here but actively
-misleading.
+misleading. The position-wise logos
+(Fig.~\ref{fig:chari_logo}) show the split concentrates at
+PAM-proximal positions (largest single-position frequency shift 0.42
+at position 20; \texttt{results/chari\_logo.json}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.62\textwidth]{fig_chari_logo.pdf}
+\caption{Per-position base frequencies of the Chari high- (top) and
+low-activity (bottom) guide lists (logomaker). The high/low separation
+is concentrated near the PAM-proximal end (positions 16--20),
+consistent with the position-weighted importance reported by
+sgRNAScorer~2.0 itself.}
+\label{fig:chari_logo}
+\end{figure}
 
 \paragraph{Families 13-14: CRISPRi/a activity screens.} The Horlbeck
 2016 training screens (eLife 19760; mhorlbeck/CRISPRiaDesign data
