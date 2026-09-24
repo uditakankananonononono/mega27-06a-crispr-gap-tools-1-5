@@ -1478,6 +1478,18 @@ mutants predicted beneficial. The top candidate (C536V, ensemble mean
 need experimental validation --- and we note this supplement ships
 predictions only (the ``mean'' column equals the mean of the five model
 outputs), an honest-negatives data-provenance caveat.
+Cas12a bridge-helix allostery (Nat Commun 2026,
+10.1038/s41467-026-68657-0, MOESM8; 8 protein variants x 3 substrates x
+4 timepoints) shows kinetic discrimination is engineerable
+(\texttt{results/cas12a\_bridge\_helix.json}): WT Cas12a barely
+discriminates a double-mismatch substrate at 15\,min (0.94 vs 0.90
+cleaved), while bridge-helix variants open a wide window --- KD2P-KA
+keeps 86\% matched cleavage with 2.4\% mismatch cleavage
+(discrimination 0.84), and WT-RA keeps 92\% matched with 12\%
+mismatch. Mismatch tolerance in WT is a time problem: cleavage of the
+mismatched substrate catches up by 15\,min, so specificity claims must
+state their timepoint.
+
 
 
 
