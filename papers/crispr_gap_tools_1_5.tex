@@ -701,6 +701,18 @@ positional activity gradient that correlates with the CFD positional
 penalties at Spearman 0.893 -- the matrix shape is right in cells --
 while per-site agreement is much weaker ($\rho=0.388$), quantifying how
 much of single-site behavior is not sequence-position alone.
+\paragraph{Cross-cell-type replication (DISCOVER-seq+).} DISCOVER-seq+
+(Nat Methods 2023, 10.1038/s41592-023-01840-z, MOESM6/11; in-vivo
+break capture, absent from crisprSQL) profiles the same VEGFA-site-2
+guide in K562 and iPSC cells
+(\texttt{results/discoverseqplus\_replication.json}). The two treatment
+arms within a cell type return identical site lists (Jaccard 1.0), but
+across cell types the sets overlap at Jaccard 0.289, and replication
+falls steeply with mismatch count: 53\% of 3-mismatch K562 sites
+recur in iPSC, 47\% at four, 19\% at five, 7\% at six. High-mismatch
+off-targets are largely cell-context-specific -- a direct caveat for
+any off-target catalogue built in one cell type and applied in
+another.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch
