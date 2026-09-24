@@ -833,7 +833,11 @@ between DNase signal and cleavage frequency across the 1{,}236 positives
 CIRCLE-seq, again cell-free by assay design. Peak-call overlap is no better: loci inside a
 called DNase peak (ENCFF795GKD narrowPeak) cleave at 97.8\% vs 97.2\%
 outside (Fisher odds ratio $1.25$, $p=1.0$;
-\texttt{results/gap5\_k562\_peaks.json}).
+\texttt{results/gap5\_k562\_peaks.json}). Effect sizes (pingouin, rank-biserial $r$ /
+Cohen's $d$) tell the same story: Koike-Yusa NAG-vs-NGG $r=0.15$
+($p=0.071$; the action is in the tail, not the bulk), K562 DNase
+$r=-0.12$, HEK293T SITE-Seq DNase $r=0.014$
+(\texttt{results/effect\_sizes\_pingouin.json}).
 \input{ablation_perseed_table.tex}
 \input{results_tables.tex}
 
