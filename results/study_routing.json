@@ -1,0 +1,262 @@
+{
+  "rows": [
+    {
+      "seed": 0,
+      "study": "Cameron",
+      "n_test": 301,
+      "prevalence": 0.23920265780730898,
+      "mean_mismatches": 5.9335548172757475,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.41445182724252505,
+      "mean_mit": 0.006220700448668133,
+      "n_pos": 72,
+      "n_neg": 229,
+      "auroc_gnn": 0.5245633187772926,
+      "auroc_mit": 0.5411511402231927
+    },
+    {
+      "seed": 0,
+      "study": "Kim",
+      "n_test": 47,
+      "prevalence": 0.3829787234042553,
+      "mean_mismatches": 7.76595744680851,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.7,
+      "mean_mit": 0.0027515380180054222,
+      "n_pos": 18,
+      "n_neg": 29,
+      "auroc_gnn": 0.48659003831417624,
+      "auroc_mit": 0.6915708812260536
+    },
+    {
+      "seed": 1,
+      "study": "Anderson",
+      "n_test": 56,
+      "prevalence": 0.08928571428571429,
+      "mean_mismatches": 3.9642857142857144,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.5419642857142858,
+      "mean_mit": 0.0775055398112058,
+      "n_pos": 5,
+      "n_neg": 51,
+      "auroc_gnn": 0.40784313725490196,
+      "auroc_mit": 0.6568627450980392
+    },
+    {
+      "seed": 1,
+      "study": "Cameron",
+      "n_test": 587,
+      "prevalence": 0.2402044293015332,
+      "mean_mismatches": 6.732538330494037,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.5592844974446337,
+      "mean_mit": 0.005547707375843372,
+      "n_pos": 141,
+      "n_neg": 446,
+      "auroc_gnn": 0.5043173361320484,
+      "auroc_mit": 0.5093820564195528
+    },
+    {
+      "seed": 1,
+      "study": "Tsai",
+      "n_test": 96,
+      "prevalence": 0.8020833333333334,
+      "mean_mismatches": 7.354166666666667,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.7374999999999999,
+      "mean_mit": 0.018904804957987634,
+      "n_pos": 77,
+      "n_neg": 19,
+      "auroc_gnn": 0.49897470950102524,
+      "auroc_mit": 0.8219412166780589
+    },
+    {
+      "seed": 2,
+      "study": "Cameron",
+      "n_test": 248,
+      "prevalence": 0.2701612903225806,
+      "mean_mismatches": 7.548387096774194,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.6999999999999998,
+      "mean_mit": 0.0010235756130112393,
+      "n_pos": 67,
+      "n_neg": 181,
+      "auroc_gnn": 0.4810752865506721,
+      "auroc_mit": 0.5691020037931888
+    },
+    {
+      "seed": 2,
+      "study": "Kim",
+      "n_test": 49,
+      "prevalence": 0.40816326530612246,
+      "mean_mismatches": 8.040816326530612,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.7000000000000001,
+      "mean_mit": 0.0025775039734274546,
+      "n_pos": 20,
+      "n_neg": 29,
+      "auroc_gnn": 0.6310344827586206,
+      "auroc_mit": 0.6120689655172413
+    },
+    {
+      "seed": 2,
+      "study": "Kim16",
+      "n_test": 40,
+      "prevalence": 0.65,
+      "mean_mismatches": 3.4,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.595,
+      "mean_mit": 0.038427892307374006,
+      "n_pos": 26,
+      "n_neg": 14,
+      "auroc_gnn": 0.5164835164835164,
+      "auroc_mit": 0.6401098901098902
+    },
+    {
+      "seed": 2,
+      "study": "Tsai",
+      "n_test": 42,
+      "prevalence": 0.8571428571428571,
+      "mean_mismatches": 7.5,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.5607142857142858,
+      "mean_mit": 0.03641398174725619,
+      "n_pos": 36,
+      "n_neg": 6,
+      "auroc_gnn": 0.7546296296296295,
+      "auroc_mit": 0.8472222222222222
+    },
+    {
+      "seed": 3,
+      "study": "KimChromatin",
+      "n_test": 46,
+      "prevalence": 0.3695652173913043,
+      "mean_mismatches": 4.217391304347826,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.6000000000000002,
+      "mean_mit": 0.02911013195395576,
+      "n_pos": 17,
+      "n_neg": 29,
+      "auroc_gnn": 0.3468559837728195,
+      "auroc_mit": 0.6206896551724138
+    },
+    {
+      "seed": 4,
+      "study": "Cameron",
+      "n_test": 216,
+      "prevalence": 0.2777777777777778,
+      "mean_mismatches": 5.486111111111111,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.4715277777777777,
+      "mean_mit": 0.008043865168252465,
+      "n_pos": 60,
+      "n_neg": 156,
+      "auroc_gnn": 0.4143162393162393,
+      "auroc_mit": 0.5077991452991453
+    },
+    {
+      "seed": 4,
+      "study": "Kim",
+      "n_test": 40,
+      "prevalence": 0.25,
+      "mean_mismatches": 7.475,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.6,
+      "mean_mit": 0.003474323998570445,
+      "n_pos": 10,
+      "n_neg": 30,
+      "auroc_gnn": 0.36833333333333335,
+      "auroc_mit": 0.4583333333333333
+    },
+    {
+      "seed": 4,
+      "study": "KimChromatin",
+      "n_test": 30,
+      "prevalence": 0.43333333333333335,
+      "mean_mismatches": 4.166666666666667,
+      "frac_non_ngg": 0.0,
+      "gc_guide": 0.5733333333333334,
+      "mean_mit": 0.03930414986269619,
+      "n_pos": 13,
+      "n_neg": 17,
+      "auroc_gnn": 0.35294117647058826,
+      "auroc_mit": 0.6923076923076923
+    }
+  ],
+  "thin_rows_excluded": [
+    {
+      "seed": 0,
+      "study": "Anderson",
+      "n_test": 72,
+      "n_pos": 2,
+      "n_neg": 70,
+      "auroc_gnn": 0.7642857142857142,
+      "auroc_mit": 0.55
+    },
+    {
+      "seed": 3,
+      "study": "Anderson",
+      "n_test": 52,
+      "n_pos": 4,
+      "n_neg": 48,
+      "auroc_gnn": 0.3489583333333333,
+      "auroc_mit": 0.828125
+    },
+    {
+      "seed": 3,
+      "study": "Tsai",
+      "n_test": 30,
+      "n_pos": 28,
+      "n_neg": 2,
+      "auroc_gnn": 0.5357142857142857,
+      "auroc_mit": 0.8035714285714286
+    },
+    {
+      "seed": 4,
+      "study": "Anderson",
+      "n_test": 86,
+      "n_pos": 1,
+      "n_neg": 85,
+      "auroc_gnn": 0.11764705882352944,
+      "auroc_mit": 0.5470588235294118
+    }
+  ],
+  "n_rows": 13,
+  "min_n_per_row": 30,
+  "min_pos_per_row": 5,
+  "min_neg_per_row": 5,
+  "features": [
+    "n_test",
+    "prevalence",
+    "mean_mismatches",
+    "frac_non_ngg",
+    "gc_guide",
+    "mean_mit"
+  ],
+  "mean_auroc": {
+    "always_gnn": 0.48368909140729716,
+    "always_mit": 0.6283493036461558,
+    "routed_loo": 0.6283493036461558,
+    "routed_prevalence_rule": 0.6091939491966836,
+    "oracle": 0.6298081895878003
+  },
+  "routing_gap_closed": 0.0,
+  "bootstrap_routed_minus_best_fixed": {
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "p_gt_0": 0.0,
+    "best_fixed_model": "mit"
+  },
+  "full_fit_weights": {
+    "n_test": -0.2093534712832882,
+    "prevalence": -0.04645391703150502,
+    "mean_mismatches": 0.3343138700107971,
+    "frac_non_ngg": 0.0,
+    "gc_guide": 0.31170517051330104,
+    "mean_mit": -0.23223135819478177
+  },
+  "full_fit_base_rate_gnn_wins": 0.07692307692307693
+}
