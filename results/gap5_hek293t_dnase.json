@@ -1,0 +1,13 @@
+{
+  "dataset": "ENCODE ENCSR000EJR / ENCFF529BOG (HEK293T DNase-seq, GRCh38, read-depth normalized)",
+  "rows": "crisprSQL HEK hg38 (Cameron SITE-Seq), all 1630 loci, +/-500bp mean",
+  "n_ok": 1630,
+  "n_pos": 893,
+  "n_neg": 737,
+  "auroc": 0.5068199671498964,
+  "median_pos": 0.060457455008463855,
+  "median_neg": 0.06069654294306052,
+  "mean_pos": 0.07910623569058839,
+  "mean_neg": 0.07791543343838923,
+  "mannwhitney_p": 0.6351271566734387
+}

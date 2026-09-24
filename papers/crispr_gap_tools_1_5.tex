@@ -499,6 +499,23 @@ the repressive mark trends lower -- but the effect sizes (medians within
 $1.1\times$) are far below what 13 negatives can resolve. Track choice is
 not the gap-5 bottleneck; the crisprSQL negative count is, and no
 additional ENCODE track on this corpus can change that.
+\paragraph{A well-powered null on SITE-Seq, and why it cannot settle the
+question.} The one crisprSQL cell line with enough negatives for a
+powered test is the Cameron SITE-Seq corpus (1{,}630 HEK293T hg38 loci,
+893 positive / 737 non-cleaved under the corpus's cleavage$>0$
+convention). Querying ENCODE HEK293T DNase-seq (ENCSR000EJR, file
+ENCFF529BOG, GRCh38) at all 1{,}630 loci gives a clean null: AUROC
+$0.507$, Mann--Whitney $p=0.64$, medians identical to two decimals
+($0.0605$ vs $0.0607$). But SITE-Seq measures cleavage on \emph{naked
+genomic DNA in vitro} -- chromatin is absent by assay design, so a
+chromatin null is expected by construction and says nothing about the
+cellular question. The cellular assays in crisprSQL (GUIDE-seq, HTGTS)
+contribute $\leq 10$ measured negatives combined across cell types. Gap 5
+is therefore \emph{structurally unanswerable} on the largest curated
+corpus: the well-powered slices lack chromatin by design, and the
+chromatin-relevant slices lack negatives. Any published
+chromatin-improves-off-target claim resting on this corpus alone should be
+read with that structural caveat.
 \input{ablation_perseed_table.tex}
 \input{results_tables.tex}
 
