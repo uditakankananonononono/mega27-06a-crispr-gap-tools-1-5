@@ -364,7 +364,11 @@ CNN: HEK $0.798$ vs $0.794$, K562 $0.616$ vs $0.610$ (three grouped
 splits, frozen config). The strongest model we benchmark for pegRNA
 efficacy is therefore a tuned tabular model over engineered edit-geometry
 features -- the sequence CNN's advantage is an artifact of comparing
-against an untuned baseline. We preserve all negatives as
+against an untuned baseline. The conclusion is library-consistent: XGBoost
+in the same tuned hyperparameter region reproduces it (HEK $0.799$, K562
+$0.606$), while \emph{default} XGBoost collapses (HEK $0.742$, K562
+$0.476$) -- a 0.06--0.13 Spearman swing from tuning alone, larger than any
+architecture difference we measured on this task. We preserve all negatives as
 the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 
