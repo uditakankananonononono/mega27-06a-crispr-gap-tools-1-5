@@ -687,6 +687,20 @@ classical seed hierarchy is not independently confirmed at this sample
 size. Because the spacers are 19-nt, the 20-mer CFD matrix does not
 apply; we report the count-based curve rather than forcing an
 approximation.
+\paragraph{CFD in cells at therapeutic-guide scale (SURRO-seq).}
+SURRO-seq (Liu et al.\ 2022, Nat Commun 10.1038/s41467-022-31543-6,
+MOESM6/8; cell-based surrogate assay, absent from crisprSQL) measures
+7,250 candidate off-targets across 110 therapeutic guides with indel
+frequencies in cells (\texttt{results/surroseq.json}). CFD reaches
+AUROC 0.692 against the authors' significance calls and 0.76 at the
+IF${}\ge1\%$ level, but only 0.538 at IF${}\ge0.1\%$: the sequence
+score orders strong off-targets well and dissolves near the detection
+floor, where cellular noise dominates. Its companion systematic
+mismatch library (284 single-mismatch sites over five spacers) shows a
+positional activity gradient that correlates with the CFD positional
+penalties at Spearman 0.893 -- the matrix shape is right in cells --
+while per-site agreement is much weaker ($\rho=0.388$), quantifying how
+much of single-site behavior is not sequence-position alone.
 
 \paragraph{Init-only versus split variance.}
 Retraining the GNN on the \emph{identical} seed-0 split with five torch

@@ -1,0 +1,47 @@
+{
+ "libb": {
+  "n_sites": 7250,
+  "n_guides": 110,
+  "n_sig": 863,
+  "cfd_applicable": 7250,
+  "auroc_cfd_sig": 0.692,
+  "auroc_cfd_if01": 0.538,
+  "auroc_cfd_if1": 0.76,
+  "spearman_cfd_if": 0.149,
+  "mm_decay": {
+   "0": {
+    "n": 110,
+    "sig_rate": 1.0,
+    "median_if": 95.20200001255095
+   },
+   "1": {
+    "n": 6,
+    "sig_rate": 1.0,
+    "median_if": 81.9683683439777
+   },
+   "2": {
+    "n": 75,
+    "sig_rate": 0.653,
+    "median_if": 2.17773569592858
+   },
+   "3": {
+    "n": 641,
+    "sig_rate": 0.218,
+    "median_if": 0.191833379007947
+   },
+   "4": {
+    "n": 6418,
+    "sig_rate": 0.087,
+    "median_if": 0.13037728713320051
+   }
+  }
+ },
+ "libc": {
+  "n_sites": 284,
+  "n_single": 284,
+  "n_double": 0,
+  "n_spacers": 5,
+  "spearman_pos_if_vs_cfd_penalty": 0.893,
+  "spearman_cfd_if_all": 0.388
+ }
+}
