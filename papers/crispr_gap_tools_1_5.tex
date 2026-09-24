@@ -937,6 +937,20 @@ features alone do not carry across enzyme variants even with matched
 guides -- variant identity is a distribution shift of its own, and the
 DeepSpCas9variants authors' variant-specific fine-tuning is not
 optional.
+\paragraph{Cross-condition stability within one screen (CRISPRon).}
+The TRAP12K surrogate screen (Xiang 2021, Nat Commun
+10.1038/s41467-021-23576-0, MOESM4; 11,446 gRNAs with matched indel
+efficiencies at day 2 and days 8/10 $\pm$ dox induction; an on-target
+efficacy record, not in crisprSQL) isolates the time/induction axis of
+gap 1 (\texttt{results/crispron\_conditions.json}). Day-2 rankings
+correlate with later conditions at only Spearman $0.18$--$0.25$, while
+day-8 and day-10 ($-$dox) agree at $0.886$; top-decile membership is
+shared at 18--65\%. A one-hot ridge trained on day 2 transfers to day
+10 at $0.531$ versus $0.638$ within-condition CV (gap $0.107$).
+Early-timepoint efficacy measurements are dominated by delivery and
+editing kinetics rather than intrinsic guide quality -- screens
+harvested early are, in effect, a different assay, which sharpens the
+gap-1 rule that assay conditions define the dataset boundary.
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
 \texttt{results/gap4\_mismatch\_tolerance.json}) quantify

@@ -133,85 +133,86 @@
 \@writefile{toc}{\contentsline {paragraph}{External PAM-variant validation (Koike-Yusa 2014).}{29}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{PAM-variant activity atlas (Kim 2020).}{29}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Cross-enzyme transfer (gap 1 $\times $ gap 4).}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cross-condition stability within one screen (CRISPRon).}{30}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Mismatch tolerance by variant.}{30}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Direct chromatin-track queries: a coverage gap and a power ceiling.}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Multi-track control: the bottleneck is negatives, not track choice.}{30}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces PAM-variant activity atlas (Kim 2020 MOESM3, $n=8{,}130$): mean background-subtracted indel frequency (log$_{10}$ \%) for 13 Cas9 variants across 16 PAM-dinucleotide classes (library PAMs are 6-mers with first base fixed to A; classes use the dinucleotide at positions 2--3). NGG dominates WT; SpCas9-NG flattens across NG$*$; VQR shifts to NGA; high-fidelity variants narrow rather than shift.}}{31}{}\protected@file@percent }
 \newlabel{fig:pam_variant}{{14}{31}}
+\@writefile{toc}{\contentsline {paragraph}{Multi-track control: the bottleneck is negatives, not track choice.}{31}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{A well-powered null on SITE-Seq, and why it cannot settle the question.}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Assembly harmonization audit.}{32}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Karyotype of the 1{,}630 hg38 crisprSQL off-target sites (pycirclize, UCSC hg38 cytobands). Inner ring: each site, colored by cleavage frequency (dark = $\approx $0, bright = high). Sites distribute across all canonical chromosomes with no chromosome-level cleavage effect (Kruskal--Wallis $p=0.26$).}}{33}{}\protected@file@percent }
 \newlabel{fig:karyotype}{{15}{33}}
-\@writefile{toc}{\contentsline {section}{\numberline {12}Discovery: target-inherent transfer residual}{33}{}\protected@file@percent }
-\newlabel{sec:discovery}{{12}{33}}
+\@writefile{toc}{\contentsline {paragraph}{Assembly harmonization audit.}{33}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces No dose-response between DNase accessibility and cleavage frequency among the 1{,}236 cleaved K562 loci: the LOESS trend (scikit-misc) is flat to slightly negative.}}{34}{}\protected@file@percent }
 \newlabel{fig:k562_loess}{{16}{34}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Gaps 4--5 ablation, per-seed held-out AUROC (fully seeded guide-grouped splits). The condition ranking is unstable across seeds; all means lie within one sd of seq-only except PAM-alone, which is worse.}}{34}{}\protected@file@percent }
 \newlabel{tab:ablperseed}{{3}{34}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Cross-dataset generalization (ridge, 3 seeds): held-out vs transfer Spearman.}}{35}{}\protected@file@percent }
-\newlabel{tab:crossdata}{{4}{35}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Cross-dataset generalization (ridge, 3 seeds): held-out vs transfer Spearman.}}{34}{}\protected@file@percent }
+\newlabel{tab:crossdata}{{4}{34}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Discovery: target-inherent transfer residual}{34}{}\protected@file@percent }
+\newlabel{sec:discovery}{{12}{34}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Cross-dataset generalization, CNN (2 seeds, 6-epoch compute budget; within-dataset numbers are undertrained relative to Table 1). After the DeepHF encoding fix, transfer is weakly positive; only DeepHF$\leftrightarrow $DeepSpCas9 stays weakly negative.}}{35}{}\protected@file@percent }
 \newlabel{tab:crosscnn}{{5}{35}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Pooling mitigation attempt (gap 1, 3 seeds).}}{35}{}\protected@file@percent }
+\newlabel{tab:pooled}{{6}{35}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.1}Portability correction: rescuing cross-dataset transfer}{35}{}\protected@file@percent }
 \newlabel{sec:porta}{{12.1}{35}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Statistical support: bootstrap intervals}{35}{}\protected@file@percent }
-\newlabel{sec:bootstrap}{{12.2}{35}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Pooling mitigation attempt (gap 1, 3 seeds).}}{36}{}\protected@file@percent }
-\newlabel{tab:pooled}{{6}{36}}
 \@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Off-target classification on crisprSQL, guide-grouped held-out split.}}{36}{}\protected@file@percent }
 \newlabel{tab:offtarget}{{7}{36}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}}{36}{}\protected@file@percent }
+\newlabel{tab:calib}{{8}{36}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Statistical support: bootstrap intervals}{36}{}\protected@file@percent }
+\newlabel{sec:bootstrap}{{12.2}{36}}
 \@writefile{toc}{\contentsline {section}{\numberline {13}Discussion}{36}{}\protected@file@percent }
 \newlabel{sec:discussion}{{13}{36}}
 \@writefile{toc}{\contentsline {paragraph}{What the residual is.}{36}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{What practitioners should do differently.}{36}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Why the pegRNA transfer negative matters.}{36}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Calibration on held-out crisprSQL pairs (isotonic/Platt fit on validation slice).}}{37}{}\protected@file@percent }
-\newlabel{tab:calib}{{8}{37}}
 \@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Calibration on crisprSQL: mean ECE over the five fully-seeded splits (recalibrators fit on each split's validation slice). At this sample size, recalibration hurts on average.}}{37}{}\protected@file@percent }
 \newlabel{tab:calib}{{9}{37}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Ablation: PAM and chromatin feature channels (gaps 4-5), five fully-seeded guide-grouped splits (mean $\pm $ sd AUROC). All conditions are within noise of seq-only; the winner varies by seed (pam\_epigen 3/5, epigen 2/5).}}{37}{}\protected@file@percent }
+\newlabel{tab:ablation}{{10}{37}}
+\@writefile{toc}{\contentsline {paragraph}{Why the pegRNA transfer negative matters.}{37}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Relation to domain adaptation theory.}{37}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Scope of claims.}{37}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Negative-results ledger.}{37}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Ablation: PAM and chromatin feature channels (gaps 4-5), five fully-seeded guide-grouped splits (mean $\pm $ sd AUROC). All conditions are within noise of seq-only; the winner varies by seed (pam\_epigen 3/5, epigen 2/5).}}{38}{}\protected@file@percent }
-\newlabel{tab:ablation}{{10}{38}}
 \@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces pegRNA efficiency (HEK), grouped held-out Spearman (gap 3).}}{38}{}\protected@file@percent }
 \newlabel{tab:pegrna}{{11}{38}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces pegRNA scarce-regime scaling (HEK, grouped held-out Spearman). Transfer never beats scratch.}}{38}{}\protected@file@percent }
+\newlabel{tab:scaling}{{12}{38}}
+\@writefile{toc}{\contentsline {paragraph}{Negative-results ledger.}{38}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {14}External tools and datasets used}{38}{}\protected@file@percent }
 \newlabel{sec:toolsdata}{{14}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {14.1}External tools (40 analysis tools + 4 infrastructure)}{38}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {14.2}Datasets and data sources (64 working; 70 literal rows incl.\ 4 UCSC alias rows)}{38}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Toward the 40-tool / 120-dataset bar.}{38}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces pegRNA scarce-regime scaling (HEK, grouped held-out Spearman). Transfer never beats scratch.}}{39}{}\protected@file@percent }
-\newlabel{tab:scaling}{{12}{39}}
 \@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Per-study held-out AUROC on the canonical split, with class counts. The Anderson GNN ``win'' rests on \textbf  {2 positives}; across five seeded splits only 13 (study, split) rows carry $\ge $5 positives and $\ge $5 negatives, and the GNN wins one of them -- per-study rankings on this corpus are not estimable (Section\nobreakspace  {}6).}}{39}{}\protected@file@percent }
 \newlabel{tab:perstudy}{{13}{39}}
-\@writefile{toc}{\contentsline {paragraph}{Examined and not integrated (with reasons).}{39}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {15}Limitations}{39}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Sequence logos of the 500 most vs\ least portable DeepHF WT guides under the reconstructed PORTA pipeline (held-out score--residual $\rho =0.825$). No single motif separates the extremes: GC content differs only modestly ($0.436$ vs $0.496$) and composition differences are positional and weak -- direct visual evidence for the distributed signature behind the residual (Section\nobreakspace  {}12\hbox {}).}}{40}{}\protected@file@percent }
-\newlabel{fig:porta_logo}{{17}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Sequence logos of the 500 most vs\ least portable DeepHF WT guides under the reconstructed PORTA pipeline (held-out score--residual $\rho =0.825$). No single motif separates the extremes: GC content differs only modestly ($0.436$ vs $0.496$) and composition differences are positional and weak -- direct visual evidence for the distributed signature behind the residual (Section\nobreakspace  {}12\hbox {}).}}{39}{}\protected@file@percent }
+\newlabel{fig:porta_logo}{{17}{39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {14.1}External tools (40 analysis tools + 4 infrastructure)}{39}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {14.2}Datasets and data sources (65 working; 71 literal rows incl.\ 4 UCSC alias rows)}{39}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Toward the 40-tool / 120-dataset bar.}{39}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Residual-corrected cross-dataset transfer. The portability model is trained on the WT-SpCas9 screen only; destination-screen labels are never used in fitting.}}{40}{}\protected@file@percent }
 \newlabel{tab:porta}{{14}{40}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Gap 2: guide-grouped AUROC on the canonical fully-seeded split, bootstrap 95\% intervals (400 reps). The paired difference includes zero: this corpus cannot separate the models on any single split; Table\nobreakspace  {}7\hbox {} gives the five-split picture.}}{40}{}\protected@file@percent }
+\newlabel{tab:boot-offtarget}{{15}{40}}
+\@writefile{toc}{\contentsline {paragraph}{Examined and not integrated (with reasons).}{40}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {15}Limitations}{40}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {16}Tool documentation}{40}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {16.1}PORTA: portability scoring and corrected transfer}{40}{}\protected@file@percent }
-\newlabel{sec:porta-tool}{{16.1}{40}}
-\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Gap 2: guide-grouped AUROC on the canonical fully-seeded split, bootstrap 95\% intervals (400 reps). The paired difference includes zero: this corpus cannot separate the models on any single split; Table\nobreakspace  {}7\hbox {} gives the five-split picture.}}{41}{}\protected@file@percent }
-\newlabel{tab:boot-offtarget}{{15}{41}}
 \@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Gap 1: Doench FC+RES $\to $ DeepHF-WT transfer, bootstrap 95\% intervals (400 reps over destination guides).}}{41}{}\protected@file@percent }
 \newlabel{tab:boot-gap1}{{16}{41}}
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces PORTA on SpCas9-HF1: bootstrap 95\% intervals (400 reps over guides).}}{41}{}\protected@file@percent }
+\newlabel{tab:boot-porta}{{17}{41}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {16.1}PORTA: portability scoring and corrected transfer}{41}{}\protected@file@percent }
+\newlabel{sec:porta-tool}{{16.1}{41}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Reproducibility appendix}{41}{}\protected@file@percent }
 \newlabel{sec:repro}{{A}{41}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Environment}{41}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Data provenance}{41}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces PORTA on SpCas9-HF1: bootstrap 95\% intervals (400 reps over guides).}}{42}{}\protected@file@percent }
-\newlabel{tab:boot-porta}{{17}{42}}
 \@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Transfer-residual concordance across nuclease screens (sequence-matched guides): the Doench transfer error on the same guide in WT-SpCas9 and SpCas9-HF1 screens agrees at $\rho =0.856$ ($n=53{,}937$), far above the cross-screen correlation of the measured activities ($\sim $$0.73$).}}{42}{}\protected@file@percent }
 \newlabel{fig:concordance}{{18}{42}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Data provenance}{42}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Entry points and tests}{42}{}\protected@file@percent }
 \bibcite{doench2014}{1}
-\bibcite{doench2016}{2}
 \@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces PORTA correction on SpCas9-HF1. Left: raw Doench$\to $HF1 transfer ranking vs measured ranks ($\rho =0.015$, no visible structure). Right: after subtracting the WT-trained portability model ($\rho =0.522$).}}{43}{}\protected@file@percent }
 \newlabel{fig:porta}{{19}{43}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Negative results register}{43}{}\protected@file@percent }
+\bibcite{doench2016}{2}
 \bibcite{chari2015}{3}
 \bibcite{wang2019}{4}
 \bibcite{chuai2018}{5}
@@ -221,10 +222,10 @@
 \bibcite{listgarten2018}{9}
 \bibcite{concordet2018}{10}
 \bibcite{lin2020}{11}
-\bibcite{walton2020}{12}
-\bibcite{anzalone2019}{13}
 \@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Distribution of the predicted portability residual on the HF1 screen; dashed lines mark the 5\%/95\% tails (guides the source model systematically over- or under-ranks).}}{44}{}\protected@file@percent }
 \newlabel{fig:portadist}{{20}{44}}
+\bibcite{walton2020}{12}
+\bibcite{anzalone2019}{13}
 \bibcite{kim2021}{14}
 \bibcite{mathis2023}{15}
 \bibcite{stortz2021}{16}
