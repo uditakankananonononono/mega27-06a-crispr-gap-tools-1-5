@@ -1208,6 +1208,17 @@ gMH no candidate off-target reaches 0.5\% in any organ despite
 genuinely organ-local: site OT112 edits at 4.5\% in pancreas but
 $\leq$1\% in every other organ. Off-target risk assessment from a
 single tissue is therefore not a safe proxy for the organism.
+Guide reprogramming work (Nat Commun 2026, 10.1038/s41467-026-74520-z,
+MOESM4--5) exposes a guide-independent contaminant class inside
+GUIDE-seq itself (\texttt{results/grna\_reprogram\_tdo.json}): 65
+tracrRNA-dependent off-target (TDO) sites recur across the 12 Tsai
+et al.\ samples, yet only 7 (10.8\%) lie within 50\,bp of a
+canonical guide-matched off-target and only 2.1\% of the 236
+canonical sites carry any TDO signal; TDO read counts are mostly low
+(median 9) but reach 1{,}365. Guide-independent cleavage is a real but
+separable background: calibrated off-target probabilities must model
+it as its own class rather than as guide-homology noise.
+
 
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;

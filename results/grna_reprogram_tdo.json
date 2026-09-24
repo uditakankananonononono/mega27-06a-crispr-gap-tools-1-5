@@ -1,0 +1,112 @@
+{
+ "n_tdo": 65,
+ "n_canonical": 236,
+ "tdo_samples": [
+  "SRR6012045",
+  "SRR6012046",
+  "SRR6012047",
+  "SRR6012048",
+  "SRR6012051",
+  "SRR6012052",
+  "SRR6019795",
+  "SRR6019796",
+  "SRR6019797",
+  "SRR6019798",
+  "SRR6019799",
+  "SRR6019800"
+ ],
+ "canon_samples": [
+  "SRR6012045",
+  "SRR6012046",
+  "SRR6012047",
+  "SRR6012048",
+  "SRR6012051",
+  "SRR6012052",
+  "SRR6019795",
+  "SRR6019796",
+  "SRR6019797",
+  "SRR6019798",
+  "SRR6019799",
+  "SRR6019800"
+ ],
+ "per_sample": {
+  "SRR6012045": {
+   "n_tdo": 4,
+   "n_canonical": 11,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  },
+  "SRR6012046": {
+   "n_tdo": 5,
+   "n_canonical": 35,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  },
+  "SRR6012047": {
+   "n_tdo": 9,
+   "n_canonical": 1,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  },
+  "SRR6012048": {
+   "n_tdo": 4,
+   "n_canonical": 9,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  },
+  "SRR6012051": {
+   "n_tdo": 6,
+   "n_canonical": 136,
+   "tdo_overlapping_canonical": 3,
+   "frac_tdo_in_canonical": 0.5
+  },
+  "SRR6012052": {
+   "n_tdo": 8,
+   "n_canonical": 14,
+   "tdo_overlapping_canonical": 4,
+   "frac_tdo_in_canonical": 0.5
+  },
+  "SRR6019795": {
+   "n_tdo": 3,
+   "n_canonical": 2,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  },
+  "SRR6019796": {
+   "n_tdo": 6,
+   "n_canonical": 3,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  },
+  "SRR6019797": {
+   "n_tdo": 2,
+   "n_canonical": 20,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  },
+  "SRR6019798": {
+   "n_tdo": 4,
+   "n_canonical": 1,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  },
+  "SRR6019799": {
+   "n_tdo": 5,
+   "n_canonical": 2,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  },
+  "SRR6019800": {
+   "n_tdo": 9,
+   "n_canonical": 2,
+   "tdo_overlapping_canonical": 0,
+   "frac_tdo_in_canonical": 0.0
+  }
+ },
+ "total_tdo_overlapping_canonical": 7,
+ "overall_frac_tdo_in_canonical": 0.108,
+ "canonical_sites_with_tdo": 5,
+ "frac_canonical_with_tdo": 0.021,
+ "tdo_reads_median": 9.0,
+ "tdo_reads_max": 1365.0
+}
