@@ -1,0 +1,37 @@
+{
+  "tool": "scikit-optimize 0.10.2 (GP-BO) + lightgbm 4.7.0",
+  "n_trials": 30,
+  "tuned_on": "seed-0 train/val only (HEK)",
+  "best_params": {
+    "n_estimators": 530,
+    "learning_rate": 0.053042307252976574,
+    "num_leaves": 8,
+    "subsample": 0.5344705368497529,
+    "min_child_samples": 91
+  },
+  "best_val_spearman": 0.7929372594559269,
+  "targets": {
+    "HEK": {
+      "by_split": [
+        0.8011402576605633,
+        0.8033799405551187,
+        0.7913305421740598
+      ],
+      "mean": 0.7986169134632473
+    },
+    "K562": {
+      "by_split": [
+        0.622911415024596,
+        0.6121504263373415,
+        0.6110426335724298
+      ],
+      "mean": 0.6153681583114557
+    }
+  },
+  "reference": {
+    "optuna_tuned_HEK": 0.7978,
+    "hyperopt_tuned_HEK": 0.7979,
+    "cnn_HEK": 0.794,
+    "default_lgbm_HEK": 0.795
+  }
+}
