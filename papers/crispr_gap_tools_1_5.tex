@@ -1111,7 +1111,14 @@ PBS/RT GC, Cas9 score; z-scored per library;
 DeepPE$\to$PRIDICT2 0.194 and PRIDICT2$\to$DeepPE 0.389 against
 within-library CV 0.669/0.523: pegRNA design models do not transfer
 across library generations even on shared features, the gap-1 boundary
-reappearing inside prime editing.
+reappearing inside prime editing. A 103k-pegRNA pooled screen from the La
+study (Nature 2024, 10.1038/s41586-024-07259-6, MOESM3 Supp.\ Table 1)
+shows the label-noise ceiling such libraries carry
+(\texttt{results/pe\_la\_transfer.json}): per-pegRNA replicate Spearman
+is only 0.03--0.05 across FACS-PE3 and MCS-PE3/PE4/PE5 arms, and top-1\%
+hit lists replicate at 6--12\% (1\% expected by chance) -- real but
+weak per-element resolution whose noise any model trained on such
+screens inherits.
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
 \texttt{results/gap4\_mismatch\_tolerance.json}) quantify
