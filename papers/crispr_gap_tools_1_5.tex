@@ -1616,6 +1616,23 @@ constant zero vector in the mouse panel, which we report as undefined
 rather than imputing). Consequence for gap-2/5: a repair-outcome
 predictor trained in one cellular context carries only its
 insertion/deletion bias, not its per-locus spectrum, into another.
+R-loop context control of Cas9 trans-cleavage (Nat Commun 2026,
+10.1038/s41467-026-68789-3, MOESM6; spacer-length ladder 49$\to$20 nt
+and a mismatch-position series, triplicate) shows collateral activity
+is continuously tuneable rather than binary
+(\texttt{results/rloop\_transcleavage.json}). Trans-cleavage signal
+rises monotonically as the spacer shortens (4.76 at 49 nt to 9.57 at
+20 nt; length-vs-signal $\rho=-0.96$, 2.0-fold range), and mismatch
+position matters asymmetrically: central mismatches (positions 8/13)
+sustain strong activation with a short-dsDNA flank (8.5x/15.1x over
+random DNA), PAM-proximal/distal single mismatches less (7.3--11.2x),
+and a triple mismatch (4-5-6) collapses signal to 2.0x (86\%
+suppression vs position-5 single). The same mismatch series in the
+second flank context (Panel B) activates at most 2.1x --- the flank
+geometry, not the mismatch alone, sets the magnitude. For gap-2/4
+diagnostics design: guide length is a continuous specificity dial,
+and single mismatches cannot be assumed to silence collateral
+cleavage.
 
 
 
