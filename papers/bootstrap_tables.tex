@@ -7,18 +7,18 @@ differences computed within the same resample
 
 \begin{table}[h]
 \centering
-\caption{Gap 2: guide-grouped AUROC, bootstrap 95\% intervals (400 reps,
-seed-0 split). The GNN wins 400/400 paired resamples within this split;
-Table~\ref{tab:offtarget} gives the three-split picture, where split
-choice dominates model choice.}
+\caption{Gap 2: guide-grouped AUROC on the canonical fully-seeded split,
+bootstrap 95\% intervals (400 reps). The paired difference includes
+zero: this corpus cannot separate the models on any single split;
+Table~\ref{tab:offtarget} gives the five-split picture.}
 \label{tab:boot-offtarget}
 \begin{tabular}{lcc}
 \hline
 Model & AUROC & 95\% CI \\
 \hline
-GNN (this work) & 0.571 & [0.542, 0.601] \\
-MIT / Hsu 2013 & 0.452 & [0.431, 0.477] \\
-paired difference & +0.119 & [0.071, 0.164] \\
+GNN (this work) & 0.600 & [0.547, 0.658] \\
+MIT / Hsu 2013 & 0.642 & [0.595, 0.697] \\
+paired difference & $-0.043$ & [$-0.115$, $+0.025$] \\
 \hline
 \end{tabular}
 \end{table}

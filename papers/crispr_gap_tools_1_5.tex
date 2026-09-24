@@ -30,11 +30,13 @@ predictable from sequence and chromatin features and yields \textbf{PORTA},
 a portability correction that rescues cross-dataset transfer from
 $\rho=0.015$ to $0.522$ (SpCas9-HF1) and $0.025$ to $0.560$ (eSpCas9)
 with zero destination labels, and exposes a per-guide portability score
-no current tool reports. On calibrated off-target scoring our GNN averages
-AUROC $0.564$ against CFD $0.526$ and MIT $0.496$ across three
-guide-grouped splits of the same corpus, winning two of three splits; the
-splits alone swing any model by up to $0.15$ AUROC, itself a
-reproducibility finding. All artifacts -- code, 40-test offline suite, data pipelines,
+no current tool reports. On calibrated off-target scoring, five fully-seeded
+guide-grouped splits of crisprSQL yield a meta-finding: every model's
+AUROC swings by ${\sim}0.2$ across splits and inits (GNN $0.45$--$0.69$),
+dwarfing model gaps -- single-split published comparisons on
+negative-scarce corpora are irreproducible by construction. Our GNN leads
+on mean ($0.609$ vs CFD $0.552$, MIT $0.516$) without separating
+significantly, and we show where it does win (per-study analysis). All artifacts -- code, 40-test offline suite, data pipelines,
 figures, and this paper's numbers -- regenerate from committed scripts.
 \end{abstract}
 
@@ -61,9 +63,10 @@ group-aware held-out numbers, including where the gap resisted us.
 \paragraph{Contributions.}
 (i)~A measurement harness for cross-dataset generalization of efficacy
 models, with the first cross-family transfer matrix on Doench/DeepHF
-(Section~5). (ii)~The first calibrated multi-study off-target benchmark,
-with a GNN that leads both published heuristic scores on average across
-three leak-free splits (Section~6). (iii)~A controlled study of
+(Section~5). (ii)~A calibrated multi-study off-target benchmark with full
+split/init determinism, establishing that negative-scarce corpora cannot
+adjudicate between scorers on single splits, with a per-study analysis of
+where models actually differ (Section~6). (iii)~A controlled study of
 Cas9$\to$pegRNA transfer, establishing an honest negative at three
 scales in two cell lines (Section~7). (iv)~PAM- and chromatin-aware
 off-target channels, with the PAM channel recovering most of the non-NGG
@@ -250,15 +253,14 @@ training slightly \emph{hurts} held-out DeepHF ($0.68$--$0.70$ pooled vs.\
 $0.72$--$0.73$ pure, 3 seeds). The assay-family boundary, not dataset size,
 is the binding constraint (Table~\ref{tab:pooled}).
 
-\subsection{Gap 2: GNN leads on average across splits; calibration is split-dependent}
+\subsection{Gap 2: determinism audit and the split-variance meta-finding}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.95\textwidth]{figs/fig_offtarget_roc_cal.png}
-\caption{Gap 2, guide-grouped held-out crisprSQL, seed-0 split. Left: ROC for the GNN
-and the MIT score. Right: calibration before/after isotonic regression;
-the corpus's 91\% test prevalence compresses the curve into the high
-range, where isotonic still reduces ECE.}
+\caption{Gap 2, canonical fully-seeded split of crisprSQL. Left: ROC for
+the GNN and the MIT score. Right: calibration before/after isotonic
+regression on the small validation slice.}
 \label{fig:roc_cal}
 \end{figure}
 \label{sec:results-offtarget}
@@ -266,19 +268,29 @@ range, where isotonic still reduces ECE.}
 \caption{Reliability curves on held-out crisprSQL pairs, before and after
 Platt calibration on the validation slice.}
 \label{fig:calibration}\end{figure}
-Across three guide-grouped crisprSQL splits (${\sim}$4,073 held-out pairs
-each, natural ${\sim}$91\% prevalence), the duplex GNN averages AUROC
-$0.564$ ($\pm 0.016$) against CFD/Doench-2016 $0.526$ ($\pm 0.067$) and
-MIT/Hsu-2013 $0.496$ ($\pm 0.041$), winning two of three splits against
-both (Table~\ref{tab:offtarget}). The dominant variance source is the
-split itself: the same model moves by up to $0.15$ AUROC across splits
-(CFD ranges $0.431$--$0.576$), so single-split comparisons on this corpus
--- our seed-0 split included, where the GNN wins $0.572$ vs
-$0.452$/$0.431$ -- are split samples, not verdicts. Isotonic calibration
-lowers mean ECE ($0.263 \to 0.243$, helping two of three splits); Platt
-averages $0.246$ with split-dependent ordering (Table~\ref{tab:calib}). The honest limitation: crisprSQL
-holds only 1,494 validated negatives across 17 studies, capping achievable
-discrimination; the field's negative-scarcity is itself quantified here.
+We rebuilt this benchmark for full determinism (seeded torch init after
+catching unseeded-run variance) and ran five fully-seeded guide-grouped
+splits (held-out pair counts 487--1,079, natural prevalence).
+Table~\ref{tab:offtarget} gives the matrix: the GNN averages
+$0.609 \pm 0.084$ against CFD $0.552 \pm 0.094$ and MIT
+$0.516 \pm 0.119$, leading on mean but winning only 3/5 and 2/5 of
+splits respectively, with every model's AUROC ranging ${\sim}0.2$ across
+splits and inits (GNN $0.454$--$0.685$). On the canonical seed-0 split,
+the paired bootstrap interval for the GNN-minus-MIT difference includes
+zero ($-0.043$ [$-0.115$, $+0.025$]). \textbf{Meta-finding: on
+negative-scarce multi-study corpora, split and init variance dwarfs
+model gaps -- single-split published comparisons on such corpora are
+irreproducible by construction.} Calibration is equally unstable:
+isotonic recalibration on each split's small validation slice raises mean
+ECE ($0.326 \to 0.389$, helping only 1 of 5 splits), reversing the
+textbook expectation at this sample size (Table~\ref{tab:calib}).
+Per-study analysis (seed-0 split; Table~\ref{tab:perstudy}) shows where
+signal actually lives: the GNN is strong on Anderson-era GUIDE-seq data
+($0.764$ vs MIT $0.550$) and weak on Kim-style targeted libraries
+($0.487$ vs $0.692$) -- model rankings are study-conditional, and most
+studies contribute too few held-out pairs to score at all, which is
+itself the corpus's core limitation: crisprSQL holds only 1,494
+validated negatives across 17 studies.
 
 \subsection{Gap 3: Cas9-to-pegRNA transfer}
 \begin{figure}[h]\centering\includegraphics[width=0.55\textwidth]{fig_pegrna_scaling.pdf}
