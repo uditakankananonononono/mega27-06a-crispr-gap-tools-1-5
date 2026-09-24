@@ -1,0 +1,75 @@
+{
+  "tool": "lightgbm 4.7.0",
+  "splits": [
+    0,
+    1,
+    2
+  ],
+  "targets": {
+    "HEK": {
+      "gbm_by_split": [
+        0.7959758815276853,
+        0.8002604665716277,
+        0.7888417084007168
+      ],
+      "gbm_mean": 0.7950260188333433
+    },
+    "K562": {
+      "gbm_by_split": [
+        0.6113895055466799,
+        0.6101779677798523,
+        0.6078214078070862
+      ],
+      "gbm_mean": 0.6097962937112061
+    }
+  },
+  "shap_top_features_HEK": [
+    {
+      "feature": "Correction_Replacement",
+      "mean_abs_shap": 0.09310484960105342
+    },
+    {
+      "feature": "Correction_Length",
+      "mean_abs_shap": 0.08025889818142605
+    },
+    {
+      "feature": "RToverhangmt",
+      "mean_abs_shap": 0.05146306817159588
+    },
+    {
+      "feature": "PBSmt",
+      "mean_abs_shap": 0.03858517799103161
+    },
+    {
+      "feature": "protospacermt",
+      "mean_abs_shap": 0.03798330921193272
+    },
+    {
+      "feature": "RToverhanglength",
+      "mean_abs_shap": 0.02771824426202654
+    },
+    {
+      "feature": "RTlength",
+      "mean_abs_shap": 0.02249201561760408
+    },
+    {
+      "feature": "deepeditposition",
+      "mean_abs_shap": 0.015852261606889833
+    },
+    {
+      "feature": "RT_initial_location_end",
+      "mean_abs_shap": 0.012652342032576994
+    },
+    {
+      "feature": "extensionmt",
+      "mean_abs_shap": 0.012244376993295057
+    }
+  ],
+  "reference_means": {
+    "ridge_numeric_HEK": 0.7366,
+    "cnn_scratch_HEK": 0.794,
+    "ridge_numeric_K562": 0.554,
+    "cnn_scratch_K562": 0.61,
+    "note": "ridge means from results/pegrna_rna_features.json (same split recipe); CNN numbers from the gap-3 benchmark (seeds 0,1)"
+  }
+}

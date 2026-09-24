@@ -350,7 +350,16 @@ move grouped held-out Spearman by $-6\times10^{-5}$ (HEK) and
 $-1\times10^{-4}$ (K562) across three grouped splits
 ($n=22{,}956$). Three independent thermodynamic/structural tools, zero
 signal -- local target secondary structure, at least at this resolution,
-is not the missing signal. We preserve all negatives as the gap-3 result.
+is not the missing signal. A final control reframes the gap-3 story: a
+LightGBM gradient-boosted model on the \emph{19 engineered numeric
+features alone} matches the sequence CNN (HEK $0.795$ vs $0.794$; K562
+$0.610$ vs $0.610$, three grouped splits each). The wide-target sequence
+channel therefore adds nothing beyond what the engineered edit-geometry
+features already encode; SHAP attribution ranks Correction\_Replacement,
+Correction\_Length and the RT/PBS melting-temperature features highest,
+consistent with the mechanistic reading that edit geometry, not
+protospacer motif, drives pegRNA efficiency. We preserve all negatives as
+the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 
 \begin{figure}[h]
