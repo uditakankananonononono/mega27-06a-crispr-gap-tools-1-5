@@ -1,0 +1,32 @@
+{
+ "n_rows": 585,
+ "libs": [
+  "CasMINI",
+  "Ctrl",
+  "hpCasMINI"
+ ],
+ "grnas": [
+  "KLHL29",
+  "NLRC4",
+  "SITE1"
+ ],
+ "per_library": {
+  "CasMINI": {
+   "n_rows": 260,
+   "total_frac": 0.69,
+   "del_share": 0.978,
+   "ins1_share_of_all": 0.008,
+   "mean_del_len": 9.01
+  },
+  "hpCasMINI": {
+   "n_rows": 276,
+   "total_frac": 4.298,
+   "del_share": 0.993,
+   "ins1_share_of_all": 0.002,
+   "mean_del_len": 12.67
+  }
+ },
+ "spectrum_spearman_KLHL29": 0.668,
+ "spectrum_spearman_NLRC4": 0.591,
+ "spectrum_spearman_SITE1": 0.766
+}
