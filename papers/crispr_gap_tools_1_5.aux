@@ -110,9 +110,9 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Reliability curves on held-out crisprSQL pairs, before and after Platt calibration on the validation slice.}}{23}{}\protected@file@percent }
 \newlabel{fig:calibration}{{9}{23}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.5}Gap 3: Cas9-to-pegRNA transfer}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {11.5.1}Scarce-regime scaling: a clean negative}{23}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Per-position mismatch log-odds on crisprSQL (GLM, guide-cluster-robust 95\% CIs; red = $p<0.05$). The profile contradicts the textbook seed-region gradient: PAM-proximal positions are null, and the position-15 positive anomaly survives clustering.}}{24}{}\protected@file@percent }
 \newlabel{fig:poslog}{{10}{24}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {11.5.1}Scarce-regime scaling: a clean negative}{24}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Study-routing audit: every (study, split) row with $\ge $30 test pairs. Top block: rows with $\ge $5 positives and $\ge $5 negatives (the estimable set; GNN wins 1 of 13). Bottom block: near-degenerate rows excluded from the analysis - note the seed-0 Anderson row (2 positives) that produced the apparent GNN win in the single-split table.}}{25}{}\protected@file@percent }
 \newlabel{tab:routing}{{2}{25}}
 \@writefile{toc}{\contentsline {paragraph}{Cross-library transfer works here.}{25}{}\protected@file@percent }
@@ -133,12 +133,12 @@
 \newlabel{tab:ablperseed}{{3}{29}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Cross-dataset generalization (ridge, 3 seeds): held-out vs transfer Spearman.}}{29}{}\protected@file@percent }
 \newlabel{tab:crossdata}{{4}{29}}
-\@writefile{toc}{\contentsline {section}{\numberline {12}Discovery: target-inherent transfer residual}{29}{}\protected@file@percent }
-\newlabel{sec:discovery}{{12}{29}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Cross-dataset generalization, CNN (2 seeds, 6-epoch compute budget; within-dataset numbers are undertrained relative to Table 1). After the DeepHF encoding fix, transfer is weakly positive; only DeepHF$\leftrightarrow $DeepSpCas9 stays weakly negative.}}{30}{}\protected@file@percent }
 \newlabel{tab:crosscnn}{{5}{30}}
 \@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Pooling mitigation attempt (gap 1, 3 seeds).}}{30}{}\protected@file@percent }
 \newlabel{tab:pooled}{{6}{30}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Discovery: target-inherent transfer residual}{30}{}\protected@file@percent }
+\newlabel{sec:discovery}{{12}{30}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.1}Portability correction: rescuing cross-dataset transfer}{30}{}\protected@file@percent }
 \newlabel{sec:porta}{{12.1}{30}}
 \@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Off-target classification on crisprSQL, guide-grouped held-out split.}}{31}{}\protected@file@percent }
@@ -163,20 +163,20 @@
 \newlabel{tab:scaling}{{12}{33}}
 \@writefile{toc}{\contentsline {paragraph}{Scope of claims.}{33}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Negative-results ledger.}{33}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {14}External tools and datasets used}{33}{}\protected@file@percent }
-\newlabel{sec:toolsdata}{{14}{33}}
 \@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Per-study held-out AUROC on the canonical split, with class counts. The Anderson GNN ``win'' rests on \textbf  {2 positives}; across five seeded splits only 13 (study, split) rows carry $\ge $5 positives and $\ge $5 negatives, and the GNN wins one of them -- per-study rankings on this corpus are not estimable (Section\nobreakspace  {}6).}}{34}{}\protected@file@percent }
 \newlabel{tab:perstudy}{{13}{34}}
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Sequence logos of the 500 most vs\ least portable DeepHF WT guides under the reconstructed PORTA pipeline (held-out score--residual $\rho =0.825$). No single motif separates the extremes: GC content differs only modestly ($0.436$ vs $0.496$) and composition differences are positional and weak -- direct visual evidence for the distributed signature behind the residual (Section\nobreakspace  {}12\hbox {}).}}{34}{}\protected@file@percent }
 \newlabel{fig:porta_logo}{{15}{34}}
+\@writefile{toc}{\contentsline {section}{\numberline {14}External tools and datasets used}{34}{}\protected@file@percent }
+\newlabel{sec:toolsdata}{{14}{34}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {14.1}External tools (24)}{34}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {14.2}Datasets and data sources (32 accession-level records + 13 sub-studies)}{34}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Toward the 40-tool / 120-dataset bar.}{34}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Examined and not integrated (with reasons).}{34}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Residual-corrected cross-dataset transfer. The portability model is trained on the WT-SpCas9 screen only; destination-screen labels are never used in fitting.}}{35}{}\protected@file@percent }
 \newlabel{tab:porta}{{14}{35}}
 \@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Gap 2: guide-grouped AUROC on the canonical fully-seeded split, bootstrap 95\% intervals (400 reps). The paired difference includes zero: this corpus cannot separate the models on any single split; Table\nobreakspace  {}7\hbox {} gives the five-split picture.}}{35}{}\protected@file@percent }
 \newlabel{tab:boot-offtarget}{{15}{35}}
+\@writefile{toc}{\contentsline {paragraph}{Examined and not integrated (with reasons).}{35}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {15}Limitations}{35}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {16}Tool documentation}{35}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Gap 1: Doench FC+RES $\to $ DeepHF-WT transfer, bootstrap 95\% intervals (400 reps over destination guides).}}{36}{}\protected@file@percent }
