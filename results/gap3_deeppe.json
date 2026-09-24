@@ -1,0 +1,35 @@
+{
+ "n": 43149,
+ "y_mean": 9.578161666801751,
+ "ridge_cv_spearman": [
+  0.68,
+  0.664,
+  0.673,
+  0.662,
+  0.665
+ ],
+ "ridge_cv_mean": 0.669,
+ "deepspcas9_only_spearman": 0.496,
+ "univariate": {
+  "PBS length": 0.132,
+  "RT length": -0.155,
+  "PBS-RT length": -0.04,
+  "Tm1": 0.29,
+  "Tm 2": -0.055,
+  "Tm 3": -0.061,
+  "Tm 4": -0.023,
+  "deltaTm": -0.072,
+  "GC count_1": 0.346,
+  "GC count_2": 0.043,
+  "GC count_3": 0.237,
+  "GC contents_1": 0.363,
+  "GC contents_2": 0.235,
+  "GC contents_3": 0.351,
+  "MFE_1": -0.297,
+  "MFE_2": -0.17,
+  "MFE_3": -0.161,
+  "MFE_4": -0.154,
+  "MFE_5": -0.173,
+  "DeepSpCas9 score": 0.496
+ }
+}

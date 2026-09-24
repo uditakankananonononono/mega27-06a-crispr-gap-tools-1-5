@@ -756,6 +756,21 @@ is therefore attainable when the measurement pipeline is shared --
 sharpening the gap-1 negative: the efficacy-transfer failure there is
 about assay provenance, not a universal impossibility. We preserve all
 negatives as the gap-3 result.
+\paragraph{Third external pegRNA library (DeepPE).} Kim 2021's DeepPE
+Library 1 (Nat Biotechnol, 10.1038/s41587-020-0677-y MOESM4; 43{,}150
+pegRNAs, HEK293T PE2) provides an independent replication of the gap-3
+findings (\texttt{results/gap3\_deeppe.json}). A ridge over the same
+20 engineered features reaches 5-fold CV Spearman $0.669$ -- below the
+PRIDICT2 HEK ridge ($0.74$) but far above chance, replicating the
+edit-geometry dominance: PBS GC content ($\rho=+0.35$) and PBS $T_m$
+($+0.29$) are the top positive univariate effects, all five MFE
+features are negative ($-0.15$ to $-0.30$), matching PRIDICT2's effect
+signs across the board. Notably the DeepSpCas9 score \emph{alone}
+correlates $0.496$ with pegRNA efficiency -- the Cas9 prior feature
+carries real signal in someone else's assay, even though (as shown
+above) transferring the Cas9 \emph{sequence model} does not beat
+scratch. The two Cas9-transfer ideas are different: a Cas9 activity
+\emph{feature} helps; Cas9 motif \emph{weights} do not.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 
 \begin{figure}[h]
