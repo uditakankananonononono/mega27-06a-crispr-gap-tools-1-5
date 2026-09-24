@@ -1,0 +1,61 @@
+{
+ "hela_n": 399,
+ "hap1_n": 162,
+ "u2os_encode_coverage": "none (no ENCODE bigWig for U2OS, any assay/assembly)",
+ "tracks": {
+  "HeLa_DNase_ENCFF426GCA": {
+   "n_ok": 388,
+   "n_pos": 330,
+   "n_neg": 58,
+   "auroc": 0.49806687565308255,
+   "mwu_p": 0.963040803841321,
+   "spearman_pos": 0.13045852019796586,
+   "spearman_pos_p": 0.01773783701340286
+  },
+  "HeLa_ATAC_ENCFF051PGV": {
+   "n_ok": 388,
+   "n_pos": 330,
+   "n_neg": 58,
+   "auroc": 0.48385579937304074,
+   "mwu_p": 0.6953155026668122,
+   "spearman_pos": 0.14360010011111174,
+   "spearman_pos_p": 0.008994076123799403
+  },
+  "HeLa_H3K27ac_ENCFF388WMD": {
+   "n_ok": 388,
+   "n_pos": 330,
+   "n_neg": 58,
+   "auroc": 0.5264367816091954,
+   "mwu_p": 0.5210350652184961,
+   "spearman_pos": 0.07253538989773567,
+   "spearman_pos_p": 0.18871065930075034
+  },
+  "HeLa_CTCF_ENCFF799KLZ": {
+   "n_ok": 388,
+   "n_pos": 330,
+   "n_neg": 58,
+   "auroc": 0.5281347962382446,
+   "mwu_p": 0.4945999895263513,
+   "spearman_pos": 0.13997062626219714,
+   "spearman_pos_p": 0.010909392841125415
+  },
+  "HAP1_DNase_ENCFF095QLZ": {
+   "n_ok": 160,
+   "n_pos": 102,
+   "n_neg": 58,
+   "auroc": 0.5336375929682218,
+   "mwu_p": 0.481077907751566,
+   "spearman_pos": 0.08152705624490848,
+   "spearman_pos_p": 0.4153057113461919
+  },
+  "HAP1_ATAC_ENCFF559JGD": {
+   "n_ok": 160,
+   "n_pos": 102,
+   "n_neg": 58,
+   "auroc": 0.5360040567951319,
+   "mwu_p": 0.4506915936713023,
+   "spearman_pos": 0.13671912595083252,
+   "spearman_pos_p": 0.17061781793794498
+  }
+ }
+}

@@ -887,9 +887,21 @@ K562 loci, plus HEK293T ATAC-seq (ENCFF128DKF) at the 1{,}629 hg38 loci
 $0.40$ and $0.52$; the largest positive-side correlations are
 ${\rho}=0.080$ (ATAC) and $0.077$ (DNase p-value), nominally
 $p=0.005$--$0.007$ but neither survives Bonferroni across the eleven
-chromatin tracks tested ($\alpha=0.0045$). Across fifteen readouts on
-eleven tracks and two cell lines, chromatin state at $\pm 500$\,bp adds
-no predictive signal for cell-free off-target cleavage.
+chromatin tracks tested ($\alpha=0.0045$). Extending the sweep to
+the HeLa and HAP1 slices (four HeLa-S3 tracks: DNase ENCFF426GCA, ATAC
+ENCFF051PGV, H3K27ac ENCFF388WMD, CTCF ENCFF799KLZ at 388 loci; two
+HAP1 tracks: DNase ENCFF095QLZ, ATAC ENCFF559JGD at 160 loci;
+\texttt{results/gap5\_encode\_sweep2.json}) finds the same null:
+AUROCs $0.48$--$0.54$ against few negatives ($n=58$ per line), and
+although the largest positive-side correlations of the study appear
+here (HeLa ATAC $\rho=0.144$, CTCF $\rho=0.140$, DNase $\rho=0.130$;
+nominal $p=0.009$--$0.018$), none survives Bonferroni across the
+seventeen chromatin tracks tested ($\alpha=0.0029$). The U2OS slice --
+the largest in crisprSQL at 5{,}920 hg19 loci -- has \emph{no} ENCODE
+chromatin track of any assay on any assembly, so the chromatin question
+is untestable there; we record this as a data-coverage gap. Across
+seventeen tracks and four cell lines, chromatin state at $\pm 500$\,bp
+adds no predictive signal for cell-free off-target cleavage.
 Chromosome-level context is also flat: on the hg38 slice (1{,}630
 sites; Fig.~\ref{fig:karyotype}), per-chromosome mean cleavage ranges
 $0.008\%$--$2.4\%$ with no significant chromosome effect (Kruskal--Wallis
