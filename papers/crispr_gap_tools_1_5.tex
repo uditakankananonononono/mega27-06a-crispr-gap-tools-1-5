@@ -1291,6 +1291,17 @@ on-target; 5.7 vs 4.1 at off-target 2), i.e.\ topology reshapes the
 ensemble the enzyme samples rather than selectively stabilizing
 matched sites -- a mechanistic basis for supercoiling-dependent
 off-target cleavage that sequence-only models cannot see.
+Allelic-readout tiling with two base editors (Nat Commun 2026,
+10.1038/s41467-026-69918-8, MOESM7) supplies a nucleotide-resolution
+replication check (\texttt{results/allelic\_tiling\_editors.json}):
+ABE8e raw per-position scores barely reproduce across replicates
+(Spearman 0.17 and 0.10 over 151 shared positions) -- only the
+deconvolved profiles are stable -- and the ABE8e and EvoCDA
+deconvolved landscapes are editor-specific (Spearman 0.21 over 127
+shared positions; top-quartile Jaccard 0.26). Base-editor choice
+reshapes the regulatory-element map, and single-replicate raw tiling
+tracks should not be trusted.
+
 
 
 

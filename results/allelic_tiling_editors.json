@@ -1,0 +1,48 @@
+{
+ "ABE8e": {
+  "blocks": [
+   "Negative Raw Score",
+   "Rep1 Raw Score",
+   "Rep2 Raw Score",
+   "Rep3 Raw Score",
+   "Deconvolved Scores",
+   "Significant Regions"
+  ],
+  "n_positions": {
+   "Negative Raw Score": 32,
+   "Rep1 Raw Score": 151,
+   "Rep2 Raw Score": 151,
+   "Rep3 Raw Score": 151,
+   "Deconvolved Scores": 335,
+   "Significant Regions": 2
+  },
+  "raw_replicate_spearman": {
+   "n_shared": 151,
+   "r1_r2": 0.167,
+   "r1_r3": 0.099
+  }
+ },
+ "EvoCDA": {
+  "blocks": [
+   "Negative Score",
+   "Rep1 Raw Score",
+   "Rep2 Raw Score",
+   "Rep3 Raw Score",
+   "Deconvolved Score",
+   "Significant Regions"
+  ],
+  "n_positions": {
+   "Negative Score": 166,
+   "Rep1 Raw Score": 13,
+   "Rep2 Raw Score": 13,
+   "Rep3 Raw Score": 13,
+   "Deconvolved Score": 127,
+   "Significant Regions": 2
+  }
+ },
+ "cross_editor_deconvolved": {
+  "n_shared_positions": 127,
+  "spearman": 0.213,
+  "top_quartile_jaccard": 0.255
+ }
+}
