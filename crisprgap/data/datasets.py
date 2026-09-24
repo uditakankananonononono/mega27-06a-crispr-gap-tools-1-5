@@ -244,3 +244,25 @@ def load_pridict() -> PegrnaDataset:
         grp_ids=df["grp_id"].tolist(),
         numeric_col_names=names,
     )
+
+
+def load_crisprscan() -> EfficacyDataset:
+    """CRISPRscan (Moreno-Mateos et al. 2015, Nat Methods; PMC4589495): 492
+    sgRNAs with in-vivo zebrafish indel activity (raw percentile-rank
+    normalized, sheet d1 of Nature ESM MOESM633) joined to 20-mer sequences
+    (sheet a). A non-cell-culture, in-vivo assay family for gap 1: tests
+    whether the assay-family boundary extends beyond mammalian cell culture.
+    Europe PMC's deposit was an empty placeholder; files fetched from
+    media.springernature.com ESM links.
+    """
+    import pandas as pd
+    path = os.path.join(DATA_DIR, "raw", "crisprscan", "crisprscan_MOESM633.xlsx")
+    x = pd.ExcelFile(path)
+    a = x.parse("a")
+    d1 = x.parse("d1")
+    j = a.merge(d1, on="Unnamed: 0")
+    assert len(j) == 492, f"CRISPRscan join drifted: {len(j)}"
+    seqs = [s.upper() for s in j.sgrna_seq]
+    assert all(len(s) == 20 and set(s) <= set("ACGT") for s in seqs)
+    scores = np.clip(j.activity_raw_prank.to_numpy(dtype=np.float32), 0.0, 1.0)
+    return EfficacyDataset(sequences=seqs, scores=scores, source="crisprscan")

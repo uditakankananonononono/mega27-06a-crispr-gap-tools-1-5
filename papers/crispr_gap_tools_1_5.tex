@@ -285,6 +285,23 @@ three-nuclease-over-one-library design remains the only corpus in this
 work where residual concordance is computable -- a structural limit on
 how far the method, and cross-dataset residual claims generally, can be
 extended without new co-assayed libraries.
+\paragraph{A seventh family: CRISPRscan (zebrafish in vivo).} Adding the
+CRISPRscan in-vivo screen (Moreno-Mateos et al.\ 2015, Nat Methods;
+492 guides with measured indel activity, Nature ESM MOESM633) as a
+seventh dataset -- the only non-mammalian, non-cell-culture assay in the
+matrix -- the boundary sharpens further (ridge, 3 seeds,
+\texttt{results/crisprscan\_transfer.json}). CRISPRscan is learnable
+within itself ($0.33$--$0.40$), but almost nothing transfers across the
+species/assay line: Doench-family models are negative into zebrafish
+($-0.02$ to $-0.11$), CRISPRon and sgDesigner are zero, and DeepHF is
+\emph{strongly anti-predictive in both directions} ($-0.29$ to $-0.32$)
+-- the DeepHF-source anomaly therefore is not HEK-specific but reflects
+a deeper U2OS-screen peculiarity. The single positive bridge is
+DeepSpCas9 ($+0.08$ into zebrafish, $+0.13$--$+0.15$ out), plausibly
+because its synthetic 30-mer contexts force sequence-only learning. The
+gap-1 verdict hardens: cross-dataset generalization fails by assay family
+\emph{and} by species, and the failure magnitude tracks biological
+distance.
 
 \subsection{Data-integrity audit: the DeepHF encoding bug}
 \label{sec:encoding-audit}

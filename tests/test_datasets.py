@@ -47,3 +47,12 @@ def test_deephf_loads():
     assert all(len(s) == 21 for s in ds.sequences)
     assert all(set(s) <= set("ACGT") for s in ds.sequences)  # encoding fix: no Ns
     assert ds.scores.min() >= 0 and ds.scores.max() <= 1
+
+
+@pytest.mark.skipif(not _have("raw/crisprscan/crisprscan_MOESM633.xlsx"), reason="data not fetched")
+def test_crisprscan_loads():
+    from crisprgap.data.datasets import load_crisprscan
+    ds = load_crisprscan()
+    assert len(ds.sequences) == 492
+    assert all(len(s) == 20 and set(s) <= set("ACGT") for s in ds.sequences)
+    assert ds.scores.min() >= 0 and ds.scores.max() <= 1
