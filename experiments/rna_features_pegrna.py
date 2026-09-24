@@ -54,7 +54,8 @@ def compute(start: int, end: int) -> None:
         w = _window(mut[i], int(round(deeppos[i])))
         try:
             structs = fold(w)
-            dg.append(min(s.e for s in structs) if structs else 0.0)
+            e = min((s.e for s in structs), default=0.0)
+            dg.append(e if np.isfinite(e) else 0.0)  # seqfold: all-unpaired => -inf
         except Exception:
             dg.append(float("nan"))
         a, b = psloc[i]
