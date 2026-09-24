@@ -30,10 +30,11 @@ predictable from sequence and chromatin features and yields \textbf{PORTA},
 a portability correction that rescues cross-dataset transfer from
 $\rho=0.015$ to $0.522$ (SpCas9-HF1) and $0.025$ to $0.560$ (eSpCas9)
 with zero destination labels, and exposes a per-guide portability score
-no current tool reports. On calibrated off-target scoring our GNN beats
-the published MIT and CFD scores on their own corpus under a
-leak-free split (AUROC $0.572$ vs $0.452$/$0.431$; $400/400$ bootstrap
-resamples). All artifacts -- code, 40-test offline suite, data pipelines,
+no current tool reports. On calibrated off-target scoring our GNN averages
+AUROC $0.564$ against CFD $0.526$ and MIT $0.496$ across three
+guide-grouped splits of the same corpus, winning two of three splits; the
+splits alone swing any model by up to $0.15$ AUROC, itself a
+reproducibility finding. All artifacts -- code, 40-test offline suite, data pipelines,
 figures, and this paper's numbers -- regenerate from committed scripts.
 \end{abstract}
 
@@ -61,8 +62,8 @@ group-aware held-out numbers, including where the gap resisted us.
 (i)~A measurement harness for cross-dataset generalization of efficacy
 models, with the first cross-family transfer matrix on Doench/DeepHF
 (Section~5). (ii)~The first calibrated multi-study off-target benchmark,
-with a GNN that beats both published heuristic scores on their own data
-under a leak-free split (Section~6). (iii)~A controlled study of
+with a GNN that leads both published heuristic scores on average across
+three leak-free splits (Section~6). (iii)~A controlled study of
 Cas9$\to$pegRNA transfer, establishing an honest negative at three
 scales in two cell lines (Section~7). (iv)~PAM- and chromatin-aware
 off-target channels, with the PAM channel recovering most of the non-NGG
@@ -249,12 +250,12 @@ training slightly \emph{hurts} held-out DeepHF ($0.68$--$0.70$ pooled vs.\
 $0.72$--$0.73$ pure, 3 seeds). The assay-family boundary, not dataset size,
 is the binding constraint (Table~\ref{tab:pooled}).
 
-\subsection{Gap 2: GNN beats published scores; isotonic calibrates}
+\subsection{Gap 2: GNN leads on average across splits; calibration is split-dependent}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.95\textwidth]{figs/fig_offtarget_roc_cal.png}
-\caption{Gap 2, guide-grouped held-out crisprSQL. Left: ROC for the GNN
+\caption{Gap 2, guide-grouped held-out crisprSQL, seed-0 split. Left: ROC for the GNN
 and the MIT score. Right: calibration before/after isotonic regression;
 the corpus's 91\% test prevalence compresses the curve into the high
 range, where isotonic still reduces ECE.}
@@ -265,12 +266,17 @@ range, where isotonic still reduces ECE.}
 \caption{Reliability curves on held-out crisprSQL pairs, before and after
 Platt calibration on the validation slice.}
 \label{fig:calibration}\end{figure}
-On a guide-grouped crisprSQL split (4,073 held-out pairs at natural 91\%
-prevalence) the duplex GNN reaches AUROC $0.572$ vs.\ MIT/Hsu-2013 $0.452$
-and CFD/Doench-2016 $0.431$ (Table~\ref{tab:offtarget}). Isotonic
-calibration on a validation slice cuts ECE from $0.148$ to $0.133$; Platt
-scaling underfits the small validation slice and slightly worsens ECE --
-we report both (Table~\ref{tab:calib}). The honest limitation: crisprSQL
+Across three guide-grouped crisprSQL splits (${\sim}$4,073 held-out pairs
+each, natural ${\sim}$91\% prevalence), the duplex GNN averages AUROC
+$0.564$ ($\pm 0.016$) against CFD/Doench-2016 $0.526$ ($\pm 0.067$) and
+MIT/Hsu-2013 $0.496$ ($\pm 0.041$), winning two of three splits against
+both (Table~\ref{tab:offtarget}). The dominant variance source is the
+split itself: the same model moves by up to $0.15$ AUROC across splits
+(CFD ranges $0.431$--$0.576$), so single-split comparisons on this corpus
+-- our seed-0 split included, where the GNN wins $0.572$ vs
+$0.452$/$0.431$ -- are split samples, not verdicts. Isotonic calibration
+lowers mean ECE ($0.263 \to 0.243$, helping two of three splits); Platt
+averages $0.246$ with split-dependent ordering (Table~\ref{tab:calib}). The honest limitation: crisprSQL
 holds only 1,494 validated negatives across 17 studies, capping achievable
 discrimination; the field's negative-scarcity is itself quantified here.
 

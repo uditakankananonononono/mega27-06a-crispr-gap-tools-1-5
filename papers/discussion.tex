@@ -29,10 +29,10 @@ library shares guides with any large public screen, a one-time
 portability calibration (a few minutes of ridge regression against the
 library's own residual) can recover most of the lost ranking signal on a
 new assay (Table~9) -- the destination assay's labels are not needed.
-Third, off-target scores should ship with calibration curves: isotonic
-recalibration on a held-out slice improves ECE even at moderate corpus
-sizes, while Platt scaling can actively hurt (Table~5), contradicting the
-common default.
+Third, off-target scores should ship with calibration curves, but the
+recalibrator choice is split-sensitive: isotonic lowers mean ECE
+($0.263 \to 0.243$) and helps two of three splits, while Platt's ordering
+is unstable -- neither should be trusted from a single split.
 
 \paragraph{Why the pegRNA transfer negative matters.}
 The naive hypothesis that Cas9 efficacy motifs transfer to pegRNA design
