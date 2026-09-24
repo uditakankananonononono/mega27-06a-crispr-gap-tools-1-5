@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  25 SEP 2026 00:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  25 SEP 2026 00:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,68 +425,74 @@ Overfull \hbox (12.0161pt too wide) in paragraph at lines 354--369
  []
 
 [16]
-<figs/fig_offtarget_roc_cal.png, id=110, 664.884pt x 289.08pt>
+<fig_transfer_dendrogram.pdf, id=110, 505.89pt x 231.26399pt>
+File: fig_transfer_dendrogram.pdf Graphic file (type pdf)
+<use fig_transfer_dendrogram.pdf>
+Package pdftex.def Info: fig_transfer_dendrogram.pdf  used on input line 372.
+(pdftex.def)             Requested size: 422.77664pt x 193.27235pt.
+
+Underfull \hbox (badness 1092) in paragraph at lines 379--379
+\OT1/ptm/m/n/12 i-lar-ity across the 12 gap-1 datasets. The Wang/Xu-side fam-il
+y (HCT116, HeLa, HL60,
+ []
+
+[17 <./fig_transfer_dendrogram.pdf>]
+<figs/fig_offtarget_roc_cal.png, id=156, 664.884pt x 289.08pt>
 File: figs/fig_offtarget_roc_cal.png Graphic file (type png)
 <use figs/fig_offtarget_roc_cal.png>
-Package pdftex.def Info: figs/fig_offtarget_roc_cal.png  used on input line 401
+Package pdftex.def Info: figs/fig_offtarget_roc_cal.png  used on input line 414
 .
 (pdftex.def)             Requested size: 446.26582pt x 194.02664pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig_calibration.pdf, id=111, 303.534pt x 289.08pt>
+<fig_calibration.pdf, id=157, 303.534pt x 289.08pt>
 File: fig_calibration.pdf Graphic file (type pdf)
 <use fig_calibration.pdf>
-Package pdftex.def Info: fig_calibration.pdf  used on input line 408.
+Package pdftex.def Info: fig_calibration.pdf  used on input line 421.
 (pdftex.def)             Requested size: 234.8775pt x 223.69061pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[17]
-<fig_poslog_profile.pdf, id=115, 462.52798pt x 231.26399pt>
-File: fig_poslog_profile.pdf Graphic file (type pdf)
-<use fig_poslog_profile.pdf>
-Package pdftex.def Info: fig_poslog_profile.pdf  used on input line 460.
-(pdftex.def)             Requested size: 352.31625pt x 176.16826pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [18 <./figs/fig_offtarget_roc_cal.png>]
-Overfull \hbox (71.46786pt too wide) in paragraph at lines 486--496
+<fig_poslog_profile.pdf, id=162, 462.52798pt x 231.26399pt>
+File: fig_poslog_profile.pdf Graphic file (type pdf)
+<use fig_poslog_profile.pdf>
+Package pdftex.def Info: fig_poslog_profile.pdf  used on input line 473.
+(pdftex.def)             Requested size: 352.31625pt x 176.16826pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19 <./fig_calibration.pdf>]
+Overfull \hbox (71.46786pt too wide) in paragraph at lines 499--509
 \OT1/ptm/m/n/12 guide and off-target (para-sail, \OT1/cmtt/m/n/12 dnafull\OT1/p
 tm/m/n/12 , match $\OT1/ztmcm/m/n/12 +2$\OT1/ptm/m/n/12 , gap open/extend $\OT1
 /ztmcm/m/n/12 2\OML/ztmcm/m/it/12 =\OT1/ztmcm/m/n/12 1$\OT1/ptm/m/n/12 ; \OT1/c
 mtt/m/n/12 results/parasail[]alignment.json\OT1/ptm/m/n/12 )
  []
 
-(./routing_table.tex) [19 <./fig_calibration.pdf>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<fig_pegrna_scaling.pdf, id=162, 303.534pt x 216.81pt>
+(./routing_table.tex) [20 <./fig_poslog_profile.pdf>]
+<fig_pegrna_scaling.pdf, id=261, 303.534pt x 216.81pt>
 File: fig_pegrna_scaling.pdf Graphic file (type pdf)
 <use fig_pegrna_scaling.pdf>
-Package pdftex.def Info: fig_pegrna_scaling.pdf  used on input line 526.
-(pdftex.def)             Requested size: 258.36668pt x 184.54741pt.
-[20 <./fig_poslog_profile.pdf> <./fig_pegrna_scaling.pdf>] [21]
-<figs/fig_ablation_bars.png, id=275, 397.485pt x 231.264pt>
-File: figs/fig_ablation_bars.png Graphic file (type png)
-<use figs/fig_ablation_bars.png>
-Package pdftex.def Info: figs/fig_ablation_bars.png  used on input line 596.
-(pdftex.def)             Requested size: 281.85587pt x 163.99391pt.
-<fig_pam_distribution.pdf, id=276, 303.534pt x 216.81pt>
-File: fig_pam_distribution.pdf Graphic file (type pdf)
-<use fig_pam_distribution.pdf>
-Package pdftex.def Info: fig_pam_distribution.pdf  used on input line 603.
+Package pdftex.def Info: fig_pegrna_scaling.pdf  used on input line 539.
 (pdftex.def)             Requested size: 258.36668pt x 184.54741pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[21] [22 <./fig_pegrna_scaling.pdf>]
+<figs/fig_ablation_bars.png, id=321, 397.485pt x 231.264pt>
+File: figs/fig_ablation_bars.png Graphic file (type png)
+<use figs/fig_ablation_bars.png>
+Package pdftex.def Info: figs/fig_ablation_bars.png  used on input line 609.
+(pdftex.def)             Requested size: 281.85587pt x 163.99391pt.
+<fig_pam_distribution.pdf, id=322, 303.534pt x 216.81pt>
+File: fig_pam_distribution.pdf Graphic file (type pdf)
+<use fig_pam_distribution.pdf>
+Package pdftex.def Info: fig_pam_distribution.pdf  used on input line 616.
+(pdftex.def)             Requested size: 258.36668pt x 184.54741pt.
 
-Overfull \hbox (0.78506pt too wide) in paragraph at lines 607--624
+Overfull \hbox (0.78506pt too wide) in paragraph at lines 620--637
 \OT1/ptm/b/n/12 find-ing \OT1/ptm/m/n/12 (Ta-ble 10[]): seq-only $\OT1/ztmcm/m/
 n/12 0\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 590[]0\OML/ztmcm/m/it/12 :\OT1/ztmc
 m/m/n/12 094$\OT1/ptm/m/n/12 , PAM $\OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1
@@ -495,25 +501,25 @@ m/m/n/12 094$\OT1/ptm/m/n/12 , PAM $\OT1/ztmcm/m/n/12 0\OML/ztmcm/m/it/12 :\OT1
 tmcm/m/it/12 :\OT1/ztmcm/m/n/12 092$\OT1/ptm/m/n/12 , PAM+epigen
  []
 
-[22 <./figs/fig_ablation_bars.png>]
-Overfull \hbox (140.95pt too wide) in paragraph at lines 640--656
+[23 <./figs/fig_ablation_bars.png> <./fig_pam_distribution.pdf>]
+Overfull \hbox (140.95pt too wide) in paragraph at lines 653--669
 \OT1/cmtt/m/n/12 wgEncodeBroadHistoneK562H3k27acStdSig\OT1/ptm/m/n/12 ), H3K9me
 3 (het-e-rochro-matin, \OT1/cmtt/m/n/12 wgEncodeBroadHistoneK562H3k9me3StdSig\O
 T1/ptm/m/n/12 )
  []
 
-[23 <./fig_pam_distribution.pdf>] (./ablation_perseed_table.tex)
-(./results_tables.tex
+(./ablation_perseed_table.tex) (./results_tables.tex
 Overfull \hbox (108.60515pt too wide) in paragraph at lines 6--13
  [][] 
  []
 
 )
-Overfull \hbox (5.00961pt too wide) in paragraph at lines 657--675
+Overfull \hbox (5.00961pt too wide) in paragraph at lines 670--688
 \OT1/ptm/m/n/12 cell line with enough neg-a-tives for a pow-ered test is the Ca
 meron SITE-Seq cor-pus (1,630 HEK293T
  []
 
+[24]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -538,22 +544,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figs/fig_porta_logo.png, id=327, 614.295pt x 260.172pt>
+<figs/fig_porta_logo.png, id=373, 614.295pt x 260.172pt>
 File: figs/fig_porta_logo.png Graphic file (type png)
 <use figs/fig_porta_logo.png>
-Package pdftex.def Info: figs/fig_porta_logo.png  used on input line 679.
+Package pdftex.def Info: figs/fig_porta_logo.png  used on input line 692.
 (pdftex.def)             Requested size: 399.29463pt x 169.11374pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24] [25]
+[25]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./bootstrap_tables.tex
+(./bootstrap_tables.tex [26]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -564,40 +567,40 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
-<figs/fig_residual_concordance.png, id=335, 346.896pt x 317.988pt>
+<figs/fig_residual_concordance.png, id=381, 346.896pt x 317.988pt>
 File: figs/fig_residual_concordance.png Graphic file (type png)
 <use figs/fig_residual_concordance.png>
 Package pdftex.def Info: figs/fig_residual_concordance.png  used on input line 
-764.
+777.
 (pdftex.def)             Requested size: 244.27461pt x 223.91954pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs/fig_porta_before_after.png, id=336, 664.884pt x 303.534pt>
+<figs/fig_porta_before_after.png, id=382, 664.884pt x 303.534pt>
 File: figs/fig_porta_before_after.png Graphic file (type png)
 <use figs/fig_porta_before_after.png>
-Package pdftex.def Info: figs/fig_porta_before_after.png  used on input line 77
-5.
+Package pdftex.def Info: figs/fig_porta_before_after.png  used on input line 78
+8.
 (pdftex.def)             Requested size: 446.26582pt x 203.72798pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs/fig_porta_score_dist.png, id=337, 346.896pt x 289.08pt>
+<figs/fig_porta_score_dist.png, id=383, 346.896pt x 289.08pt>
 File: figs/fig_porta_score_dist.png Graphic file (type png)
 <use figs/fig_porta_score_dist.png>
-Package pdftex.def Info: figs/fig_porta_score_dist.png  used on input line 785.
+Package pdftex.def Info: figs/fig_porta_score_dist.png  used on input line 798.
 
 (pdftex.def)             Requested size: 234.8775pt x 195.7337pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./discussion.tex [26] [27]) (./tools_and_data.tex [28]
+(./discussion.tex [27]) [28] (./tools_and_data.tex
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (262.38509pt too wide) in paragraph at lines 49--81
+Overfull \hbox (262.38509pt too wide) in paragraph at lines 50--82
  [][] 
  []
 
@@ -605,38 +608,38 @@ Overfull \hbox (262.38509pt too wide) in paragraph at lines 49--81
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
-Overfull \hbox (16.84058pt too wide) in paragraph at lines 84--795
+Overfull \hbox (16.84058pt too wide) in paragraph at lines 85--808
  \OT1/ptm/b/n/12 To-ward the 40-tool / 120-dataset bar.[] \OT1/ptm/m/n/12 Reach
 -able ad-di-tions with gen-uine use in this item: published-
  []
 
 
-Overfull \hbox (17.82321pt too wide) in paragraph at lines 84--795
+Overfull \hbox (17.82321pt too wide) in paragraph at lines 85--808
 \OT1/ptm/m/n/12 model ex-ter-nal val-i-da-tion (PRI-DICT2, CRISPRon, DeepHF BiL
 -STM weights as bench-mark columns),
  []
 
 
-Overfull \hbox (1.98587pt too wide) in paragraph at lines 84--795
+Overfull \hbox (1.98587pt too wide) in paragraph at lines 85--808
 \OT1/ptm/m/n/12 2019/2020 CRISPRon 15k, Xiang-2021, Chari-2015, GUIDE-seq/CIRCL
 E-seq/CHANGE-seq pri-
  []
 
-[29 <./figs/fig_porta_logo.png>]
-Overfull \hbox (14.37503pt too wide) in paragraph at lines 810--816
+[29]
+Overfull \hbox (14.37503pt too wide) in paragraph at lines 823--829
 \OT1/ptm/m/n/12 Each gap ships as a callable tool: \OT1/cmtt/m/n/12 crisprgap.c
 rossdata \OT1/ptm/m/n/12 (gap 1 har-ness), \OT1/cmtt/m/n/12 crisprgap.calibrati
 on
  []
 
 
-Overfull \hbox (9.04047pt too wide) in paragraph at lines 810--816
+Overfull \hbox (9.04047pt too wide) in paragraph at lines 823--829
 \OT1/ptm/m/n/12 + \OT1/cmtt/m/n/12 crisprgap.models.transfer[]cnn \OT1/ptm/m/n/
 12 (gap 3 pre-dic-tor), \OT1/cmtt/m/n/12 crisprgap.models.offtarget[]v2 \OT1/pt
 m/m/n/12 (gaps
  []
 
-[30] (./repro_appendix.tex
+[30 <./figs/fig_porta_logo.png>] (./repro_appendix.tex [31]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
 5.
 
@@ -660,7 +663,7 @@ m/n/12 data/deepHF/\OMS/cmtt/m/n/12 f\OT1/cmtt/m/n/12 wt,esp,hf\OMS/cmtt/m/n/12
  g[]\OT1/cmtt/m/n/12 seq[]data[]array.pkl\OT1/ptm/m/n/12 );
  []
 
-
+[32 <./figs/fig_residual_concordance.png>]
 Overfull \hbox (43.1291pt too wide) in paragraph at lines 27--29
 []\OT1/ptm/b/n/12 PRIDICT2\OT1/ptm/m/n/12 : \OT1/cmtt/m/n/12 data[]23k[]v1.csv 
 \OT1/ptm/m/n/12 from \OT1/cmtt/m/n/12 github.com/uzh-dqbm-cmi/PRIDICT2\OT1/ptm/
@@ -674,7 +677,7 @@ Overfull \hbox (20.71205pt too wide) in paragraph at lines 29--32
 ]Scoring/\OT1/ptm/m/n/12 )
  []
 
-[31]
+
 Overfull \hbox (5.72021pt too wide) in paragraph at lines 51--51
 []\OT1/cmtt/m/n/12 python scripts/make_paper_assets.py        # tables and figu
 res from results/[] 
@@ -698,9 +701,8 @@ Overfull \hbox (11.89522pt too wide) in paragraph at lines 51--51
 d/primer3 features[] 
  []
 
-[32 <./figs/fig_residual_concordance.png>]) (./references.tex [33 <./figs/fig_p
-orta_before_after.png>] [34 <./figs/fig_porta_score_dist.png>] [35]) [36]
-(./crispr_gap_tools_1_5.aux)
+[33 <./figs/fig_porta_before_after.png>]) (./references.tex [34 <./figs/fig_por
+ta_score_dist.png>] [35] [36]) [37] (./crispr_gap_tools_1_5.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -709,13 +711,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3641 strings out of 480247
- 55326 string characters out of 5896151
- 360667 words of memory out of 5000000
- 21462 multiletter control sequences out of 15000+600000
+ 3649 strings out of 480247
+ 55586 string characters out of 5896151
+ 361640 words of memory out of 5000000
+ 21469 multiletter control sequences out of 15000+600000
  521004 words of font info for 139 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,10n,62p,559b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,10n,62p,571b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -729,10 +731,10 @@ share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on crispr_gap_tools_1_5.pdf (36 pages, 982216 bytes).
+Output written on crispr_gap_tools_1_5.pdf (37 pages, 994182 bytes).
 PDF statistics:
- 434 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
+ 483 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

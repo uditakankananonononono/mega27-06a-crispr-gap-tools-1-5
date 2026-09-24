@@ -367,6 +367,19 @@ communities -- pooling across 1,000 lines does not recover what single
 assays share, consistent with each assay family's label being dominated
 by family-specific systematic components.
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\textwidth]{fig_transfer_dendrogram.pdf}
+\caption{Average-linkage hierarchy (scipy) on the symmetrized
+positive-part transfer similarity across the 12 gap-1 datasets. The
+Wang/Xu-side family (HCT116, HeLa, HL60, CRISPRon) clusters tightly;
+DepMap and CRISPRscan attach weakly to it; the HEK family
+(fcres/v1/DeepSpCas9/sgDesigner/DeepHF) forms the other subtree, with
+the anomalous DeepCRISPR HEK293T set joining last. Independent
+confirmation of the Louvain partition.}
+\label{fig:dendrogram}
+\end{figure}
+
 \subsection{Data-integrity audit: the DeepHF encoding bug}
 \label{sec:encoding-audit}
 A mid-project audit of the DeepHF pkl arrays caught a decoding error:
