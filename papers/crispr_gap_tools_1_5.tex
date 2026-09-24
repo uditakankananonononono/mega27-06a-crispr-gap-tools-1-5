@@ -1598,6 +1598,24 @@ contact-disrupting variants), not predictive ranking of which
 off-targets are dangerous; that ranking still needs measurement. We
 flag this as an honest negative for gap-2 with the caveat that the
 joined measured subset is small (33--39 regions).
+A mutational-scar map of double-strand-break repair (MUSIC; Nat
+Commun 2026, 10.1038/s41467-026-72744-7, MOESM4/6/7; 121 mouse genes
+(186{,}831 outcome rows), 28-gene mouse and 29-gene human RPE1
+panels) shows repair spectra are locus-deterministic but
+context-locked (\texttt{results/music\_repair\_spectra.json}).
+The dominant outcome class carries a mean 45\% of reads per locus in
+the 121-gene mouse panel and 65\% in both 28/29-gene panels; in the
+121-gene panel 115 loci are dominated by $>$3\,bp deletions. Class
+composition is strongly context-dependent: human RPE1 is
+insertion-dominated (mean 65\% INS) while the 121-gene mouse panel is
+deletion-dominated (44\% DEL$>$3bp) and the 28-gene mouse panel has
+no $>$3\,bp deletions at all. Across the 24 shared genes, per-class
+spectra transfer only partially (INS $\rho=0.45$, OTHER
+$\rho=0.59$, DEL\_1-3 $\rho=-0.15$; DEL$>$3bp undefined --- a
+constant zero vector in the mouse panel, which we report as undefined
+rather than imputing). Consequence for gap-2/5: a repair-outcome
+predictor trained in one cellular context carries only its
+insertion/deletion bias, not its per-locus spectrum, into another.
 
 
 

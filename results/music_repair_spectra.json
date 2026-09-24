@@ -1,0 +1,75 @@
+{
+ "n_genes": {
+  "mouse_121": 121,
+  "mouse_28": 28,
+  "human_29": 29
+ },
+ "mean_dominant_class_share": {
+  "mouse_121": 0.4505118579429548,
+  "mouse_28": 0.6450408442251511,
+  "human_29": 0.6523732719983938
+ },
+ "class_means": {
+  "mouse_121": {
+   "DEL_1-3": 0.29537609205233506,
+   "DEL_4+": 0.4425910051192731,
+   "INS": 0.15894281264059432,
+   "WT": 0.0,
+   "OTHER": 0.1030900901877976
+  },
+  "mouse_28": {
+   "DEL_1-3": 0.6447751021801835,
+   "DEL_4+": 0.0,
+   "INS": 0.16981570861100953,
+   "WT": 0.0,
+   "OTHER": 0.18540918920880659
+  },
+  "human_29": {
+   "DEL_1-3": 0.1284828529622492,
+   "DEL_4+": 0.17014015096113008,
+   "INS": 0.6512143285682872,
+   "WT": 0.0,
+   "OTHER": 0.05016266750833354
+  }
+ },
+ "shared_genes_mouse28_human29": [
+  "APTX",
+  "DBR1",
+  "DCLRE1C",
+  "FANCD2",
+  "FEN1",
+  "HELB",
+  "HELQ",
+  "HLTF",
+  "HUS1",
+  "KHDRBS1",
+  "METTL14",
+  "METTL3",
+  "POLL",
+  "POLM",
+  "RAD1",
+  "RAD51C",
+  "RAD51D",
+  "RAD9A",
+  "RNASEH2B",
+  "SGMMNONTARGETING",
+  "SGMMPOLQ",
+  "TOP2A",
+  "WRN",
+  "WTAP",
+  "XRCC4",
+  "ZC3H13"
+ ],
+ "cross_context_class_spearman": {
+  "DEL_1-3": -0.15213675213675212,
+  "DEL_4+": null,
+  "INS": 0.45094017094017086,
+  "WT": null,
+  "OTHER": 0.5938461538461539
+ },
+ "top_class_counts_mouse121": {
+  "DEL_4+": 115,
+  "DEL_1-3": 3,
+  "INS": 3
+ }
+}
