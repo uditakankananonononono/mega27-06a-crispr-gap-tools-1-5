@@ -1160,6 +1160,14 @@ NGA-PAM targets at 36\%; at canonical NGG the variants retain or exceed
 WT activity (en1 60\% vs FnCas9 32\%). Even SpCas9-HF1/eSpCas9 show
 30--36\% AGG activity at one FANCF1 locus (n=3, locus-specific), so
 ``NGG-specific'' is itself a graded, locus-dependent claim.
+Guide-sequence optimization against WGS-measured off-targets (Nat
+Commun 2023, 10.1038/s41467-023-42695-4, MOESM9;
+\texttt{results/rnadna\_wgs.json}) shows both sides of the trade: at
+PCSK9 the optimized guide keeps 96\% of on-target editing while cutting
+total off-target burden 2.7x (122$\to$46 summed fixed indel frequency;
+sites $>$5\%: 550$\to$192), but at BCL11A the same procedure keeps only
+34\% of on-target activity for a 1.45x burden reduction -- guide
+optimization is a locus-dependent trade, not a free lunch.
 \paragraph{Mismatch tolerance by variant.} The same supplement's
 mismatch sheets (3{,}120 guide--target pairs, Day 4 and Day 7;
 \texttt{results/gap4\_mismatch\_tolerance.json}) quantify

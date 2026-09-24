@@ -1,0 +1,34 @@
+{
+ "PCSK9": {
+  "wt": {
+   "n_sites": 1876,
+   "on_target_fixed": 0.3645,
+   "off_gt5pct": 550,
+   "off_burden": 122.035
+  },
+  "opti": {
+   "n_sites": 704,
+   "on_target_fixed": 0.3506,
+   "off_gt5pct": 192,
+   "off_burden": 45.641
+  },
+  "on_target_change": 0.962,
+  "burden_reduction": 2.67
+ },
+ "BCL11A": {
+  "wt": {
+   "n_sites": 1333,
+   "on_target_fixed": 0.4324,
+   "off_gt5pct": 250,
+   "off_burden": 60.984
+  },
+  "opti": {
+   "n_sites": 805,
+   "on_target_fixed": 0.1489,
+   "off_gt5pct": 174,
+   "off_burden": 41.948
+  },
+  "on_target_change": 0.344,
+  "burden_reduction": 1.45
+ }
+}
