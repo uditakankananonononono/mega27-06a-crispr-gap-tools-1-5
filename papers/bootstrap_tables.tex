@@ -1,0 +1,41 @@
+\subsection{Statistical support: bootstrap intervals}
+\label{sec:bootstrap}
+All headline comparisons carry 400-replicate nonparametric bootstrap
+intervals over the held-out units (guides or pairs), with paired
+differences computed within the same resample
+(Eq.~\eqref{eq:boot}).
+
+\begin{table}[h]
+\centering
+\caption{Gap 2: guide-grouped AUROC, bootstrap 95\% intervals (400 reps).
+The GNN wins 400/400 paired resamples.}
+\label{tab:boot-offtarget}
+\begin{tabular}{lcc}
+\hline
+Model & AUROC & 95\% CI \\
+\hline
+GNN (this work) & 0.571 & [0.542, 0.601] \\
+MIT / Hsu 2013 & 0.452 & [0.431, 0.477] \\
+paired difference & +0.119 & [0.071, 0.164] \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{PORTA on SpCas9-HF1: bootstrap 95\% intervals (400 reps over
+guides).}
+\label{tab:boot-porta}
+\begin{tabular}{lcc}
+\hline
+Ranking & Spearman $\rho$ & 95\% CI \\
+\hline
+Raw Doench transfer & 0.015 & [0.007, 0.023] \\
+PORTA-corrected & 0.523 & [0.516, 0.528] \\
+paired difference & +0.508 & [0.499, 0.518] \\
+\hline
+\end{tabular}
+\end{table}
+
+Both intervals exclude the null by a wide margin: the gap-2 win and the
+PORTA rescue are not split artifacts.
