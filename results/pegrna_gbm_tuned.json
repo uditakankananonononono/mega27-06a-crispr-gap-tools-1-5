@@ -1,0 +1,37 @@
+{
+  "tool": "optuna 5.0.0 (TPE) + lightgbm 4.7.0",
+  "n_trials": 30,
+  "tuned_on": "seed-0 train/val only (HEK)",
+  "best_params": {
+    "n_estimators": 704,
+    "learning_rate": 0.030024509813476728,
+    "num_leaves": 13,
+    "subsample": 0.7034525099678022,
+    "min_child_samples": 33
+  },
+  "best_val_spearman": 0.7917245357240094,
+  "targets": {
+    "HEK": {
+      "tuned_gbm_by_split": [
+        0.800899969575035,
+        0.8028709089497805,
+        0.7896010517638846
+      ],
+      "tuned_gbm_mean": 0.7977906434295666
+    },
+    "K562": {
+      "tuned_gbm_by_split": [
+        0.6217122381599428,
+        0.6125766737000525,
+        0.6141292834096952
+      ],
+      "tuned_gbm_mean": 0.6161393984232302
+    }
+  },
+  "reference": {
+    "untuned_gbm_HEK": 0.795,
+    "cnn_HEK": 0.794,
+    "untuned_gbm_K562": 0.61,
+    "cnn_K562": 0.61
+  }
+}

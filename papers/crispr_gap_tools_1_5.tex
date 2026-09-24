@@ -358,7 +358,13 @@ channel therefore adds nothing beyond what the engineered edit-geometry
 features already encode; SHAP attribution ranks Correction\_Replacement,
 Correction\_Length and the RT/PBS melting-temperature features highest,
 consistent with the mechanistic reading that edit geometry, not
-protospacer motif, drives pegRNA efficiency. We preserve all negatives as
+protospacer motif, drives pegRNA efficiency. Tuning the GBM (30 Optuna
+TPE trials on the seed-0 train/val split only) pushes it \emph{past} the
+CNN: HEK $0.798$ vs $0.794$, K562 $0.616$ vs $0.610$ (three grouped
+splits, frozen config). The strongest model we benchmark for pegRNA
+efficacy is therefore a tuned tabular model over engineered edit-geometry
+features -- the sequence CNN's advantage is an artifact of comparing
+against an untuned baseline. We preserve all negatives as
 the gap-3 result.
 \subsection{Gaps 4-5: PAM and chromatin ablation}
 
