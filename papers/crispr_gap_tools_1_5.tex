@@ -200,7 +200,19 @@ thermodynamic energies, cell line and study provenance; St\"ortz \&
 Minary 2021). An edlib full-alignment audit finds 8{,}949 of the 25{,}632
 pairs (34.9\%) carry at least one insertion or deletion
 (\texttt{results/gap2\_edlib\_baseline.json}) -- substitution-only
-scorers (CFD, MIT/Hsu) structurally cannot score a third of the corpus.
+scorers (CFD, MIT/Hsu) structurally cannot score a third of the corpus. The 25{,}632 pairs measure only 87 unique guides,
+13 of them (14.9\%) by two or more studies
+(Fig.~\ref{fig:guide_upset}) -- the guide-level dependence this creates
+is why all gap-2 evaluations use guide-clustered splits and SEs.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.62\textwidth]{fig_guide_upset.pdf}
+\caption{UpSet plot of guide-sharing across crisprSQL studies. Most
+guides are measured by exactly one study; a core set (e.g.\ the VEGFA
+sites) recurs across up to six studies, coupling their measurements.}
+\label{fig:guide_upset}
+\end{figure}
 Bare edit distance itself is a weak scorer (grouped-split AUROC $0.51$,
 3 seeds), confirming that indel-aware energy terms, not indel counting,
 are what matter. \textbf{PRIDICT2 23k} (22,956 pegRNAs with 99-mer wide
