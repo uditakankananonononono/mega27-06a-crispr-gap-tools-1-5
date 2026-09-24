@@ -1385,6 +1385,16 @@ rank-informative (median per-cluster accuracy rises monotonically from
 miscalibrated in absolute terms: mean accuracy in the 0.9--1.0
 confidence bin is only 0.77 ($n=1{,}419$ cluster--PAM pairs), a 0.23
 overconfidence gap that any deployed PAM-expansion tool must correct.
+High-throughput prime editing of histone H3 lysines (Nat Genet 2026,
+10.1038/s41588-026-02675-y, MOESM4--6; 65 pegRNAs across six lysine
+edits) separates site-level from pegRNA-level difficulty
+(\texttt{results/h3\_lysine\_pe.json}): site medians span 2.8$\times$
+(K18R 30.4\% vs K14K 86.4\%) while within-site pegRNA spread is modest
+(max/min 1.2--4.8$\times$), and editing efficiency is
+\emph{negatively} correlated with indels across pegRNAs (Spearman
+$-0.35$) --- efficient pegRNAs are cleaner, not dirtier, so pegRNA
+selection buys efficiency and purity together.
+
 
 
 

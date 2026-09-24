@@ -1,0 +1,56 @@
+{
+ "n_sites": 6,
+ "n_pegrnas_total": 65,
+ "per_site": {
+  "K23R": {
+   "n_pegrnas": 11,
+   "edit_median": 80.20338,
+   "edit_max": 99.81403,
+   "edit_min": 70.7239,
+   "spread_max_over_min": 1.4113196529037568,
+   "indel_median": 0.211602
+  },
+  "K14R": {
+   "n_pegrnas": 10,
+   "edit_median": 44.0674,
+   "edit_max": 66.1434,
+   "edit_min": 38.1044,
+   "spread_max_over_min": 1.7358467788496867,
+   "indel_median": 0.4718322445
+  },
+  "K18R": {
+   "n_pegrnas": 13,
+   "edit_median": 30.42373,
+   "edit_max": 46.1606,
+   "edit_min": 9.5226,
+   "spread_max_over_min": 4.847478629785983,
+   "indel_median": 1.836158
+  },
+  "K14K": {
+   "n_pegrnas": 10,
+   "edit_median": 86.35052999999999,
+   "edit_max": 98.92,
+   "edit_min": 60.33,
+   "spread_max_over_min": 1.639648599370131,
+   "indel_median": 0.203407
+  },
+  "K18K": {
+   "n_pegrnas": 9,
+   "edit_median": 79.4132,
+   "edit_max": 88.781,
+   "edit_min": 74.4496,
+   "spread_max_over_min": 1.1924980120779696,
+   "indel_median": 0.991624985
+  },
+  "R23K": {
+   "n_pegrnas": 12,
+   "edit_median": 63.924324999999996,
+   "edit_max": 83.33025,
+   "edit_min": 51.21625,
+   "spread_max_over_min": 1.6270275547311646,
+   "indel_median": 0.0
+  }
+ },
+ "edit_vs_indel_spearman_all_pegrnas": -0.3469926083187829,
+ "best_vs_worst_site_median_ratio": 2.8382624352766737
+}
