@@ -1,0 +1,60 @@
+{
+ "sheet_counts": {
+  "NGG-ABE8e-Targetable": 16966,
+  "NGG-ABE8e-Precise": 5413,
+  "NGG-ABE8e-ByStander": 12751,
+  "NGG-ABE8e-Pathogenic": 425,
+  "NGG-ABE9-Precise": 1841,
+  "NGG-ABE9-Pathogenic": 70,
+  "NGG-PNLM-pcABE-Precise": 3282,
+  "NGG-PNLM-pcABE-Pathogenic": 80,
+  "NG-ABE8e-Targetable": 37516,
+  "NG-ABE8e-Precise": 14472,
+  "NG-ABE8e-ByStander": 30786,
+  "NG-ABE8e-Pathogenic": 1177,
+  "NG-ABE9-Precise": 6033,
+  "NG-ABE9-Pathogenic": 258,
+  "NG-PNLM-pcABE-Precise": 10354,
+  "NG-PNLM-pcABE-Pathogenic": 251
+ },
+ "per_editor_pam": {
+  "NGG-ABE8e": {
+   "precise": 5413,
+   "pathogenic_bystander": 425,
+   "targetable": 16966,
+   "precision_fraction": 0.319,
+   "bystander": 12751,
+   "pathogenic_bystander_per_precise": 0.0785
+  },
+  "NGG-ABE9": {
+   "precise": 1841,
+   "pathogenic_bystander": 70,
+   "pathogenic_bystander_per_precise": 0.038
+  },
+  "NGG-PNLM-pcABE": {
+   "precise": 3282,
+   "pathogenic_bystander": 80,
+   "pathogenic_bystander_per_precise": 0.0244
+  },
+  "NG-ABE8e": {
+   "precise": 14472,
+   "pathogenic_bystander": 1177,
+   "targetable": 37516,
+   "precision_fraction": 0.3858,
+   "bystander": 30786,
+   "pathogenic_bystander_per_precise": 0.0813
+  },
+  "NG-ABE9": {
+   "precise": 6033,
+   "pathogenic_bystander": 258,
+   "pathogenic_bystander_per_precise": 0.0428
+  },
+  "NG-PNLM-pcABE": {
+   "precise": 10354,
+   "pathogenic_bystander": 251,
+   "pathogenic_bystander_per_precise": 0.0242
+  }
+ },
+ "abe8e_precise_ng_vs_ngg_expansion": 2.674,
+ "note": "Only ABE8e sheets include Targetable/Bystander denominators; ABE9 and PNLM-pcABE contribute Precise + pathogenic-bystander counts."
+}

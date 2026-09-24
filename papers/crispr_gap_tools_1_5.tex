@@ -1457,6 +1457,17 @@ edits nearly flat (1.13$\times$). The same nicking on PEMax raises
 intended edits 28$\times$ but unintended edits 15$\times$, halving
 precision --- nicking is precision-positive only for the
 chimeric-oligonucleotide mechanism.
+A protein--nucleic-acid language-model-designed precise compact ABE
+(Nat Commun 2025, 10.1038/s41467-025-65311-z, MOESM6) prices precision
+against targetable space on ClinVar pathogenic G$>$A variants
+(\texttt{results/pnlm\_pcabe\_space.json}): for ABE8e, 31.9\%
+(NGG) to 38.6\% (NG) of targetable variants are precisely editable, and
+relaxing NGG$\to$NG expands the precise space 2.7$\times$
+(5,413$\to$14,472). Per precise edit, the LM-designed PNLM-pcABE
+carries a 2.4\% pathogenic-bystander rate versus 7.9--8.1\% for ABE8e
+and 3.8--4.3\% for ABE9 --- a 3$\times$ safety gain per edit, bought
+with a smaller absolute precise space (3,282 NGG / 10,354 NG).
+
 
 
 
