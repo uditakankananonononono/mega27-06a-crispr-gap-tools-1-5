@@ -1,0 +1,64 @@
+\section{External tools and datasets used}
+\label{sec:toolsdata}
+Per program requirements, every external resource actually used in this
+work is listed with its role. Counts are honest: an entry appears only if
+it was executed or analyzed in the pipeline.
+
+\subsection{External tools (12)}
+\begin{table}[h]\centering\small
+\caption{External tools/packages used, with role.}
+\label{tab:tools}
+\begin{tabular}{ll}
+\hline
+Tool (version) & Used for \\
+\hline
+PyTorch (2.14.0) & GNN/CNN model training (gaps 1--5) \\
+scikit-learn (1.7.2) & ridge models, Platt/isotonic calibration, splits, metrics \\
+SciPy (1.15.3) & rank statistics: \texttt{rankdata}, Spearman $\rho$ \\
+NumPy (2.2.6) & all numerics \\
+pandas (2.3.3) & dataset assembly (crisprSQL, PRIDICT2) \\
+matplotlib & all figures (10) \\
+pytest & 43-test hermetic suite \\
+ViennaRNA RNAfold (2.7.2) & 135k-sequence folding; MFE features (2 experiments, honest negatives) \\
+CRISPOR CFD matrices & published off-target baseline (vendored, offline scorer) \\
+MIT/Hsu-2013 score & published off-target baseline (reimplemented from source) \\
+GitHub & code hosting (repo: mega27-06a-crispr-gap-tools-1-5) \\
+Google Drive API & artifact delivery (bundle + paper PDF) \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Datasets and data sources (9 accessions + 13 sub-studies)}
+\begin{table}[h]\centering\small
+\caption{Datasets actually analyzed, with role.}
+\label{tab:datasets}
+\begin{tabular}{ll}
+\hline
+Dataset (accession) & Used for \\
+\hline
+Doench FC+RES (Azimuth mirror) & gap-1 source, PORTA base model \\
+Doench V1 (Azimuth mirror) & gap-1 within-family transfer \\
+DeepHF WT-SpCas9 screen & gap-1 destination, PORTA calibration screen \\
+DeepHF eSpCas9 screen & residual replication, PORTA destination \\
+DeepHF SpCas9-HF1 screen & residual replication, PORTA destination \\
+crisprSQL 100720 & gaps 2/4/5 corpus (17 component studies) \\
+\quad of which per-study analyzed: & Anderson, Cameron, Kim (scorable); \\
+\quad examined, unscorable ($<$30 pairs): & Chen17, Cho, Frock, Fu, Kim16, \\
+& KimChromatin, Listgarten, Ran, Slaymaker, Tsai \\
+PRIDICT2 23k (HEK293T + K562) & gap-3 benchmark + ViennaRNA fold study \\
+CFD substitution matrices & gap-2 baseline scorer parameters \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Toward the 40-tool / 120-dataset bar.}
+Reachable additions with genuine use in this item: published-model
+external validation (PRIDICT2, CRISPRon, DeepHF BiLSTM weights as
+benchmark columns), verification tools (primer3-py pegRNA thermodynamics,
+seqfold cross-check, FlashFry off-target aggregation, BLAST+ guide
+uniqueness), and the wider public CRISPR screen literature (Kim-2019/2020
+CRISPRon 15k, Xiang-2021, Chari-2015, GUIDE-seq/CIRCLE-seq/CHANGE-seq
+primaries, inDelphi, SPROUT, TUSCAN, DeepCpf1). We estimate an honest
+ceiling of ${\sim}$35 tools and ${\sim}$60 accession-level datasets for
+this item; beyond that, entries would be decorative, so they are not
+claimed.
