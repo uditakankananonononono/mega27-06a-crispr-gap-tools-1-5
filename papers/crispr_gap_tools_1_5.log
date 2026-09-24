@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  25 SEP 2026 00:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.8.14)  25 SEP 2026 00:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -642,7 +642,7 @@ Overfull \hbox (75.7228pt too wide) in paragraph at lines 11--49
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (262.38509pt too wide) in paragraph at lines 55--88
+Overfull \hbox (262.38509pt too wide) in paragraph at lines 55--90
  [][] 
  []
 
@@ -651,25 +651,25 @@ Overfull \hbox (262.38509pt too wide) in paragraph at lines 55--88
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (16.84058pt too wide) in paragraph at lines 91--101
+Overfull \hbox (16.84058pt too wide) in paragraph at lines 93--103
  \OT1/ptm/b/n/12 To-ward the 40-tool / 120-dataset bar.[] \OT1/ptm/m/n/12 Reach
 -able ad-di-tions with gen-uine use in this item: published-
  []
 
 
-Overfull \hbox (17.82321pt too wide) in paragraph at lines 91--101
+Overfull \hbox (17.82321pt too wide) in paragraph at lines 93--103
 \OT1/ptm/m/n/12 model ex-ter-nal val-i-da-tion (PRI-DICT2, CRISPRon, DeepHF BiL
 -STM weights as bench-mark columns),
  []
 
 
-Overfull \hbox (1.98587pt too wide) in paragraph at lines 91--101
+Overfull \hbox (1.98587pt too wide) in paragraph at lines 93--103
 \OT1/ptm/m/n/12 2019/2020 CRISPRon 15k, Xiang-2021, Chari-2015, GUIDE-seq/CIRCL
 E-seq/CHANGE-seq pri-
  []
 
 )
-Overfull \hbox (23.22455pt too wide) in paragraph at lines 103--873
+Overfull \hbox (23.22455pt too wide) in paragraph at lines 105--873
  \OT1/ptm/b/n/12 Ex-am-ined and not in-te-grated (with rea-sons).[] \OT1/ptm/m/
 n/12 Chari 2015 (nmeth.3473): Na-ture ESM MOESM297--
  []
@@ -762,7 +762,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3657 strings out of 480247
  55805 string characters out of 5896151
- 363273 words of memory out of 5000000
+ 363462 words of memory out of 5000000
  21476 multiletter control sequences out of 15000+600000
  521004 words of font info for 139 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -780,7 +780,7 @@ share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on crispr_gap_tools_1_5.pdf (39 pages, 1130119 bytes).
+Output written on crispr_gap_tools_1_5.pdf (39 pages, 1130198 bytes).
 PDF statistics:
  543 PDF objects out of 1000 (max. 8388607)
  173 compressed objects within 2 object streams

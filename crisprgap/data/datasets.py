@@ -306,3 +306,34 @@ def load_depmap_efficacy() -> EfficacyDataset:
     return EfficacyDataset(sequences=seqs,
                            scores=np.clip(np.asarray(scores, dtype=np.float32), 0, 1),
                            source="depmap_23q4")
+
+
+def load_horlbeck(modality: str = "i") -> EfficacyDataset:
+    """Horlbeck et al. 2016 (eLife 19760) empirical sgRNA activity scores from
+    the CRISPRi/a v2 training screens (K562), via mhorlbeck/CRISPRiaDesign
+    data_files. Modality 'i' (CRISPRi, ~40k guides) or 'a' (CRISPRa, ~5k).
+    Scores are growth-phenotype-derived activities, min-max scaled to [0,1].
+    Gap-1 families 13-14: repression/activation screens, not nuclease cutting.
+    """
+    import csv
+    base = os.path.join(DATA_DIR, "horlbeck")
+    tag = "CRISPRi" if modality == "i" else "CRISPRa"
+    seqs = {}
+    with open(os.path.join(base, f"{tag}_trainingdata_libraryTable.txt")) as fh:
+        for row in csv.DictReader(fh, delimiter="\t"):
+            s = row["sequence"].upper()
+            if 18 <= len(s) <= 25 and set(s) <= set("ACGT"):
+                seqs[row["sgId"]] = s
+    ids, scores = [], []
+    with open(os.path.join(base, f"{tag}_trainingdata_activityScores.txt")) as fh:
+        for line in fh:
+            gid, v = line.rstrip("\n").split("\t")
+            if gid in seqs:
+                ids.append(gid)
+                scores.append(float(v))
+    lo, hi = min(scores), max(scores)
+    rng = max(hi - lo, 1e-9)
+    return EfficacyDataset(sequences=[seqs[i] for i in ids],
+                           scores=np.array([(v - lo) / rng for v in scores],
+                                           dtype=np.float32),
+                           source=f"horlbeck_{tag}")

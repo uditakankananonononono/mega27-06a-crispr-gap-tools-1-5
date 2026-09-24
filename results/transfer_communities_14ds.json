@@ -1,0 +1,89 @@
+{
+  "names": [
+    "crispron",
+    "crisprscan",
+    "dc_hct116",
+    "dc_hek293t",
+    "dc_hela",
+    "dc_hl60",
+    "deephf_wt",
+    "deepspcas9",
+    "depmap",
+    "fcres",
+    "horlbeck_a",
+    "horlbeck_i",
+    "sgdesigner",
+    "v1"
+  ],
+  "seeds": {
+    "0": {
+      "communities": [
+        [
+          "crispron",
+          "crisprscan",
+          "dc_hct116",
+          "dc_hela",
+          "dc_hl60",
+          "depmap",
+          "horlbeck_a",
+          "horlbeck_i"
+        ],
+        [
+          "dc_hek293t",
+          "deephf_wt",
+          "deepspcas9",
+          "fcres",
+          "sgdesigner",
+          "v1"
+        ]
+      ],
+      "modularity": 0.2763
+    },
+    "1": {
+      "communities": [
+        [
+          "crispron",
+          "crisprscan",
+          "dc_hct116",
+          "dc_hela",
+          "dc_hl60",
+          "depmap",
+          "horlbeck_a",
+          "horlbeck_i"
+        ],
+        [
+          "dc_hek293t",
+          "deephf_wt",
+          "deepspcas9",
+          "fcres",
+          "sgdesigner",
+          "v1"
+        ]
+      ],
+      "modularity": 0.2763
+    },
+    "2": {
+      "communities": [
+        [
+          "crispron",
+          "crisprscan",
+          "dc_hct116",
+          "dc_hela",
+          "dc_hl60",
+          "depmap",
+          "horlbeck_a",
+          "horlbeck_i"
+        ],
+        [
+          "dc_hek293t",
+          "deephf_wt",
+          "deepspcas9",
+          "fcres",
+          "sgdesigner",
+          "v1"
+        ]
+      ],
+      "modularity": 0.2763
+    }
+  }
+}

@@ -84,3 +84,14 @@ def test_pridict_v1_library():
     assert len(df) == 92423
     assert df["averageedited"].between(0, 100).all()
     assert {"PBSlength", "RTlength", "wide_initial_target"} <= set(df.columns)
+
+
+@pytest.mark.skipif(not _have("horlbeck/CRISPRi_trainingdata_libraryTable.txt"), reason="data not fetched")
+def test_horlbeck_loads():
+    from crisprgap.data.datasets import load_horlbeck
+    di = load_horlbeck("i")
+    da = load_horlbeck("a")
+    assert len(di.sequences) == 18380 and len(da.sequences) == 2792
+    for ds in (di, da):
+        assert ds.scores.min() >= 0 and ds.scores.max() <= 1
+        assert all(set(s) <= set("ACGT") for s in ds.sequences[:2000])
