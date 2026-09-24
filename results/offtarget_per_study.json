@@ -1,0 +1,73 @@
+{
+  "seed": 0,
+  "per_study": [
+    {
+      "study": "Anderson",
+      "n_test": 72,
+      "auroc_gnn": 0.764,
+      "auroc_mit": 0.55
+    },
+    {
+      "study": "Cameron",
+      "n_test": 301,
+      "auroc_gnn": 0.525,
+      "auroc_mit": 0.541
+    },
+    {
+      "study": "Chen17",
+      "n_test": 36,
+      "note": "single-class or <30"
+    },
+    {
+      "study": "Cho",
+      "n_test": 10,
+      "note": "single-class or <30"
+    },
+    {
+      "study": "Frock",
+      "n_test": 6,
+      "note": "single-class or <30"
+    },
+    {
+      "study": "Fu",
+      "n_test": 3,
+      "note": "single-class or <30"
+    },
+    {
+      "study": "Kim",
+      "n_test": 47,
+      "auroc_gnn": 0.487,
+      "auroc_mit": 0.692
+    },
+    {
+      "study": "Kim16",
+      "n_test": 13,
+      "note": "single-class or <30"
+    },
+    {
+      "study": "KimChromatin",
+      "n_test": 11,
+      "note": "single-class or <30"
+    },
+    {
+      "study": "Listgarten",
+      "n_test": 9,
+      "note": "single-class or <30"
+    },
+    {
+      "study": "Ran",
+      "n_test": 14,
+      "note": "single-class or <30"
+    },
+    {
+      "study": "Slaymaker",
+      "n_test": 2,
+      "note": "single-class or <30"
+    },
+    {
+      "study": "Tsai",
+      "n_test": 2,
+      "note": "single-class or <30"
+    }
+  ]
+}

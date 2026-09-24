@@ -25,6 +25,7 @@ torch.set_num_threads(2)
 
 def train_offtarget(out_dir: str = "results", max_pairs: int = 8000, epochs: int = 8, seed: int = 0) -> dict:
     rng = np.random.default_rng(seed)
+    torch.manual_seed(seed)  # deterministic model init: reproducible artifacts
     ds = load_crisprsql()
     pos_idx = np.where(ds.labels == 1)[0]
     neg_idx = np.where(ds.labels == 0)[0]
