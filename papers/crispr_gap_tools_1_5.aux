@@ -65,13 +65,13 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Datasets}{12}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Models and protocols}{12}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Reproduction}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Experimental protocols}{12}{}\protected@file@percent }
-\newlabel{sec:protocols}{{10}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Experimental protocols}{13}{}\protected@file@percent }
+\newlabel{sec:protocols}{{10}{13}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Gap 1: cross-dataset harness}{13}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Gap 2: off-target GNN and calibration}{13}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Gap 3: Cas9-to-pegRNA transfer}{13}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.4}Gaps 4 and 5: PAM and chromatin channels}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}PORTA: portability model and correction}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}PORTA: portability model and correction}{14}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {11}Results}{14}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Gap 1: collapse across divergent assays, transfer within families}{14}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Gap 1 transfer matrix (ridge, seed 0): within-family transfer is moderate ($0.43$--$0.50$) but every cross-family entry collapses to $\le 0.13$, against within-screen $0.73$. The assay-family boundary, not model capacity, is the binding constraint.}}{14}{}\protected@file@percent }
@@ -81,31 +81,31 @@
 \@writefile{toc}{\contentsline {paragraph}{A shared-library ceiling on residual methods.}{15}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{A seventh family: CRISPRscan (zebrafish in vivo).}{15}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Eleven datasets: two transfer communities and one inversion.}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A twelfth family: the DepMap consensus label.}{16}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces UMAP of one-hot guide sequence features, 600 guides per dataset (seed 0). The datasets' guides largely \emph  {co-occupy} sequence space; only CRISPRscan separates visibly (zebrafish T7-promoter sequence constraints). The transfer failure is therefore not primarily a covariate-shift artifact -- the datasets look alike as sequences while their labels behave differently -- consistent with assay-specific label systematics dominating.}}{17}{}\protected@file@percent }
 \newlabel{fig:umap}{{3}{17}}
+\@writefile{toc}{\contentsline {paragraph}{A twelfth family: the DepMap consensus label.}{17}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Pooling closes the gap only inside a community.}{17}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Per-position base frequencies of the Chari high- (top) and low-activity (bottom) guide lists (logomaker). The high/low separation is concentrated near the PAM-proximal end (positions 16--20), consistent with the position-weighted importance reported by sgRNAScorer\nobreakspace  {}2.0 itself.}}{18}{}\protected@file@percent }
 \newlabel{fig:chari_logo}{{4}{18}}
 \@writefile{toc}{\contentsline {paragraph}{External binary test: sgRNAScorer 2.0.}{18}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Families 13-14: CRISPRi/a activity screens.}{18}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Data-integrity audit: the DeepHF encoding bug}{18}{}\protected@file@percent }
-\newlabel{sec:encoding-audit}{{11.2}{18}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The full $14\times 14$ cross-dataset transfer matrix (ridge, mean of 3 seeds; diagonal = within-dataset). The HEK-nuclease block (bottom right) and the Wang/Xu block (upper middle) are visible as coherent red squares; the DeepCRISPR-HEK293T column is uniformly blue (the inversion anomaly); the Horlbeck CRISPRi/a pair transfers to each other and to sgDesigner/CRISPRscan but negatively to DepMap.}}{19}{}\protected@file@percent }
 \newlabel{fig:transfer_heatmap}{{5}{19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Data-integrity audit: the DeepHF encoding bug}{19}{}\protected@file@percent }
+\newlabel{sec:encoding-audit}{{11.2}{19}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.3}Gap 1 (cont.): pooling does not fix the boundary}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.4}Gap 2: determinism audit and the split-variance meta-finding}{19}{}\protected@file@percent }
-\newlabel{sec:results-offtarget}{{11.4}{19}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Average-linkage hierarchy (scipy) on the symmetrized positive-part transfer similarity across the 12 gap-1 datasets. The Wang/Xu-side family (HCT116, HeLa, HL60, CRISPRon) clusters tightly; DepMap and CRISPRscan attach weakly to it; the HEK family (fcres/v1/DeepSpCas9/sgDesigner/DeepHF) forms the other subtree, with the anomalous DeepCRISPR HEK293T set joining last. Independent confirmation of the Louvain partition.}}{20}{}\protected@file@percent }
 \newlabel{fig:dendrogram}{{6}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.4}Gap 2: determinism audit and the split-variance meta-finding}{20}{}\protected@file@percent }
+\newlabel{sec:results-offtarget}{{11.4}{20}}
 \@writefile{toc}{\contentsline {paragraph}{A one-hot logistic beats the GNN.}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Inferential layer: per-position mismatch effects.}{20}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Gap 2, canonical fully-seeded split of crisprSQL. Left: ROC for the GNN and the MIT score. Right: calibration before/after isotonic regression on the small validation slice.}}{21}{}\protected@file@percent }
 \newlabel{fig:roc_cal}{{7}{21}}
+\@writefile{toc}{\contentsline {paragraph}{Inferential layer: per-position mismatch effects.}{21}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{External validation on the CRISPOR benchmark (Haeussler 2016).}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Alignment score as a classical comparator.}{21}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Reliability curves on held-out crisprSQL pairs, before and after Platt calibration on the validation slice.}}{22}{}\protected@file@percent }
 \newlabel{fig:calibration}{{8}{22}}
+\@writefile{toc}{\contentsline {paragraph}{Alignment score as a classical comparator.}{22}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Init-only versus split variance.}{22}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Per-position mismatch log-odds on crisprSQL (GLM, guide-cluster-robust 95\% CIs; red = $p<0.05$). The profile contradicts the textbook seed-region gradient: PAM-proximal positions are null, and the position-15 positive anomaly survives clustering.}}{23}{}\protected@file@percent }
 \newlabel{fig:poslog}{{9}{23}}
@@ -146,18 +146,18 @@
 \@writefile{toc}{\contentsline {section}{\numberline {13}Discussion}{30}{}\protected@file@percent }
 \newlabel{sec:discussion}{{13}{30}}
 \@writefile{toc}{\contentsline {paragraph}{What the residual is.}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{What practitioners should do differently.}{30}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Calibration on crisprSQL: mean ECE over the five fully-seeded splits (recalibrators fit on each split's validation slice). At this sample size, recalibration hurts on average.}}{31}{}\protected@file@percent }
 \newlabel{tab:calib}{{9}{31}}
 \@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Ablation: PAM and chromatin feature channels (gaps 4-5), five fully-seeded guide-grouped splits (mean $\pm $ sd AUROC). All conditions are within noise of seq-only; the winner varies by seed (pam\_epigen 3/5, epigen 2/5).}}{31}{}\protected@file@percent }
 \newlabel{tab:ablation}{{10}{31}}
+\@writefile{toc}{\contentsline {paragraph}{What practitioners should do differently.}{31}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Why the pegRNA transfer negative matters.}{31}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Relation to domain adaptation theory.}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Scope of claims.}{31}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces pegRNA efficiency (HEK), grouped held-out Spearman (gap 3).}}{32}{}\protected@file@percent }
 \newlabel{tab:pegrna}{{11}{32}}
 \@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces pegRNA scarce-regime scaling (HEK, grouped held-out Spearman). Transfer never beats scratch.}}{32}{}\protected@file@percent }
 \newlabel{tab:scaling}{{12}{32}}
+\@writefile{toc}{\contentsline {paragraph}{Scope of claims.}{32}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Negative-results ledger.}{32}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {14}External tools and datasets used}{32}{}\protected@file@percent }
 \newlabel{sec:toolsdata}{{14}{32}}

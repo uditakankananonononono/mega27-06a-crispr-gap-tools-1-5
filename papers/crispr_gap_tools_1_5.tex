@@ -197,7 +197,13 @@ U2OS; Wang et al.\ 2019) as the divergent assay family. \textbf{crisprSQL}
 100720 release (25,632 experimentally measured guide/off-target pairs from
 17 studies, with cleavage frequencies, five epigenetic tracks,
 thermodynamic energies, cell line and study provenance; St\"ortz \&
-Minary 2021). \textbf{PRIDICT2 23k} (22,956 pegRNAs with 99-mer wide
+Minary 2021). An edlib full-alignment audit finds 8{,}949 of the 25{,}632
+pairs (34.9\%) carry at least one insertion or deletion
+(\texttt{results/gap2\_edlib\_baseline.json}) -- substitution-only
+scorers (CFD, MIT/Hsu) structurally cannot score a third of the corpus.
+Bare edit distance itself is a weak scorer (grouped-split AUROC $0.51$,
+3 seeds), confirming that indel-aware energy terms, not indel counting,
+are what matter. \textbf{PRIDICT2 23k} (22,956 pegRNAs with 99-mer wide
 target contexts, engineered PBS/RT features and measured editing
 efficiencies in HEK293T and K562; Koeppel et al.\ 2023, underlying screens
 from Mathis et al.\ 2023).
