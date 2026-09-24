@@ -388,6 +388,21 @@ same split (\texttt{results/depmap\_cnn\_within.json}) -- the deep model
 does not beat the linear one even at 193k-guide scale, echoing the
 pegRNA regime where tuned GBMs match or beat the CNN.
 
+\paragraph{Pooling closes the gap only inside a community.} Ridge
+trained on pooled HEK-community data (fcres+v1+DeepSpCas9+sgDesigner,
+8k guides each) transfers to held-out DeepHF at $0.08$--$0.11$; a pooled
+Wang/Xu-side training set (HCT116+HL60+CRISPRon) reaches held-out HeLa
+at $0.31$--$0.33$. The swapped pools score ${\le}0.02$ and ${\le}0.01$
+respectively (3 seeds;
+\texttt{results/pooled\_community\_transfer.json}). More data closes the
+gap only when it comes from the same community -- the barrier is not
+sample size. A biopython feature audit (GC, nearest-neighbor RNA--DNA
+$T_m$, length; added to ridge on fcres and HeLa) changes within- and
+cross-scores by ${\le}0.01$ (3 seeds;
+\texttt{results/biopython\_feature\_audit.json}): standard biophysical
+features neither improve within-dataset fit nor rescue cross-community
+transfer.
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.9\textwidth]{fig_transfer_dendrogram.pdf}

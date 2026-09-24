@@ -1,0 +1,44 @@
+{
+  "per_seed": {
+    "0": {
+      "fcres->fcres:base": 0.4975108380329264,
+      "fcres->fcres:bio": 0.49534315255234734,
+      "dc_hela->dc_hela:base": 0.36719500275397093,
+      "dc_hela->dc_hela:bio": 0.3676136538103117,
+      "fcres->dc_hela:base": -0.024400545430841965,
+      "fcres->dc_hela:bio": -0.02555452114274206,
+      "dc_hela->fcres:base": -0.07627379699375693,
+      "dc_hela->fcres:bio": -0.06551585924910609
+    },
+    "1": {
+      "fcres->fcres:base": 0.40473403001459457,
+      "fcres->fcres:bio": 0.40436837511129664,
+      "dc_hela->dc_hela:base": 0.3254701410996993,
+      "dc_hela->dc_hela:bio": 0.3254780624900903,
+      "fcres->dc_hela:base": -0.033363163302494996,
+      "fcres->dc_hela:bio": -0.03315710977553477,
+      "dc_hela->fcres:base": -0.039166889904675845,
+      "dc_hela->fcres:bio": -0.020806795916412442
+    },
+    "2": {
+      "fcres->fcres:base": 0.46136222559860074,
+      "fcres->fcres:bio": 0.46088907087503506,
+      "dc_hela->dc_hela:base": 0.32429860067883814,
+      "dc_hela->dc_hela:bio": 0.3243654717214224,
+      "fcres->dc_hela:base": -0.06068196416938782,
+      "fcres->dc_hela:bio": -0.060996767815873786,
+      "dc_hela->fcres:base": -0.043744881154547034,
+      "dc_hela->fcres:bio": -0.040492098344920575
+    }
+  },
+  "mean": {
+    "fcres->fcres:base": 0.45453569788204057,
+    "fcres->fcres:bio": 0.4535335328462264,
+    "dc_hela->dc_hela:base": 0.33898791484416946,
+    "dc_hela->dc_hela:bio": 0.3391523960072748,
+    "fcres->dc_hela:base": -0.03948189096757493,
+    "fcres->dc_hela:bio": -0.03990279957805021,
+    "dc_hela->fcres:base": -0.05306185601765994,
+    "dc_hela->fcres:bio": -0.0422715845034797
+  }
+}
