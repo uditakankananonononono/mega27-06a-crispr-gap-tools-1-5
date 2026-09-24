@@ -728,6 +728,22 @@ concern for the epigen channel (tracks were measured in each source
 study's cell type, so the channel can encode study identity) as a
 plausible but untested explanation. Per-seed condition AUROCs are in
 Table~\ref{tab:ablperseed}.
+
+\paragraph{External PAM-variant validation (Koike-Yusa 2014).} The
+nbt.2800 Supplementary Table 1 deposits MiSeq cleavage for 190 candidate
+off-targets of a single guide (Piga l20\_5tm, mouse ESC), half with
+NAG-variant PAMs -- an independent gap-4 test outside crisprSQL
+(\texttt{results/koike\_yusa\_nag.json}). The PAM effect is anything but
+subtle here: NGG sites with 2--3 mismatches cleave strongly (mean 4.8\%
+at 2 mismatches, 11.6\% at 3), while NAG sites stay near background at
+every mismatch count ($\le 0.08\%$ mean; one of 95 above 1\%). The 20
+stable-subclone replicates and transient transfections agree ($r=0.982$).
+CFD ranks these sites with Spearman $-0.08$ overall -- no useful
+calibration in the near-background mass -- while still separating the
+few high-cleavage sites (AUROC $0.90$ at the $\ge 1\%$ level, but only
+3--4 positives). Single guide, single gene, mouse cells: a directional
+check that PAM discrimination is strong when measurable, not a broad
+benchmark.
 \paragraph{Direct chromatin-track queries: a coverage gap and a power
 ceiling.} crisprSQL's bundled chromatin columns are themselves sparse:
 on the 1{,}271 K562 hg19 rows (CIRCLE-seq + Cho) the bundled H3K4me3

@@ -1,0 +1,77 @@
+{
+  "n_sites": 190,
+  "n_ngg": 95,
+  "n_nag": 95,
+  "pam_counts": {
+    "AAG": 26,
+    "AGG": 9,
+    "CAG": 30,
+    "CGG": 1,
+    "GAG": 28,
+    "GGG": 5,
+    "TAG": 11,
+    "TGG": 80
+  },
+  "gradient": {
+    "ngg": {
+      "2": {
+        "n": 1,
+        "mean_cleavage": 4.768369197845459,
+        "median_cleavage": 4.768369197845459,
+        "frac_ge_1pct": 1.0
+      },
+      "3": {
+        "n": 2,
+        "mean_cleavage": 11.574158668518066,
+        "median_cleavage": 11.574158668518066,
+        "frac_ge_1pct": 0.5
+      },
+      "4": {
+        "n": 44,
+        "mean_cleavage": 0.0482577346265316,
+        "median_cleavage": 0.0329485721886158,
+        "frac_ge_1pct": 0.0
+      },
+      "5": {
+        "n": 48,
+        "mean_cleavage": 0.12214837223291397,
+        "median_cleavage": 0.030647525563836098,
+        "frac_ge_1pct": 0.020833333333333332
+      }
+    },
+    "nag": {
+      "2": {
+        "n": 2,
+        "mean_cleavage": 0.0326244942843914,
+        "median_cleavage": 0.0326244942843914,
+        "frac_ge_1pct": 0.0
+      },
+      "3": {
+        "n": 7,
+        "mean_cleavage": 0.027541356161236763,
+        "median_cleavage": 0.033367935568094254,
+        "frac_ge_1pct": 0.0
+      },
+      "4": {
+        "n": 77,
+        "mean_cleavage": 0.08130364120006561,
+        "median_cleavage": 0.024242423474788666,
+        "frac_ge_1pct": 0.012987012987012988
+      },
+      "5": {
+        "n": 9,
+        "mean_cleavage": 0.025180578231811523,
+        "median_cleavage": 0.014073604717850685,
+        "frac_ge_1pct": 0.0
+      }
+    }
+  },
+  "cfd": {
+    "n_scored": 190,
+    "spearman_all": -0.07987438069334984,
+    "spearman_ngg": -0.04862951018779309,
+    "auroc_ge1pct_all": 0.8991935483870968,
+    "auroc_gt0_all": 0.4351515151515152
+  },
+  "subclone_corr": 0.9821309735533748
+}

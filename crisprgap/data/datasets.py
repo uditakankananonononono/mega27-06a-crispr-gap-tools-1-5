@@ -99,6 +99,51 @@ def load_crisprsql() -> OfftargetDataset:
 _INT2BASE = {2: "C", 3: "G", 4: "T", 5: "A"}
 
 
+def load_koike_yusa_miseq() -> OfftargetDataset:
+    """Koike-Yusa 2014 (nbt.2800) Supplementary Table 1: MiSeq cleavage at 190
+    candidate off-target sites of a single guide (l20_5tm / Piga, mouse ESC).
+    Outcome: exp1 transient-transfection percent cleavage; subclone means kept
+    in energies for robustness checks. 95 of 190 sites carry NAG-variant PAMs.
+    """
+    import csv as _csv
+    path = os.path.join(DATA_DIR, "raw", "koike_yusa",
+                        "nbt2800_st1_miseq_offtargets.csv")
+    rows = [r for r in _csv.DictReader(open(path)) if r["identifier"] != "On-target"]
+    guide = "GAAGAGAGCATCATGGGCCA"
+
+    def _aligned(seq_field: str) -> str:
+        # the xlsx stores "_" where the site matches the guide and the
+        # substituted base otherwise (verified against the mismatch column)
+        assert len(seq_field) == 20
+        return "".join(g if c == "_" else c for g, c in zip(guide, seq_field))
+
+    def _f(x):
+        try:
+            return float(x)
+        except (TypeError, ValueError):
+            return float("nan")
+
+    cleav = np.array([_f(r["exp1_tf"]) for r in rows], dtype=np.float32)
+    sub = []
+    for r in rows:
+        vals = [_f(r[f"s5_{i}"]) for i in range(1, 11)] + \
+               [_f(r[f"s8_{i}"]) for i in range(1, 11)]
+        vals = [v for v in vals if v == v]
+        sub.append(sum(vals) / len(vals) if vals else float("nan"))
+    return OfftargetDataset(
+        guides=[guide] * len(rows),
+        offtargets=[_aligned(r["sequence"]) for r in rows],
+        labels=(cleav > 0).astype(np.int8),
+        cleavage_freq=cleav,
+        studies=["koike_yusa_2014"] * len(rows),
+        cell_lines=["mESC"] * len(rows),
+        pam=["TGG"] * len(rows),
+        off_pam=[r["pam"] for r in rows],
+        energies={"subclone_mean": np.array(sub, dtype=np.float32)},
+        source="koike_yusa_2014_miseq",
+    )
+
+
 def load_deephf(variant: str = "wt", max_n: int | None = None, seed: int = 0) -> EfficacyDataset:
     """DeepHF screen data (Wang et al. 2019, Nat Commun): ~55.6k guides with
     measured indel frequencies for WT-SpCas9 ('wt'), eSpCas9 ('esp') or
