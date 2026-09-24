@@ -1,0 +1,16 @@
+{
+ "n_guides": 76597,
+ "n_usable_totreads_ge100": 60764,
+ "edited_frac": {
+  "median": 0.497,
+  "p10": 0.387,
+  "p90": 0.772,
+  "frac_ge_09": 0.036,
+  "frac_le_05": 0.511
+ },
+ "gc_spearman": 0.006,
+ "n_genes_ge3_guides": 15062,
+ "guides_per_gene_median": 4.0,
+ "gene_median_efrac_p10": 0.438,
+ "gene_median_efrac_p90": 0.645
+}
