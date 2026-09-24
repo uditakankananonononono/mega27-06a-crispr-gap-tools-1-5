@@ -49,7 +49,7 @@ Google Drive API & artifact delivery (bundle + paper PDF) \\
 \end{tabular}
 \end{table}
 
-\subsection{Datasets and data sources (27 accession-level records + 13 sub-studies)}
+\subsection{Datasets and data sources (28 accession-level records + 13 sub-studies)}
 \begin{table}[h]\centering\small
 \caption{Datasets actually analyzed, with role.}
 \label{tab:datasets}
@@ -79,6 +79,7 @@ PRIDICT v1 Library\_1 (Mathis 2023, Nat Biotechnol, ESM MOESM5) & gap-3 cross-li
 Horlbeck 2016 CRISPRi activity (eLife 19760, CRISPRiaDesign tables) & gap-1 thirteenth family (18,380 guides) \\
 Horlbeck 2016 CRISPRa activity (eLife 19760, CRISPRiaDesign tables) & gap-1 fourteenth family (2,792 guides) \\
 Koike-Yusa 2014 MiSeq off-targets (nbt.2800 ST1) & gap-4 PAM-variant validation (190 sites, 1 guide, mESC) \\
+Chari sgRNAScorer 2.0 high/low lists (rajchari2/sgrnascorer) & gap-1 external discrimination test (215+215 guides) \\
 CRISPRscan zebrafish in-vivo screen (Nat Methods 2015, PMC4589495, ESM MOESM633) & gap-1 seventh assay family (492 guides) \\
 DeepCRISPR HCT116 screen (Chuai 2018, Genome Biol; Wang 2014 derivative) & gap-1 eighth family (4,239 guides) \\
 DeepCRISPR HEK293T screen (Chuai 2018) & gap-1; anti-correlated anomaly set (4,566 guides) \\
@@ -106,10 +107,12 @@ claimed.
 \paragraph{Examined and not integrated (with reasons).}
 Chari 2015 (nmeth.3473): Nature ESM MOESM297--302 checked -- gene-level
 rates and indel spectra only; the guide-level activity table is not in
-the public deposits, and the author's repository ships scripts, not the
-table. Koike-Yusa 2014 (nbt.2800): ESM MOESM7 is the 87k-guide library
-design without screen outcomes; outcome counts would need GEO
-reprocessing (deferred). OPED (Zenodo 8133527): 126k-pegRNA design
+the publisher deposits. The author's repository (rajchari2/sgrnascorer)
+does ship the sgRNAScorer~2.0 high/low training lists (215+215 guides),
+now integrated as an external discrimination test (Section gap-1).
+Koike-Yusa 2014 (nbt.2800): ESM MOESM7 is the 87k-guide library design
+without screen outcomes; outcome counts would need GEO reprocessing
+(deferred); the MiSeq off-target table was integrated (gap~4). OPED (Zenodo 8133527): 126k-pegRNA design
 database with predicted (not measured) efficiencies -- no labels.
 DeepPrime (Yu 2023, Cell): 259k-pegRNA training set not fetchable
 (publisher page bot-walled, no PMC/Zenodo deposit); models only.

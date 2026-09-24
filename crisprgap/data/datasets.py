@@ -99,6 +99,22 @@ def load_crisprsql() -> OfftargetDataset:
 _INT2BASE = {2: "C", 3: "G", 4: "T", 5: "A"}
 
 
+def load_sgrnascorer() -> EfficacyDataset:
+    """Chari sgRNAScorer 2.0 training lists: 215 high- + 215 low-activity
+    guides (binary labels). Per the author's generateSVMFile.V2.py, the
+    model reads the first 20 nt of each row, so guide20 is the modeled
+    sequence; rows are 23- or 27-mers with PAM/context tails.
+    """
+    import csv as _csv
+    path = os.path.join(DATA_DIR, "raw", "sgrnascorer", "chari_high_low.csv")
+    rows = list(_csv.DictReader(open(path)))
+    return EfficacyDataset(
+        sequences=[r["guide20"] for r in rows],
+        scores=np.array([float(r["label"]) for r in rows], dtype=np.float32),
+        source="sgrnascorer_chari",
+    )
+
+
 def load_koike_yusa_miseq() -> OfftargetDataset:
     """Koike-Yusa 2014 (nbt.2800) Supplementary Table 1: MiSeq cleavage at 190
     candidate off-target sites of a single guide (l20_5tm / Piga, mouse ESC).

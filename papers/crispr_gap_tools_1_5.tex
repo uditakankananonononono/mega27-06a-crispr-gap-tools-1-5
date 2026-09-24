@@ -403,6 +403,19 @@ cross-scores by ${\le}0.01$ (3 seeds;
 features neither improve within-dataset fit nor rescue cross-community
 transfer.
 
+\paragraph{External binary test: sgRNAScorer 2.0.} The Chari lab's
+sgRNAScorer 2.0 ships its training split as 215 high- and 215
+low-activity guides (rajchari2/sgrnascorer; the model itself reads only
+the first 20 nt of each listed sequence). We use the split untouched as
+an external discrimination endpoint
+(\texttt{results/sgrnascorer\_transfer.json}). A ridge trained on
+Doench-2016 fcres \emph{anti-predicts} it (AUROC $0.464$), as does v1
+($0.439$); CRISPRscan ($0.635$) and sgDesigner ($0.656$) transfer
+positively but far below the within-Chari 5-fold ridge ($0.807$). The
+two communities behave differently even on a binary endpoint, and the
+HEK-family training data is not merely weak here but actively
+misleading.
+
 \paragraph{Families 13-14: CRISPRi/a activity screens.} The Horlbeck
 2016 training screens (eLife 19760; mhorlbeck/CRISPRiaDesign data
 tables) contribute guide-level empirical activity scores for CRISPRi
