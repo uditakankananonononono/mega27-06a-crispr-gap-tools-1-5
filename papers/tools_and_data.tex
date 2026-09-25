@@ -4,7 +4,7 @@ Per program requirements, every external resource actually used in this
 work is listed with its role. Counts are honest: an entry appears only if
 it was executed or analyzed in the pipeline.
 
-\subsection{External tools (44 analysis tools + 4 infrastructure)}
+\subsection{Research/data tool inventory (provisional, strict audit pending)}
 \begin{table}[h]\centering\small
 \caption{External tools/packages used, with role.}
 \label{tab:tools}
@@ -66,9 +66,9 @@ Google Drive API & artifact delivery (bundle + paper PDF) \\
 
 \noindent \emph{Not counted toward the tool tally (infrastructure):
 GitHub (hosting), Google Drive API (delivery), pytest (test runner),
-pyarrow (I/O caching). Counted analysis/software tools: 44.}
+pyarrow (I/O caching). A strict audit removes the CFD parameter table and locally implemented MIT scorer as separately executed external tools. At most 42 research/data candidates remain; their per-tool execution evidence is not yet complete, so the 40-tool gate is not certified. See the accompanying evidence audit.}
 
-\subsection{Datasets and data sources (124 working; 131 literal rows incl.\ 4 UCSC alias rows)}
+\subsection{Dataset inventory (not an accession-verified count)}
 \begin{table}[h]\centering\small
 \caption{Datasets actually analyzed, with role.}
 \label{tab:datasets}
@@ -211,17 +211,15 @@ CFD substitution matrices & gap-2 baseline scorer parameters \\
 \end{tabular}
 \end{table}
 
-\paragraph{Toward the 40-tool / 120-dataset bar.}
-Reachable additions with genuine use in this item: published-model
-external validation (PRIDICT2, CRISPRon, DeepHF BiLSTM weights as
-benchmark columns), verification tools (primer3-py pegRNA thermodynamics,
-seqfold cross-check, FlashFry off-target aggregation, BLAST+ guide
-uniqueness), and the wider public CRISPR screen literature (Kim-2019/2020
-CRISPRon 15k, Xiang-2021, Chari-2015, GUIDE-seq/CIRCLE-seq/CHANGE-seq
-primaries, inDelphi, SPROUT, TUSCAN, DeepCpf1). We estimate an honest
-ceiling of ${\sim}$35 tools and ${\sim}$60 accession-level datasets for
-this item; beyond that, entries would be decorative, so they are not
-claimed.
+\paragraph{Gate accounting.}
+The table is an inventory, not a verified accession ledger. It includes
+repeated publications with distinct sheets, four UCSC aliases of ENCODE files,
+and sub-study notes, none of which automatically count as independent data.
+Twenty-three distinct ENCODE accessions have numerical per-track outcomes in
+\texttt{results/gap5\_encode\_sweep{,2,3}.json}, but the bigWig source hashes
+were not retained. No 120-accession-dataset gate is certified until source URLs,
+input hashes, and analysis outputs are linked for each counted record.
+See \texttt{EVIDENCE\_AUDIT.md}.
 
 \paragraph{Examined and not integrated (with reasons).}
 Chari 2015 (nmeth.3473): Nature ESM MOESM297--302 checked -- gene-level
