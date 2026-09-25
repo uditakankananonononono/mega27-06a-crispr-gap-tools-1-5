@@ -1,8 +1,11 @@
 \documentclass[12pt]{article}
-\usepackage{mathptmx} % Nimbus Roman metrics, not genuine Times New Roman
+\pdfmapfile{+tnr.map}
+\usepackage[T1]{fontenc}
+\renewcommand{\rmdefault}{tnr} % user-owned Times New Roman installed locally; TTF not distributed
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
+\usepackage{longtable}
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}[proposition]{Corollary}
 \newtheorem{definition}{Definition}

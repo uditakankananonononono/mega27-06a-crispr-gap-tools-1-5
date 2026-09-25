@@ -25,4 +25,4 @@ CFD is defined only for substitution-only ACGT 23-mers; the CLI rejects indels a
 
 ## Evidence audit (September 25, 2026)
 
-The paper's 44-tool and 124-dataset headings are provisional inventory counts, not verified passes against the strict research/data-tool and accession gates. See `EVIDENCE_AUDIT.md`; the current PDF uses Nimbus Roman, not genuine Times New Roman. Work remains open.
+The paper's 44-tool and 124-dataset headings are provisional inventory counts, not verified passes against the strict research/data-tool and accession gates. See `EVIDENCE_AUDIT.md`; the updated PDF embeds Times New Roman text (math fonts remain Computer Modern). Research-tool and dataset evidence work remains open.

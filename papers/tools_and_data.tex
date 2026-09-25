@@ -1,17 +1,15 @@
 \section{External tools and datasets used}
 \label{sec:toolsdata}
 Per program requirements, every external resource actually used in this
-work is listed with its role. Counts are honest: an entry appears only if
-it was executed or analyzed in the pipeline.
+work is listed with its role. The inventory is descriptive rather than a certified count: tool execution and unique accession evidence still require a strict audit.
 
 \subsection{Research/data tool inventory (provisional, strict audit pending)}
-\begin{table}[h]\centering\small
-\caption{External tools/packages used, with role.}
-\label{tab:tools}
-\begin{tabular}{ll}
+\begingroup\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}p{0.27\textwidth}p{0.68\textwidth}@{}}
+\caption{External tools/packages used, with role.}\label{tab:tools}\\
 \hline
-Tool (version) & Used for \\
-\hline
+Tool (version) & Used for \\\hline\endfirsthead
+\hline Tool (continued) & Used for \\\hline\endhead
 PyTorch (2.14.0) & GNN/CNN model training (gaps 1--5) \\
 scikit-learn (1.7.2) & ridge models, Platt/isotonic calibration, splits, metrics \\
 SciPy (1.15.3) & rank statistics (\texttt{rankdata}, Spearman $\rho$, Mann--Whitney) and hierarchical clustering of the transfer matrix (Fig.~\ref{fig:dendrogram}) \\
@@ -61,21 +59,19 @@ ruptures (1.1.10) & PELT change-point detection on positional editing windows (g
 GitHub & code hosting (repo: mega27-06a-crispr-gap-tools-1-5) \\
 Google Drive API & artifact delivery (bundle + paper PDF) \\
 \hline
-\end{tabular}
-\end{table}
+\end{longtable}\endgroup
 
 \noindent \emph{Not counted toward the tool tally (infrastructure):
 GitHub (hosting), Google Drive API (delivery), pytest (test runner),
 pyarrow (I/O caching). A strict audit removes the CFD parameter table and locally implemented MIT scorer as separately executed external tools. At most 42 research/data candidates remain; their per-tool execution evidence is not yet complete, so the 40-tool gate is not certified. See the accompanying evidence audit.}
 
 \subsection{Dataset inventory (not an accession-verified count)}
-\begin{table}[h]\centering\small
-\caption{Datasets actually analyzed, with role.}
-\label{tab:datasets}
-\begin{tabular}{ll}
+\begingroup\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}p{0.62\textwidth}p{0.33\textwidth}@{}}
+\caption{Descriptive dataset inventory (unique accession count not certified).}\label{tab:datasets}\\
 \hline
-Dataset (accession) & Used for \\
-\hline
+Dataset (accession) & Used for \\\hline\endfirsthead
+\hline Dataset (continued) & Used for \\\hline\endhead
 Doench FC+RES (Azimuth mirror) & gap-1 source, PORTA base model \\
 Doench V1 (Azimuth mirror) & gap-1 within-family transfer \\
 DeepHF WT-SpCas9 screen & gap-1 destination, PORTA calibration screen \\
@@ -208,8 +204,7 @@ DepMap 23Q4 Public (figshare 24667905, CRISPRInferredGuideEfficacy) & gap-1 twel
 Haeussler 2016 CRISPOR off-target benchmark (via microsoft/Elevation mirror) & gap-2 external validation corpus (23,502 external pairs) \\
 CFD substitution matrices & gap-2 baseline scorer parameters \\
 \hline
-\end{tabular}
-\end{table}
+\end{longtable}\endgroup
 
 \paragraph{Gate accounting.}
 The table is an inventory, not a verified accession ledger. It includes
